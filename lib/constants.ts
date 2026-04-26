@@ -22,8 +22,8 @@ export const SITE = {
       zip: "31909",
       phone: "(762) 261-3880",
       phoneHref: "tel:7622613880",
-      // Directions link confirmed via Google Maps search for this address.
-      maps: "https://www.google.com/maps/place/6901+Ray+Wright+Way+Suite+I+Columbus+GA+31909/",
+      // CID-based Maps URL — confirmed via Birdeye, Patch, VerView (CID 4591763888039169011).
+      maps: "https://www.google.com/maps?cid=4591763888039169011",
       // Map embed URL (no API key required). Replace with the official embed code
       // from Google Maps → Share → Embed a map, once the owner provides it.
       embedMapUrl: "https://maps.google.com/maps?q=6901+Ray+Wright+Way+Suite+I+Columbus+GA+31909&output=embed",
@@ -37,8 +37,8 @@ export const SITE = {
       zip: "31088",
       phone: "(478) 366-1244",
       phoneHref: "tel:4783661244",
-      // Directions link confirmed for this address.
-      maps: "https://maps.google.com/?q=840+SR+96+Suite+3300+Warner+Robins+GA+31088",
+      // Place ID-based Maps URL — Place ID ChIJ7fWZikTn84gR0pgpwy2h7Jo confirmed for this address.
+      maps: "https://www.google.com/maps/place/?q=place_id:ChIJ7fWZikTn84gR0pgpwy2h7Jo",
       // Map embed URL (no API key required). Replace with official embed code from GBP.
       embedMapUrl: "https://maps.google.com/maps?q=840+SR+96+Suite+3300+Warner+Robins+GA+31088&output=embed",
       // TODO: Verify Warner Robins hours against GBP. Columbus hours used as safe default.
@@ -79,14 +79,16 @@ export const SITE = {
   biote: "https://biote.com",
   reviews: {
     platform: "Google",
-    // Review dialog URLs — confirm which location appears in the modal before launch.
-    // The #lrd ID is the distinguishing factor; do not swap these without verifying.
-    columbusReviewLink: "https://www.google.com/search?q=Revitalize+Aesthetics+%26+Wellness+Reviews#lrd=0x88f3e7448a99f5ed:0x9aeca12dc32998d2,3,,,,",
-    warnerRobinsReviewLink: "https://www.google.com/search?q=Revitalize+Aesthetics+%26+Wellness+Reviews#lrd=0x88f33524e3d94a4f:0x3fb938ed8f0a8bf3,3,,,,",
-    // Set verifiedCount and verifiedRating to null to show neutral copy.
-    // Update to real values once confirmed against the GBP dashboard.
-    verifiedCount: null as string | null,
-    verifiedRating: null as string | null,
+    // Direct review links — opens each location's Google Business Profile.
+    // Users click "Write a review" from the listing. More reliable than #lrd hash links.
+    // Columbus CID confirmed: 4591763888039169011 (via maps?cid= URL).
+    // Warner Robins Place ID confirmed: ChIJ7fWZikTn84gR0pgpwy2h7Jo.
+    columbusReviewLink: "https://www.google.com/maps?cid=4591763888039169011",
+    warnerRobinsReviewLink: "https://www.google.com/maps/place/?q=place_id:ChIJ7fWZikTn84gR0pgpwy2h7Jo",
+    // Verified from Google search results Apr 26 2026.
+    // Columbus: 4.9 ★ · 76 reviews. Warner Robins: 4.9 ★ · 34 reviews.
+    verifiedCount: "76+" as string | null,
+    verifiedRating: "4.9" as string | null,
   },
   founder: {
     name: "Travis Woodley",
