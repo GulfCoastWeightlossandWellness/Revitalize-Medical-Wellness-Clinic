@@ -5,6 +5,7 @@ import { SITE } from "@/lib/constants";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Revitalize Aesthetics & Wellness | Columbus & Warner Robins, GA",
@@ -162,6 +163,7 @@ const TESTIMONIALS = [
 ];
 
 export default function HomePage() {
+  const featuredPosts = getAllBlogPosts().slice(0, 3);
   return (
     <>
       {/* ── HERO ── */}
@@ -1580,43 +1582,62 @@ export default function HomePage() {
         <style>{`.shop-section-grid { grid-template-columns: 1fr 1fr; } @media (max-width: 768px) { .shop-section-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
-      {/* ── CONTENT HUB ENTRY ── */}
-      <section style={{ background: "#fff", padding: "66px clamp(24px, 6vw, 80px)" }}>
-        <div style={{ maxWidth: "1080px", margin: "0 auto", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "26px", alignItems: "center" }} className="home-hub-grid">
+      {/* ── LEARNING LIBRARY PREVIEW ── */}
+      <section style={{ background: "#fff", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <FadeIn>
-            <div>
-              <div className="eyebrow" style={{ marginBottom: "14px" }}>New: unified content hub</div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.7rem, 3vw, 2.5rem)", fontWeight: 400, lineHeight: 1.2, color: "var(--color-ink)", marginBottom: "12px" }}>
-                All education in one place
-              </h2>
-              <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "18px" }}>
-                Browse long-form articles, embedded videos, and key resources through one internal
-                hub instead of scattered external links.
-              </p>
-              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                <Link href="/hub" style={{ background: "var(--color-teal)", color: "#fff", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                  Open Hub
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "40px", gap: "20px", flexWrap: "wrap" }}>
+              <div>
+                <div className="eyebrow" style={{ marginBottom: "12px" }}>Learning Library</div>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.15 }}>
+                  Patient education &amp; insights
+                </h2>
+              </div>
+              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", flexShrink: 0 }}>
+                <Link href="/hub" style={{ background: "var(--color-teal)", color: "#fff", padding: "11px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  Full Library
                 </Link>
-                <Link href="/hub/articles" style={{ border: "1px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                  Read Articles
+                <Link href="/blog" style={{ border: "1px solid var(--color-divider)", color: "var(--color-muted)", padding: "11px 18px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  All Articles →
                 </Link>
               </div>
             </div>
           </FadeIn>
-          <FadeIn delay={0.08}>
-            <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "20px 22px" }}>
-              <div style={{ fontSize: "0.56rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "10px" }}>
-                Quick paths
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                <Link href="/hub/videos" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Watch videos</Link>
-                <Link href="/hub/resources" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Explore resources</Link>
-                <Link href="/hub/index.json" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Developer index (JSON)</Link>
-              </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }} className="home-lib-grid">
+            {featuredPosts.map((post, i) => (
+              <FadeIn key={post.slug} delay={i * 0.06}>
+                <Link href={`/blog/${post.slug}`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
+                  <article style={{ background: "var(--color-stone)", borderRadius: "4px", padding: "28px 24px", height: "100%", borderTop: "3px solid var(--color-teal)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }} className="home-lib-card">
+                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 500, marginBottom: "12px" }}>{post.category}</div>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "10px", flex: 1 }}>{post.title}</h3>
+                    <p style={{ fontSize: "0.78rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "16px" }}>{post.description}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                      <span style={{ fontSize: "0.62rem", color: "var(--color-muted-light)" }}>{post.readTime}</span>
+                      <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                    </div>
+                  </article>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn>
+            <div style={{ marginTop: "20px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <Link href="/hub/videos" style={{ fontSize: "0.7rem", color: "var(--color-muted)", letterSpacing: "0.08em" }}>Watch videos →</Link>
+              <span style={{ color: "var(--color-divider)" }}>·</span>
+              <Link href="/hub/resources" style={{ fontSize: "0.7rem", color: "var(--color-muted)", letterSpacing: "0.08em" }}>Patient guides →</Link>
+              <span style={{ color: "var(--color-divider)" }}>·</span>
+              <Link href="/book" style={{ fontSize: "0.7rem", color: "var(--color-muted)", letterSpacing: "0.08em" }}>The Book →</Link>
             </div>
           </FadeIn>
         </div>
-        <style>{`.home-hub-grid { grid-template-columns: 1.2fr 1fr; } @media (max-width: 900px) { .home-hub-grid { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`
+          .home-lib-grid { grid-template-columns: repeat(3, 1fr); }
+          .home-lib-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+          @media (max-width: 900px) { .home-lib-grid { grid-template-columns: 1fr 1fr !important; } }
+          @media (max-width: 560px) { .home-lib-grid { grid-template-columns: 1fr !important; } }
+        `}</style>
       </section>
 
       {/* ── FINAL CTA ── */}

@@ -59,12 +59,35 @@ const SERVICES_MENU: NavColumn[] = [
   },
 ];
 
+const LIBRARY_MENU = [
+  {
+    category: "Browse",
+    items: [
+      { label: "Learning Library", href: "/hub" },
+      { label: "Articles", href: "/hub/articles" },
+      { label: "Videos", href: "/hub/videos" },
+      { label: "Patient Guides", href: "/hub/resources" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
+  {
+    category: "From Travis",
+    items: [
+      { label: "The Book", href: "/book" },
+      { label: "Assessments & Tools", href: "/tools" },
+      { label: "About Travis Woodley", href: "/about" },
+    ],
+  },
+];
+
 export default function Nav() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [libraryOpen, setLibraryOpen] = useState(false);
   const servicesMenuRef = useRef<HTMLDivElement | null>(null);
+  const libraryMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -75,21 +98,25 @@ export default function Nav() {
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
+    setLibraryOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     const onPointerDown = (event: MouseEvent) => {
-      if (!servicesOpen) return;
       const target = event.target as Node | null;
       if (!target) return;
-      if (servicesMenuRef.current && !servicesMenuRef.current.contains(target)) {
+      if (servicesOpen && servicesMenuRef.current && !servicesMenuRef.current.contains(target)) {
         setServicesOpen(false);
+      }
+      if (libraryOpen && libraryMenuRef.current && !libraryMenuRef.current.contains(target)) {
+        setLibraryOpen(false);
       }
     };
 
     const onEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setServicesOpen(false);
+        setLibraryOpen(false);
       }
     };
 
@@ -99,7 +126,7 @@ export default function Nav() {
       document.removeEventListener("mousedown", onPointerDown);
       document.removeEventListener("keydown", onEscape);
     };
-  }, [servicesOpen]);
+  }, [servicesOpen, libraryOpen]);
 
   return (
     <>
@@ -291,27 +318,69 @@ export default function Nav() {
             Start Here
           </Link>
 
-          {[
-            { label: "About Travis", href: "/about" },
-            { label: "Learning Library", href: "/hub" },
-            { label: "Locations", href: "/locations" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.48)",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-              className={`nav-link nav-text-link ${pathname === item.href ? "active" : ""}`}
+          {/* About Travis */}
+          <Link
+            href="/about"
+            style={{ fontSize: "0.6rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.48)", fontWeight: 500, transition: "color 0.2s" }}
+            className={`nav-link nav-text-link ${pathname === "/about" ? "active" : ""}`}
+          >
+            About Travis
+          </Link>
+
+          {/* Learning Library dropdown */}
+          <div ref={libraryMenuRef} style={{ position: "relative" }}>
+            <button
+              type="button"
+              style={{ fontSize: "0.6rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.48)", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-body)", fontWeight: 500, display: "flex", alignItems: "center", gap: "5px", transition: "color 0.2s", padding: "10px 2px" }}
+              className={`nav-link nav-text-link ${pathname.startsWith("/hub") || pathname === "/blog" || pathname === "/book" ? "active" : ""}`}
+              aria-expanded={libraryOpen}
+              aria-controls="desktop-library-menu"
+              aria-haspopup="menu"
+              onClick={() => { setLibraryOpen((o) => !o); setServicesOpen(false); }}
             >
-              {item.label}
-            </Link>
-          ))}
+              Learning Library
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.4, marginTop: 1 }}>
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            </button>
+
+            {libraryOpen && (
+              <div
+                id="desktop-library-menu"
+                style={{ position: "absolute", top: "calc(100% + 8px)", left: "50%", transform: "translateX(-50%)", background: "rgba(9,25,34,0.98)", backdropFilter: "blur(20px)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "10px", padding: "24px 28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", minWidth: "340px", boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}
+              >
+                {LIBRARY_MENU.map((col) => (
+                  <div key={col.category}>
+                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 500, marginBottom: "14px" }}>
+                      {col.category}
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                      {col.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.5)", transition: "color 0.2s", lineHeight: 1.4, fontWeight: 400, padding: "8px 2px" }}
+                          className="nav-dropdown-link list-link-block"
+                          onClick={() => setLibraryOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Locations */}
+          <Link
+            href="/locations"
+            style={{ fontSize: "0.6rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.48)", fontWeight: 500, transition: "color 0.2s" }}
+            className={`nav-link nav-text-link ${pathname === "/locations" ? "active" : ""}`}
+          >
+            Locations
+          </Link>
 
           <a
             href={SITE.booking}
@@ -428,10 +497,7 @@ export default function Nav() {
 
             {[
               { label: "About Travis", href: "/about" },
-              { label: "Learning Library", href: "/hub" },
-              { label: "Latest Articles", href: "/blog" },
               { label: "Locations", href: "/locations" },
-              { label: "The Book", href: "/book" },
               { label: "Contact", href: "/contact" },
               { label: "Payment Plans", href: "/payment-plans" },
             ].map((item) => (
@@ -439,20 +505,37 @@ export default function Nav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                style={{
-                  fontSize: "0.85rem",
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.55)",
-                  padding: "14px 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.06)",
-                  fontWeight: 500,
-                }}
+                style={{ fontSize: "0.85rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", padding: "14px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", fontWeight: 500 }}
                 className={`list-link-block ${pathname === item.href ? "active-mobile-link" : ""}`}
               >
                 {item.label}
               </Link>
             ))}
+
+            {/* Learning Library section in mobile */}
+            <div style={{ marginTop: "4px" }}>
+              <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "8px", fontWeight: 500, paddingTop: "12px" }}>
+                Learning Library
+              </div>
+              {[
+                { label: "Learning Library", href: "/hub" },
+                { label: "Articles", href: "/hub/articles" },
+                { label: "Videos", href: "/hub/videos" },
+                { label: "Patient Guides", href: "/hub/resources" },
+                { label: "Blog", href: "/blog" },
+                { label: "The Book", href: "/book" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  style={{ display: "block", fontSize: "0.8rem", color: "rgba(255,255,255,0.4)", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}
+                  className="list-link-block"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
 
             <div style={{ marginTop: "12px" }}>
               <div style={{

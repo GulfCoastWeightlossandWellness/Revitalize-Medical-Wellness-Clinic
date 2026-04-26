@@ -3,35 +3,46 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import { getHubArticles, getHubVideos } from "@/lib/contentHub";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Content Hub | Articles, Videos, and Educational Resources",
+  title: "Learning Library | Hormone Health, Weight Loss & Aesthetics Education | Revitalize",
   description:
-    "Centralized hub for Revitalize educational content across articles, videos, and legacy resources from clinic and nutrition platforms.",
+    "Patient education library from Revitalize Aesthetics & Wellness. Articles, videos, and patient guides on hormone therapy, medical weight loss, aesthetics, IV hydration, and more. Led by Travis Woodley, MSN, RN, CRNP.",
   alternates: {
     canonical: "https://revitalizemedicalclinic.com/hub",
   },
   openGraph: {
-    title: "Revitalize Learning Library",
+    title: "Learning Library | Revitalize Aesthetics & Wellness",
     description:
-      "Complete patient education library for hormone optimization, metabolic health, recovery, and clinical resources.",
+      "Complete patient education library for hormone optimization, metabolic health, aesthetics, recovery, and clinical resources — from Travis Woodley and the Revitalize team.",
     url: "https://revitalizemedicalclinic.com/hub",
     type: "website",
   },
 };
 
-export default function ContentHubPage() {
-  const articles = getHubArticles().slice(0, 4);
+const TOPIC_PATHS = [
+  { title: "Hormone Health", desc: "Perimenopause, testosterone, BHRT, Biote pellets", href: "/hub/articles", service: "/services/hormone-therapy-women" },
+  { title: "Weight & Metabolism", desc: "GLP-1, semaglutide, insulin resistance, body composition", href: "/hub/articles", service: "/services/medical-weight-loss" },
+  { title: "Aesthetics", desc: "Neuromodulators, fillers, skin resurfacing, PRP", href: "/hub/articles", service: "/services/neuromodulators" },
+  { title: "IV Hydration", desc: "Vitamin infusions, recovery, hydration protocols", href: "/hub/articles", service: "/services/iv-hydration" },
+  { title: "Sexual Wellness", desc: "O-Shot, erectile dysfunction, intimacy restoration", href: "/hub/articles", service: "/services/o-shot" },
+  { title: "Hair Restoration", desc: "DE|RIVE protocol, PRP for hair, scalp health", href: "/hub/articles", service: "/services/derive-hair-restoration" },
+];
+
+export default function LearningLibraryPage() {
+  const hubArticles = getHubArticles().slice(0, 4);
   const videos = getHubVideos().slice(0, 4);
+  const blogPosts = getAllBlogPosts().slice(0, 6);
+
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Revitalize Learning Library",
-    description:
-      "Patient-facing education library with articles, videos, and clinical resource pathways.",
+    description: "Patient-facing education library with articles, videos, and clinical resource pathways.",
     url: "https://revitalizemedicalclinic.com/hub",
     hasPart: [
-      ...articles.map((a) => ({
+      ...hubArticles.map((a) => ({
         "@type": "Article",
         headline: a.title,
         url: `https://revitalizemedicalclinic.com/hub/${a.slug}`,
@@ -44,315 +55,327 @@ export default function ContentHubPage() {
     ],
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      { "@type": "ListItem", position: 2, name: "Learning Library", item: `${SITE.url}/hub` },
+    ],
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      {/* ── HERO ── */}
       <section style={{ background: "linear-gradient(130deg, #091922 0%, #0E3D4D 60%, #174E60 100%)", padding: "80px clamp(24px, 6vw, 80px)" }}>
-        <div style={{ maxWidth: "1180px", margin: "0 auto", display: "grid", gridTemplateColumns: "1.2fr 0.9fr", gap: "30px" }} className="hub-hero-grid">
+        <div style={{ maxWidth: "1180px", margin: "0 auto", display: "grid", gridTemplateColumns: "1.2fr 0.9fr", gap: "48px", alignItems: "center" }} className="hub-hero-grid">
           <div>
-            <div className="eyebrow-white" style={{ marginBottom: "20px" }}>
-              Learning library
-            </div>
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.2rem, 4.6vw, 4.6rem)",
-              fontWeight: 400,
-              lineHeight: 1.08,
-              color: "#fff",
-              letterSpacing: "-0.015em",
-              marginBottom: "18px",
-            }}
-          >
-            Revitalize
-            <br />
-            <em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>Content Hub</em>
-          </h1>
-          <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.5)", maxWidth: "680px" }}>
-            Complete patient education library for hormone optimization, metabolic health,
-            nutrition, and recovery guidance from Travis Woodley and the Revitalize clinical team.
-            Use this to browse everything in one place.
-          </p>
-            <div style={{ marginTop: "26px", display: "flex", gap: "10px", flexWrap: "wrap" }}>
-              <Link href="/hub/articles" style={{ background: "var(--color-gold)", color: "#fff", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+            <div className="eyebrow-white" style={{ marginBottom: "20px" }}>Patient Education</div>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem, 4.6vw, 4.8rem)", fontWeight: 400, lineHeight: 1.07, color: "#fff", letterSpacing: "-0.015em", marginBottom: "18px" }}>
+              Learning
+              <br />
+              <em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>Library</em>
+            </h1>
+            <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.5)", maxWidth: "560px", marginBottom: "32px" }}>
+              Explore articles, videos, and patient guides from Revitalize. Written and curated by Travis Woodley, MSN, RN, CRNP — so you can make confident, informed decisions before your first appointment.
+            </p>
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              <Link href="/hub/articles" style={{ background: "var(--color-gold)", color: "#fff", padding: "13px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
                 Read Articles
               </Link>
-              <Link href="/hub/videos" style={{ background: "rgba(255,255,255,0.09)", color: "rgba(255,255,255,0.88)", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.24)" }}>
+              <Link href="/hub/videos" style={{ background: "rgba(255,255,255,0.09)", color: "rgba(255,255,255,0.88)", padding: "13px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.2)" }}>
                 Watch Videos
+              </Link>
+              <Link href="/tools" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", padding: "13px 10px" }}>
+                Take Assessment →
               </Link>
             </div>
           </div>
           <FadeIn delay={0.08}>
-            <div style={{ background: "rgba(255,255,255,0.09)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "22px" }}>
-              <div style={{ fontSize: "0.54rem", color: "rgba(255,255,255,0.58)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "8px" }}>
-                Featured in this platform
-              </div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.45rem", color: "#fff", fontWeight: 400, marginBottom: "8px", lineHeight: 1.25 }}>
+            <div style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", padding: "28px 24px" }}>
+              <div style={{ fontSize: "0.54rem", color: "rgba(255,255,255,0.5)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "10px" }}>Featured · Travis Woodley</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", color: "#fff", fontWeight: 400, marginBottom: "10px", lineHeight: 1.25 }}>
                 {SITE.book.title}
               </h2>
-              <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "16px" }}>
-                &ldquo;You are not broken. You are unbalanced.&rdquo; This hub is built around the same
-                patient-first framework from Travis&apos;s clinical and book content.
+              <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "20px" }}>
+                &ldquo;You are not broken. You are unbalanced.&rdquo; The clinical framework behind the clinic, the protocols, and every resource in this library.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                <a href={SITE.book.allPlatforms} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.6rem", color: "var(--color-gold)", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                <a href={SITE.book.allPlatforms} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "var(--color-gold)", color: "#fff", padding: "11px 18px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", textDecoration: "none" }}>
                   Get The Book ↗
                 </a>
-                <a href={SITE.ecosystem.nutritionShop} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.6rem", color: "var(--color-gold)", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700 }}>
-                  Visit Vitamin Shop ↗
-                </a>
+                <Link href="/book" style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em" }}>
+                  View all formats →
+                </Link>
               </div>
             </div>
           </FadeIn>
         </div>
-        <style>{`
-          .hub-hero-grid { grid-template-columns: 1.2fr 0.9fr; }
-          @media (max-width: 900px) {
-            .hub-hero-grid { grid-template-columns: 1fr !important; }
-          }
-        `}</style>
+        <style>{`.hub-hero-grid { grid-template-columns: 1.2fr 0.9fr; } @media (max-width: 900px) { .hub-hero-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
+      {/* ── BROWSE BY FORMAT ── */}
+      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "36px" }}>
+              <div className="eyebrow" style={{ marginBottom: "12px" }}>Browse by format</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
+                Choose how you learn
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }} className="hub-format-grid">
+            {[
+              {
+                eyebrow: "Articles",
+                title: "Long-form patient education",
+                desc: "Hormones, metabolic medicine, fertility, sleep, aesthetics, and recovery explained in clinical-quality language for real-world patient decisions.",
+                href: "/hub/articles",
+                accent: "var(--color-teal)",
+                cta: "Open Article Library",
+              },
+              {
+                eyebrow: "Videos",
+                title: "Visual education from Travis",
+                desc: "Watch practical patient education directly from Travis and the Revitalize team. Short-form clinical explainers without the fluff.",
+                href: "/hub/videos",
+                accent: "var(--color-gold)",
+                cta: "Watch Videos",
+              },
+              {
+                eyebrow: "Patient Guides",
+                title: "Resources and care pathways",
+                desc: "Jump to the nutrition shop, book resources, financing options, and trusted ecosystem destinations from one place.",
+                href: "/hub/resources",
+                accent: "var(--color-ink)",
+                cta: "Explore Guides",
+              },
+            ].map((card) => (
+              <FadeIn key={card.eyebrow}>
+                <div style={{ background: "#fff", borderRadius: "8px", padding: "34px 30px", borderTop: `3px solid ${card.accent}`, height: "100%", display: "flex", flexDirection: "column" }}>
+                  <div className="eyebrow" style={{ marginBottom: "12px" }}>{card.eyebrow}</div>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.2rem, 2vw, 1.6rem)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "10px", lineHeight: 1.25 }}>{card.title}</h3>
+                  <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "24px", flex: 1 }}>{card.desc}</p>
+                  <Link href={card.href} style={{ display: "inline-block", background: "var(--color-teal)", color: "#fff", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                    {card.cta}
+                  </Link>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+        <style>{`.hub-format-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 900px) { .hub-format-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* ── LATEST ARTICLES FROM TRAVIS ── */}
       <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <FadeIn>
-            <div style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "10px", padding: "26px 24px" }}>
-              <div className="eyebrow" style={{ marginBottom: "10px" }}>
-                Start here
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px", gap: "20px", flexWrap: "wrap" }}>
+              <div>
+                <div className="eyebrow" style={{ marginBottom: "12px" }}>Latest articles</div>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
+                  From the Revitalize blog
+                </h2>
               </div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.8vw, 2.2rem)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "8px" }}>
-                Pick what you need right now
-              </h2>
-              <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "18px", maxWidth: "760px" }}>
-                This hub is organized for patient decisions, not content inventory. Choose your
-                concern, learn quickly, and take the next step when you are ready.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px" }} className="hub-start-grid">
-                {[
-                  { title: "Hormones", desc: "Perimenopause, testosterone, BHRT", href: "/hub/articles?topic=hormones" },
-                  { title: "Energy", desc: "Fatigue, sleep, recovery basics", href: "/hub/videos" },
-                  { title: "Weight & Metabolic", desc: "Insulin, body composition, GLP-1", href: "/hub/articles?topic=metabolic" },
-                  { title: "Supplements", desc: "Clinical vitamin guidance", href: "/hub/resources" },
-                ].map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    style={{
-                      background: "var(--color-bg)",
-                      border: "1px solid var(--color-divider)",
-                      borderRadius: "8px",
-                      padding: "14px 14px",
-                      display: "block",
-                    }}
-                  >
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: "5px" }}>
-                      {item.title}
-                    </div>
-                    <div style={{ fontSize: "0.78rem", color: "var(--color-muted)", lineHeight: 1.55, marginBottom: "10px" }}>
-                      {item.desc}
-                    </div>
-                    <div style={{ fontSize: "0.56rem", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--color-teal)" }}>
-                      Open →
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <Link href="/blog" style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)", whiteSpace: "nowrap" }}>
+                All articles →
+              </Link>
             </div>
           </FadeIn>
 
-          <div style={{ marginTop: "52px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "14px" }} className="hub-entry-grid">
-            <FadeIn>
-              <div style={{ background: "#fff", borderRadius: "6px", padding: "34px 30px", borderTop: "3px solid var(--color-teal)" }}>
-                <div className="eyebrow" style={{ marginBottom: "12px" }}>
-                  Articles
-                </div>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.4rem, 2.4vw, 2rem)",
-                    fontWeight: 400,
-                    color: "var(--color-ink)",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Evidence-backed patient articles
-                </h2>
-                <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "20px" }}>
-                  Hormones, metabolic medicine, fertility, sleep, and recovery explained in plain
-                  language for real-world patient decisions.
-                </p>
-                <Link
-                  href="/hub/articles"
-                  style={{
-                    display: "inline-block",
-                    background: "var(--color-teal)",
-                    color: "#fff",
-                    padding: "12px 22px",
-                    borderRadius: "6px",
-                    fontSize: "0.6rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Open Article Dashboard
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }} className="hub-articles-grid">
+            {blogPosts.map((post, i) => (
+              <FadeIn key={post.slug} delay={i * 0.05}>
+                <Link href={`/blog/${post.slug}`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
+                  <article style={{ background: "#fff", borderRadius: "4px", padding: "28px 24px", height: "100%", borderTop: "3px solid var(--color-teal)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }} className="hub-article-card">
+                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 500, marginBottom: "12px" }}>{post.category}</div>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.08rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "10px", flex: 1 }}>{post.title}</h3>
+                    <p style={{ fontSize: "0.78rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "16px" }}>{post.description}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                      <span style={{ fontSize: "0.62rem", color: "var(--color-muted-light)" }}>{post.readTime}</span>
+                      <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                    </div>
+                  </article>
                 </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.06}>
-              <div style={{ background: "#fff", borderRadius: "6px", padding: "34px 30px", borderTop: "3px solid var(--color-gold)" }}>
-                <div className="eyebrow" style={{ marginBottom: "12px" }}>
-                  Videos
-                </div>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.4rem, 2.4vw, 2rem)",
-                    fontWeight: 400,
-                    color: "var(--color-ink)",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Watch the patient video library
-                </h2>
-                <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "20px" }}>
-                  Practical education from Travis and the team. No cluttered labels, just direct
-                  access to the actual lessons.
-                </p>
-                <Link
-                  href="/hub/videos"
-                  style={{
-                    display: "inline-block",
-                    background: "var(--color-teal)",
-                    color: "#fff",
-                    padding: "12px 22px",
-                    borderRadius: "6px",
-                    fontSize: "0.6rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Open Video Dashboard
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.12}>
-              <div style={{ background: "#fff", borderRadius: "6px", padding: "34px 30px", borderTop: "3px solid var(--color-ink)" }}>
-                <div className="eyebrow" style={{ marginBottom: "12px" }}>
-                  Resources
-                </div>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.4rem, 2.4vw, 2rem)",
-                    fontWeight: 400,
-                    color: "var(--color-ink)",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Care pathways and tools
-                </h2>
-                <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "20px" }}>
-                  Jump to the nutrition shop, book resources, financing info, and trusted ecosystem
-                  destinations from one command center.
-                </p>
-                <Link
-                  href="/hub/resources"
-                  style={{
-                    display: "inline-block",
-                    background: "var(--color-teal)",
-                    color: "#fff",
-                    padding: "12px 22px",
-                    borderRadius: "6px",
-                    fontSize: "0.6rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Open Resource Dashboard
-                </Link>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
           </div>
 
-          <div style={{ marginTop: "48px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }} className="hub-preview-grid">
+          {hubArticles.length > 0 && (
             <FadeIn>
-              <div style={{ background: "#fff", borderRadius: "8px", border: "1px solid var(--color-divider)", padding: "24px 24px 20px" }}>
-                <div className="eyebrow" style={{ marginBottom: "10px" }}>
-                  Featured articles
+              <div style={{ marginTop: "28px", background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "8px", padding: "22px 24px" }}>
+                <div className="eyebrow" style={{ marginBottom: "10px" }}>Also in the library</div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "8px" }} className="hub-also-grid">
+                  {hubArticles.map((a) => (
+                    <Link key={a.slug} href={`/hub/${a.slug}`} style={{ fontSize: "0.84rem", color: "var(--color-teal)", padding: "8px 0", borderBottom: "1px solid var(--color-divider)", display: "block" }} className="list-link-block">
+                      {a.title}
+                    </Link>
+                  ))}
                 </div>
-                {articles.length === 0 ? (
-                  <p style={{ fontSize: "0.85rem", color: "var(--color-muted)" }}>
-                    Articles are still being synced into the hub.
-                  </p>
-                ) : (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    {articles.map((a) => (
-                      <Link key={a.slug} href={`/hub/${a.slug}`} style={{ fontSize: "0.84rem", color: "var(--color-teal)", borderBottom: "1px solid var(--color-divider)", paddingBottom: "8px" }}>
-                        {a.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                <Link href="/hub/articles" style={{ display: "inline-block", marginTop: "16px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>
+                  Full article archive →
+                </Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.08}>
-              <div style={{ background: "#fff", borderRadius: "8px", border: "1px solid var(--color-divider)", padding: "24px 24px 20px" }}>
-                <div className="eyebrow" style={{ marginBottom: "10px" }}>
-                  Featured videos
-                </div>
-                {videos.length === 0 ? (
-                  <p style={{ fontSize: "0.85rem", color: "var(--color-muted)" }}>
-                    Videos are still being synced into the hub.
-                  </p>
-                ) : (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    {videos.map((v) => (
-                      <a key={v.id} href={v.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.84rem", color: "var(--color-teal)", borderBottom: "1px solid var(--color-divider)", paddingBottom: "8px" }}>
-                        {v.title}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </FadeIn>
-          </div>
+          )}
+        </div>
+        <style>{`
+          .hub-articles-grid { grid-template-columns: repeat(3, 1fr); }
+          .hub-also-grid { grid-template-columns: repeat(2, 1fr); }
+          .hub-article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+          @media (max-width: 900px) { .hub-articles-grid { grid-template-columns: 1fr 1fr !important; } .hub-also-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 560px) { .hub-articles-grid { grid-template-columns: 1fr !important; } }
+        `}</style>
+      </section>
 
-          <FadeIn delay={0.12}>
-            <div style={{ marginTop: "16px", background: "linear-gradient(115deg, #F8F6F2 0%, #FFFFFF 100%)", border: "1px solid var(--color-divider)", borderRadius: "10px", padding: "24px" }}>
-              <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "8px" }}>
-                From Travis
+      {/* ── VIDEOS ── */}
+      {videos.length > 0 && (
+        <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <FadeIn>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px", gap: "20px", flexWrap: "wrap" }}>
+                <div>
+                  <div className="eyebrow" style={{ marginBottom: "12px" }}>Video education</div>
+                  <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
+                    Watch &amp; learn
+                  </h2>
+                </div>
+                <Link href="/hub/videos" style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)", whiteSpace: "nowrap" }}>
+                  All videos →
+                </Link>
               </div>
-              <p style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: "1.4rem", lineHeight: 1.4, color: "var(--color-ink)" }}>
-                &ldquo;If a supplement does not support outcomes we can measure in clinic, it does not
-                stay in our recommendations.&rdquo;
+            </FadeIn>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "14px" }} className="hub-videos-grid">
+              {videos.map((v, i) => (
+                <FadeIn key={v.id} delay={i * 0.06}>
+                  <article style={{ background: "#fff", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--color-divider)" }}>
+                    <iframe
+                      src={v.embedUrl}
+                      title={v.title}
+                      loading="lazy"
+                      style={{ width: "100%", aspectRatio: "16 / 9", border: "none", background: "#000" }}
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                    />
+                    <div style={{ padding: "14px 16px" }}>
+                      <h3 style={{ fontSize: "0.88rem", lineHeight: 1.45, color: "var(--color-ink)", margin: 0 }}>{v.title}</h3>
+                    </div>
+                  </article>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+          <style>{`.hub-videos-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .hub-videos-grid { grid-template-columns: 1fr !important; } }`}</style>
+        </section>
+      )}
+
+      {/* ── BROWSE BY TOPIC ── */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "36px" }}>
+              <div className="eyebrow" style={{ marginBottom: "12px" }}>Browse by topic</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
+                Popular patient topics
+              </h2>
+            </div>
+          </FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px" }} className="hub-topics-grid">
+            {TOPIC_PATHS.map((topic, i) => (
+              <FadeIn key={topic.title} delay={i * 0.05}>
+                <div style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "8px", padding: "24px 22px" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "8px" }}>{topic.title}</h3>
+                  <p style={{ fontSize: "0.78rem", lineHeight: 1.65, color: "var(--color-muted)", marginBottom: "16px" }}>{topic.desc}</p>
+                  <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                    <Link href={topic.href} style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-teal)" }}>
+                      Read Articles →
+                    </Link>
+                    <Link href={topic.service} style={{ fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-muted-light)" }}>
+                      View Service →
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+        <style>{`.hub-topics-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 900px) { .hub-topics-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 560px) { .hub-topics-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* ── TRAVIS / AUTHOR SECTION ── */}
+      <section style={{ background: "var(--color-teal-dark)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="hub-author-grid">
+          <FadeIn>
+            <div>
+              <div className="eyebrow-white" style={{ marginBottom: "16px" }}>Author &amp; clinician</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 400, color: "#fff", lineHeight: 1.15, marginBottom: "16px", letterSpacing: "-0.01em" }}>
+                Travis Woodley,<br />
+                <em style={{ color: "var(--color-gold)", fontStyle: "italic" }}>MSN, RN, CRNP</em>
+              </h2>
+              <p style={{ fontSize: "0.92rem", lineHeight: 1.85, color: "rgba(255,255,255,0.5)", marginBottom: "28px" }}>
+                With 17+ years in high-acuity clinical medicine and functional wellness, Travis brings the same evidence-based framework to every article, video, and patient consultation. Every resource in this library reflects what he actually discusses in clinic — not marketing copy.
               </p>
-              <a href={SITE.ecosystem.nutritionShop} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "14px", fontSize: "0.58rem", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700, color: "var(--color-teal)" }}>
-                Shop Clinical-Grade Vitamins ↗
-              </a>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <Link href="/about" style={{ background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.8)", padding: "11px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  About Travis
+                </Link>
+                <a href={SITE.book.allPlatforms} target="_blank" rel="noopener noreferrer" style={{ background: "var(--color-gold)", color: "#fff", padding: "11px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  Get the Book ↗
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", padding: "28px 24px" }}>
+              <div style={{ fontSize: "0.56rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "16px" }}>This library covers</div>
+              {[
+                "Hormone optimization for men and women",
+                "Medical weight loss and GLP-1 therapy",
+                "Aesthetic treatments and skin health",
+                "IV hydration and recovery protocols",
+                "Sexual wellness and intimacy restoration",
+                "Hair restoration and scalp health",
+                "Clinical supplement guidance",
+              ].map((item) => (
+                <div key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: "0.84rem", color: "rgba(255,255,255,0.55)" }}>
+                  <span style={{ color: "var(--color-teal-light)", flexShrink: 0 }}>✓</span>
+                  {item}
+                </div>
+              ))}
             </div>
           </FadeIn>
         </div>
-        <style>{`
-          .hub-start-grid { grid-template-columns: repeat(4, 1fr); }
-          .hub-entry-grid { grid-template-columns: 1fr 1fr 1fr; }
-          .hub-preview-grid { grid-template-columns: 1fr 1fr; }
-          @media (max-width: 900px) {
-            .hub-start-grid { grid-template-columns: 1fr 1fr !important; }
-            .hub-entry-grid { grid-template-columns: 1fr !important; }
-            .hub-preview-grid { grid-template-columns: 1fr !important; }
-          }
-          @media (max-width: 560px) {
-            .hub-start-grid { grid-template-columns: 1fr !important; }
-          }
-        `}</style>
+        <style>{`.hub-author-grid { grid-template-columns: 1fr 1fr; } @media (max-width: 900px) { .hub-author-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* ── FINAL CTA ── */}
+      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", textAlign: "center" }}>
+        <FadeIn>
+          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+            <div className="eyebrow" style={{ marginBottom: "16px" }}>Patient tools</div>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", marginBottom: "14px", lineHeight: 1.15 }}>
+              Not sure where to start?
+            </h2>
+            <p style={{ fontSize: "0.92rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "32px" }}>
+              Use the Treatment Finder or Hormone Health Assessment before your consultation — so you arrive with a clear starting point.
+            </p>
+            <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+              <Link href="/tools" style={{ background: "var(--color-teal)", color: "#fff", padding: "14px 28px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>
+                Use the Treatment Finder
+              </Link>
+              <Link href="/start-here" style={{ border: "1.5px solid rgba(201,168,108,0.4)", color: "var(--color-gold)", padding: "14px 24px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                Start Here — New Patients
+              </Link>
+            </div>
+          </div>
+        </FadeIn>
       </section>
     </>
   );
 }
-

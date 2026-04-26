@@ -3,9 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import { getAllBlogPosts } from "@/lib/blog";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog | Hormone Health, Weight Loss & Aesthetics | Columbus GA",
+  title: "Articles | Hormone Health, Weight Loss & Aesthetics Education | Columbus GA",
   description: "Clinical articles on hormone therapy, medical weight loss, and aesthetic treatments from Travis Woodley, MSN, RN, CRNP — Revitalize Aesthetics & Wellness in Columbus and Warner Robins, GA.",
   alternates: {
     canonical: "https://revitalizemedicalclinic.com/blog",
@@ -27,17 +28,28 @@ export default function BlogPage() {
   const featured = posts[0];
   const rest = posts.slice(1);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      { "@type": "ListItem", position: 2, name: "Learning Library", item: `${SITE.url}/hub` },
+      { "@type": "ListItem", position: 3, name: "Articles", item: `${SITE.url}/blog` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "700px" }}>
-          <div className="eyebrow-white" style={{ marginBottom: "20px" }}>Clinical insights</div>
+          <div className="eyebrow-white" style={{ marginBottom: "20px" }}>Clinical insights · Learning Library</div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem, 4.5vw, 4.8rem)", fontWeight: 400, lineHeight: 1.07, color: "#fff", letterSpacing: "-0.015em", marginBottom: "20px" }}>
-            The Revitalize Blog
+            Articles
           </h1>
           <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", maxWidth: "520px" }}>
-            Latest clinic articles and practical patient guidance on hormones, metabolic medicine,
-            and aesthetic treatments. For the complete long-form archive, use the Learning Library.
+            Clinical articles and practical patient guidance on hormones, metabolic medicine,
+            and aesthetic treatments — from Travis Woodley, MSN, RN, CRNP.
           </p>
         </div>
       </section>
@@ -60,7 +72,7 @@ export default function BlogPage() {
               }}
             >
               <div style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>
-                Looking for older content too? Visit the full Content Hub.
+                Looking for videos, guides, and extended resources? Visit the full Learning Library.
               </div>
               <Link
                 href="/hub"
@@ -73,9 +85,10 @@ export default function BlogPage() {
                   background: "var(--color-teal)",
                   borderRadius: "6px",
                   padding: "10px 14px",
+                  whiteSpace: "nowrap",
                 }}
               >
-                Open Content Hub
+                Learning Library →
               </Link>
             </div>
           </FadeIn>

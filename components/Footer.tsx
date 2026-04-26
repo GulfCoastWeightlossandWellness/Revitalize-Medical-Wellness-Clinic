@@ -15,17 +15,26 @@ const FOOTER_SERVICES = [
   { label: "All Services", href: "/services" },
 ];
 
-const FOOTER_LINKS = [
+const FOOTER_CLINIC_LINKS = [
   { label: "About Travis", href: "/about" },
   { label: "Our Team", href: "/team" },
   { label: "Locations", href: "/locations" },
-  { label: "Latest Articles", href: "/blog" },
-  { label: "Learning Library", href: "/hub" },
-  { label: "The Book", href: "/book" },
+  { label: "Start Here", href: "/start-here" },
   { label: "Tools & Assessments", href: "/tools" },
-  { label: "Ecosystem", href: "/ecosystem" },
   { label: "Payment Plans", href: "/payment-plans" },
   { label: "Contact", href: "/contact" },
+];
+
+const FOOTER_LIBRARY_LINKS = [
+  { label: "Learning Library", href: "/hub" },
+  { label: "Articles", href: "/hub/articles" },
+  { label: "Videos", href: "/hub/videos" },
+  { label: "Patient Guides", href: "/hub/resources" },
+  { label: "Blog", href: "/blog" },
+  { label: "Hormone Health", href: "/services/hormone-therapy-women" },
+  { label: "Weight Loss", href: "/services/medical-weight-loss" },
+  { label: "Aesthetics", href: "/services/neuromodulators" },
+  { label: "Sexual Wellness", href: "/services/o-shot" },
 ];
 
 export default function Footer() {
@@ -42,8 +51,8 @@ export default function Footer() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "2fr 1.5fr 1fr 1fr",
-            gap: "52px",
+            gridTemplateColumns: "2fr 1.4fr 1fr 1fr 1fr",
+            gap: "44px",
             marginBottom: "60px",
           }}
           className="footer-grid"
@@ -178,26 +187,26 @@ export default function Footer() {
 
           {/* Clinic */}
           <div>
-            <div
-              style={{
-                fontSize: "0.55rem",
-                letterSpacing: "0.28em",
-                textTransform: "uppercase",
-                color: "var(--color-gold)",
-                fontWeight: 500,
-                marginBottom: "20px",
-              }}
-            >
+            <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 500, marginBottom: "20px" }}>
               Clinic
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
-              {FOOTER_LINKS.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }}
-                  className="footer-link list-link-block"
-                >
+              {FOOTER_CLINIC_LINKS.map((l) => (
+                <Link key={l.href} href={l.href} style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }} className="footer-link list-link-block">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Learning Library */}
+          <div>
+            <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 500, marginBottom: "20px" }}>
+              Learning Library
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
+              {FOOTER_LIBRARY_LINKS.map((l) => (
+                <Link key={l.href} href={l.href} style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }} className="footer-link list-link-block">
                   {l.label}
                 </Link>
               ))}
@@ -285,6 +294,9 @@ export default function Footer() {
       <style>{`
         .footer-link:hover { color: rgba(255,255,255,0.72) !important; }
         .footer-social-link:hover { color: var(--color-gold) !important; border-color: rgba(201,168,108,0.45) !important; }
+        @media (max-width: 1100px) {
+          .footer-grid { grid-template-columns: 2fr 1.4fr 1fr 1fr !important; }
+        }
         @media (max-width: 900px) {
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
         }
