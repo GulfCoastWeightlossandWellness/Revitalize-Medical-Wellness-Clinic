@@ -32,7 +32,7 @@ export default function ContactPage() {
                   items: [
                     { type: "address", value: "6901 Ray Wright Way, Suite I\nColumbus, GA 31909" },
                     { type: "phone", value: SITE.phone.columbus, href: SITE.phone.columbusHref },
-                    { type: "booking", value: "Book online (24/7)", href: SITE.booking },
+                    { type: "booking", value: "Book Columbus online (24/7)", href: SITE.bookingColumbus },
                   ],
                 },
                 {
@@ -40,7 +40,7 @@ export default function ContactPage() {
                   items: [
                     { type: "address", value: "840 SR 96, Suite 3300\nWarner Robins, GA 31088" },
                     { type: "phone", value: SITE.phone.warnerRobins, href: SITE.phone.warnerRobinsHref },
-                    { type: "booking", value: "Book online (24/7)", href: SITE.booking },
+                    { type: "booking", value: "Book Warner Robins online (24/7)", href: SITE.bookingWarnerRobins },
                   ],
                 },
                 {
@@ -121,9 +121,11 @@ export default function ContactPage() {
                   Send Message
                 </button>
                 <p style={{ fontSize: "0.7rem", color: "var(--color-muted-light)", lineHeight: 1.65 }}>
-                  For appointment booking, please use our{" "}
-                  <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)" }}>online scheduler</a>
-                  {" "}for the fastest response.
+                  For appointment booking, use our online scheduler —{" "}
+                  <a href={SITE.bookingColumbus} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)" }}>Columbus</a>
+                  {" or "}
+                  <a href={SITE.bookingWarnerRobins} target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)" }}>Warner Robins</a>
+                  {" "}— for the fastest response. This form opens your email client.
                 </p>
               </form>
             </div>

@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
 import Image from "next/image";
+
+// Developer-only utility page — excluded from search indexing and sitemap.
+export const metadata: Metadata = {
+  title: "Media Review (Internal)",
+  robots: { index: false, follow: false },
+};
 
 const MEDIA_DIR = path.join(process.cwd(), "public", "media", "original-site", "images");
 const PAGE_SIZE = 60;

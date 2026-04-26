@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /media-review
 
 Sitemap: https://revitalizemedicalclinic.com/sitemap.xml
