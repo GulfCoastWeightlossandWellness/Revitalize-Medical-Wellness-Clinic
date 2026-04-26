@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
-import { getHubArticles } from "@/lib/contentHub";
+import { getHubItems } from "@/lib/contentHub";
 
 const BASE = "https://revitalizemedicalclinic.com";
 
@@ -95,14 +95,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Hub article routes
-  const hubEntries: MetadataRoute.Sitemap = getHubArticles().map((article) => ({
-    url: `${BASE}/hub/${article.slug}`,
-    lastModified: article.publishedAt
-      ? new Date(article.publishedAt).toISOString()
+  // Hub item routes (articles + videos — both served by /hub/[slug])
+  const hubEntries: MetadataRoute.Sitemap = getHubItems().map((item) => ({
+    url: `${BASE}/hub/${item.slug}`,
+    lastModified: item.publishedAt
+      ? new Date(item.publishedAt).toISOString()
       : now,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: item.kind === "article" ? 0.6 : 0.5,
   }));
 
   return [...staticEntries, ...blogEntries, ...hubEntries];

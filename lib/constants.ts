@@ -69,6 +69,10 @@ export const SITE = {
     // Obtain Place IDs from https://business.google.com → Location → "Get more reviews"
     columbusReviewLink: "",   // TODO: add Columbus Google Business Profile review link
     warnerRobinsReviewLink: "", // TODO: add Warner Robins Google Business Profile review link
+    // Verified review stats — update once confirmed against GBP dashboard.
+    // Set verifiedCount and verifiedRating to null to show neutral copy instead.
+    verifiedCount: "70+" as string | null,
+    verifiedRating: "4.9" as string | null,
   },
   founder: {
     name: "Travis Woodley",

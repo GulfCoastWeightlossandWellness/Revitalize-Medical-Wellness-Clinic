@@ -200,9 +200,11 @@ export default function HomePage() {
               width: "fit-content",
             }}
           >
-            <span style={{ color: "var(--color-gold)", fontSize: "0.82rem", fontWeight: 600 }}>4.9</span>
+            {SITE.reviews.verifiedRating && (
+              <span style={{ color: "var(--color-gold)", fontSize: "0.82rem", fontWeight: 600 }}>{SITE.reviews.verifiedRating}</span>
+            )}
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-              70+ Google Reviews
+              {SITE.reviews.verifiedCount ? `${SITE.reviews.verifiedCount} Google Reviews` : "Verified Google Reviews"}
             </span>
             <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>
@@ -317,8 +319,8 @@ export default function HomePage() {
           >
             {[
               { val: "17+", label: "Years\nClinical Experience" },
-              { val: "70+", label: "Five-Star\nGoogle Reviews" },
-              { val: "4.9", label: "Average\nRating" },
+              { val: SITE.reviews.verifiedCount ?? "Top Rated", label: "Five-Star\nGoogle Reviews" },
+              { val: SITE.reviews.verifiedRating ?? "⭐⭐⭐⭐⭐", label: "Average\nRating" },
               { val: "2", label: "Georgia\nLocations" },
             ].map((s) => (
               <div key={s.val}>
@@ -593,7 +595,7 @@ export default function HomePage() {
           >
             {[
               { val: "17+", label: "Years in high-acuity clinical medicine" },
-              { val: "4.9", label: "Average Google rating across 70+ reviews" },
+              { val: SITE.reviews.verifiedRating ?? "Top Rated", label: SITE.reviews.verifiedCount ? `Average Google rating across ${SITE.reviews.verifiedCount} reviews` : "Average Google rating" },
               { val: "Platinum", label: "Biote Hormone Therapy provider designation" },
               { val: "2", label: "Clinic locations in Georgia" },
             ].map((s, i) => (
@@ -1016,9 +1018,13 @@ export default function HomePage() {
                   borderRadius: "100px",
                 }}
               >
-                <span style={{ color: "var(--color-gold)", fontWeight: 600 }}>4.9</span>
+                {SITE.reviews.verifiedRating && (
+                  <span style={{ color: "var(--color-gold)", fontWeight: 600 }}>{SITE.reviews.verifiedRating}</span>
+                )}
                 <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.7rem" }}>
-                  average rating across 70+ Google reviews
+                  {SITE.reviews.verifiedCount
+                    ? `average rating across ${SITE.reviews.verifiedCount} Google reviews`
+                    : "top-rated on Google"}
                 </span>
               </div>
             </div>

@@ -6,6 +6,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BookingBar from "@/components/BookingBar";
+import { SITE } from "@/lib/constants";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
@@ -79,8 +80,10 @@ const localBusinessSchema = {
         addressCountry: "US",
       },
       geo: { "@type": "GeoCoordinates", latitude: 32.5099, longitude: -84.9877 },
-      aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "70" },
-      hasMap: "https://www.google.com/maps/place/6901+Ray+Wright+Rd,+Columbus,+GA+31909/",
+      ...(SITE.reviews.verifiedRating && SITE.reviews.verifiedCount
+        ? { aggregateRating: { "@type": "AggregateRating", ratingValue: SITE.reviews.verifiedRating, reviewCount: SITE.reviews.verifiedCount.replace("+", "") } }
+        : {}),
+      hasMap: SITE.locations.columbus.maps,
     },
     {
       "@type": "MedicalBusiness",
