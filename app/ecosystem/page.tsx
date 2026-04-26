@@ -37,7 +37,7 @@ const ECOSYSTEM_NODES = [
     color: "#6B5B4E",
   },
   {
-    name: "Revitalize Content Hub",
+    name: "Learning Library",
     category: "Unified Content Library",
     description: "A single internal destination for archived articles, embedded videos, and supporting resources gathered from across the ecosystem.",
     href: "/hub",

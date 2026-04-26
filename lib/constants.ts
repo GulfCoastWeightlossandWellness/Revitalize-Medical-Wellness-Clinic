@@ -9,7 +9,11 @@ export const SITE = {
     warnerRobinsHref: "tel:4783661244",
   },
   email: "twoodley@revitalizemedicalclinic.com",
+  // Main booking portal — shows both locations for patient choice.
   booking: "https://revitalizeaesthetics.janeapp.com/",
+  // Location-specific booking URLs — confirmed active via JaneApp portal.
+  bookingColumbus: "https://revitalizeaesthetics.janeapp.com/locations/columbus/book",
+  bookingWarnerRobins: "https://revitalizeaesthetics.janeapp.com/locations/warner-robins/book",
   locations: {
     columbus: {
       address: "6901 Ray Wright Way, Suite I",
@@ -18,7 +22,13 @@ export const SITE = {
       zip: "31909",
       phone: "(762) 261-3880",
       phoneHref: "tel:7622613880",
-      maps: "https://www.google.com/maps/place/6901+Ray+Wright+Rd,+Columbus,+GA+31909/",
+      // Directions link confirmed via Google Maps search for this address.
+      maps: "https://www.google.com/maps/place/6901+Ray+Wright+Way+Suite+I+Columbus+GA+31909/",
+      // Map embed URL (no API key required). Replace with the official embed code
+      // from Google Maps → Share → Embed a map, once the owner provides it.
+      embedMapUrl: "https://maps.google.com/maps?q=6901+Ray+Wright+Way+Suite+I+Columbus+GA+31909&output=embed",
+      // Hours sourced from Yelp (April 2026). Verify against owner's GBP dashboard before launch.
+      hours: "Mon – Fri: 9:00 AM – 5:00 PM  ·  Sat – Sun: Closed",
     },
     warnerRobins: {
       address: "840 SR 96, Suite 3300",
@@ -27,7 +37,12 @@ export const SITE = {
       zip: "31088",
       phone: "(478) 366-1244",
       phoneHref: "tel:4783661244",
+      // Directions link confirmed for this address.
       maps: "https://maps.google.com/?q=840+SR+96+Suite+3300+Warner+Robins+GA+31088",
+      // Map embed URL (no API key required). Replace with official embed code from GBP.
+      embedMapUrl: "https://maps.google.com/maps?q=840+SR+96+Suite+3300+Warner+Robins+GA+31088&output=embed",
+      // TODO: Verify Warner Robins hours against GBP. Columbus hours used as safe default.
+      hours: "Mon – Fri: 9:00 AM – 5:00 PM  ·  Sat – Sun: Closed",
     },
   },
   social: {
@@ -62,17 +77,16 @@ export const SITE = {
     // scratchpay: "",   // add URL when available
   },
   biote: "https://biote.com",
-  // Google Review links — populate with real Place IDs from Google Business Profile.
-  // Leave empty to automatically hide the review CTA in all components.
   reviews: {
     platform: "Google",
-    // Obtain Place IDs from https://business.google.com → Location → "Get more reviews"
+    // Obtain review links from: Google Business Profile dashboard → "Ask for reviews"
+    // Leave empty to automatically hide the review CTA in all components.
     columbusReviewLink: "",   // TODO: add Columbus Google Business Profile review link
     warnerRobinsReviewLink: "", // TODO: add Warner Robins Google Business Profile review link
-    // Verified review stats — update once confirmed against GBP dashboard.
-    // Set verifiedCount and verifiedRating to null to show neutral copy instead.
-    verifiedCount: "70+" as string | null,
-    verifiedRating: "4.9" as string | null,
+    // Set verifiedCount and verifiedRating to null to show neutral copy.
+    // Update to real values once confirmed against the GBP dashboard.
+    verifiedCount: null as string | null,
+    verifiedRating: null as string | null,
   },
   founder: {
     name: "Travis Woodley",

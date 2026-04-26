@@ -4,8 +4,8 @@ import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Content Hub Resources",
-  description: "Key external and internal resources for education, tools, and follow-up care.",
+  title: "Patient Guides & Resources | Learning Library | Revitalize Aesthetics & Wellness",
+  description: "Patient guides, trusted resources, and educational tools from the Revitalize Learning Library. Nutrition shop, metabolic health institute, video library, and assessment tools.",
   alternates: {
     canonical: "https://revitalizemedicalclinic.com/hub/resources",
   },
@@ -56,7 +56,7 @@ export default function HubResourcesPage() {
       <section style={{ background: "var(--color-ink)", padding: "74px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <div className="eyebrow-white" style={{ marginBottom: "18px" }}>
-            Content hub
+            Learning Library
           </div>
           <h1
             style={{
@@ -68,7 +68,7 @@ export default function HubResourcesPage() {
               marginBottom: "12px",
             }}
           >
-            Resource Dashboard
+            Patient Guides & Resources
           </h1>
           <p style={{ color: "rgba(255,255,255,0.52)", lineHeight: 1.8, maxWidth: "700px" }}>
             Everything patients need in one place: education, supplements, book resources, and

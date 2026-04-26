@@ -910,18 +910,18 @@ export function getAllBlogPosts(): BlogPost[] {
     const date = article.publishedAt ? article.publishedAt.slice(0, 10) : "2026-01-25";
     return {
       slug: `hub-${article.slug}`,
-      title: `${article.title} (From Content Hub)`,
+      title: article.title,
       description:
         article.excerpt ||
-        "Originally published in the Revitalize Content Hub and mirrored here for blog readers.",
-      keyword: `revitalize content hub ${article.slug}`,
+        "Originally published in the Revitalize Learning Library and featured here in the blog.",
+      keyword: `revitalize learning library ${article.slug}`,
       date,
       readTime: "8 min read",
       category: topic.category,
       relatedService: topic.relatedService,
       relatedServiceHref: topic.relatedServiceHref,
       content: `
-${article.excerpt || "Read the full article in the Content Hub for the complete version."}
+${article.excerpt || "Read the full article in the Learning Library for the complete version."}
       `.trim(),
       mirroredFromHub: true,
       canonicalUrl: `https://revitalizemedicalclinic.com/hub/${article.slug}`,

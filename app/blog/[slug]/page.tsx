@@ -160,12 +160,12 @@ export default async function BlogPostPage({ params }: Props) {
               {post.mirroredFromHub && post.sourceHubSlug ? (
                 <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "14px 16px", marginBottom: "18px" }}>
                   <div style={{ fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "6px" }}>
-                    Content Hub mirror
+                    Learning Library
                   </div>
                   <p style={{ margin: 0, fontSize: "0.82rem", lineHeight: 1.7, color: "var(--color-muted)" }}>
-                    This post is mirrored from the patient Content Hub. For the canonical version, open{" "}
+                    This article is part of the Revitalize Learning Library. For the full version, visit{" "}
                     <Link href={`/hub/${post.sourceHubSlug}`} style={{ color: "var(--color-teal)" }}>
-                      the full hub article
+                      the Learning Library article
                     </Link>.
                   </p>
                 </div>

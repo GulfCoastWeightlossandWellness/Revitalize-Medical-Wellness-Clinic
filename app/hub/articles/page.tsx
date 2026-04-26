@@ -4,8 +4,8 @@ import FadeIn from "@/components/FadeIn";
 import { getHubArticles } from "@/lib/contentHub";
 
 export const metadata: Metadata = {
-  title: "Content Hub Articles",
-  description: "Centralized index of long-form educational articles from the Revitalize ecosystem.",
+  title: "Full Article Archive | Learning Library | Revitalize Aesthetics & Wellness",
+  description: "Complete archive of educational articles on hormone health, metabolic medicine, aesthetics, and wellness from the Revitalize Learning Library.",
   alternates: {
     canonical: "https://revitalizemedicalclinic.com/hub/articles",
   },
@@ -44,7 +44,7 @@ export default async function HubArticlesPage({
       <section style={{ background: "var(--color-ink)", padding: "74px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <div className="eyebrow-white" style={{ marginBottom: "18px" }}>
-            Content hub
+            Learning Library
           </div>
           <h1
             style={{
@@ -56,7 +56,7 @@ export default async function HubArticlesPage({
               marginBottom: "12px",
             }}
           >
-            Article Dashboard
+            Full Article Archive
           </h1>
           <p style={{ color: "rgba(255,255,255,0.52)", lineHeight: 1.8, maxWidth: "700px" }}>
             Browse the complete long-form patient education library with transparent sources and

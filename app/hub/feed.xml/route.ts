@@ -33,7 +33,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Revitalize Content Hub Feed</title>
+    <title>Revitalize Learning Library Feed</title>
     <link>${siteUrl}/hub</link>
     <description>Centralized article feed from the Revitalize content hub.</description>
     <language>en-us</language>

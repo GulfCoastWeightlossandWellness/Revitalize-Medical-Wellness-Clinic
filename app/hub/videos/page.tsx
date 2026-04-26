@@ -3,8 +3,8 @@ import FadeIn from "@/components/FadeIn";
 import { getHubVideos } from "@/lib/contentHub";
 
 export const metadata: Metadata = {
-  title: "Content Hub Videos",
-  description: "Embedded video library from the Revitalize ecosystem.",
+  title: "Videos | Learning Library | Revitalize Aesthetics & Wellness",
+  description: "Patient education videos on hormone health, metabolic medicine, aesthetics, and wellness from Travis Woodley and the Revitalize team.",
   alternates: {
     canonical: "https://revitalizemedicalclinic.com/hub/videos",
   },
@@ -18,7 +18,7 @@ export default function HubVideosPage() {
       <section style={{ background: "var(--color-teal-dark)", padding: "74px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <div className="eyebrow-white" style={{ marginBottom: "18px" }}>
-            Content hub
+            Learning Library
           </div>
           <h1
             style={{
@@ -30,7 +30,7 @@ export default function HubVideosPage() {
               marginBottom: "12px",
             }}
           >
-            Video Dashboard
+            Videos
           </h1>
           <p style={{ color: "rgba(255,255,255,0.54)", lineHeight: 1.8, maxWidth: "700px" }}>
             Curated lessons from Travis and the Revitalize ecosystem. Built for patients who want

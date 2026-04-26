@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getHubItemBySlug(slug);
   if (!item) return { title: "Content Not Found | Hub" };
   return {
-    title: `${item.title} | Content Hub`,
-    description: `Hub detail for ${item.title}`,
+    title: `${item.title} | Learning Library | Revitalize`,
+    description: (item.kind === "article" && item.excerpt) ? item.excerpt.slice(0, 155) : `Patient education resource from the Revitalize Learning Library: ${item.title}`,
   };
 }
 
@@ -69,7 +69,7 @@ export default async function HubItemDetailPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Content Hub",
+        name: "Learning Library",
         item: "https://revitalizemedicalclinic.com/hub",
       },
       {
@@ -94,7 +94,7 @@ export default async function HubItemDetailPage({ params }: Props) {
       <section style={{ background: "var(--color-ink)", padding: "68px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "940px", margin: "0 auto" }}>
           <div className="eyebrow-white" style={{ marginBottom: "14px" }}>
-            {item.kind === "article" ? "Hub article" : "Hub video"}
+            Learning Library · {item.kind === "article" ? "Article" : "Video"}
           </div>
           <h1
             style={{
@@ -145,13 +145,13 @@ export default async function HubItemDetailPage({ params }: Props) {
             className="hub-detail-sidebar"
           >
             <div style={{ fontSize: "0.56rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "10px" }}>
-              Content Hub
+              Learning Library
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "14px" }}>
-              <Link href="/hub" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Hub Home</Link>
-              <Link href="/hub/articles" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Article Dashboard</Link>
-              <Link href="/hub/videos" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Video Dashboard</Link>
-              <Link href="/hub/resources" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Resource Dashboard</Link>
+              <Link href="/hub" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Learning Library</Link>
+              <Link href="/hub/articles" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Full Archive</Link>
+              <Link href="/hub/videos" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Videos</Link>
+              <Link href="/hub/resources" style={{ fontSize: "0.82rem", color: "var(--color-teal)" }}>Patient Guides</Link>
             </div>
             <div style={{ height: "1px", background: "var(--color-divider)", marginBottom: "12px" }} />
             <a href={SITE.book.allPlatforms} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: "0.72rem", color: "var(--color-muted)", marginBottom: "8px" }}>

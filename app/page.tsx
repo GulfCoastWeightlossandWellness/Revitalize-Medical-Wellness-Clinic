@@ -321,8 +321,8 @@ export default function HomePage() {
           >
             {[
               { val: "17+", label: "Years\nClinical Experience" },
-              { val: SITE.reviews.verifiedCount ?? "Top Rated", label: "Five-Star\nGoogle Reviews" },
-              { val: SITE.reviews.verifiedRating ?? "⭐⭐⭐⭐⭐", label: "Average\nRating" },
+              ...(SITE.reviews.verifiedCount ? [{ val: SITE.reviews.verifiedCount, label: "Google\nReviews" }] : [{ val: "Patient-\nFocused", label: "Columbus &\nWarner Robins" }]),
+              ...(SITE.reviews.verifiedRating ? [{ val: SITE.reviews.verifiedRating, label: "Average\nRating" }] : [{ val: "Consult-\nFirst", label: "Approach\nto Care" }]),
               { val: "2", label: "Georgia\nLocations" },
             ].map((s) => (
               <div key={s.val}>

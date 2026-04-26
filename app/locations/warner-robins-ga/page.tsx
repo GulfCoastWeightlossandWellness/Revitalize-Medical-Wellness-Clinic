@@ -149,7 +149,7 @@ export default function WarnerRobinsLocationPage() {
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a
-              href={SITE.booking}
+              href={SITE.bookingWarnerRobins}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -243,15 +243,15 @@ export default function WarnerRobinsLocationPage() {
                 </div>
                 <div>
                   <div style={{ fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "4px" }}>Hours</div>
-                  <p style={{ fontSize: "0.82rem", color: "var(--color-muted)" }}>
-                    Contact the clinic for current hours — hours may vary.
+                  <p style={{ fontSize: "0.82rem", color: "var(--color-muted)", whiteSpace: "pre-line" }}>
+                    {SITE.locations.warnerRobins.hours}
                   </p>
                 </div>
               </div>
 
               <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                 <a
-                  href={SITE.booking}
+                  href={SITE.bookingWarnerRobins}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -312,7 +312,7 @@ export default function WarnerRobinsLocationPage() {
             <div style={{ borderRadius: "6px", overflow: "hidden", lineHeight: 0, border: "1px solid var(--color-divider)" }}>
               <iframe
                 title="Revitalize Warner Robins, GA — Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.0!2d-83.6677!3d32.6281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f3b000000000000%3A0x0!2s840+SR+96%2C+Warner+Robins%2C+GA+31088!5e0!3m2!1sen!2sus!4v1700000000000"
+                src={SITE.locations.warnerRobins.embedMapUrl}
                 width="100%"
                 height="360"
                 style={{ border: 0 }}
@@ -495,7 +495,7 @@ export default function WarnerRobinsLocationPage() {
               </p>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                 <a
-                  href={SITE.booking}
+                  href={SITE.bookingWarnerRobins}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
