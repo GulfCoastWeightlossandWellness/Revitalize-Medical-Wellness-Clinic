@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
+import { BLOG_POSTS } from "@/lib/blog";
+import ImageSlot from "@/components/ui/ImageSlot";
+
+export const metadata: Metadata = {
+  title: "Blog | Hormone Health, Weight Loss & Aesthetics | Columbus GA",
+  description: "Clinical articles on hormone therapy, medical weight loss, and aesthetic treatments from Travis Woodley, MSN, RN, CRNP — Revitalize Aesthetics & Wellness in Columbus and Warner Robins, GA.",
+};
+
+const CATEGORY_COLORS: Record<string, string> = {
+  "Hormone Therapy": "var(--color-teal)",
+  "Weight Loss": "#4A7C59",
+  "Aesthetics": "#7C5C4A",
+  "IV Therapy": "#4A5C7C",
+  "Hair Restoration": "#5C4A7C",
+  "Sexual Wellness": "#7C4A5C",
+  "Clinic": "var(--color-teal-mid)",
+};
+
+export default function BlogPage() {
+  const featured = BLOG_POSTS[0];
+  const rest = BLOG_POSTS.slice(1);
+
+  return (
+    <>
+      <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "700px" }}>
+          <div className="eyebrow-white" style={{ marginBottom: "20px" }}>Clinical insights</div>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem, 4.5vw, 4.8rem)", fontWeight: 400, lineHeight: 1.07, color: "#fff", letterSpacing: "-0.015em", marginBottom: "20px" }}>
+            The Revitalize Blog
+          </h1>
+          <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", maxWidth: "520px" }}>
+            Evidence-informed articles on hormone health, metabolic medicine, and aesthetic treatments — written by the clinical team, not a content agency.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+
+          <FadeIn>
+            <Link href={`/blog/${featured.slug}`} style={{ display: "block", textDecoration: "none", marginBottom: "64px" }}>
+              <div style={{ background: "#fff", borderRadius: "6px", overflow: "hidden", display: "grid", gridTemplateColumns: "1fr 1fr", boxShadow: "0 2px 20px rgba(0,0,0,0.06)", transition: "box-shadow 0.2s" }} className="featured-post-grid">
+                <div style={{ minHeight: "360px", display: "flex", alignItems: "flex-end", padding: "40px", position: "relative", overflow: "hidden" }}>
+                  <ImageSlot
+                    src="/images/placeholders/blog-featured.svg"
+                    alt="Featured blog image placeholder"
+                    priority
+                    overlay="linear-gradient(0deg, rgba(9,25,34,0.6), rgba(9,25,34,0.34))"
+                  />
+                  <div style={{ position: "relative", zIndex: 2 }}>
+                    <span style={{ display: "inline-block", fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.2)", padding: "4px 12px", borderRadius: "100px", marginBottom: "16px" }}>Featured</span>
+                    <div style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: "8px" }}>{featured.category}</div>
+                    <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.2vw, 2rem)", fontWeight: 400, color: "#fff", lineHeight: 1.3, marginBottom: "12px" }}>{featured.title}</h2>
+                    <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{featured.date} &bull; {featured.readTime}</div>
+                  </div>
+                </div>
+                <div style={{ padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "24px" }}>{featured.description}</p>
+                  <span style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read article &rarr;</span>
+                </div>
+              </div>
+            </Link>
+          </FadeIn>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }} className="blog-grid">
+            {rest.map((post, i) => (
+              <FadeIn key={post.slug} delay={i * 0.05}>
+                <Link href={`/blog/${post.slug}`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
+                  <article style={{ background: "#fff", borderRadius: "4px", padding: "32px 28px", height: "100%", borderTop: `3px solid ${CATEGORY_COLORS[post.category] ?? "var(--color-teal)"}`, display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }} className="blog-card">
+                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: CATEGORY_COLORS[post.category] ?? "var(--color-teal)", fontWeight: 500, marginBottom: "14px" }}>{post.category}</div>
+                    <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "12px", flex: 1 }}>{post.title}</h2>
+                    <p style={{ fontSize: "0.8rem", lineHeight: 1.78, color: "var(--color-muted)", marginBottom: "20px" }}>{post.description}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
+                      <span style={{ fontSize: "0.65rem", color: "var(--color-muted-light)", letterSpacing: "0.05em" }}>{post.readTime}</span>
+                      <span style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read &rarr;</span>
+                    </div>
+                  </article>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          .featured-post-grid { grid-template-columns: 1fr 1fr; }
+          .blog-grid { grid-template-columns: repeat(3, 1fr); }
+          .blog-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+          @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr !important; } }
+          @media (max-width: 768px) { .featured-post-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr !important; } }
+        `}</style>
+      </section>
+    </>
+  );
+}

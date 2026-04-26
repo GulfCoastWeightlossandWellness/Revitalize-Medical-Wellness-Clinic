@@ -1,0 +1,14 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A5F73"/>
+      <stop offset="1" stop-color="#0E3D4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bg)"/>
+  <circle cx="600" cy="520" r="220" fill="white" fill-opacity="0.12"/>
+  <rect x="370" y="770" width="460" height="420" rx="180" fill="white" fill-opacity="0.1"/>
+  <text x="122" y="1320" fill="white" fill-opacity="0.78" font-family="Arial, sans-serif" font-size="46" letter-spacing="3">
+    REPLACE WITH TRAVIS HEADSHOT
+  </text>
+</svg>

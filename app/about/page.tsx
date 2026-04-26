@@ -1,0 +1,103 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
+import { SITE } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "About Travis Woodley | MSN, RN, CRNP | Founder",
+  description: "Travis Woodley, MSN, RN, CRNP — founder of Revitalize Aesthetics & Wellness. 17+ years in emergency medicine, cardiac ICU, and cath lab. Certified Platinum Biote provider. Columbus and Warner Robins, GA.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "760px" }}>
+          <div className="eyebrow-white" style={{ marginBottom: "20px" }}>The clinician behind the practice</div>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem, 4.5vw, 4.8rem)", fontWeight: 400, lineHeight: 1.07, color: "#fff", letterSpacing: "-0.015em", marginBottom: "20px" }}>
+            Travis Woodley,<br /><em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>MSN, RN, CRNP</em>
+          </h1>
+          <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", maxWidth: "540px" }}>
+            Nurse practitioner. Founder. Certified Platinum Biote provider. Published author. 17+ years in high-acuity clinical medicine. The kind of clinician who reads your labs before making a recommendation.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ background: "#fff", display: "grid", gridTemplateColumns: "1fr 1fr" }} className="about-grid">
+        <div style={{ background: "var(--color-teal)", minHeight: "480px", display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 40px" }}>
+          <blockquote style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontStyle: "italic", color: "rgba(255,255,255,0.85)", lineHeight: 1.55, textAlign: "center", maxWidth: "400px" }}>
+            &ldquo;You are not broken. You are unbalanced. And balance can be rebuilt.&rdquo;
+            <cite style={{ display: "block", marginTop: "20px", fontStyle: "normal", fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
+              — Travis Woodley, MSN, RN, CRNP
+            </cite>
+          </blockquote>
+        </div>
+        <FadeIn>
+          <div style={{ padding: "72px clamp(32px, 5vw, 72px)" }}>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}>
+              Travis Woodley didn&apos;t come to aesthetic and functional medicine through a spa. He came through seventeen years of emergency rooms, cardiac catheterization labs, and intensive care units — environments where reading the whole patient, not just the presenting complaint, is the difference between getting it right and getting it wrong.
+            </p>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}>
+              When he founded Revitalize Aesthetics and Wellness, he brought that same orientation with him. Every patient gets a clinical conversation before a treatment recommendation. Labs are reviewed, not skimmed. The question is always &ldquo;what is actually driving this&rdquo; — not &ldquo;what can we sell.&rdquo;
+            </p>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "28px" }}>
+              He is a Certified Platinum Biote provider — one of the highest designations in the Biote hormone therapy network — and the published author of <em>You&apos;re Not Broken — You&apos;re Unbalanced</em>, a clinician&apos;s guide to midlife metabolic health. He also founded the Rebuild Metabolic Health Institute, a structured coaching program for adults navigating the hormone and metabolic shifts of mid-life.
+            </p>
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              <Link href="/book" style={{ background: "var(--color-teal)", color: "#fff", padding: "12px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>The Book</Link>
+              <a href={SITE.ecosystem.rebuildInstitute} target="_blank" rel="noopener noreferrer" style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase" }}>Rebuild Institute</a>
+            </div>
+          </div>
+        </FadeIn>
+        <style>{`.about-grid { grid-template-columns: 1fr 1fr; } @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr !important; } .about-grid > div:first-child { min-height: 280px !important; } }`}</style>
+      </section>
+
+      <section style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "48px" }}>
+              <div className="eyebrow" style={{ marginBottom: "16px" }}>Credentials &amp; background</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 3rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em" }}>
+                17+ years of earned clinical authority
+              </h2>
+            </div>
+          </FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }} className="creds-grid">
+            {[
+              { title: "Emergency Medicine", body: "Over a decade in emergency clinical environments — triage, rapid assessment, and high-acuity decision-making under pressure. This is where you learn to read a patient, not just a chart." },
+              { title: "Cardiac ICU & Cath Lab", body: "Critical care in cardiac intensive care and cardiac catheterization laboratory settings. Cardiovascular disease and its metabolic drivers — insulin resistance, hormonal dysfunction, inflammation — are not abstractions." },
+              { title: "Certified Platinum Biote Provider", body: "Platinum designation within the Biote hormone therapy provider network, reflecting clinical volume, training, and outcome-based recognition." },
+              { title: "MSN, RN, CRNP", body: "Masters of Science in Nursing, Registered Nurse, Certified Registered Nurse Practitioner. Clinical training that spans direct care and advanced practice." },
+              { title: "Published Author", body: "Author of You're Not Broken — You're Unbalanced — a clinician-written guide to midlife metabolic health, available on Amazon, Apple Books, Kobo, and major platforms." },
+              { title: "Rebuild Metabolic Health Institute", body: "Founder of a structured 12-week coaching program addressing hormones, metabolism, sleep, stress, and gut health for midlife adults seeking a systems-based approach." },
+            ].map((c) => (
+              <FadeIn key={c.title}>
+                <div style={{ background: "#fff", padding: "36px 30px", height: "100%", borderRadius: "4px" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "12px", lineHeight: 1.25 }}>{c.title}</h3>
+                  <p style={{ fontSize: "0.82rem", lineHeight: 1.8, color: "var(--color-muted)" }}>{c.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+        <style>{`.creds-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 900px) { .creds-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 560px) { .creds-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      <section style={{ background: "var(--color-teal)", padding: "72px clamp(24px, 6vw, 80px)", textAlign: "center" }}>
+        <FadeIn>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3.2rem)", fontWeight: 400, color: "#fff", letterSpacing: "-0.01em", marginBottom: "16px" }}>
+            Ready to work with Travis&apos;s team?
+          </h2>
+          <p style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.5)", marginBottom: "28px", maxWidth: "480px", margin: "0 auto 28px" }}>
+            Every treatment begins with a consultation. Book online or call either location.
+          </p>
+          <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ background: "var(--color-gold)", color: "#fff", padding: "14px 28px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Book a Consultation</a>
+            <a href={SITE.phone.columbusHref} style={{ border: "1.5px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "14px 24px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase" }}>Columbus: {SITE.phone.columbus}</a>
+            <a href={SITE.phone.warnerRobinsHref} style={{ border: "1.5px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "14px 24px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase" }}>Warner Robins: {SITE.phone.warnerRobins}</a>
+          </div>
+        </FadeIn>
+      </section>
+    </>
+  );
+}
