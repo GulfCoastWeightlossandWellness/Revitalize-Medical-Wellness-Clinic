@@ -3,7 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import { getHubArticles, getHubVideos } from "@/lib/contentHub";
-import { getAllBlogPosts } from "@/lib/blog";
+import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Learning Library | Hormone Health, Weight Loss & Aesthetics Education | Revitalize",
@@ -33,7 +33,7 @@ const TOPIC_PATHS = [
 export default function LearningLibraryPage() {
   const hubArticles = getHubArticles().slice(0, 4);
   const videos = getHubVideos().slice(0, 4);
-  const blogPosts = getAllBlogPosts().slice(0, 6);
+  const blogPosts = BLOG_POSTS.slice(0, 6);
 
   const collectionSchema = {
     "@context": "https://schema.org",

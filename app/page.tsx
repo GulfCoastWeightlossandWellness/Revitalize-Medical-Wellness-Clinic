@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
-import { getAllBlogPosts } from "@/lib/blog";
+import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Revitalize Aesthetics & Wellness | Columbus & Warner Robins, GA",
@@ -163,7 +163,7 @@ const TESTIMONIALS = [
 ];
 
 export default function HomePage() {
-  const featuredPosts = getAllBlogPosts().slice(0, 3);
+  const featuredPosts = BLOG_POSTS.slice(0, 3);
   return (
     <>
       {/* ── HERO ── */}

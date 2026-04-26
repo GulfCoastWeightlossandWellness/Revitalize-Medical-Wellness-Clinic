@@ -64,10 +64,10 @@ const LIBRARY_MENU = [
     category: "Browse",
     items: [
       { label: "Learning Library", href: "/hub" },
-      { label: "Articles", href: "/hub/articles" },
+      { label: "Latest Articles", href: "/blog" },
+      { label: "Full Article Archive", href: "/hub/articles" },
       { label: "Videos", href: "/hub/videos" },
       { label: "Patient Guides", href: "/hub/resources" },
-      { label: "Blog", href: "/blog" },
     ],
   },
   {
@@ -75,7 +75,7 @@ const LIBRARY_MENU = [
     items: [
       { label: "The Book", href: "/book" },
       { label: "Assessments & Tools", href: "/tools" },
-      { label: "About Travis Woodley", href: "/about" },
+      { label: "Start Here — New Patients", href: "/start-here" },
     ],
   },
 ];
@@ -209,7 +209,7 @@ export default function Nav() {
               aria-expanded={servicesOpen}
               aria-controls="desktop-services-menu"
               aria-haspopup="menu"
-              onClick={() => setServicesOpen((open) => !open)}
+              onClick={() => { setServicesOpen((open) => !open); setLibraryOpen(false); }}
             >
               Services
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.4, marginTop: 1 }}>
@@ -513,16 +513,16 @@ export default function Nav() {
             ))}
 
             {/* Learning Library section in mobile */}
-            <div style={{ marginTop: "4px" }}>
-              <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "8px", fontWeight: 500, paddingTop: "12px" }}>
+            <div style={{ marginTop: "16px" }}>
+              <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "8px", fontWeight: 500 }}>
                 Learning Library
               </div>
               {[
                 { label: "Learning Library", href: "/hub" },
-                { label: "Articles", href: "/hub/articles" },
+                { label: "Latest Articles", href: "/blog" },
+                { label: "Full Archive", href: "/hub/articles" },
                 { label: "Videos", href: "/hub/videos" },
                 { label: "Patient Guides", href: "/hub/resources" },
-                { label: "Blog", href: "/blog" },
                 { label: "The Book", href: "/book" },
               ].map((item) => (
                 <Link

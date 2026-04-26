@@ -27,10 +27,10 @@ const FOOTER_CLINIC_LINKS = [
 
 const FOOTER_LIBRARY_LINKS = [
   { label: "Learning Library", href: "/hub" },
-  { label: "Articles", href: "/hub/articles" },
+  { label: "Latest Articles", href: "/blog" },
+  { label: "Full Archive", href: "/hub/articles" },
   { label: "Videos", href: "/hub/videos" },
   { label: "Patient Guides", href: "/hub/resources" },
-  { label: "Blog", href: "/blog" },
   { label: "Hormone Health", href: "/services/hormone-therapy-women" },
   { label: "Weight Loss", href: "/services/medical-weight-loss" },
   { label: "Aesthetics", href: "/services/neuromodulators" },
