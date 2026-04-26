@@ -48,12 +48,6 @@ const RESOURCE_LINKS = [
     description: "Direct multi-platform purchase page for Travis's book.",
     external: true,
   },
-  {
-    label: "Media Archive Review",
-    href: "/media-review",
-    description: "Local review page for archived original media assets.",
-    external: false,
-  },
 ];
 
 export default function HubResourcesPage() {

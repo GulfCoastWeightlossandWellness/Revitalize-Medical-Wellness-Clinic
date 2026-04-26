@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
@@ -83,6 +85,29 @@ export default function MedicalWeightLoss() {
           a: "Yes. Our medical weight loss program is available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
+      earlyVisual={
+        <FadeIn>
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid var(--color-divider)",
+              borderRadius: "10px",
+              overflow: "hidden",
+              maxWidth: "760px",
+            }}
+          >
+            <Image
+              src="/images/generated/service-medical-weight-loss-consult-v1.png"
+              alt="Medical weight loss consultation reviewing metabolic trends on a tablet"
+              width={1024}
+              height={576}
+              quality={82}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </FadeIn>
+      }
       disclaimer="Medical information on this page is educational and does not constitute medical advice. GLP-1 receptor agonists require a prescription and in-person clinical evaluation. We do not prescribe weight loss medications online. Individual results vary significantly. Weight loss outcomes depend on multiple factors including adherence, metabolic baseline, and lifestyle factors."
     />
   );

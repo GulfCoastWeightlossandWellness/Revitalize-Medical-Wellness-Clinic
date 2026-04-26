@@ -132,7 +132,18 @@ export default async function HubItemDetailPage({ params }: Props) {
 
       <section style={{ background: "var(--color-bg)", padding: "48px clamp(24px, 6vw, 80px) 80px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "grid", gridTemplateColumns: "280px 1fr", gap: "16px" }} className="hub-detail-layout">
-          <aside style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "8px", padding: "18px 16px", height: "fit-content", position: "sticky", top: "96px" }}>
+          <aside
+            style={{
+              background: "#fff",
+              border: "1px solid var(--color-divider)",
+              borderRadius: "8px",
+              padding: "18px 16px",
+              height: "fit-content",
+              position: "sticky",
+              top: "96px",
+            }}
+            className="hub-detail-sidebar"
+          >
             <div style={{ fontSize: "0.56rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "10px" }}>
               Content Hub
             </div>
@@ -227,6 +238,10 @@ export default async function HubItemDetailPage({ params }: Props) {
           .hub-detail-layout { grid-template-columns: 280px 1fr; }
           @media (max-width: 980px) {
             .hub-detail-layout { grid-template-columns: 1fr !important; }
+            .hub-detail-sidebar {
+              position: static !important;
+              top: auto !important;
+            }
           }
         `}</style>
         {item.kind === "video" && !item.embeddable && (

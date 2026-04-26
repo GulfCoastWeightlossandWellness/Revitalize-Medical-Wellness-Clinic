@@ -921,20 +921,7 @@ export function getAllBlogPosts(): BlogPost[] {
       relatedService: topic.relatedService,
       relatedServiceHref: topic.relatedServiceHref,
       content: `
-This article is part of the Revitalize Content Hub and is mirrored in the blog for easier discovery.
-
-## Why this is in the blog
-
-We are consolidating Travis Woodley's educational content so patients can access it from one ecosystem while preserving source transparency and SEO clarity.
-
-## Article summary
-
 ${article.excerpt || "Read the full article in the Content Hub for the complete version."}
-
-## Read the full version
-
-- View the complete article in the Content Hub: /hub/${article.slug}
-- Continue exploring patient resources in /hub/videos and /hub/resources
       `.trim(),
       mirroredFromHub: true,
       canonicalUrl: `https://revitalizemedicalclinic.com/hub/${article.slug}`,

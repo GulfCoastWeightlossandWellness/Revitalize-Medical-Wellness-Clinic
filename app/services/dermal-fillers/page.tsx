@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
@@ -81,6 +83,29 @@ export default function DermalFillers() {
           a: "Yes. Dermal filler treatments are available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
+      earlyVisual={
+        <FadeIn>
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid var(--color-divider)",
+              borderRadius: "10px",
+              overflow: "hidden",
+              maxWidth: "760px",
+            }}
+          >
+            <Image
+              src="/images/generated/service-dermal-fillers-facial-balancing-v1.png"
+              alt="Dermal filler consultation focused on anatomy-first facial balancing and conservative treatment planning"
+              width={1024}
+              height={576}
+              quality={82}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </FadeIn>
+      }
       disclaimer="Dermal filler treatments are performed by licensed clinical providers. Results are temporary and vary by individual. Fillers are FDA-cleared devices; specific product selection is determined at consultation. Hyaluronic acid fillers are reversible; other filler types are not. Information on this page is educational and does not constitute medical advice."
     />
   );

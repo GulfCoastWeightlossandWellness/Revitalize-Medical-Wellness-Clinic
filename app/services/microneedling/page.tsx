@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
@@ -79,6 +81,29 @@ export default function Microneedling() {
           a: "Yes. Microneedling is available at our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
+      earlyVisual={
+        <FadeIn>
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid var(--color-divider)",
+              borderRadius: "10px",
+              overflow: "hidden",
+              maxWidth: "760px",
+            }}
+          >
+            <Image
+              src="/images/generated/service-microneedling-prp-prep-consult-v1.png"
+              alt="Microneedling and PRP facial consultation with pre-treatment planning in a clinical setting"
+              width={1024}
+              height={576}
+              quality={82}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </FadeIn>
+      }
       disclaimer="Microneedling results vary by individual, skin type, and treatment series. This is a cosmetic treatment, not a medical one. Individual responses to microneedling differ. Results from a single session are less pronounced than results from a completed series. Information on this page is educational and does not constitute medical advice."
     />
   );

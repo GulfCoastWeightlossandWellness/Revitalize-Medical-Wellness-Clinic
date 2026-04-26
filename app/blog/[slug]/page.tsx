@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { getAllBlogPosts, getBlogPost } from "@/lib/blog";
+import { getHubArticleBySlug } from "@/lib/contentHub";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
 
@@ -81,6 +82,8 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) notFound();
+  const mirroredHubArticle =
+    post.mirroredFromHub && post.sourceHubSlug ? getHubArticleBySlug(post.sourceHubSlug) : null;
 
   const allPosts = getAllBlogPosts();
   const otherPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
@@ -144,7 +147,14 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 </div>
               ) : null}
-              {renderContent(post.content)}
+              {mirroredHubArticle?.contentHtml ? (
+                <article
+                  className="hub-article-content"
+                  dangerouslySetInnerHTML={{ __html: mirroredHubArticle.contentHtml }}
+                />
+              ) : (
+                renderContent(post.content)
+              )}
 
               <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "24px 28px", marginTop: "48px" }}>
                 <p style={{ fontSize: "0.75rem", lineHeight: 1.75, color: "var(--color-muted-light)" }}>
@@ -185,6 +195,14 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
         <style>{`
           .post-layout { grid-template-columns: 1fr 320px; }
+          .hub-article-content { color: var(--color-ink-2); font-size: 0.96rem; line-height: 1.9; }
+          .hub-article-content h2 { font-family: var(--font-display); color: var(--color-ink); font-size: 1.8rem; line-height: 1.2; margin: 28px 0 14px; }
+          .hub-article-content h3 { font-family: var(--font-display); color: var(--color-ink); font-size: 1.35rem; line-height: 1.3; margin: 24px 0 12px; }
+          .hub-article-content p { margin: 0 0 14px; }
+          .hub-article-content ul, .hub-article-content ol { margin: 0 0 16px 20px; }
+          .hub-article-content li { margin-bottom: 8px; }
+          .hub-article-content img { width: 100%; height: auto; border-radius: 6px; margin: 10px 0 18px; }
+          .hub-article-content blockquote { margin: 16px 0; border-left: 3px solid var(--color-teal); padding: 8px 0 8px 14px; color: var(--color-muted); }
           @media (max-width: 1024px) { .post-layout { grid-template-columns: 1fr !important; } }
         `}</style>
       </section>

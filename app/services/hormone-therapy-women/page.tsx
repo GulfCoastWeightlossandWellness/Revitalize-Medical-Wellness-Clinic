@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ServicePage from "@/components/ServicePage";
 import FadeIn from "@/components/FadeIn";
 import { getHubVideos } from "@/lib/contentHub";
@@ -97,6 +98,29 @@ export default function HormoneTherapyWomen() {
           a: "This is very common, particularly in the first pellet cycle. Your initial dose is calibrated to your labs and symptom severity, but every patient metabolizes hormones differently. If your follow-up labs or symptoms suggest the dose needs adjustment, we correct this at your next insertion. Getting the dose right is a process, and we set this expectation clearly upfront.",
         },
       ]}
+        earlyVisual={
+          <FadeIn>
+            <div
+              style={{
+                background: "#fff",
+                border: "1px solid var(--color-divider)",
+                borderRadius: "10px",
+                overflow: "hidden",
+                maxWidth: "760px",
+              }}
+            >
+              <Image
+                src="/images/generated/womens-hormone-consult-v1.png"
+                alt="Women's hormone consultation reviewing lab trends on a tablet"
+                width={1024}
+                height={576}
+                quality={82}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </FadeIn>
+        }
         disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for hormone therapy. Individual results vary. Not all patients are appropriate candidates. Always consult with a licensed healthcare provider before beginning any hormone treatment."
       />
 

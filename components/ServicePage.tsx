@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
@@ -28,6 +29,7 @@ export interface ServicePageProps {
   relatedServices: { name: string; href: string }[];
   relatedPosts: { title: string; href: string }[];
   faqs: FAQ[];
+  earlyVisual?: ReactNode;
   schema?: Record<string, unknown>;
   disclaimer?: string;
 }
@@ -79,7 +81,7 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
-export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, schema, disclaimer }: ServicePageProps) {
+export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, earlyVisual, schema, disclaimer }: ServicePageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -218,6 +220,8 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
             </p>
           </section>
         </FadeIn>
+
+        {earlyVisual ? <div style={{ marginBottom: "40px" }}>{earlyVisual}</div> : null}
 
         {/* What & How */}
         <div
