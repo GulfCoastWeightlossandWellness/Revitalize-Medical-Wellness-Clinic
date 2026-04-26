@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
+import ImageSlot from "@/components/ui/ImageSlot";
 
 export const metadata: Metadata = {
   title: "About Travis Woodley | MSN, RN, CRNP | Founder",
@@ -24,10 +25,17 @@ export default function AboutPage() {
       </section>
 
       <section style={{ background: "#fff", display: "grid", gridTemplateColumns: "1fr 1fr" }} className="about-grid">
-        <div style={{ background: "var(--color-teal)", minHeight: "480px", display: "flex", alignItems: "center", justifyContent: "center", padding: "60px 40px" }}>
-          <blockquote style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontStyle: "italic", color: "rgba(255,255,255,0.85)", lineHeight: 1.55, textAlign: "center", maxWidth: "400px" }}>
+        <div style={{ minHeight: "480px", position: "relative", overflow: "hidden" }}>
+          <ImageSlot
+            src="/images/site/travis-woodley.jpg"
+            alt="Travis Woodley portrait"
+            priority
+            overlay="linear-gradient(0deg, rgba(9,25,34,0.56), rgba(9,25,34,0.22))"
+            objectPosition="center top"
+          />
+          <blockquote style={{ position: "absolute", left: "28px", right: "28px", bottom: "24px", zIndex: 2, fontFamily: "var(--font-display)", fontSize: "clamp(1.1rem, 2vw, 1.5rem)", fontStyle: "italic", color: "rgba(255,255,255,0.9)", lineHeight: 1.45, textAlign: "left", maxWidth: "420px" }}>
             &ldquo;You are not broken. You are unbalanced. And balance can be rebuilt.&rdquo;
-            <cite style={{ display: "block", marginTop: "20px", fontStyle: "normal", fontSize: "0.62rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
+            <cite style={{ display: "block", marginTop: "14px", fontStyle: "normal", fontSize: "0.56rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
               — Travis Woodley, MSN, RN, CRNP
             </cite>
           </blockquote>

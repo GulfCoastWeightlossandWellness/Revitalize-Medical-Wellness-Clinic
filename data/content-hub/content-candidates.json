@@ -1,0 +1,47 @@
+{
+  "shop_articles": [
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/article",
+      "slug": "article"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/bd6f1541f474382f95a33769ec1b1450",
+      "slug": "bd6f1541f474382f95a33769ec1b1450"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/creatine-the-overlooked-metabolic-workhorse-for-muscle-brain-and-fertility",
+      "slug": "creatine-the-overlooked-metabolic-workhorse-for-muscle-brain-and-fertility"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/lymph-glymphatic-drainage-for-hormones-metabolic-health",
+      "slug": "lymph-glymphatic-drainage-for-hormones-metabolic-health"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/summary_large_image",
+      "slug": "summary_large_image"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/the-most-overlooked-trio-in-midlife-health-vitamin-a-d3-and-k2",
+      "slug": "the-most-overlooked-trio-in-midlife-health-vitamin-a-d3-and-k2"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/why-gallbladder-and-bile-physiology-matter-in-bhrt-and-metabolic-medicine",
+      "slug": "why-gallbladder-and-bile-physiology-matter-in-bhrt-and-metabolic-medicine"
+    },
+    {
+      "url": "https://revitalizenutritionshop.com/blogs/news/width=device-width,initial-scale=1",
+      "slug": "width=device-width,initial-scale=1"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://player.vimeo.com/video/679245967?amp%3Bwmode=opaque&h=2612cfc78a"
+    },
+    {
+      "url": "https://player.vimeo.com/video/679288098?amp%3Bwmode=opaque&h=df41b8ea0b"
+    },
+    {
+      "url": "https://www.youtube.com/@rebuildmetabolichealth"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/constants";
 
 type NavItem = { label: string; href: string; external?: boolean };
@@ -91,17 +92,23 @@ export default function Nav() {
         <Link
           href="/"
           style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "1rem",
-            fontWeight: 400,
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.92)",
+            display: "inline-flex",
+            alignItems: "center",
+            background: "rgba(255,255,255,0.96)",
+            borderRadius: "6px",
+            padding: "4px 10px",
             flexShrink: 0,
           }}
+          aria-label="Revitalize Aesthetics and Wellness home"
         >
-          <em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>Revitalize</em>
-          <span style={{ display: "none" }} className="md-show"> Aesthetics &amp; Wellness</span>
+          <Image
+            src="/images/brand/revitalize-logo.png"
+            alt="Revitalize Aesthetics and Wellness logo"
+            width={180}
+            height={56}
+            priority
+            style={{ width: "auto", height: "30px" }}
+          />
         </Link>
 
         {/* Desktop nav */}

@@ -41,8 +41,8 @@ export default function LocationSEOPage({
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0 }}>
           <ImageSlot
-            src="/images/placeholders/hero-clinic.svg"
-            alt={`${city} location photo placeholder`}
+            src="/images/site/clinic-lobby-hero.jpg"
+            alt={`${city} Revitalize clinic interior`}
             overlay="linear-gradient(0deg, rgba(9,25,34,0.78), rgba(9,25,34,0.78))"
           />
         </div>

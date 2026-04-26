@@ -74,7 +74,13 @@ export default function ContactPage() {
               <p style={{ fontSize: "0.85rem", color: "var(--color-muted)", marginBottom: "28px", lineHeight: 1.75 }}>
                 For appointment booking, use our online scheduler — it is the fastest option. For clinical questions or general inquiries, use the form below.
               </p>
-              <form style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <form
+                action={`mailto:${SITE.email}`}
+                method="post"
+                encType="text/plain"
+                style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+              >
+                <input type="hidden" name="subject" value="New inquiry from Revitalize website" />
                 {[
                   { label: "Full name", type: "text", name: "name", placeholder: "Your name" },
                   { label: "Email address", type: "email", name: "email", placeholder: "your@email.com" },
@@ -92,7 +98,10 @@ export default function ContactPage() {
                 ))}
                 <div>
                   <label style={{ display: "block", fontSize: "0.68rem", fontWeight: 500, letterSpacing: "0.1em", color: "var(--color-ink-2)", marginBottom: "6px" }}>Preferred location</label>
-                  <select style={{ width: "100%", padding: "11px 14px", border: "1.5px solid var(--color-divider)", borderRadius: "6px", fontSize: "0.88rem", color: "var(--color-ink)", background: "var(--color-bg)", fontFamily: "var(--font-body)" }}>
+                  <select
+                    name="preferred_location"
+                    style={{ width: "100%", padding: "11px 14px", border: "1.5px solid var(--color-divider)", borderRadius: "6px", fontSize: "0.88rem", color: "var(--color-ink)", background: "var(--color-bg)", fontFamily: "var(--font-body)" }}
+                  >
                     <option value="">Select a location</option>
                     <option value="columbus">Columbus, GA</option>
                     <option value="warnerrobins">Warner Robins, GA</option>

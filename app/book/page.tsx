@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 
@@ -60,12 +60,26 @@ export default function BookPage() {
             </div>
           </div>
           <FadeIn>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "48px 40px", textAlign: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.8rem)", fontStyle: "italic", color: "#fff", lineHeight: 1.25, marginBottom: "20px" }}>
-                &ldquo;You are not broken.<br />You are unbalanced.<br />And balance can be rebuilt.&rdquo;
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "28px 24px", textAlign: "center" }}>
+              <Image
+                src="/images/books/youre-not-broken-cover.png"
+                alt="You're Not Broken — You're Unbalanced by Travis Woodley"
+                width={420}
+                height={560}
+                priority
+                style={{
+                  width: "min(100%, 320px)",
+                  height: "auto",
+                  borderRadius: "6px",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
+                  margin: "0 auto 22px",
+                }}
+              />
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.2rem, 2.1vw, 1.7rem)", fontStyle: "italic", color: "#fff", lineHeight: 1.35, marginBottom: "8px" }}>
+                &ldquo;You are not broken. You are unbalanced.&rdquo;
               </div>
-              <cite style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", fontStyle: "normal" }}>
-                — Travis Woodley, MSN, RN, CRNP
+              <cite style={{ fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", fontStyle: "normal" }}>
+                — Travis Woodley
               </cite>
             </div>
           </FadeIn>

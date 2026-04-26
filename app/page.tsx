@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/constants";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
@@ -329,6 +330,12 @@ export default function HomePage() {
             background: "var(--color-teal)",
           }}
         >
+          <ImageSlot
+            src="/images/site/clinic-lobby-hero.jpg"
+            alt="Revitalize clinic lobby"
+            priority
+            overlay="linear-gradient(0deg, rgba(9,25,34,0.16), rgba(9,25,34,0.16))"
+          />
           {/* Gradient overlay */}
           <div
             style={{
@@ -792,10 +799,11 @@ export default function HomePage() {
         {/* Image panel */}
         <div style={{ minHeight: "560px", position: "relative", overflow: "hidden" }}>
           <ImageSlot
-            src="/images/placeholders/hero-clinic.svg"
-            alt="Revitalize clinic hero placeholder"
+            src="/images/site/travis-woodley.jpg"
+            alt="Travis Woodley portrait"
             priority
-            objectPosition="center"
+            objectPosition="center top"
+            overlay="linear-gradient(0deg, rgba(9,25,34,0.52), rgba(9,25,34,0.2))"
           />
           <div
             style={{
@@ -814,7 +822,7 @@ export default function HomePage() {
               textTransform: "uppercase",
             }}
           >
-            Replace with your primary clinic or provider hero photo
+            Founder &amp; Lead Clinician
           </div>
         </div>
 
@@ -1387,66 +1395,22 @@ export default function HomePage() {
               transform: "translate(-50%, -50%)",
             }}
           />
-          {/* Stylized book cover */}
-          <div
+          <Image
+            src="/images/books/youre-not-broken-cover.png"
+            alt="You're Not Broken — You're Unbalanced by Travis Woodley"
+            width={392}
+            height={522}
+            priority
+            quality={75}
             style={{
-              width: "192px",
-              height: "284px",
-              background: "linear-gradient(150deg, #1A3A48 0%, #0E2835 100%)",
+              width: "min(100%, 360px)",
+              height: "auto",
               borderRadius: "3px 10px 10px 3px",
-              boxShadow: "-10px 24px 64px rgba(0,0,0,0.8), inset -1px 0 0 rgba(0,0,0,0.3)",
-              borderLeft: "5px solid var(--color-gold)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "28px 18px",
-              textAlign: "center",
+              boxShadow: "-10px 24px 64px rgba(0,0,0,0.8)",
               position: "relative",
               zIndex: 1,
             }}
-          >
-            <div
-              style={{
-                fontSize: "0.48rem",
-                letterSpacing: "0.24em",
-                textTransform: "uppercase",
-                color: "var(--color-gold)",
-                marginBottom: "18px",
-                opacity: 0.8,
-              }}
-            >
-              Travis Woodley, MSN, RN, CRNP
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "1.1rem",
-                fontWeight: 400,
-                color: "#fff",
-                lineHeight: 1.2,
-                marginBottom: "2px",
-              }}
-            >
-              You&apos;re Not Broken
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "1.1rem",
-                fontStyle: "italic",
-                color: "var(--color-gold)",
-                lineHeight: 1.2,
-                marginBottom: "16px",
-              }}
-            >
-              You&apos;re Unbalanced
-            </div>
-            <div style={{ width: "28px", height: "1px", background: "var(--color-gold)", margin: "0 auto 12px" }} />
-            <div style={{ fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)" }}>
-              Rebuilding your metabolic health
-            </div>
-          </div>
+          />
         </div>
 
         <style>{`
@@ -1460,8 +1424,26 @@ export default function HomePage() {
       </section>
 
       {/* ── NUTRITION SHOP ── */}
-      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="shop-section-grid">
+      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", position: "relative", overflow: "hidden" }}>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/images/site/nutrition-shop-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.52,
+            filter: "saturate(1.02) contrast(1.02)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(0deg, rgba(245,243,239,0.74), rgba(245,243,239,0.66))",
+          }}
+        />
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", position: "relative", zIndex: 2 }} className="shop-section-grid">
           <FadeIn>
             <div>
               <div className="eyebrow" style={{ marginBottom: "16px" }}>Revitalize Nutrition Shop</div>

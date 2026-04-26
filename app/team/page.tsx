@@ -30,8 +30,8 @@ export default function TeamPage() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }} className="team-lead-grid">
               <div style={{ minHeight: "440px", borderRadius: "4px", overflow: "hidden", position: "relative" }}>
                 <ImageSlot
-                  src="/images/placeholders/team-travis.svg"
-                  alt="Travis Woodley headshot placeholder"
+                  src="/images/site/travis-woodley.jpg"
+                  alt="Travis Woodley"
                   priority
                   overlay="linear-gradient(0deg, rgba(9,25,34,0.58), rgba(9,25,34,0.22))"
                   objectPosition="center top"

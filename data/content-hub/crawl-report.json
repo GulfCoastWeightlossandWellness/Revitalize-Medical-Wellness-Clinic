@@ -1,0 +1,165 @@
+{
+  "generated_at_utc": "2026-04-26T03:04:09Z",
+  "domains": [
+    "revitalizemedicalclinic.com",
+    "revitalizenutritionshop.com",
+    "www.revitalizemedicalclinic.com"
+  ],
+  "pages_crawled": 498,
+  "pages_errors": 2435,
+  "unique_pages_seen": 2933,
+  "links_discovered": 48127,
+  "media_links_discovered": 10495,
+  "youtube_links_discovered": 0,
+  "iframe_embeds_discovered": 46,
+  "top_outbound_domains": [
+    {
+      "domain": "images.squarespace-cdn.com",
+      "count": 1001
+    },
+    {
+      "domain": "shop.app",
+      "count": 768
+    },
+    {
+      "domain": "www.facebook.com",
+      "count": 756
+    },
+    {
+      "domain": "www.linkedin.com",
+      "count": 719
+    },
+    {
+      "domain": "definitions.sqspcdn.com",
+      "count": 521
+    },
+    {
+      "domain": "assets.squarespace.com",
+      "count": 504
+    },
+    {
+      "domain": "www.google.com",
+      "count": 468
+    },
+    {
+      "domain": "rebuildmetabolichealth.com",
+      "count": 434
+    },
+    {
+      "domain": "www.instagram.com",
+      "count": 431
+    },
+    {
+      "domain": "www.youtube.com",
+      "count": 390
+    },
+    {
+      "domain": "fonts.shopifycdn.com",
+      "count": 384
+    },
+    {
+      "domain": "monorail-edge.shopifysvc.com",
+      "count": 384
+    },
+    {
+      "domain": "www.shopify.com",
+      "count": 384
+    },
+    {
+      "domain": "x.com",
+      "count": 325
+    },
+    {
+      "domain": "static1.squarespace.com",
+      "count": 181
+    },
+    {
+      "domain": "code.jquery.com",
+      "count": 84
+    },
+    {
+      "domain": "www.googletagmanager.com",
+      "count": 84
+    },
+    {
+      "domain": "fonts.googleapis.com",
+      "count": 43
+    },
+    {
+      "domain": "fonts.gstatic.com",
+      "count": 42
+    },
+    {
+      "domain": "revitalizeaesthetics.janeapp.com",
+      "count": 42
+    },
+    {
+      "domain": "assets.codepen.io",
+      "count": 42
+    },
+    {
+      "domain": "www.amazon.com",
+      "count": 41
+    },
+    {
+      "domain": "cdn.shopify.com",
+      "count": 19
+    },
+    {
+      "domain": "biote.com",
+      "count": 6
+    },
+    {
+      "domain": "www.barnesandnoble.com",
+      "count": 5
+    },
+    {
+      "domain": "books.apple.com",
+      "count": 5
+    },
+    {
+      "domain": "www.kobo.com",
+      "count": 5
+    },
+    {
+      "domain": "www.everand.com",
+      "count": 5
+    },
+    {
+      "domain": "www.overdrive.com",
+      "count": 5
+    },
+    {
+      "domain": "player.vimeo.com",
+      "count": 5
+    },
+    {
+      "domain": "books2read.com",
+      "count": 4
+    },
+    {
+      "domain": "www.americanboardcosmeticsurgery.org",
+      "count": 1
+    },
+    {
+      "domain": "www.prnewswire.com",
+      "count": 1
+    },
+    {
+      "domain": "na02.patientnow.com",
+      "count": 1
+    },
+    {
+      "domain": "schedule.yosicare.com",
+      "count": 1
+    },
+    {
+      "domain": "js.hcaptcha.com",
+      "count": 1
+    },
+    {
+      "domain": "purl.org",
+      "count": 1
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/constants";
 
 const FOOTER_SERVICES = [
@@ -51,18 +52,22 @@ export default function Footer() {
             <Link
               href="/"
               style={{
-                display: "block",
-                fontFamily: "var(--font-display)",
-                fontSize: "1rem",
-                fontWeight: 400,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.88)",
+                display: "inline-flex",
+                alignItems: "center",
+                background: "rgba(255,255,255,0.96)",
+                borderRadius: "8px",
+                padding: "8px 12px",
                 marginBottom: "16px",
               }}
+              aria-label="Revitalize Aesthetics and Wellness home"
             >
-              <em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>Revitalize</em>
-              {" "}Aesthetics &amp; Wellness
+              <Image
+                src="/images/brand/revitalize-logo.png"
+                alt="Revitalize Aesthetics and Wellness logo"
+                width={240}
+                height={70}
+                style={{ width: "auto", height: "40px" }}
+              />
             </Link>
             <p
               style={{
@@ -76,6 +81,15 @@ export default function Footer() {
             >
               Premier medical aesthetics and functional wellness in Columbus and Warner Robins, Georgia. Led by Travis Woodley, MSN, RN, CRNP — Platinum Biote provider and 17+ year clinician.
             </p>
+            <div style={{ marginBottom: "20px" }}>
+              <Image
+                src="/media/original-site/images/logo-biote-ea8484c1e1.png"
+                alt="Biote Trusted Certified Provider Platinum Partner badge"
+                width={250}
+                height={323}
+                style={{ width: "110px", height: "auto", opacity: 0.95 }}
+              />
+            </div>
             {/* Phones */}
             <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "20px" }}>
               <a
