@@ -302,7 +302,7 @@ export default function ColumbusLocationPage() {
                       textTransform: "uppercase",
                     }}
                   >
-                    Leave a Review
+                    Leave a Google Review
                   </a>
                 )}
               </div>

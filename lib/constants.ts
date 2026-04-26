@@ -79,10 +79,10 @@ export const SITE = {
   biote: "https://biote.com",
   reviews: {
     platform: "Google",
-    // Obtain review links from: Google Business Profile dashboard → "Ask for reviews"
-    // Leave empty to automatically hide the review CTA in all components.
-    columbusReviewLink: "",   // TODO: add Columbus Google Business Profile review link
-    warnerRobinsReviewLink: "", // TODO: add Warner Robins Google Business Profile review link
+    // Review dialog URLs — confirm which location appears in the modal before launch.
+    // The #lrd ID is the distinguishing factor; do not swap these without verifying.
+    columbusReviewLink: "https://www.google.com/search?q=Revitalize+Aesthetics+%26+Wellness+Reviews#lrd=0x88f3e7448a99f5ed:0x9aeca12dc32998d2,3,,,,",
+    warnerRobinsReviewLink: "https://www.google.com/search?q=Revitalize+Aesthetics+%26+Wellness+Reviews#lrd=0x88f33524e3d94a4f:0x3fb938ed8f0a8bf3,3,,,,",
     // Set verifiedCount and verifiedRating to null to show neutral copy.
     // Update to real values once confirmed against the GBP dashboard.
     verifiedCount: null as string | null,

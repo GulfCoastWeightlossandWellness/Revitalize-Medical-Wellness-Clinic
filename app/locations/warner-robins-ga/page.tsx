@@ -300,7 +300,7 @@ export default function WarnerRobinsLocationPage() {
                       textTransform: "uppercase",
                     }}
                   >
-                    Leave a Review
+                    Leave a Google Review
                   </a>
                 )}
               </div>
