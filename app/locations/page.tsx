@@ -36,6 +36,7 @@ export default function LocationsPage() {
               maps: SITE.locations.columbus.maps,
               badge: "Primary Location",
               note: "Online booking available 24/7",
+              detailHref: "/locations/columbus-ga",
             },
             {
               city: "Warner Robins",
@@ -44,9 +45,10 @@ export default function LocationsPage() {
               zip: "Warner Robins, GA 31088",
               phone: SITE.phone.warnerRobins,
               phoneHref: SITE.phone.warnerRobinsHref,
-              maps: "https://maps.google.com/?q=840+SR+96+Warner+Robins+GA",
+              maps: SITE.locations.warnerRobins.maps,
               badge: "Second Location",
               note: "Online booking available 24/7",
+              detailHref: "/locations/warner-robins-ga",
             },
           ].map((loc) => (
             <FadeIn key={loc.city}>
@@ -62,6 +64,7 @@ export default function LocationsPage() {
                   <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ background: "var(--color-teal)", color: "#fff", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>Book Online</a>
                   <a href={loc.phoneHref} style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase" }}>Call</a>
                   <a href={loc.maps} target="_blank" rel="noopener noreferrer" style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase" }}>Directions</a>
+                  <Link href={loc.detailHref} style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-teal)", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" }}>Full Details →</Link>
                 </div>
               </div>
             </FadeIn>

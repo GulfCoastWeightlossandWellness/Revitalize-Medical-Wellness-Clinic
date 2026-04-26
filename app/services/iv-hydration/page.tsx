@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
@@ -76,7 +78,32 @@ export default function IVHydration() {
           a: "Yes. IV hydration therapy is available at our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
+      earlyVisual={
+        <FadeIn>
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid var(--color-divider)",
+              borderRadius: "10px",
+              overflow: "hidden",
+              maxWidth: "760px",
+            }}
+          >
+            <Image
+              src="/images/generated/service-iv-hydration-infusion-v1.png"
+              alt="IV hydration infusion session in a monitored clinical setting"
+              width={1024}
+              height={576}
+              quality={82}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </FadeIn>
+      }
       disclaimer="IV hydration therapy is intended to support hydration status and general well-being. It is not a treatment for medical conditions, not a substitute for emergency care, and not appropriate for all individuals. A good-faith clinical examination is required before every session. Individual responses vary. Information on this page is educational and does not constitute medical advice."
+      pageHref="/services/iv-hydration"
+      pageName="IV Hydration Therapy"
     />
   );
 }

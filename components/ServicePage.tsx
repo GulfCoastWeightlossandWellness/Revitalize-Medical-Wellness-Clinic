@@ -32,6 +32,12 @@ export interface ServicePageProps {
   earlyVisual?: ReactNode;
   schema?: Record<string, unknown>;
   disclaimer?: string;
+  /** Page href used for BreadcrumbList schema, e.g. "/services/hormone-therapy-women" */
+  pageHref?: string;
+  /** Page display name for BreadcrumbList breadcrumb */
+  pageName?: string;
+  /** If set, renders a "Take Assessment" CTA panel before the bottom CTA section */
+  assessmentCta?: { label: string; href: string };
 }
 
 function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
@@ -81,7 +87,7 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
-export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, earlyVisual, schema, disclaimer }: ServicePageProps) {
+export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, earlyVisual, schema, disclaimer, pageHref, pageName, assessmentCta }: ServicePageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -92,12 +98,28 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
     })),
   };
 
+  const breadcrumbSchema = pageHref && pageName ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/services` },
+      { "@type": "ListItem", position: 3, name: pageName, item: `${SITE.url}${pageHref}` },
+    ],
+  } : null;
+
   return (
     <>
       {schema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       )}
       <script
@@ -498,6 +520,45 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
         )}
       </div>
 
+      {/* Assessment CTA — shown when assessmentCta prop is provided */}
+      {assessmentCta && (
+        <section style={{ background: "var(--color-stone)", padding: "56px clamp(24px, 6vw, 80px)" }}>
+          <FadeIn>
+            <div style={{ maxWidth: "800px", margin: "0 auto", background: "#fff", borderRadius: "8px", padding: "40px 44px", borderLeft: "4px solid var(--color-gold)", display: "flex", gap: "32px", alignItems: "center", flexWrap: "wrap" }}>
+              <div style={{ flex: 1, minWidth: "240px" }}>
+                <div style={{ fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "10px" }}>
+                  Free patient tool
+                </div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "10px" }}>
+                  {assessmentCta.label}
+                </h3>
+                <p style={{ fontSize: "0.85rem", lineHeight: 1.75, color: "var(--color-muted)" }}>
+                  Use this assessment before your consultation to help identify relevant services and prepare for your appointment.
+                </p>
+              </div>
+              <Link
+                href={assessmentCta.href}
+                style={{
+                  flexShrink: 0,
+                  background: "var(--color-teal)",
+                  color: "#fff",
+                  padding: "13px 26px",
+                  borderRadius: "6px",
+                  fontSize: "0.62rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Take Assessment
+              </Link>
+            </div>
+          </FadeIn>
+        </section>
+      )}
+
       {/* Bottom CTA */}
       <section
         style={{
@@ -574,6 +635,24 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
               Call Warner Robins
             </a>
           </div>
+
+          {/* Location page deep links */}
+          <div style={{ marginTop: "28px", display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link
+              href="/locations/columbus-ga"
+              style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textDecoration: "none" }}
+              className="svc-loc-link"
+            >
+              Columbus clinic details →
+            </Link>
+            <Link
+              href="/locations/warner-robins-ga"
+              style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textDecoration: "none" }}
+              className="svc-loc-link"
+            >
+              Warner Robins clinic details →
+            </Link>
+          </div>
         </FadeIn>
       </section>
 
@@ -582,6 +661,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
         .candidacy-grid { grid-template-columns: 1fr 1fr; }
         .related-grid { grid-template-columns: 1fr 1fr; }
         .related-post-link:hover { color: var(--color-teal) !important; }
+        .svc-loc-link:hover { color: rgba(255,255,255,0.72) !important; }
         @media (max-width: 768px) {
           .svc-what-grid { grid-template-columns: 1fr !important; }
           .candidacy-grid { grid-template-columns: 1fr !important; }

@@ -78,6 +78,9 @@ export default function BiotePelletTherapy() {
         },
       ]}
       disclaimer="Biote pellet therapy requires in-person consultation and comprehensive lab work prior to treatment. Individual results vary. This page is for educational purposes and does not constitute medical advice. Travis Woodley is a Certified Platinum Biote Provider — this designation reflects training and clinical experience within the Biote network."
-    />
+      pageHref="/services/biote-pellet-therapy"
+      pageName="Biote Pellet Therapy"
+      assessmentCta={{ label: "Hormone Health Self-Assessment", href: "/tools" }}
+      />
   );
 }

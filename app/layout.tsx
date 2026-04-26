@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import BookingBar from "@/components/BookingBar";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -114,6 +118,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body style={{ paddingTop: "var(--nav-height)" }}>
+        {/* Google Analytics 4 — loads only when NEXT_PUBLIC_GA_ID is set */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
         <a
           href="#main-content"
           style={{
@@ -137,6 +158,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Footer />
         <BookingBar />
+        <Analytics />
       </body>
     </html>
   );

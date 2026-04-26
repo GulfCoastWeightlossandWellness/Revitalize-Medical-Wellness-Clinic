@@ -107,6 +107,8 @@ export default function DermalFillers() {
         </FadeIn>
       }
       disclaimer="Dermal filler treatments are performed by licensed clinical providers. Results are temporary and vary by individual. Fillers are FDA-cleared devices; specific product selection is determined at consultation. Hyaluronic acid fillers are reversible; other filler types are not. Information on this page is educational and does not constitute medical advice."
+      pageHref="/services/dermal-fillers"
+      pageName="Dermal Fillers"
     />
   );
 }

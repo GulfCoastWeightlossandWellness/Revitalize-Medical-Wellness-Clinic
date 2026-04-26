@@ -27,6 +27,7 @@ export const SITE = {
       zip: "31088",
       phone: "(478) 366-1244",
       phoneHref: "tel:4783661244",
+      maps: "https://maps.google.com/?q=840+SR+96+Suite+3300+Warner+Robins+GA+31088",
     },
   },
   social: {
@@ -61,7 +62,14 @@ export const SITE = {
     // scratchpay: "",   // add URL when available
   },
   biote: "https://biote.com",
-  reviews: { count: "70+", rating: "4.9", platform: "Google" },
+  // Google Review links — populate with real Place IDs from Google Business Profile.
+  // Leave empty to automatically hide the review CTA in all components.
+  reviews: {
+    platform: "Google",
+    // Obtain Place IDs from https://business.google.com → Location → "Get more reviews"
+    columbusReviewLink: "",   // TODO: add Columbus Google Business Profile review link
+    warnerRobinsReviewLink: "", // TODO: add Warner Robins Google Business Profile review link
+  },
   founder: {
     name: "Travis Woodley",
     credentials: "MSN, RN, CRNP",
@@ -69,6 +77,11 @@ export const SITE = {
     experience: "17+ years",
   },
 };
+
+/** Returns true only when a review link has been populated with a real URL. */
+export function hasReviewLink(url: string | undefined): url is string {
+  return typeof url === "string" && url.length > 0 && !url.includes("REPLACE_WITH");
+}
 
 export const NAV_SERVICES = [
   { label: "Hormone Therapy", href: "/services/hormone-therapy-women" },

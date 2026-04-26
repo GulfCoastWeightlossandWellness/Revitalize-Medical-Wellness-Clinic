@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
-import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Laser Hair Removal | Motus AZ | Columbus & Warner Robins, GA",
@@ -77,13 +78,30 @@ export default function LaserHairRemoval() {
           a: "Yes. Laser hair removal is available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
+        earlyVisual={
+          <FadeIn>
+            <div
+              style={{
+                background: "#fff",
+                border: "1px solid var(--color-divider)",
+                borderRadius: "10px",
+                overflow: "hidden",
+                maxWidth: "760px",
+              }}
+            >
+              <Image
+                src="/images/generated/service-laser-hair-removal-treatment-v1.png"
+                alt="Laser hair removal treatment session with protective eyewear and device-guided care"
+                width={1024}
+                height={576}
+                quality={82}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 68vw, 760px"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+          </FadeIn>
+        }
         disclaimer="Laser hair removal results vary by individual, hair type, and skin tone. Long-term reduction is likely for most appropriate candidates; permanent elimination is not guaranteed. A series of sessions is required. Consultation required to confirm candidacy."
-      />
-      <ServiceImagePlaceholder
-        eyebrow="Treatment equipment"
-        title="Motus AZ platform context"
-        description="This section is being replaced with custom device-context photography captured to match this treatment page."
-        plannedImageSet="P04 - Service Hero System (Skin Resurfacing and Device Context)"
       />
     </>
   );

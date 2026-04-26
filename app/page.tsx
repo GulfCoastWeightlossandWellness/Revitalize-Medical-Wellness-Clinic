@@ -239,7 +239,7 @@ export default function HomePage() {
             Hormone therapy, medical weight loss, and precision aesthetic care — delivered by a licensed clinical team in Columbus and Warner Robins, Georgia.
           </p>
 
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "56px" }}>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "20px" }}>
             <a
               href={SITE.booking}
               target="_blank"
@@ -260,10 +260,25 @@ export default function HomePage() {
               Book a Consultation
             </a>
             <Link
-              href="/services"
+              href="/start-here"
               style={{
-                border: "1.5px solid rgba(255,255,255,0.18)",
-                color: "rgba(255,255,255,0.6)",
+                border: "1.5px solid rgba(201,168,108,0.4)",
+                color: "var(--color-gold)",
+                padding: "14px 28px",
+                borderRadius: "6px",
+                fontSize: "0.62rem",
+                fontWeight: 600,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+              }}
+            >
+              Start Here
+            </Link>
+            <Link
+              href="/tools"
+              style={{
+                border: "1.5px solid rgba(255,255,255,0.12)",
+                color: "rgba(255,255,255,0.5)",
                 padding: "14px 28px",
                 borderRadius: "6px",
                 fontSize: "0.62rem",
@@ -272,7 +287,21 @@ export default function HomePage() {
                 textTransform: "uppercase",
               }}
             >
-              Explore Services
+              Take Assessment
+            </Link>
+          </div>
+          <div style={{ marginBottom: "36px" }}>
+            <Link
+              href="/services"
+              style={{
+                fontSize: "0.68rem",
+                color: "rgba(255,255,255,0.3)",
+                letterSpacing: "0.12em",
+                textDecoration: "none",
+              }}
+              className="hero-services-link"
+            >
+              Explore all services →
             </Link>
           </div>
 
@@ -385,6 +414,7 @@ export default function HomePage() {
         <style>{`
           .hero-section { grid-template-columns: 54% 46%; }
           .btn-gold:hover { background: var(--color-gold-dark) !important; }
+          .hero-services-link:hover { color: rgba(255,255,255,0.6) !important; }
           @media (max-width: 768px) {
             .hero-section { grid-template-columns: 1fr !important; }
             .hero-section > div:last-child { display: none !important; }
@@ -1105,6 +1135,7 @@ export default function HomePage() {
                 phoneHref: SITE.phone.columbusHref,
                 maps: SITE.locations.columbus.maps,
                 badge: "Primary Location",
+                detailHref: "/locations/columbus-ga",
               },
               {
                 city: "Warner Robins",
@@ -1113,8 +1144,9 @@ export default function HomePage() {
                 zip: "Warner Robins, GA 31088",
                 phone: SITE.phone.warnerRobins,
                 phoneHref: SITE.phone.warnerRobinsHref,
-                maps: "#",
+                maps: SITE.locations.warnerRobins.maps,
                 badge: "Second Location",
+                detailHref: "/locations/warner-robins-ga",
               },
             ].map((loc) => (
               <FadeIn key={loc.city}>
@@ -1236,6 +1268,21 @@ export default function HomePage() {
                     >
                       Get Directions
                     </a>
+                    <Link
+                      href={loc.detailHref}
+                      style={{
+                        border: "1.5px solid var(--color-divider)",
+                        color: "var(--color-teal)",
+                        padding: "11px 22px",
+                        borderRadius: "6px",
+                        fontSize: "0.6rem",
+                        fontWeight: 600,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Full Details →
+                    </Link>
                   </div>
                 </div>
               </FadeIn>
@@ -1250,6 +1297,48 @@ export default function HomePage() {
             .locations-grid { grid-template-columns: 1fr !important; }
           }
         `}</style>
+      </section>
+
+      {/* ── START HERE / TOOLS ── */}
+      <section style={{ background: "var(--color-teal)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <FadeIn>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="start-tools-grid">
+            <div>
+              <div className="eyebrow-white" style={{ marginBottom: "20px" }}>Patient tools</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3.4rem)", fontWeight: 400, lineHeight: 1.1, color: "#fff", letterSpacing: "-0.01em", marginBottom: "16px" }}>
+                Not sure where<br />
+                <em style={{ color: "var(--color-gold)", fontStyle: "italic" }}>to start?</em>
+              </h2>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "rgba(255,255,255,0.5)", marginBottom: "32px", maxWidth: "460px" }}>
+                Use the Hormone Health Self-Assessment or Treatment Finder to understand which services may be most relevant to your concerns — before booking an appointment.
+              </p>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <Link href="/start-here" style={{ background: "var(--color-gold)", color: "#fff", padding: "13px 26px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>
+                  Start Here
+                </Link>
+                <Link href="/tools" style={{ border: "1.5px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "13px 24px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  Take Assessment
+                </Link>
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {[
+                { icon: "🌡️", title: "Hormone Health Assessment", desc: "Answer questions about your symptoms to understand if hormone optimization may be relevant to you.", href: "/tools" },
+                { icon: "🔍", title: "Treatment Finder", desc: "Select your top concerns and see which services are designed to address them.", href: "/tools" },
+                { icon: "🗺️", title: "New Patient Guide", desc: "Not sure what to expect? The Start Here page walks you through the first visit process.", href: "/start-here" },
+              ].map((tool) => (
+                <Link key={tool.title} href={tool.href} style={{ background: "rgba(255,255,255,0.07)", borderRadius: "8px", padding: "20px 22px", display: "flex", gap: "16px", alignItems: "flex-start", textDecoration: "none", transition: "background 0.2s" }} className="tool-card-link">
+                  <span style={{ fontSize: "1.4rem", flexShrink: 0 }} aria-hidden="true">{tool.icon}</span>
+                  <div>
+                    <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>{tool.title}</div>
+                    <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>{tool.desc}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+        <style>{`.start-tools-grid { grid-template-columns: 1fr 1fr; } .tool-card-link:hover { background: rgba(255,255,255,0.12) !important; } @media (max-width: 900px) { .start-tools-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
       {/* ── BOOK SECTION ── */}

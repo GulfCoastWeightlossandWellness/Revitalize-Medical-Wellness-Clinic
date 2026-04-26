@@ -88,22 +88,41 @@ export default async function BlogPostPage({ params }: Props) {
   const allPosts = getAllBlogPosts();
   const otherPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const canonicalUrl = post.canonicalUrl ?? `${SITE.url}/blog/${post.slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.description,
+    url: canonicalUrl,
     datePublished: post.date,
+    dateModified: post.date,
+    keywords: post.keyword,
     author: {
       "@type": "Person",
       name: "Travis Woodley",
       jobTitle: "MSN, RN, CRNP",
+      url: `${SITE.url}/team`,
     },
     publisher: {
       "@type": "Organization",
       name: SITE.name,
       url: SITE.url,
     },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE.url}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl },
+    ],
   };
 
   return (
@@ -111,6 +130,10 @@ export default async function BlogPostPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>

@@ -122,6 +122,9 @@ export default function HormoneTherapyWomen() {
           </FadeIn>
         }
         disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for hormone therapy. Individual results vary. Not all patients are appropriate candidates. Always consult with a licensed healthcare provider before beginning any hormone treatment."
+        pageHref="/services/hormone-therapy-women"
+        pageName="Hormone Therapy for Women"
+        assessmentCta={{ label: "Hormone Health Self-Assessment", href: "/tools" }}
       />
 
       <section style={{ background: "var(--color-bg)", padding: "0 clamp(24px, 6vw, 80px) 80px" }}>

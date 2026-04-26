@@ -114,6 +114,9 @@ export default function HormoneTherapyMen() {
           </FadeIn>
         }
         disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for testosterone therapy. Individual results vary. Not all patients are appropriate candidates for hormone therapy. Testosterone therapy is not appropriate for men with active hormone-sensitive cancers or certain cardiovascular conditions without specialist coordination."
+        pageHref="/services/hormone-therapy-men"
+        pageName="Hormone Therapy for Men"
+        assessmentCta={{ label: "Hormone Health Self-Assessment", href: "/tools" }}
       />
 
       {menVideo ? (

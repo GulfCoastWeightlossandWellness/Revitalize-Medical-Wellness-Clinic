@@ -271,11 +271,29 @@ export default function Nav() {
             )}
           </div>
 
+          {/* Start Here — primary conversion CTA, visually distinct */}
+          <Link
+            href="/start-here"
+            style={{
+              fontSize: "0.6rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--color-gold)",
+              fontWeight: 600,
+              transition: "color 0.2s, border-color 0.2s",
+              border: "1px solid rgba(201,168,108,0.4)",
+              padding: "8px 16px",
+              borderRadius: "6px",
+              whiteSpace: "nowrap",
+            }}
+            className={`nav-link nav-start-here-link ${pathname === "/start-here" ? "active" : ""}`}
+          >
+            Start Here
+          </Link>
+
           {[
             { label: "About Travis", href: "/about" },
-            { label: "Latest Articles", href: "/blog" },
             { label: "Learning Library", href: "/hub" },
-            { label: "The Book", href: "/book" },
             { label: "Locations", href: "/locations" },
           ].map((item) => (
             <Link
@@ -372,15 +390,50 @@ export default function Nav() {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+            {/* Start Here — most prominent mobile nav item */}
+            <Link
+              href="/start-here"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontSize: "0.85rem",
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--color-gold)",
+                padding: "16px 0",
+                borderBottom: "1px solid rgba(201,168,108,0.2)",
+                fontWeight: 600,
+              }}
+              className="list-link-block"
+            >
+              Start Here — New Patients
+            </Link>
+
+            {/* Tools as second item */}
+            <Link
+              href="/tools"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontSize: "0.85rem",
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.65)",
+                padding: "14px 0",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+                fontWeight: 500,
+              }}
+              className={`list-link-block ${pathname === "/tools" ? "active-mobile-link" : ""}`}
+            >
+              Assessments & Tools
+            </Link>
+
             {[
               { label: "About Travis", href: "/about" },
-              { label: "Latest Articles", href: "/blog" },
               { label: "Learning Library", href: "/hub" },
+              { label: "Latest Articles", href: "/blog" },
               { label: "Locations", href: "/locations" },
               { label: "The Book", href: "/book" },
               { label: "Contact", href: "/contact" },
               { label: "Payment Plans", href: "/payment-plans" },
-              { label: "Tools & Assessments", href: "/tools" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -496,6 +549,7 @@ export default function Nav() {
         .nav-link:hover { color: rgba(255,255,255,0.9) !important; }
         .nav-dropdown-link:hover { color: rgba(255,255,255,0.88) !important; }
         .nav-cta-btn:hover { background: var(--color-gold-dark) !important; }
+        .nav-start-here-link:hover { color: #fff !important; border-color: rgba(201,168,108,0.8) !important; }
         .active-mobile-link { color: rgba(255,255,255,0.95) !important; }
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
