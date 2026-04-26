@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "VI Peel | Chemical Peel | Columbus & Warner Robins, GA",
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function VIPeel() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Skin Resurfacing — Columbus & Warner Robins, GA",
         headline: "VI Peel —<br /><em>Professional Chemical Peel</em>",
         subheadline: "Controlled chemical exfoliation that resurfaces the outer skin layers and reveals smoother, more even, more radiant skin underneath. Available for face and body.",
@@ -75,7 +77,14 @@ export default function VIPeel() {
           a: "Yes — Columbus at (762) 261-3880 and Warner Robins at (478) 366-1244.",
         },
       ]}
-      disclaimer="VI Peel results vary by individual and skin type. This is a cosmetic treatment with a recovery period. Strict adherence to aftercare instructions — including sun avoidance — is required. Information on this page is educational and does not constitute medical advice."
-    />
+        disclaimer="VI Peel results vary by individual and skin type. This is a cosmetic treatment with a recovery period. Strict adherence to aftercare instructions — including sun avoidance — is required. Information on this page is educational and does not constitute medical advice."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="VI Peel gallery"
+        title="Treatment context visuals"
+        description="This section is being replaced with custom clinical imagery matched to VI Peel consultation and recovery education."
+        plannedImageSet="P09 - Skin Resurfacing Supporting Image"
+      />
+    </>
   );
 }

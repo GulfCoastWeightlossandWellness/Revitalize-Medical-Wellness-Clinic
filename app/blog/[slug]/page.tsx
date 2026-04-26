@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { BLOG_POSTS, getBlogPost } from "@/lib/blog";
+import { getAllBlogPosts, getBlogPost } from "@/lib/blog";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+  return getAllBlogPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | Revitalize Aesthetics & Wellness`,
     description: post.description,
+    alternates: {
+      canonical: post.canonicalUrl || `${SITE.url}/blog/${post.slug}`,
+    },
   };
 }
 
@@ -79,7 +82,8 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const otherPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const allPosts = getAllBlogPosts();
+  const otherPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -127,6 +131,19 @@ export default async function BlogPostPage({ params }: Props) {
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 320px", gap: "64px", alignItems: "start" }} className="post-layout">
           <FadeIn>
             <article>
+              {post.mirroredFromHub && post.sourceHubSlug ? (
+                <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "14px 16px", marginBottom: "18px" }}>
+                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "6px" }}>
+                    Content Hub mirror
+                  </div>
+                  <p style={{ margin: 0, fontSize: "0.82rem", lineHeight: 1.7, color: "var(--color-muted)" }}>
+                    This post is mirrored from the patient Content Hub. For the canonical version, open{" "}
+                    <Link href={`/hub/${post.sourceHubSlug}`} style={{ color: "var(--color-teal)" }}>
+                      the full hub article
+                    </Link>.
+                  </p>
+                </div>
+              ) : null}
               {renderContent(post.content)}
 
               <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "24px 28px", marginTop: "48px" }}>

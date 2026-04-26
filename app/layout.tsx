@@ -114,8 +114,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body style={{ paddingTop: "var(--nav-height)" }}>
+        <a
+          href="#main-content"
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "8px",
+            background: "var(--color-gold)",
+            color: "#fff",
+            padding: "10px 14px",
+            borderRadius: "8px",
+            fontSize: "0.64rem",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            zIndex: 2000,
+          }}
+          className="skip-link"
+        >
+          Skip to main content
+        </a>
         <Nav />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <BookingBar />
       </body>

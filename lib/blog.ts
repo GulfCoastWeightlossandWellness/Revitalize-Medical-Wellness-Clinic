@@ -1,3 +1,5 @@
+import { getHubArticles } from "@/lib/contentHub";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,6 +11,9 @@ export interface BlogPost {
   relatedService: string;
   relatedServiceHref: string;
   content: string;
+  mirroredFromHub?: boolean;
+  canonicalUrl?: string;
+  sourceHubSlug?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -872,5 +877,72 @@ Sexual wellness concerns are systematically undertreated in conventional medicin
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((p) => p.slug === slug);
+  return getAllBlogPosts().find((p) => p.slug === slug);
+}
+
+function hubTopicFromTitle(title: string) {
+  const t = title.toLowerCase();
+  if (t.includes("hormone") || t.includes("bhrt") || t.includes("menopause") || t.includes("testosterone")) {
+    return {
+      category: "Hormone Therapy",
+      relatedService: "Hormone Therapy — Women",
+      relatedServiceHref: "/services/hormone-therapy-women",
+    };
+  }
+  if (t.includes("metabolic") || t.includes("creatine") || t.includes("gallbladder") || t.includes("vitamin")) {
+    return {
+      category: "Weight Loss",
+      relatedService: "Medical Weight Loss",
+      relatedServiceHref: "/services/medical-weight-loss",
+    };
+  }
+  return {
+    category: "Education",
+    relatedService: "Nutritional Counseling",
+    relatedServiceHref: "/services/nutritional-counseling",
+  };
+}
+
+export function getAllBlogPosts(): BlogPost[] {
+  const hubArticles = getHubArticles().slice(0, 3);
+  const mirrored: BlogPost[] = hubArticles.map((article) => {
+    const topic = hubTopicFromTitle(article.title);
+    const date = article.publishedAt ? article.publishedAt.slice(0, 10) : "2026-01-25";
+    return {
+      slug: `hub-${article.slug}`,
+      title: `${article.title} (From Content Hub)`,
+      description:
+        article.excerpt ||
+        "Originally published in the Revitalize Content Hub and mirrored here for blog readers.",
+      keyword: `revitalize content hub ${article.slug}`,
+      date,
+      readTime: "8 min read",
+      category: topic.category,
+      relatedService: topic.relatedService,
+      relatedServiceHref: topic.relatedServiceHref,
+      content: `
+This article is part of the Revitalize Content Hub and is mirrored in the blog for easier discovery.
+
+## Why this is in the blog
+
+We are consolidating Travis Woodley's educational content so patients can access it from one ecosystem while preserving source transparency and SEO clarity.
+
+## Article summary
+
+${article.excerpt || "Read the full article in the Content Hub for the complete version."}
+
+## Read the full version
+
+- View the complete article in the Content Hub: /hub/${article.slug}
+- Continue exploring patient resources in /hub/videos and /hub/resources
+      `.trim(),
+      mirroredFromHub: true,
+      canonicalUrl: `https://revitalizemedicalclinic.com/hub/${article.slug}`,
+      sourceHubSlug: article.slug,
+    };
+  });
+
+  const map = new Map<string, BlogPost>();
+  [...BLOG_POSTS, ...mirrored].forEach((post) => map.set(post.slug, post));
+  return [...map.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
 }

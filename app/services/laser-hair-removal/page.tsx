@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Laser Hair Removal | Motus AZ | Columbus & Warner Robins, GA",
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function LaserHairRemoval() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Aesthetics — Columbus & Warner Robins, GA",
         headline: "Laser Hair<br /><em>Removal</em>",
         subheadline: "Long-term hair reduction using the Motus AZ system — a modern laser platform capable of treating a wide range of skin tones with minimal discomfort.",
@@ -75,7 +77,14 @@ export default function LaserHairRemoval() {
           a: "Yes. Laser hair removal is available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
-      disclaimer="Laser hair removal results vary by individual, hair type, and skin tone. Long-term reduction is likely for most appropriate candidates; permanent elimination is not guaranteed. A series of sessions is required. Consultation required to confirm candidacy."
-    />
+        disclaimer="Laser hair removal results vary by individual, hair type, and skin tone. Long-term reduction is likely for most appropriate candidates; permanent elimination is not guaranteed. A series of sessions is required. Consultation required to confirm candidacy."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="Treatment equipment"
+        title="Motus AZ platform context"
+        description="This section is being replaced with custom device-context photography captured to match this treatment page."
+        plannedImageSet="P04 - Service Hero System (Skin Resurfacing and Device Context)"
+      />
+    </>
   );
 }

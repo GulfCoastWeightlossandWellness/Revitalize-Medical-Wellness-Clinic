@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import { BLOG_POSTS } from "@/lib/blog";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog | Hormone Health, Weight Loss & Aesthetics | Columbus GA",
   description: "Clinical articles on hormone therapy, medical weight loss, and aesthetic treatments from Travis Woodley, MSN, RN, CRNP — Revitalize Aesthetics & Wellness in Columbus and Warner Robins, GA.",
+  alternates: {
+    canonical: "https://revitalizemedicalclinic.com/blog",
+  },
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -20,8 +23,9 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export default function BlogPage() {
-  const featured = BLOG_POSTS[0];
-  const rest = BLOG_POSTS.slice(1);
+  const posts = getAllBlogPosts();
+  const featured = posts[0];
+  const rest = posts.slice(1);
 
   return (
     <>
@@ -32,13 +36,49 @@ export default function BlogPage() {
             The Revitalize Blog
           </h1>
           <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", maxWidth: "520px" }}>
-            Evidence-informed articles on hormone health, metabolic medicine, and aesthetic treatments — written by the clinical team, not a content agency.
+            Latest clinic articles and practical patient guidance on hormones, metabolic medicine,
+            and aesthetic treatments. For the complete long-form archive, use the Learning Library.
           </p>
         </div>
       </section>
 
       <section style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <FadeIn>
+            <div
+              style={{
+                background: "#fff",
+                border: "1px solid var(--color-divider)",
+                borderRadius: "6px",
+                padding: "18px 22px",
+                marginBottom: "22px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <div style={{ fontSize: "0.8rem", color: "var(--color-muted)" }}>
+                Looking for older content too? Visit the full Content Hub.
+              </div>
+              <Link
+                href="/hub"
+                style={{
+                  fontSize: "0.58rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#fff",
+                  background: "var(--color-teal)",
+                  borderRadius: "6px",
+                  padding: "10px 14px",
+                }}
+              >
+                Open Content Hub
+              </Link>
+            </div>
+          </FadeIn>
 
           <FadeIn>
             <Link href={`/blog/${featured.slug}`} style={{ display: "block", textDecoration: "none", marginBottom: "64px" }}>

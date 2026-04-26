@@ -37,6 +37,15 @@ const ECOSYSTEM_NODES = [
     color: "#6B5B4E",
   },
   {
+    name: "Revitalize Content Hub",
+    category: "Unified Content Library",
+    description: "A single internal destination for archived articles, embedded videos, and supporting resources gathered from across the ecosystem.",
+    href: "/hub",
+    external: false,
+    cta: "Open Hub",
+    color: "var(--color-teal-dark)",
+  },
+  {
     name: "You're Not Broken — You're Unbalanced",
     category: "The Book",
     description: "Travis Woodley's clinician-written guide to midlife metabolic health — for patients who have been told their labs are normal while feeling the opposite. Available on Amazon, Apple Books, Kobo, and all major platforms.",

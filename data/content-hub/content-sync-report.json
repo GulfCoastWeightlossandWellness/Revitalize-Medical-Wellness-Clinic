@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-04-26T03:32:03.462Z",
+  "source_files": {
+    "pages": "data/content-hub/pages.json",
+    "links": "data/content-hub/links.json",
+    "media_links": "data/content-hub/media-links.json",
+    "embed_links": "data/content-hub/embed-links.json",
+    "crawl_report": "data/content-hub/crawl-report.json"
+  },
+  "output_file": "data/content-hub/master-content-index.json",
+  "checksum": "4a0e9075",
+  "summary": {
+    "article_candidates": 4,
+    "video_candidates": 7,
+    "media_assets": 6033,
+    "pages_crawled_ok": 498,
+    "pages_errors": 2435
+  },
+  "delta": {
+    "article_candidates": 0,
+    "video_candidates": 4,
+    "media_assets": 0
+  },
+  "notes": [
+    "This refresh script is deterministic and idempotent for the same crawl artifacts.",
+    "Run a fresh crawl first if you need newly published upstream content."
+  ]
+}

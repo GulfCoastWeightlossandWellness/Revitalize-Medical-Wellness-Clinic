@@ -167,6 +167,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
               }}
+              className="nav-cta-link"
             >
               Book a Consultation
             </a>
@@ -178,6 +179,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 fontWeight: 500,
                 letterSpacing: "0.05em",
               }}
+              className="list-link-block"
             >
               Columbus: {SITE.phone.columbus}
             </a>
@@ -189,6 +191,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 fontWeight: 500,
                 letterSpacing: "0.05em",
               }}
+              className="list-link-block"
             >
               Warner Robins: {SITE.phone.warnerRobins}
             </a>
@@ -447,6 +450,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                         fontWeight: 500,
                         transition: "color 0.2s",
                       }}
+                      className="list-link-block"
                     >
                       {s.name} &#8594;
                     </Link>
@@ -478,7 +482,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                         color: "var(--color-muted)",
                         transition: "color 0.2s",
                       }}
-                      className="related-post-link"
+                      className="related-post-link list-link-block"
                     >
                       {p.title} &#8594;
                     </Link>
@@ -529,6 +533,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
               }}
+              className="nav-cta-link"
             >
               Book a Consultation
             </a>
@@ -544,6 +549,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
               }}
+              className="nav-cta-link"
             >
               Call Columbus
             </a>
@@ -559,6 +565,7 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
               }}
+              className="nav-cta-link"
             >
               Call Warner Robins
             </a>

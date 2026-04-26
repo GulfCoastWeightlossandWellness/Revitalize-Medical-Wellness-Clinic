@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { SITE } from "@/lib/constants";
 
 type NavItem = { label: string; href: string; external?: boolean };
@@ -58,15 +60,46 @@ const SERVICES_MENU: NavColumn[] = [
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesMenuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onPointerDown = (event: MouseEvent) => {
+      if (!servicesOpen) return;
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (servicesMenuRef.current && !servicesMenuRef.current.contains(target)) {
+        setServicesOpen(false);
+      }
+    };
+
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, [servicesOpen]);
 
   return (
     <>
@@ -99,6 +132,7 @@ export default function Nav() {
             padding: "4px 10px",
             flexShrink: 0,
           }}
+          className="tap-target"
           aria-label="Revitalize Aesthetics and Wellness home"
         >
           <Image
@@ -123,11 +157,11 @@ export default function Nav() {
         >
           {/* Services dropdown */}
           <div
+            ref={servicesMenuRef}
             style={{ position: "relative" }}
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
           >
             <button
+              type="button"
               style={{
                 fontSize: "0.6rem",
                 letterSpacing: "0.22em",
@@ -142,9 +176,13 @@ export default function Nav() {
                 alignItems: "center",
                 gap: "5px",
                 transition: "color 0.2s",
-                padding: "8px 0",
+                padding: "10px 2px",
               }}
-              className="nav-link"
+              className={`nav-link nav-text-link ${pathname.startsWith("/services") ? "active" : ""}`}
+              aria-expanded={servicesOpen}
+              aria-controls="desktop-services-menu"
+              aria-haspopup="menu"
+              onClick={() => setServicesOpen((open) => !open)}
             >
               Services
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.4, marginTop: 1 }}>
@@ -170,6 +208,7 @@ export default function Nav() {
                   minWidth: "760px",
                   boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
                 }}
+                id="desktop-services-menu"
               >
                 {SERVICES_MENU.map((col) => (
                   <div key={col.category}>
@@ -199,8 +238,9 @@ export default function Nav() {
                               transition: "color 0.2s",
                               lineHeight: 1.4,
                               fontWeight: 400,
+                              padding: "8px 2px",
                             }}
-                            className="nav-dropdown-link"
+                            className="nav-dropdown-link list-link-block"
                             onClick={() => setServicesOpen(false)}
                           >
                             {item.label} ↗
@@ -215,8 +255,9 @@ export default function Nav() {
                               transition: "color 0.2s",
                               lineHeight: 1.4,
                               fontWeight: 400,
+                              padding: "8px 2px",
                             }}
-                            className="nav-dropdown-link"
+                            className="nav-dropdown-link list-link-block"
                             onClick={() => setServicesOpen(false)}
                           >
                             {item.label}
@@ -232,7 +273,8 @@ export default function Nav() {
 
           {[
             { label: "About Travis", href: "/about" },
-            { label: "Blog", href: "/blog" },
+            { label: "Latest Articles", href: "/blog" },
+            { label: "Learning Library", href: "/hub" },
             { label: "The Book", href: "/book" },
             { label: "Locations", href: "/locations" },
           ].map((item) => (
@@ -247,7 +289,7 @@ export default function Nav() {
                 fontWeight: 500,
                 transition: "color 0.2s",
               }}
-              className="nav-link"
+              className={`nav-link nav-text-link ${pathname === item.href ? "active" : ""}`}
             >
               {item.label}
             </Link>
@@ -269,7 +311,7 @@ export default function Nav() {
               transition: "background 0.2s",
               whiteSpace: "nowrap",
             }}
-            className="nav-cta-btn"
+            className="nav-cta-btn nav-cta-link"
           >
             Book Now
           </a>
@@ -288,6 +330,8 @@ export default function Nav() {
             gap: "5px",
             padding: "8px",
           }}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-menu"
           aria-label="Toggle menu"
         >
           <span style={{
@@ -313,6 +357,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
+          id="mobile-nav-menu"
           style={{
             position: "fixed",
             top: "var(--nav-height)",
@@ -329,7 +374,8 @@ export default function Nav() {
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
             {[
               { label: "About Travis", href: "/about" },
-              { label: "Blog", href: "/blog" },
+              { label: "Latest Articles", href: "/blog" },
+              { label: "Learning Library", href: "/hub" },
               { label: "Locations", href: "/locations" },
               { label: "The Book", href: "/book" },
               { label: "Contact", href: "/contact" },
@@ -349,6 +395,7 @@ export default function Nav() {
                   borderBottom: "1px solid rgba(255,255,255,0.06)",
                   fontWeight: 500,
                 }}
+                className={`list-link-block ${pathname === item.href ? "active-mobile-link" : ""}`}
               >
                 {item.label}
               </Link>
@@ -377,9 +424,10 @@ export default function Nav() {
                       display: "block",
                       fontSize: "0.8rem",
                       color: "rgba(255,255,255,0.4)",
-                      padding: "10px 0",
+                      padding: "12px 0",
                       borderBottom: "1px solid rgba(255,255,255,0.04)",
                     }}
+                    className="list-link-block"
                   >
                     {item.label} ↗
                   </a>
@@ -392,9 +440,10 @@ export default function Nav() {
                       display: "block",
                       fontSize: "0.8rem",
                       color: "rgba(255,255,255,0.4)",
-                      padding: "10px 0",
+                      padding: "12px 0",
                       borderBottom: "1px solid rgba(255,255,255,0.04)",
                     }}
+                    className="list-link-block"
                   >
                     {item.label}
                   </Link>
@@ -447,6 +496,7 @@ export default function Nav() {
         .nav-link:hover { color: rgba(255,255,255,0.9) !important; }
         .nav-dropdown-link:hover { color: rgba(255,255,255,0.88) !important; }
         .nav-cta-btn:hover { background: var(--color-gold-dark) !important; }
+        .active-mobile-link { color: rgba(255,255,255,0.95) !important; }
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }

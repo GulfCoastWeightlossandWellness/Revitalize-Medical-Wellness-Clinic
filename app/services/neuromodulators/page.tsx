@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Neuromodulator Treatments | Botox | Columbus & Warner Robins, GA",
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function Neuromodulators() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Aesthetics — Columbus & Warner Robins, GA",
         headline: "Neuromodulator<br /><em>Treatments</em>",
         subheadline: "Wrinkle-relaxing injections delivered by a licensed clinical team with a conservative, face-mapped approach. The goal is softer lines and natural movement — not a frozen appearance.",
@@ -86,7 +88,14 @@ export default function Neuromodulators() {
           a: "Before: avoid blood thinners including aspirin, ibuprofen, fish oil, and vitamin E for several days if possible, and avoid alcohol the day before. After: avoid lying flat for four hours, avoid rubbing the treated areas, avoid intense heat (saunas, hot yoga) and strenuous exercise for the day. We will provide full written aftercare instructions.",
         },
       ]}
-      disclaimer="Neuromodulator treatments are performed by licensed clinical providers. Results are temporary and vary by individual. This page uses the term 'neuromodulator' to refer to wrinkle-relaxing injectable treatments. Specific product selection is determined at consultation. Information on this page is educational and does not constitute medical advice."
-    />
+        disclaimer="Neuromodulator treatments are performed by licensed clinical providers. Results are temporary and vary by individual. This page uses the term 'neuromodulator' to refer to wrinkle-relaxing injectable treatments. Specific product selection is determined at consultation. Information on this page is educational and does not constitute medical advice."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="Treatment visual"
+        title="Neuromodulator treatment context"
+        description="This section is being replaced with custom injectables imagery showing assessment-first, natural-result treatment planning."
+        plannedImageSet="P08 - Injectables Supporting Image"
+      />
+    </>
   );
 }

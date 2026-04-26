@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "DE|RIVE Hair Restoration | Columbus & Warner Robins, GA",
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function DeriveHairRestoration() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Hair Restoration — Columbus & Warner Robins, GA",
         headline: "DE|RIVE Hair<br /><em>Restoration</em>",
         subheadline: "A 100% natural, hormone-free hair wellness system using plant-based EXO|E Technology. In-office treatment combined with a daily at-home protocol for progressive, lasting improvement.",
@@ -70,7 +72,14 @@ export default function DeriveHairRestoration() {
           a: "Yes — Columbus at (762) 261-3880 and Warner Robins at (478) 366-1244.",
         },
       ]}
-      disclaimer="DE|RIVE hair restoration results vary by individual. This is a cosmetic treatment, not a medical one. Individual responses to the protocol differ. Results are not guaranteed. Information on this page is educational and does not constitute medical advice."
-    />
+        disclaimer="DE|RIVE hair restoration results vary by individual. This is a cosmetic treatment, not a medical one. Individual responses to the protocol differ. Results are not guaranteed. Information on this page is educational and does not constitute medical advice."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="Treatment visuals"
+        title="DE|RIVE treatment context"
+        description="This section is being replaced with custom treatment-specific photography that reflects how care is actually delivered."
+        plannedImageSet="P10 - Hair Restoration Supporting Image"
+      />
+    </>
   );
 }

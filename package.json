@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "hub:import": "node ./scripts/content-hub-import.mjs",
+    "hub:refresh": "node ./scripts/content-hub-refresh.mjs",
+    "hub:sync": "npm run hub:import && npm run hub:refresh"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
     "framer-motion": "^12.38.0",
     "next": "16.2.4",
     "next-seo": "^7.2.0",

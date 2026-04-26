@@ -1485,6 +1485,45 @@ export default function HomePage() {
         <style>{`.shop-section-grid { grid-template-columns: 1fr 1fr; } @media (max-width: 768px) { .shop-section-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
+      {/* ── CONTENT HUB ENTRY ── */}
+      <section style={{ background: "#fff", padding: "66px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1080px", margin: "0 auto", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "26px", alignItems: "center" }} className="home-hub-grid">
+          <FadeIn>
+            <div>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>New: unified content hub</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.7rem, 3vw, 2.5rem)", fontWeight: 400, lineHeight: 1.2, color: "var(--color-ink)", marginBottom: "12px" }}>
+                All education in one place
+              </h2>
+              <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "18px" }}>
+                Browse long-form articles, embedded videos, and key resources through one internal
+                hub instead of scattered external links.
+              </p>
+              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                <Link href="/hub" style={{ background: "var(--color-teal)", color: "#fff", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                  Open Hub
+                </Link>
+                <Link href="/hub/articles" style={{ border: "1px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 20px", borderRadius: "6px", fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                  Read Articles
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.08}>
+            <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "20px 22px" }}>
+              <div style={{ fontSize: "0.56rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-teal-light)", marginBottom: "10px" }}>
+                Quick paths
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                <Link href="/hub/videos" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Watch videos</Link>
+                <Link href="/hub/resources" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Explore resources</Link>
+                <Link href="/hub/index.json" style={{ fontSize: "0.83rem", color: "var(--color-teal)" }}>Developer index (JSON)</Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+        <style>{`.home-hub-grid { grid-template-columns: 1.2fr 1fr; } @media (max-width: 900px) { .home-hub-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
       {/* ── FINAL CTA ── */}
       <section
         style={{

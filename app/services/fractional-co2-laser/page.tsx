@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "PhantomClear Fractional CO2 Laser | Columbus & Warner Robins, GA",
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function FractionalCO2Laser() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Skin Resurfacing — Columbus & Warner Robins, GA",
         headline: "PhantomClear<br /><em>Fractional CO2 Laser</em>",
         subheadline: "Ablative fractional CO2 resurfacing at 10,600 nm. One of the most clinically effective options available for skin texture, tone, and fine line improvement in appropriate candidates.",
@@ -78,7 +80,14 @@ export default function FractionalCO2Laser() {
           a: "Yes. PhantomClear fractional CO2 laser is available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
-      disclaimer="Fractional CO2 laser resurfacing is an ablative procedure with a recovery period. Individual results vary. This treatment is not appropriate for all patients — candidacy is determined at consultation. Strict sun protection during and after healing is required. Information on this page is educational and does not constitute medical advice."
-    />
+        disclaimer="Fractional CO2 laser resurfacing is an ablative procedure with a recovery period. Individual results vary. This treatment is not appropriate for all patients — candidacy is determined at consultation. Strict sun protection during and after healing is required. Information on this page is educational and does not constitute medical advice."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="CO2 visuals"
+        title="Resurfacing treatment context"
+        description="This section is being replaced with custom procedural-context imagery for fractional CO2 treatment planning and recovery education."
+        plannedImageSet="P09 - Skin Resurfacing Supporting Image"
+      />
+    </>
   );
 }

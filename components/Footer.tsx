@@ -19,7 +19,8 @@ const FOOTER_LINKS = [
   { label: "About Travis", href: "/about" },
   { label: "Our Team", href: "/team" },
   { label: "Locations", href: "/locations" },
-  { label: "Blog", href: "/blog" },
+  { label: "Latest Articles", href: "/blog" },
+  { label: "Learning Library", href: "/hub" },
   { label: "The Book", href: "/book" },
   { label: "Tools & Assessments", href: "/tools" },
   { label: "Ecosystem", href: "/ecosystem" },
@@ -59,6 +60,7 @@ export default function Footer() {
                 padding: "8px 12px",
                 marginBottom: "16px",
               }}
+              className="tap-target"
               aria-label="Revitalize Aesthetics and Wellness home"
             >
               <Image
@@ -95,21 +97,21 @@ export default function Footer() {
               <a
                 href={SITE.phone.columbusHref}
                 style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", transition: "color 0.2s" }}
-                className="footer-link"
+                className="footer-link list-link-block"
               >
                 Columbus: {SITE.phone.columbus}
               </a>
               <a
                 href={SITE.phone.warnerRobinsHref}
                 style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", transition: "color 0.2s" }}
-                className="footer-link"
+                className="footer-link list-link-block"
               >
                 Warner Robins: {SITE.phone.warnerRobins}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
                 style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", transition: "color 0.2s" }}
-                className="footer-link"
+                className="footer-link list-link-block"
               >
                 {SITE.email}
               </a>
@@ -131,7 +133,7 @@ export default function Footer() {
                     fontSize: "0.56rem",
                     letterSpacing: "0.16em",
                     textTransform: "uppercase",
-                    padding: "6px 12px",
+                    padding: "10px 12px",
                     border: "1px solid rgba(255,255,255,0.12)",
                     color: "rgba(255,255,255,0.38)",
                     borderRadius: "4px",
@@ -166,7 +168,7 @@ export default function Footer() {
                   key={s.href}
                   href={s.href}
                   style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }}
-                  className="footer-link"
+                  className="footer-link list-link-block"
                 >
                   {s.label}
                 </Link>
@@ -194,7 +196,7 @@ export default function Footer() {
                   key={l.href}
                   href={l.href}
                   style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }}
-                  className="footer-link"
+                  className="footer-link list-link-block"
                 >
                   {l.label}
                 </Link>
@@ -231,7 +233,7 @@ export default function Footer() {
                   target={l.href.startsWith("http") ? "_blank" : undefined}
                   rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.38)", transition: "color 0.2s" }}
-                  className="footer-link"
+                  className="footer-link list-link-block"
                 >
                   {l.label}
                 </a>
@@ -271,7 +273,7 @@ export default function Footer() {
                 key={l.label}
                 href={l.href}
                 style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.2)", transition: "color 0.2s" }}
-                className="footer-link"
+                className="footer-link list-link-block"
               >
                 {l.label}
               </Link>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import ServiceImagePlaceholder from "@/components/ServiceImagePlaceholder";
 
 export const metadata: Metadata = {
   title: "Fat Dissolving Injections | Submental | Columbus & Warner Robins, GA",
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function FatDissolvingInjections() {
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Wellness — Columbus & Warner Robins, GA",
         headline: "Fat Dissolving<br /><em>Injections</em>",
         subheadline: "FDA-recognized deoxycholic acid injections for localized submental fullness — the 'double chin.' Non-surgical, with gradual, natural-looking results over a series of sessions.",
@@ -68,7 +70,14 @@ export default function FatDissolvingInjections() {
           a: "Yes — Columbus at (762) 261-3880 and Warner Robins at (478) 366-1244.",
         },
       ]}
-      disclaimer="Deoxycholic acid injections are FDA-recognized for submental fullness only. This is not a weight loss treatment. Individual results vary. Significant post-treatment swelling and bruising are expected. Information on this page is educational and does not constitute medical advice."
-    />
+        disclaimer="Deoxycholic acid injections are FDA-recognized for submental fullness only. This is not a weight loss treatment. Individual results vary. Significant post-treatment swelling and bruising are expected. Information on this page is educational and does not constitute medical advice."
+      />
+      <ServiceImagePlaceholder
+        eyebrow="Treatment visuals"
+        title="Submental fat reduction context"
+        description="This section is being replaced with custom, page-specific clinical visuals aligned to candidacy and treatment expectations."
+        plannedImageSet="P04 - Service Hero System (Injectables and Wellness Context)"
+      />
+    </>
   );
 }

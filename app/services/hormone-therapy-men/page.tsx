@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
+import { getHubVideos } from "@/lib/contentHub";
 
 export const metadata: Metadata = {
   title: "Hormone Therapy for Men | Testosterone Optimization | Columbus & Warner Robins, GA",
@@ -8,9 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function HormoneTherapyMen() {
+  const menVideo = getHubVideos().find((video) =>
+    /testosterone|bhrt/i.test(video.title)
+  );
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Men's Health — Columbus & Warner Robins, GA",
         headline: "Hormone Therapy<br /><em>for Men</em>",
         subheadline: "Lab-guided testosterone optimization using the Biote pellet method. If your energy, drive, or body composition has shifted in ways that feel beyond explanation, your hormones may be part of the answer.",
@@ -83,7 +89,35 @@ export default function HormoneTherapyMen() {
           a: "Yes. Testosterone pellet therapy and men's hormone optimization are available at both our Columbus, GA location — (762) 261-3880 — and our Warner Robins, GA location — (478) 366-1244.",
         },
       ]}
-      disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for testosterone therapy. Individual results vary. Not all patients are appropriate candidates for hormone therapy. Testosterone therapy is not appropriate for men with active hormone-sensitive cancers or certain cardiovascular conditions without specialist coordination."
-    />
+        disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for testosterone therapy. Individual results vary. Not all patients are appropriate candidates for hormone therapy. Testosterone therapy is not appropriate for men with active hormone-sensitive cancers or certain cardiovascular conditions without specialist coordination."
+      />
+
+      {menVideo ? (
+        <section style={{ background: "var(--color-bg)", padding: "0 clamp(24px, 6vw, 80px) 80px" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <FadeIn>
+              <div style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "8px", overflow: "hidden" }}>
+                <div style={{ padding: "18px 18px 0" }}>
+                  <div className="eyebrow" style={{ marginBottom: "10px" }}>Men's hormone education video</div>
+                </div>
+                <iframe
+                  src={menVideo.embedUrl}
+                  title={menVideo.title}
+                  loading="lazy"
+                  style={{ width: "100%", aspectRatio: "16 / 9", border: "none", background: "#000" }}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+                <div style={{ padding: "14px 16px 18px" }}>
+                  <h3 style={{ fontSize: "0.88rem", lineHeight: 1.45, color: "var(--color-ink)", margin: 0 }}>
+                    {menVideo.title}
+                  </h3>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      ) : null}
+    </>
   );
 }

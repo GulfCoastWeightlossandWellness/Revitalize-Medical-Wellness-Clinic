@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
+import FadeIn from "@/components/FadeIn";
+import { getHubVideos } from "@/lib/contentHub";
 
 export const metadata: Metadata = {
   title: "Hormone Therapy for Women | Biote Pellets | Columbus & Warner Robins, GA",
@@ -8,9 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function HormoneTherapyWomen() {
+  const womenVideo = getHubVideos().find((video) =>
+    /estrogen|menopause/i.test(video.title)
+  );
   return (
-    <ServicePage
-      hero={{
+    <>
+      <ServicePage
+        hero={{
         eyebrow: "Women's Health — Columbus & Warner Robins, GA",
         headline: "Hormone Therapy<br /><em>for Women</em>",
         subheadline: "Bioidentical hormone optimization for perimenopause, menopause, and mid-life imbalance. Lab-guided, clinician-supervised, and delivered via the Biote pellet method at Revitalize in Columbus and Warner Robins, Georgia.",
@@ -91,7 +97,45 @@ export default function HormoneTherapyWomen() {
           a: "This is very common, particularly in the first pellet cycle. Your initial dose is calibrated to your labs and symptom severity, but every patient metabolizes hormones differently. If your follow-up labs or symptoms suggest the dose needs adjustment, we correct this at your next insertion. Getting the dose right is a process, and we set this expectation clearly upfront.",
         },
       ]}
-      disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for hormone therapy. Individual results vary. Not all patients are appropriate candidates. Always consult with a licensed healthcare provider before beginning any hormone treatment."
-    />
+        disclaimer="Medical information on this page is educational and does not constitute medical advice. Consultation and lab work are required to determine candidacy for hormone therapy. Individual results vary. Not all patients are appropriate candidates. Always consult with a licensed healthcare provider before beginning any hormone treatment."
+      />
+
+      <section style={{ background: "var(--color-bg)", padding: "0 clamp(24px, 6vw, 80px) 80px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "10px", padding: "30px 28px" }}>
+              <div className="eyebrow" style={{ marginBottom: "12px" }}>Women's hormone education video</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.5vw, 2.1rem)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "10px" }}>
+                Menopause and estrogen-focused education
+              </h2>
+              <p style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "16px" }}>
+                This video is selected specifically for women evaluating hormone support around
+                menopause and estrogen changes.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div style={{ marginTop: "14px", display: "grid", gridTemplateColumns: "1fr", gap: "14px" }}>
+            {womenVideo ? (
+              <FadeIn key={womenVideo.id}>
+                <article style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "8px", overflow: "hidden" }}>
+                  <iframe
+                    src={womenVideo.embedUrl}
+                    title={womenVideo.title}
+                    loading="lazy"
+                    style={{ width: "100%", aspectRatio: "16 / 9", border: "none", background: "#000" }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  />
+                  <div style={{ padding: "14px 16px" }}>
+                    <h3 style={{ fontSize: "0.88rem", lineHeight: 1.45, color: "var(--color-ink)", margin: 0 }}>{womenVideo.title}</h3>
+                  </div>
+                </article>
+              </FadeIn>
+            ) : null}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
