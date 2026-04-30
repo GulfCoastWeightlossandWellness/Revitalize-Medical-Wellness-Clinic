@@ -1056,7 +1056,6 @@ export default function HomePage() {
           <FadeIn>
             <div style={{ textAlign: "center", marginBottom: "60px" }}>
               <div className="eyebrow-white" style={{ marginBottom: "16px", justifyContent: "center" }}>
-                <span style={{ display: "none" }}>eyebrow-before</span>
                 Patient experiences
               </div>
               <h2
@@ -1144,7 +1143,7 @@ export default function HomePage() {
                       color: "rgba(255,255,255,0.3)",
                     }}
                   >
-                    {t.author} — {t.location} · {t.service}
+                    {t.author} — {t.location}
                   </div>
                 </div>
               </FadeIn>

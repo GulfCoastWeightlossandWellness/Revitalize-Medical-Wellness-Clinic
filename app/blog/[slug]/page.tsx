@@ -36,10 +36,12 @@ function applyServiceLinks(html: string, serviceLinks?: Record<string, string>):
     const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const isExternal = href.startsWith("http");
     const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
-    result = result.replace(
-      new RegExp(escaped, "g"),
-      `<a href="${href}" style="color:var(--color-teal);text-decoration:underline;"${target}>${phrase}</a>`
-    );
+    const linkTag = `<a href="${href}" style="color:var(--color-teal);text-decoration:underline;"${target}>${phrase}</a>`;
+    // Split by existing anchor tags so we only replace text nodes, not text already inside <a>
+    const parts = result.split(/(<a\b[^>]*>[\s\S]*?<\/a>)/);
+    result = parts.map((part, i) =>
+      i % 2 === 0 ? part.replace(new RegExp(escaped, "g"), linkTag) : part
+    ).join("");
   }
   return result;
 }
@@ -216,7 +218,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </>
               ) : (() => {
                 const elements = renderContent(post.content, post.serviceLinks).filter(Boolean);
-                const splitAt = Math.min(3, Math.floor(elements.length / 2));
+                const splitAt = Math.floor(elements.length / 2);
                 return (
                   <>
                     {post.tableOfContents && post.tableOfContents.length > 0 ? (
