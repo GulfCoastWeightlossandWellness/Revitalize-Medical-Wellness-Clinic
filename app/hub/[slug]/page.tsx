@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE } from "@/lib/constants";
 import { getHubItemBySlug, getHubItems } from "@/lib/contentHub";
+import { getMirroredBlogSlugByHubSlug } from "@/lib/blog";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -16,9 +17,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getHubItemBySlug(slug);
   if (!item) return { title: "Content Not Found | Hub" };
+  const mirroredBlogSlug = getMirroredBlogSlugByHubSlug(slug);
+  const canonicalUrl = mirroredBlogSlug
+    ? `${SITE.url}/blog/${mirroredBlogSlug}`
+    : `${SITE.url}/hub/${slug}`;
   return {
     title: `${item.title} | Learning Library | Revitalize`,
     description: (item.kind === "article" && item.excerpt) ? item.excerpt.slice(0, 155) : `Patient education resource from the Revitalize Learning Library: ${item.title}`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 

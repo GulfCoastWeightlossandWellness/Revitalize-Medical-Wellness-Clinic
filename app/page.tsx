@@ -1107,7 +1107,7 @@ export default function HomePage() {
                       marginBottom: "20px",
                     }}
                   >
-                    ★★★★★
+                    5.0 rating
                   </div>
                   <blockquote
                     style={{

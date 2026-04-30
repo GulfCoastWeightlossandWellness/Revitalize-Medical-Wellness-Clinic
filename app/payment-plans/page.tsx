@@ -301,7 +301,7 @@ export default function PaymentPlansPage() {
                             flexShrink: 0,
                           }}
                         >
-                          ✓
+                          —
                         </span>
                         {h}
                       </li>

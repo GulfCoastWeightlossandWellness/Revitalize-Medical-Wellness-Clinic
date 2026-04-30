@@ -344,7 +344,7 @@ export default function LearningLibraryPage() {
                 "Clinical supplement guidance",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: "0.84rem", color: "rgba(255,255,255,0.55)" }}>
-                  <span style={{ color: "var(--color-teal-light)", flexShrink: 0 }}>✓</span>
+                  <span style={{ color: "var(--color-teal-light)", flexShrink: 0 }}>—</span>
                   {item}
                 </div>
               ))}

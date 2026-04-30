@@ -38,7 +38,7 @@ const SERVICES_AT_LOCATION = [
 const FAQS = [
   {
     q: "Where is the Columbus clinic located?",
-    a: "The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. It is conveniently accessible from Phenix City, Fort Benning, and surrounding areas.",
+    a: "The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. It is conveniently accessible from Phenix City, Fort Moore (formerly Fort Benning), and surrounding areas.",
   },
   {
     q: "How do I book an appointment at the Columbus location?",
@@ -53,8 +53,8 @@ const FAQS = [
     a: "Travis Woodley, MSN, RN, CRNP, is the founder and primary clinician. He is a Platinum-certified Biote provider with 17+ years of clinical experience and oversees care at both the Columbus and Warner Robins locations.",
   },
   {
-    q: "Does Revitalize serve patients from Phenix City or Fort Benning?",
-    a: "Yes. The Columbus clinic is located near Phenix City, AL and Fort Benning and the surrounding military community, and welcomes patients from both communities.",
+    q: "Does Revitalize serve patients from Phenix City or Fort Moore (formerly Fort Benning)?",
+    a: "Yes. The Columbus clinic is located near Phenix City, AL and Fort Moore (formerly Fort Benning) and the surrounding military community, and welcomes patients from both communities.",
   },
   {
     q: "What should I bring to my first appointment?",
@@ -87,7 +87,7 @@ const columbusSchema = {
         SITE.social.instagram,
       ],
       medicalSpecialty: "Hormone Therapy, Medical Weight Loss, Aesthetic Medicine",
-      areaServed: ["Columbus, GA", "Phenix City, AL", "Fort Benning, GA", "Muscogee County, GA"],
+      areaServed: ["Columbus, GA", "Phenix City, AL", "Fort Moore (formerly Fort Benning), GA", "Muscogee County, GA"],
       priceRange: "$$",
     },
     {
@@ -378,7 +378,7 @@ export default function ColumbusLocationPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)" }}>
-                The Columbus clinic is the primary Revitalize location, offering a full range of services including hormone therapy, Biote bioidentical hormone pellets, medical weight loss, and aesthetic treatments. Travis Woodley and the clinical team serve patients from Columbus, Phenix City, Fort Benning, and the broader Muscogee County area.
+                The Columbus clinic is the primary Revitalize location, offering a full range of services including hormone therapy, Biote bioidentical hormone pellets, medical weight loss, and aesthetic treatments. Travis Woodley and the clinical team serve patients from Columbus, Phenix City, Fort Moore (formerly Fort Benning), and the broader Muscogee County area.
               </p>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)" }}>
                 Care at Revitalize is relationship-based. Every treatment plan begins with a clinical evaluation and is tailored to the individual. Whether you are exploring hormone optimization for the first time or continuing an existing wellness plan, the Columbus team prioritizes understanding your goals before recommending any treatment.
@@ -583,7 +583,7 @@ export default function ColumbusLocationPage() {
                 Serving Columbus and surrounding communities
               </h3>
               <p style={{ fontSize: "0.88rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", marginBottom: "20px" }}>
-                The Columbus clinic welcomes patients from Columbus, Phenix City (AL), Fort Benning,
+                The Columbus clinic welcomes patients from Columbus, Phenix City (AL), Fort Moore (formerly Fort Benning),
                 Midland, Ellerslie, Pine Mountain, Hamilton, and the greater Muscogee County area.
               </p>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>

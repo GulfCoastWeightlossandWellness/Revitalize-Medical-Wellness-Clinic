@@ -1770,7 +1770,7 @@ Hormone replacement therapy is not a quick fix — it is a clinical relationship
   {
     slug: "medical-weight-loss-columbus-ga",
     title: "Medical Weight Loss in Columbus, Georgia — What to Look For in a Program",
-    description: "A guide for patients in Columbus, Phenix City, and Fort Benning evaluating medical weight loss programs. What distinguishes clinical programs from commercial diets, and what to expect at Revitalize.",
+    description: "A guide for patients in Columbus, Phenix City, and Fort Moore (formerly Fort Benning) evaluating medical weight loss programs. What distinguishes clinical programs from commercial diets, and what to expect at Revitalize.",
     keyword: "medical weight loss Columbus Georgia GLP-1 semaglutide program",
     date: "2026-04-22",
     readTime: "8 min read",
@@ -1778,7 +1778,7 @@ Hormone replacement therapy is not a quick fix — it is a clinical relationship
     relatedService: "Medical Weight Loss",
     relatedServiceHref: "/services/medical-weight-loss",
     content: `
-If you are searching for medical weight loss in Columbus, Georgia — or in Phenix City, Fort Benning, or the surrounding area — you have probably encountered a range of options: commercial diet programs, online prescription services for GLP-1 medications, local med spas with weight loss menus, and clinics that blend clinical medicine with wellness programming. Knowing what to look for — and what distinguishes evidence-based medical weight loss from a prescription with no clinical framework — is the starting point.
+If you are searching for medical weight loss in Columbus, Georgia — or in Phenix City, Fort Moore (formerly Fort Benning), or the surrounding area — you have probably encountered a range of options: commercial diet programs, online prescription services for GLP-1 medications, local med spas with weight loss menus, and clinics that blend clinical medicine with wellness programming. Knowing what to look for — and what distinguishes evidence-based medical weight loss from a prescription with no clinical framework — is the starting point.
 
 ## What makes a weight loss program "medical"
 
@@ -1820,7 +1820,7 @@ What monitoring is included — lab follow-up, clinical visits, dose adjustment 
 
 The program at Revitalize Columbus is led by Travis Woodley, MSN, RN, CRNP — a nurse practitioner with 17+ years of clinical experience in high-acuity medicine. The program begins with an in-person evaluation and comprehensive lab work. GLP-1 medications are prescribed where clinically appropriate after a complete metabolic assessment — not as the starting point.
 
-The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909, and is convenient for patients in Columbus, Phenix City, Fort Benning, and surrounding communities. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880.
+The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909, and is convenient for patients in Columbus, Phenix City, Fort Moore (formerly Fort Benning), and surrounding communities. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880.
 
 Most patients in the structured program see meaningful early progress in the first six to eight weeks — both on the scale and in lab values, including insulin and inflammatory markers. Body composition changes — particularly visceral fat reduction — typically become measurable over three to six months of sustained treatment. The program does not end when the medication is issued; it continues through monitoring, adjustment, and the transition off medication with the metabolic foundation to sustain results.
     `.trim(),
@@ -1873,7 +1873,7 @@ At the Columbus location, a first neuromodulator appointment includes a clinical
 
 Treatment is conservative by philosophy — using the minimum effective dose to achieve the desired result, with room for adjustment at a follow-up visit rather than overcorrecting on the first treatment. Most patients return to normal activities the same day.
 
-The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880. The clinic serves patients in Columbus, Phenix City, Fort Benning, and surrounding communities.
+The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880. The clinic serves patients in Columbus, Phenix City, Fort Moore (formerly Fort Benning), and surrounding communities.
 
 ## Realistic expectations
 
@@ -1935,7 +1935,7 @@ export function getAllBlogPosts(): BlogPost[] {
 ${article.excerpt || "Read the full article in the Learning Library for the complete version."}
       `.trim(),
       mirroredFromHub: true,
-      canonicalUrl: `https://revitalizemedicalclinic.com/hub/${article.slug}`,
+      canonicalUrl: `https://revitalizemedicalclinic.com/blog/hub-${article.slug}`,
       sourceHubSlug: article.slug,
     };
   });
@@ -1943,4 +1943,11 @@ ${article.excerpt || "Read the full article in the Learning Library for the comp
   const map = new Map<string, BlogPost>();
   [...BLOG_POSTS, ...mirrored].forEach((post) => map.set(post.slug, post));
   return [...map.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getMirroredBlogSlugByHubSlug(hubSlug: string): string | undefined {
+  const mirrored = getAllBlogPosts().find(
+    (post) => post.mirroredFromHub && post.sourceHubSlug === hubSlug
+  );
+  return mirrored?.slug;
 }

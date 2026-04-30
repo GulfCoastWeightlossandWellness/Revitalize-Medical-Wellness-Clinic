@@ -86,7 +86,7 @@ export const SITE = {
     columbusReviewLink: "https://www.google.com/maps/place/Revitalize+Aesthetics+%26+Wellness/@32.5465488,-84.8745532,17z/data=!4m8!3m7!1s0x88f33524e3d94a4f:0x3fb938ed8f0a8bf3!8m2!3d32.5465488!4d-84.8745532!9m1!1b1!16s%2Fg%2F11y2fkzlx6?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D",
     warnerRobinsReviewLink: "https://www.google.com/maps/place/Revitalize+Aesthetics+%26+Wellness/@32.553819,-83.665674,17z/data=!4m8!3m7!1s0x88f3e7448a99f5ed:0x9aeca12dc32998d2!8m2!3d32.553819!4d-83.665674!9m1!1b1!16s%2Fg%2F11kk1shkrq?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D",
     // Verified from Google search results Apr 26 2026.
-    // Columbus: 4.9 ★ · 76 reviews. Warner Robins: 4.9 ★ · 34 reviews.
+    // Columbus: 4.9 rating · 76 reviews. Warner Robins: 4.9 rating · 34 reviews.
     verifiedCount: "76+" as string | null,
     verifiedRating: "4.9" as string | null,
   },
