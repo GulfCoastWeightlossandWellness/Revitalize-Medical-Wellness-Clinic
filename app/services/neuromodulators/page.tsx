@@ -56,8 +56,10 @@ export default function Neuromodulators() {
         { name: "PhantomClear CO2 Laser", href: "/services/fractional-co2-laser" },
       ]}
       relatedPosts={[
+        { title: "Botox vs. Dysport — An Honest Clinical Comparison", href: "/compare/botox-vs-dysport" },
         { title: "The Difference Between Botox and Dermal Fillers", href: "/blog/botox-vs-dermal-fillers" },
         { title: "How to Choose a Medical Spa in Columbus GA", href: "/blog/how-to-choose-medical-spa-columbus-ga" },
+        { title: "How to Choose a Botox Provider in Columbus, GA", href: "/blog/how-to-choose-botox-provider-columbus-ga" },
       ]}
       faqs={[
         {

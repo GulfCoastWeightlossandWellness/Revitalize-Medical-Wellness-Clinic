@@ -87,13 +87,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  // Blog post routes
-  const blogEntries: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
-    url: post.canonicalUrl ?? `${BASE}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date).toISOString() : now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  // Blog post routes — exclude mirrored hub articles (already emitted by hubEntries)
+  const blogEntries: MetadataRoute.Sitemap = getAllBlogPosts()
+    .filter((post) => !post.mirroredFromHub)
+    .map((post) => ({
+      url: `${BASE}/blog/${post.slug}`,
+      lastModified: post.date ? new Date(post.date).toISOString() : now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
 
   // Hub item routes (articles + videos — both served by /hub/[slug])
   const hubEntries: MetadataRoute.Sitemap = getHubItems().map((item) => ({

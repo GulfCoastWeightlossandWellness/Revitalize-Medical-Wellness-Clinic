@@ -162,10 +162,58 @@ const TESTIMONIALS = [
   },
 ];
 
+const aggregateRatingColumbus = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Revitalize Aesthetics & Wellness — Columbus",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "76",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "6901 Ray Wright Way, Suite I",
+    addressLocality: "Columbus",
+    addressRegion: "GA",
+    postalCode: "31909",
+  },
+};
+
+const aggregateRatingWarnerRobins = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Revitalize Aesthetics & Wellness — Warner Robins",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "76",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "840 SR 96, Suite 3300",
+    addressLocality: "Warner Robins",
+    addressRegion: "GA",
+    postalCode: "31088",
+  },
+};
+
 export default function HomePage() {
   const featuredPosts = BLOG_POSTS.slice(0, 3);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingColumbus) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingWarnerRobins) }}
+      />
       {/* ── HERO ── */}
       <section
         style={{
@@ -1331,16 +1379,13 @@ export default function HomePage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
-                { icon: "🌡️", title: "Hormone Health Assessment", desc: "Answer questions about your symptoms to understand if hormone optimization may be relevant to you.", href: "/tools" },
-                { icon: "🔍", title: "Treatment Finder", desc: "Select your top concerns and see which services are designed to address them.", href: "/tools" },
-                { icon: "🗺️", title: "New Patient Guide", desc: "Not sure what to expect? The Start Here page walks you through the first visit process.", href: "/start-here" },
+                { title: "Hormone Health Assessment", desc: "Answer questions about your symptoms to understand if hormone optimization may be relevant to you.", href: "/tools" },
+                { title: "Treatment Finder", desc: "Select your top concerns and see which services are designed to address them.", href: "/tools" },
+                { title: "New Patient Guide", desc: "Not sure what to expect? The Start Here page walks you through the first visit process.", href: "/start-here" },
               ].map((tool) => (
-                <Link key={tool.title} href={tool.href} style={{ background: "rgba(255,255,255,0.07)", borderRadius: "8px", padding: "20px 22px", display: "flex", gap: "16px", alignItems: "flex-start", textDecoration: "none", transition: "background 0.2s" }} className="tool-card-link">
-                  <span style={{ fontSize: "1.4rem", flexShrink: 0 }} aria-hidden="true">{tool.icon}</span>
-                  <div>
-                    <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>{tool.title}</div>
-                    <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>{tool.desc}</div>
-                  </div>
+                <Link key={tool.title} href={tool.href} style={{ background: "rgba(255,255,255,0.07)", borderRadius: "8px", padding: "20px 22px", borderLeft: "3px solid var(--color-gold)", textDecoration: "none", transition: "background 0.2s", display: "block" }} className="tool-card-link">
+                  <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#fff", marginBottom: "4px" }}>{tool.title}</div>
+                  <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>{tool.desc}</div>
                 </Link>
               ))}
             </div>

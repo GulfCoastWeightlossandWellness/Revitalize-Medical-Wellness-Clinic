@@ -6,6 +6,9 @@ import { getAllBlogPosts, getBlogPost } from "@/lib/blog";
 import { getHubArticleBySlug } from "@/lib/contentHub";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleCTA from "@/components/ArticleCTA";
+import ArticleFAQ from "@/components/ArticleFAQ";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,7 +29,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function renderContent(content: string) {
+function applyServiceLinks(html: string, serviceLinks?: Record<string, string>): string {
+  if (!serviceLinks) return html;
+  let result = html;
+  for (const [phrase, href] of Object.entries(serviceLinks)) {
+    const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const isExternal = href.startsWith("http");
+    const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+    result = result.replace(
+      new RegExp(escaped, "g"),
+      `<a href="${href}" style="color:var(--color-teal);text-decoration:underline;"${target}>${phrase}</a>`
+    );
+  }
+  return result;
+}
+
+function renderContent(content: string, serviceLinks?: Record<string, string>) {
   const paragraphs = content.trim().split(/\n\n+/);
   return paragraphs.map((block, i) => {
     if (block.startsWith("## ")) {
@@ -49,7 +67,7 @@ function renderContent(content: string) {
         <ul key={i} style={{ paddingLeft: "20px", marginBottom: "20px" }}>
           {items.map((item, j) => (
             <li key={j} style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "6px" }}
-              dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") }}
+              dangerouslySetInnerHTML={{ __html: applyServiceLinks(item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
             />
           ))}
         </ul>
@@ -62,7 +80,7 @@ function renderContent(content: string) {
           <ol key={i} style={{ paddingLeft: "20px", marginBottom: "20px" }}>
             {items.map((item, j) => (
               <li key={j} style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "6px" }}
-                dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") }}
+                dangerouslySetInnerHTML={{ __html: applyServiceLinks(item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
               />
             ))}
           </ol>
@@ -72,7 +90,7 @@ function renderContent(content: string) {
     if (block.trim() === "") return null;
     return (
       <p key={i} style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}
-        dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") }}
+        dangerouslySetInnerHTML={{ __html: applyServiceLinks(block.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
       />
     );
   });
@@ -171,19 +189,34 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               ) : null}
               {mirroredHubArticle?.contentHtml ? (
-                <article
-                  className="hub-article-content"
-                  dangerouslySetInnerHTML={{ __html: mirroredHubArticle.contentHtml }}
-                />
-              ) : (
-                renderContent(post.content)
-              )}
+                <>
+                  <article
+                    className="hub-article-content"
+                    dangerouslySetInnerHTML={{ __html: mirroredHubArticle.contentHtml }}
+                  />
+                  {post.cta && <ArticleCTA {...post.cta} />}
+                </>
+              ) : (() => {
+                const elements = renderContent(post.content, post.serviceLinks).filter(Boolean);
+                const splitAt = Math.min(3, Math.floor(elements.length / 2));
+                return (
+                  <>
+                    {elements.slice(0, splitAt)}
+                    {post.cta && <ArticleCTA {...post.cta} />}
+                    {elements.slice(splitAt)}
+                  </>
+                );
+              })()}
+
+              {post.faq && post.faq.length > 0 && <ArticleFAQ questions={post.faq} />}
 
               <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "24px 28px", marginTop: "48px" }}>
                 <p style={{ fontSize: "0.75rem", lineHeight: 1.75, color: "var(--color-muted-light)" }}>
                   <strong style={{ color: "var(--color-muted)" }}>Medical disclaimer:</strong> This article is for educational purposes only and does not constitute medical advice. Individual clinical decisions should be made in consultation with a qualified healthcare provider following appropriate evaluation. References to specific treatments, dosing, or protocols are informational.
                 </p>
               </div>
+
+              <AuthorBio />
             </article>
           </FadeIn>
 

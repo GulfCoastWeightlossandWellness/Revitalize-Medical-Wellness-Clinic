@@ -373,6 +373,28 @@ export default function Nav() {
             )}
           </div>
 
+          {/* Shop — amber pill */}
+          <a
+            href={SITE.ecosystem.nutritionShop}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: "0.6rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--color-gold)",
+              fontWeight: 500,
+              border: "1px solid rgba(201,168,108,0.5)",
+              padding: "8px 16px",
+              borderRadius: "99px",
+              whiteSpace: "nowrap",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+            className="nav-shop-link"
+          >
+            Shop
+          </a>
+
           {/* Locations */}
           <Link
             href="/locations"
@@ -512,6 +534,27 @@ export default function Nav() {
               </Link>
             ))}
 
+            {/* Shop — mobile */}
+            <a
+              href={SITE.ecosystem.nutritionShop}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontSize: "0.85rem",
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--color-gold)",
+                padding: "14px 0",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+                fontWeight: 500,
+                display: "block",
+              }}
+              className="list-link-block"
+            >
+              Shop ↗
+            </a>
+
             {/* Learning Library section in mobile */}
             <div style={{ marginTop: "16px" }}>
               <div style={{ fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "8px", fontWeight: 500 }}>
@@ -633,6 +676,7 @@ export default function Nav() {
         .nav-dropdown-link:hover { color: rgba(255,255,255,0.88) !important; }
         .nav-cta-btn:hover { background: var(--color-gold-dark) !important; }
         .nav-start-here-link:hover { color: #fff !important; border-color: rgba(201,168,108,0.8) !important; }
+        .nav-shop-link:hover { color: #fff !important; border-color: rgba(201,168,108,0.9) !important; }
         .active-mobile-link { color: rgba(255,255,255,0.95) !important; }
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }

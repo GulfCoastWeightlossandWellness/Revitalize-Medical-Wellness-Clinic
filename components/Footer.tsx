@@ -229,6 +229,7 @@ export default function Footer() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
               {[
+                { label: "Institute", href: "/institute" },
                 { label: "Nutrition Shop", href: SITE.ecosystem.nutritionShop },
                 { label: "Rebuild Institute", href: SITE.ecosystem.rebuildInstitute },
                 { label: "The Book", href: "/book" },

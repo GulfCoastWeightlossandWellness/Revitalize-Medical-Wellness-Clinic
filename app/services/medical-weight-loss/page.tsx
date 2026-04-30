@@ -54,6 +54,7 @@ export default function MedicalWeightLoss() {
         { name: "Fat Dissolving Injections", href: "/services/fat-dissolving-injections" },
       ]}
       relatedPosts={[
+        { title: "Semaglutide vs. Tirzepatide — What the Difference Actually Means", href: "/compare/semaglutide-vs-tirzepatide" },
         { title: "Medical Weight Loss vs Fad Diets — What Actually Works", href: "/blog/medical-weight-loss-vs-fad-diets" },
         { title: "How Semaglutide Works for Weight Loss", href: "/blog/how-semaglutide-works" },
         { title: "Signs Your Hormones Are Out of Balance", href: "/blog/signs-hormones-out-of-balance" },
@@ -111,7 +112,7 @@ export default function MedicalWeightLoss() {
       disclaimer="Medical information on this page is educational and does not constitute medical advice. GLP-1 receptor agonists require a prescription and in-person clinical evaluation. We do not prescribe weight loss medications online. Individual results vary significantly. Weight loss outcomes depend on multiple factors including adherence, metabolic baseline, and lifestyle factors."
       pageHref="/services/medical-weight-loss"
       pageName="Medical Weight Loss"
-      assessmentCta={{ label: "Weight Loss Readiness Assessment", href: "/tools" }}
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools" }}
       />
   );
 }

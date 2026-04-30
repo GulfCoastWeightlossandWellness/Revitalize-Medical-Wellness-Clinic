@@ -54,7 +54,7 @@ const FAQS = [
   },
   {
     q: "Does Revitalize serve patients from Phenix City or Fort Benning?",
-    a: "Yes. The Columbus clinic is located near Phenix City, AL and the Fort Moore / Fort Benning area, and welcomes patients from both communities.",
+    a: "Yes. The Columbus clinic is located near Phenix City, AL and Fort Benning and the surrounding military community, and welcomes patients from both communities.",
   },
   {
     q: "What should I bring to my first appointment?",
@@ -87,7 +87,7 @@ const columbusSchema = {
         SITE.social.instagram,
       ],
       medicalSpecialty: "Hormone Therapy, Medical Weight Loss, Aesthetic Medicine",
-      areaServed: ["Columbus, GA", "Phenix City, AL", "Fort Moore, GA", "Muscogee County, GA"],
+      areaServed: ["Columbus, GA", "Phenix City, AL", "Fort Benning, GA", "Muscogee County, GA"],
       priceRange: "$$",
     },
     {
@@ -109,6 +109,26 @@ const columbusSchema = {
   ],
 };
 
+const columbusAggregateRating = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Revitalize Aesthetics & Wellness — Columbus",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "76",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "6901 Ray Wright Way, Suite I",
+    addressLocality: "Columbus",
+    addressRegion: "GA",
+    postalCode: "31909",
+  },
+};
+
 export default function ColumbusLocationPage() {
   const reviewLink = SITE.reviews.columbusReviewLink;
 
@@ -117,6 +137,10 @@ export default function ColumbusLocationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(columbusSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(columbusAggregateRating) }}
       />
 
       {/* ── HERO ── */}
@@ -354,7 +378,7 @@ export default function ColumbusLocationPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)" }}>
-                The Columbus clinic is the primary Revitalize location, offering a full range of services including hormone therapy, Biote bioidentical hormone pellets, medical weight loss, and aesthetic treatments. Travis Woodley and the clinical team serve patients from Columbus, Phenix City, Fort Moore, and the broader Muscogee County area.
+                The Columbus clinic is the primary Revitalize location, offering a full range of services including hormone therapy, Biote bioidentical hormone pellets, medical weight loss, and aesthetic treatments. Travis Woodley and the clinical team serve patients from Columbus, Phenix City, Fort Benning, and the broader Muscogee County area.
               </p>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)" }}>
                 Care at Revitalize is relationship-based. Every treatment plan begins with a clinical evaluation and is tailored to the individual. Whether you are exploring hormone optimization for the first time or continuing an existing wellness plan, the Columbus team prioritizes understanding your goals before recommending any treatment.
@@ -362,6 +386,73 @@ export default function ColumbusLocationPage() {
               <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)" }}>
                 Travis Woodley is a Platinum-certified Biote provider and holds credentials as a Nurse Practitioner (MSN, RN, CRNP) with more than 17 years of clinical experience. He is also the author of <em>You're Not Broken — You're Unbalanced</em>, a patient resource on hormone health and metabolic medicine.
               </p>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* ── LOCAL SEO ARTICLE CROSSLINKS ── */}
+      <section style={{ background: "var(--color-stone)", padding: "48px clamp(24px, 6vw, 80px)" }}>
+        <FadeIn>
+          <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+            <div className="eyebrow" style={{ marginBottom: "16px" }}>From the learning library</div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <Link
+                href="/blog/medical-weight-loss-columbus-ga"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  background: "#fff",
+                  borderRadius: "6px",
+                  padding: "24px 28px",
+                  borderLeft: "4px solid var(--color-gold)",
+                  textDecoration: "none",
+                  gap: "16px",
+                }}
+                className="columbus-article-link"
+              >
+                <div>
+                  <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "6px" }}>
+                    Medical Weight Loss · Columbus
+                  </p>
+                  <p style={{ fontSize: "1rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "4px" }}>
+                    Medical Weight Loss in Columbus, GA — How the Program Works
+                  </p>
+                  <p style={{ fontSize: "0.8rem", color: "var(--color-muted)", lineHeight: 1.65 }}>
+                    The 90-day metabolic program: lab-based evaluation, GLP-1 candidacy, hormone optimization, and monitoring.
+                  </p>
+                </div>
+                <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
+              </Link>
+              <Link
+                href="/blog/how-to-choose-botox-provider-columbus-ga"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  background: "#fff",
+                  borderRadius: "6px",
+                  padding: "24px 28px",
+                  borderLeft: "4px solid var(--color-teal)",
+                  textDecoration: "none",
+                  gap: "16px",
+                }}
+                className="columbus-article-link"
+              >
+                <div>
+                  <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "6px" }}>
+                    Aesthetics · Columbus
+                  </p>
+                  <p style={{ fontSize: "1rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "4px" }}>
+                    How to Choose a Botox Provider in Columbus, GA — A Clinical Checklist
+                  </p>
+                  <p style={{ fontSize: "0.8rem", color: "var(--color-muted)", lineHeight: 1.65 }}>
+                    Credentials, consultation process, and red flags — what to look for before booking an injectable appointment.
+                  </p>
+                </div>
+                <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
+              </Link>
             </div>
           </div>
         </FadeIn>
@@ -492,7 +583,7 @@ export default function ColumbusLocationPage() {
                 Serving Columbus and surrounding communities
               </h3>
               <p style={{ fontSize: "0.88rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", marginBottom: "20px" }}>
-                The Columbus clinic welcomes patients from Columbus, Phenix City (AL), Fort Moore,
+                The Columbus clinic welcomes patients from Columbus, Phenix City (AL), Fort Benning,
                 Midland, Ellerslie, Pine Mountain, Hamilton, and the greater Muscogee County area.
               </p>
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -572,6 +663,7 @@ export default function ColumbusLocationPage() {
         .columbus-nap-grid { grid-template-columns: 1fr 1fr; }
         .columbus-footer-grid { grid-template-columns: 1fr 1fr; }
         .columbus-service-link:hover { background: var(--color-stone) !important; }
+        .columbus-article-link:hover { background: var(--color-stone) !important; }
         @media (max-width: 900px) {
           .columbus-nap-grid { grid-template-columns: 1fr !important; }
           .columbus-footer-grid { grid-template-columns: 1fr !important; }

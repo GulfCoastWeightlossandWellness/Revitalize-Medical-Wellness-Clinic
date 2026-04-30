@@ -11,33 +11,42 @@ export const metadata: Metadata = {
   },
 };
 
-function topicForArticle(title: string) {
+function categoryForArticle(title: string): string {
   const t = title.toLowerCase();
-  if (t.includes("hormone") || t.includes("bhrt") || t.includes("estrogen") || t.includes("testosterone")) return "hormones";
-  if (t.includes("metabolic") || t.includes("weight") || t.includes("creatine")) return "metabolic";
-  if (t.includes("vitamin") || t.includes("gallbladder") || t.includes("bile")) return "nutrition";
-  return "general";
+  if (t.includes("hormone") || t.includes("bhrt") || t.includes("estrogen") || t.includes("testosterone") || t.includes("perimenopause") || t.includes("menopause") || t.includes("biote")) return "hormone-therapy";
+  if (t.includes("metabolic") || t.includes("weight") || t.includes("creatine") || t.includes("glp") || t.includes("semaglutide") || t.includes("insulin")) return "weight-loss";
+  if (t.includes("aesthetic") || t.includes("botox") || t.includes("filler") || t.includes("skin") || t.includes("microneedling") || t.includes("laser") || t.includes("dysport")) return "aesthetics";
+  if (t.includes("iv") || t.includes("hydration") || t.includes("vitamin")) return "iv-hydration";
+  if (t.includes("sexual") || t.includes("libido") || t.includes("erectile") || t.includes("o-shot")) return "sexual-wellness";
+  if (t.includes("hair") || t.includes("scalp") || t.includes("derive")) return "hair-restoration";
+  if (t.includes("gallbladder") || t.includes("bile") || t.includes("nutrition")) return "wellness";
+  return "wellness";
 }
 
 const TOPIC_CHIPS = [
   { id: "all", label: "All Topics" },
-  { id: "hormones", label: "Hormones" },
-  { id: "metabolic", label: "Metabolic Health" },
-  { id: "nutrition", label: "Nutrition & Vitamins" },
+  { id: "hormone-therapy", label: "Hormone Health" },
+  { id: "weight-loss", label: "Weight & Metabolism" },
+  { id: "aesthetics", label: "Aesthetics" },
+  { id: "iv-hydration", label: "IV Hydration" },
+  { id: "sexual-wellness", label: "Sexual Wellness" },
+  { id: "hair-restoration", label: "Hair Restoration" },
+  { id: "wellness", label: "Wellness" },
 ];
 
 export default async function HubArticlesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ topic?: string }>;
+  searchParams: Promise<{ category?: string; topic?: string }>;
 }) {
   const query = await searchParams;
-  const activeTopic = query.topic && TOPIC_CHIPS.some((chip) => chip.id === query.topic) ? query.topic : "all";
+  const rawCategory = query.category ?? query.topic ?? "all";
+  const activeCategory = TOPIC_CHIPS.some((chip) => chip.id === rawCategory) ? rawCategory : "all";
   const articles = getHubArticles();
   const filtered =
-    activeTopic === "all"
+    activeCategory === "all"
       ? articles
-      : articles.filter((article) => topicForArticle(article.title) === activeTopic);
+      : articles.filter((article) => categoryForArticle(article.title) === activeCategory);
 
   return (
     <>
@@ -71,7 +80,7 @@ export default async function HubArticlesPage({
             {TOPIC_CHIPS.map((chip) => (
               <Link
                 key={chip.id}
-                href={chip.id === "all" ? "/hub/articles" : `/hub/articles?topic=${chip.id}`}
+                href={chip.id === "all" ? "/hub/articles" : `/hub/articles?category=${chip.id}`}
                 style={{
                   fontSize: "0.58rem",
                   letterSpacing: "0.16em",
@@ -79,9 +88,9 @@ export default async function HubArticlesPage({
                   fontWeight: 600,
                   padding: "9px 12px",
                   borderRadius: "999px",
-                  border: activeTopic === chip.id ? "1px solid var(--color-teal)" : "1px solid var(--color-divider)",
-                  background: activeTopic === chip.id ? "var(--color-teal)" : "#fff",
-                  color: activeTopic === chip.id ? "#fff" : "var(--color-muted)",
+                  border: activeCategory === chip.id ? "1px solid var(--color-teal)" : "1px solid var(--color-divider)",
+                  background: activeCategory === chip.id ? "var(--color-teal)" : "#fff",
+                  color: activeCategory === chip.id ? "#fff" : "var(--color-muted)",
                 }}
               >
                 {chip.label}

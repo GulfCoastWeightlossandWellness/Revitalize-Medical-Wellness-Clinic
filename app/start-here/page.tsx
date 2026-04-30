@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const CONCERNS = [
   {
-    icon: "⚡",
+    icon: "01",
     label: "Low Energy or Fatigue",
     description: "Persistent tiredness, brain fog, or feeling worn down despite rest.",
     services: [
@@ -30,7 +30,7 @@ const CONCERNS = [
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
   },
   {
-    icon: "⚖️",
+    icon: "02",
     label: "Weight Gain or Difficulty Losing Weight",
     description: "Struggling with weight despite diet and exercise changes.",
     services: [
@@ -41,7 +41,7 @@ const CONCERNS = [
     tool: { label: "Use the Treatment Finder", href: "/tools" },
   },
   {
-    icon: "🌡️",
+    icon: "03",
     label: "Hormone Symptoms",
     description: "Hot flashes, mood changes, low libido, sleep problems, or irregular cycles.",
     services: [
@@ -52,7 +52,7 @@ const CONCERNS = [
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
   },
   {
-    icon: "✨",
+    icon: "04",
     label: "Skin Aging or Aesthetic Concerns",
     description: "Fine lines, volume loss, uneven skin tone, or desire for a refreshed appearance.",
     services: [
@@ -64,7 +64,7 @@ const CONCERNS = [
     tool: { label: "Use the Treatment Finder", href: "/tools" },
   },
   {
-    icon: "💧",
+    icon: "05",
     label: "Dehydration or Recovery",
     description: "Post-illness recovery, athletic recovery, or general need for replenishment.",
     services: [
@@ -73,7 +73,7 @@ const CONCERNS = [
     tool: { label: "Use the Treatment Finder", href: "/tools" },
   },
   {
-    icon: "💛",
+    icon: "06",
     label: "Sexual Wellness Concerns",
     description: "Low libido, discomfort, or sexual health changes affecting quality of life.",
     services: [
@@ -84,7 +84,7 @@ const CONCERNS = [
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
   },
   {
-    icon: "🌿",
+    icon: "07",
     label: "Hair Thinning or Loss",
     description: "Noticeable hair thinning, shedding, or changes in density.",
     services: [
@@ -94,7 +94,7 @@ const CONCERNS = [
     tool: { label: "Use the Treatment Finder", href: "/tools" },
   },
   {
-    icon: "🏥",
+    icon: "08",
     label: "General Wellness Optimization",
     description: "You feel okay but want to feel better — more energy, better sleep, sharper focus.",
     services: [
@@ -263,7 +263,7 @@ export default function StartHerePage() {
                 gap: "12px",
                 height: "100%",
               }}>
-                <div style={{ fontSize: "1.6rem" }} aria-hidden="true">{concern.icon}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: "2.8rem", fontWeight: 400, color: "var(--color-gold)", opacity: 0.4, lineHeight: 1, marginBottom: "16px" }}>{concern.icon}</div>
                 <h3 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "1.2rem",

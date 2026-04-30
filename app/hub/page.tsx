@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 const TOPIC_PATHS = [
-  { title: "Hormone Health", desc: "Perimenopause, testosterone, BHRT, Biote pellets", href: "/hub/articles", service: "/services/hormone-therapy-women" },
-  { title: "Weight & Metabolism", desc: "GLP-1, semaglutide, insulin resistance, body composition", href: "/hub/articles", service: "/services/medical-weight-loss" },
-  { title: "Aesthetics", desc: "Neuromodulators, fillers, skin resurfacing, PRP", href: "/hub/articles", service: "/services/neuromodulators" },
-  { title: "IV Hydration", desc: "Vitamin infusions, recovery, hydration protocols", href: "/hub/articles", service: "/services/iv-hydration" },
-  { title: "Sexual Wellness", desc: "O-Shot, erectile dysfunction, intimacy restoration", href: "/hub/articles", service: "/services/o-shot" },
-  { title: "Hair Restoration", desc: "DE|RIVE protocol, PRP for hair, scalp health", href: "/hub/articles", service: "/services/derive-hair-restoration" },
+  { title: "Hormone Health", desc: "Perimenopause, testosterone, BHRT, Biote pellets", href: "/hub/articles?category=hormone-therapy", service: "/services/hormone-therapy-women" },
+  { title: "Weight & Metabolism", desc: "GLP-1, semaglutide, insulin resistance, body composition", href: "/hub/articles?category=weight-loss", service: "/services/medical-weight-loss" },
+  { title: "Aesthetics", desc: "Neuromodulators, fillers, skin resurfacing, PRP", href: "/hub/articles?category=aesthetics", service: "/services/neuromodulators" },
+  { title: "IV Hydration", desc: "Vitamin infusions, recovery, hydration protocols", href: "/hub/articles?category=iv-hydration", service: "/services/iv-hydration" },
+  { title: "Sexual Wellness", desc: "O-Shot, erectile dysfunction, intimacy restoration", href: "/hub/articles?category=sexual-wellness", service: "/services/o-shot" },
+  { title: "Hair Restoration", desc: "DE|RIVE protocol, PRP for hair, scalp health", href: "/hub/articles?category=hair-restoration", service: "/services/derive-hair-restoration" },
 ];
 
 export default function LearningLibraryPage() {

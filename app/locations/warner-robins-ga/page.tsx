@@ -107,6 +107,26 @@ const warnerRobinsSchema = {
   ],
 };
 
+const warnerRobinsAggregateRating = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Revitalize Aesthetics & Wellness — Warner Robins",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "76",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "840 SR 96, Suite 3300",
+    addressLocality: "Warner Robins",
+    addressRegion: "GA",
+    postalCode: "31088",
+  },
+};
+
 export default function WarnerRobinsLocationPage() {
   const reviewLink = SITE.reviews.warnerRobinsReviewLink;
 
@@ -115,6 +135,10 @@ export default function WarnerRobinsLocationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(warnerRobinsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(warnerRobinsAggregateRating) }}
       />
 
       {/* ── HERO ── */}
@@ -365,6 +389,43 @@ export default function WarnerRobinsLocationPage() {
         </FadeIn>
       </section>
 
+      {/* ── LOCAL SEO ARTICLE CROSSLINK ── */}
+      <section style={{ background: "var(--color-stone)", padding: "48px clamp(24px, 6vw, 80px)" }}>
+        <FadeIn>
+          <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+            <div className="eyebrow" style={{ marginBottom: "16px" }}>From the learning library</div>
+            <Link
+              href="/blog/hormone-replacement-therapy-warner-robins"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                background: "#fff",
+                borderRadius: "6px",
+                padding: "28px 32px",
+                borderLeft: "4px solid var(--color-gold)",
+                textDecoration: "none",
+                gap: "16px",
+              }}
+              className="wr-article-link"
+            >
+              <div>
+                <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "8px" }}>
+                  Hormone Therapy · Warner Robins
+                </p>
+                <p style={{ fontSize: "1.05rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "6px" }}>
+                  Hormone Replacement Therapy in Warner Robins, GA — A Clinical Overview
+                </p>
+                <p style={{ fontSize: "0.82rem", color: "var(--color-muted)", lineHeight: 1.7 }}>
+                  What to expect from HRT at our Warner Robins clinic: evaluation process, delivery options, and who is a candidate.
+                </p>
+              </div>
+              <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
+            </Link>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* ── SERVICES ── */}
       <section style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <FadeIn>
@@ -570,6 +631,7 @@ export default function WarnerRobinsLocationPage() {
         .wr-nap-grid { grid-template-columns: 1fr 1fr; }
         .wr-footer-grid { grid-template-columns: 1fr 1fr; }
         .wr-service-link:hover { background: var(--color-stone) !important; }
+        .wr-article-link:hover { background: var(--color-stone) !important; }
         @media (max-width: 900px) {
           .wr-nap-grid { grid-template-columns: 1fr !important; }
           .wr-footer-grid { grid-template-columns: 1fr !important; }
