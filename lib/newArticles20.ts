@@ -1285,7 +1285,7 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     relatedArticles: [
       {
         title: "What to Expect at Your First Hormone Consultation",
-        href: "/blog/what-to-expect-at-first-hormone-consultation"
+        href: "/blog/first-hormone-consultation"
       },
       {
         title: "What to Expect at Your First Aesthetic Appointment",

@@ -6,7 +6,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Patient Reviews | Revitalize Aesthetics & Wellness | Columbus & Warner Robins",
   description:
-    "Real patient experiences at Revitalize Aesthetics & Wellness. 4.9 stars across 76+ Google reviews. Columbus and Warner Robins, Georgia.",
+    "Patient feedback and Google review highlights for Revitalize Aesthetics & Wellness in Columbus and Warner Robins, Georgia.",
 };
 
 const REVIEWS = [
@@ -68,46 +68,6 @@ const REVIEWS = [
   },
 ];
 
-const aggregateRatingColumbus = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Revitalize Aesthetics & Wellness — Columbus",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "76",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "6901 Ray Wright Way, Suite I",
-    addressLocality: "Columbus",
-    addressRegion: "GA",
-    postalCode: "31909",
-  },
-};
-
-const aggregateRatingWarnerRobins = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Revitalize Aesthetics & Wellness — Warner Robins",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "76",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "840 SR 96, Suite 3300",
-    addressLocality: "Warner Robins",
-    addressRegion: "GA",
-    postalCode: "31088",
-  },
-};
-
 function Stars({ count }: { count: number }) {
   return (
     <div style={{ display: "flex", gap: "2px", marginBottom: "14px" }}>
@@ -123,15 +83,6 @@ function Stars({ count }: { count: number }) {
 export default function ReviewsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingColumbus) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingWarnerRobins) }}
-      />
-
       {/* Hero */}
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "760px" }}>
@@ -142,8 +93,7 @@ export default function ReviewsPage() {
             What patients say about Revitalize.
           </h1>
           <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "rgba(255,255,255,0.65)" }}>
-            4.9 stars across 76+ Google reviews &mdash; Columbus and Warner Robins.{" "}
-            Real patients. Real names where provided. Verified on Google.
+            Google review highlights from Columbus and Warner Robins. Highly rated by patients on Google.
           </p>
         </div>
       </section>
@@ -171,18 +121,21 @@ export default function ReviewsPage() {
                 }}
               >
                 <Stars count={review.stars} />
+                <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal)", marginBottom: "10px" }}>
+                  Google review excerpt
+                </div>
                 <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "var(--color-ink)", marginBottom: "16px", fontStyle: "italic" }}>
                   &ldquo;{review.quote}&rdquo;
                 </p>
                 <div style={{ fontSize: "0.75rem", color: "var(--color-muted)", fontWeight: 600 }}>
                   &mdash; {review.name}, {review.location}
                 </div>
-                <div style={{ fontSize: "0.6rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-teal)", marginTop: "4px" }}>
-                  {review.service}
-                </div>
               </div>
             ))}
           </div>
+          <p style={{ maxWidth: "1100px", margin: "18px auto 0", fontSize: "0.72rem", lineHeight: 1.7, color: "var(--color-muted-light)", fontStyle: "italic" }}>
+            Review excerpts should be verified against the live Google Business Profile before final launch.
+          </p>
         </FadeIn>
       </section>
 
@@ -195,20 +148,20 @@ export default function ReviewsPage() {
             </div>
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <a
-                href={SITE.locations.columbus.maps}
+                href={SITE.reviews.columbusReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: "inline-block", background: "var(--color-teal)", color: "#fff", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none" }}
               >
-                Columbus Reviews on Google &rarr;
+                Read Google Reviews (Columbus) &rarr;
               </a>
               <a
-                href={SITE.locations.warnerRobins.maps}
+                href={SITE.reviews.warnerRobinsReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: "inline-block", background: "var(--color-gold)", color: "#fff", padding: "12px 22px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none" }}
               >
-                Warner Robins Reviews on Google &rarr;
+                Read Google Reviews (Warner Robins) &rarr;
               </a>
             </div>
           </div>

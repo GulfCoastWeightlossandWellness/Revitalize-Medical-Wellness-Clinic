@@ -86,7 +86,7 @@ export default function LocationsComparePage() {
                 {[
                   "Columbus, GA",
                   "Phenix City, AL",
-                  "Fort Moore (formerly Fort Benning) and the surrounding military community",
+                  "Fort Benning and the surrounding military community",
                   "Harris County",
                   "Muscogee County",
                   "East Alabama within reasonable driving distance",

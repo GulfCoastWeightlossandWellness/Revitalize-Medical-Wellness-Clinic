@@ -2,6 +2,108 @@ import { getHubArticles } from "@/lib/contentHub";
 import { ARTICLE_ENHANCEMENTS } from "@/lib/articleEnhancements";
 import { NEW_ARTICLES_20 } from "@/lib/newArticles20";
 
+const INTERNAL_MARKERS = [
+  "IMPLEMENTATION NOTES",
+  "CLAUDE CODE",
+  "Campbell Digital Studio",
+  "Internal use only",
+  "HIGH CONVERSION",
+  "INLINE LINKS",
+  "MID-ARTICLE CTA",
+  "Metadata:",
+  "FULL PAGE COPY",
+  "PHASE",
+  "Route:",
+  "File to edit",
+];
+
+function stripVercelPreviewUrls(value: string): string {
+  return value.replace(/https:\/\/revitalize-medical-wellness-clinic\.vercel\.app/g, "");
+}
+
+function sanitizeFortBenningWording(value: string): string {
+  return value
+    .replace(/Fort\s+Moore\s*\(formerly\s+Fort\s+Benning\)/g, "Fort Benning, formerly Fort Moore")
+    .replace(/Fort\s+Moore\s+and\s+the\s+surrounding\s+military\s+community/g, "Fort Benning and the surrounding military community")
+    .replace(/Fort\s+Moore,\s*formerly\s+Fort\s+Benning/g, "Fort Benning, formerly Fort Moore")
+    .replace(/\bFort Moore\b/g, "Fort Benning");
+}
+
+function stripInternalSections(value: string): string {
+  return value
+    .replace(/\n\*\*INLINE LINKS:\*\*[\s\S]*$/i, "")
+    .replace(/\n\*\*MID-ARTICLE CTA:\*\*[\s\S]*$/i, "")
+    .replace(/\n\*\*FAQ:\*\*[\s\S]*$/i, "")
+    .replace(/\n\*\*MEDICAL DISCLAIMER:\*\*[\s\S]*$/i, "")
+    .replace(/\n\*\*RELATED SERVICE:\*\*[\s\S]*$/i, "")
+    .replace(/\n\*\*RELATED ARTICLES:\*\*[\s\S]*$/i, "")
+    .replace(/^# .+\n\n/, "")
+    .replace(/\*\*Dek:\*\*.+\n\n/i, "")
+    .replace(/\*\*By .+\*\*\n\n/i, "")
+    .replace(/\*\*TABLE OF CONTENTS:\*\*[\s\S]*?\n---\n\n/i, "")
+    .trim();
+}
+
+function sanitizeText(value?: string): string | undefined {
+  if (!value) return value;
+  const sanitized = sanitizeFortBenningWording(value);
+  if (INTERNAL_MARKERS.some((marker) => sanitized.includes(marker))) {
+    return stripInternalSections(sanitized);
+  }
+  return sanitized;
+}
+
+function sanitizeReadTime(value?: string): string {
+  const match = value?.match(/\d+\s*min(?:\s*read)?/i);
+  if (!match) return "8 min read";
+  return match[0].toLowerCase().includes("read") ? match[0] : `${match[0]} read`;
+}
+
+function sanitizeCategory(value?: string): string {
+  return (value ?? "Education").split("\n")[0].replace(/\*\*.*$/, "").trim() || "Education";
+}
+
+function sanitizeRelatedArticles(relatedArticles?: Array<{ title: string; href: string }>) {
+  if (!relatedArticles?.length) return undefined;
+  return relatedArticles.filter(
+    (item) =>
+      item?.title &&
+      item?.href?.startsWith("/") &&
+      !item.title.includes("**") &&
+      !INTERNAL_MARKERS.some((marker) => item.title.includes(marker))
+  );
+}
+
+function sanitizePost(post: BlogPost): BlogPost {
+  return {
+    ...post,
+    title: sanitizeText(post.title) ?? post.title,
+    metaTitle: sanitizeText(post.metaTitle),
+    description: sanitizeText(post.description) ?? post.description,
+    keyword: sanitizeText(post.keyword) ?? post.keyword,
+    readTime: sanitizeReadTime(post.readTime),
+    category: sanitizeCategory(post.category),
+    relatedService: sanitizeText(post.relatedService) ?? post.relatedService,
+    relatedServiceDescription: sanitizeText(post.relatedServiceDescription),
+    content: stripVercelPreviewUrls(stripInternalSections(sanitizeText(post.content) ?? post.content)),
+    medicalDisclaimer: sanitizeText(post.medicalDisclaimer),
+    cta: post.cta
+      ? {
+          ...post.cta,
+          headline: sanitizeText(post.cta.headline) ?? post.cta.headline,
+          body: sanitizeText(post.cta.body) ?? post.cta.body,
+          buttonLabel: sanitizeText(post.cta.buttonLabel) ?? post.cta.buttonLabel,
+        }
+      : undefined,
+    faq: post.faq?.map((item) => ({
+      q: sanitizeText(item.q) ?? item.q,
+      a: sanitizeText(item.a) ?? item.a,
+    })),
+    tableOfContents: post.tableOfContents?.map((item) => sanitizeText(item) ?? item),
+    relatedArticles: sanitizeRelatedArticles(post.relatedArticles),
+  };
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -1776,7 +1878,7 @@ Hormone replacement therapy is not a quick fix — it is a clinical relationship
   {
     slug: "medical-weight-loss-columbus-ga",
     title: "Medical Weight Loss in Columbus, Georgia — What to Look For in a Program",
-    description: "A guide for patients in Columbus, Phenix City, and Fort Moore (formerly Fort Benning) evaluating medical weight loss programs. What distinguishes clinical programs from commercial diets, and what to expect at Revitalize.",
+    description: "A guide for patients in Columbus, Phenix City, and Fort Benning and the surrounding military community evaluating medical weight loss programs. What distinguishes clinical programs from commercial diets, and what to expect at Revitalize.",
     keyword: "medical weight loss Columbus Georgia GLP-1 semaglutide program",
     date: "2026-04-22",
     readTime: "8 min read",
@@ -1784,7 +1886,7 @@ Hormone replacement therapy is not a quick fix — it is a clinical relationship
     relatedService: "Medical Weight Loss",
     relatedServiceHref: "/services/medical-weight-loss",
     content: `
-If you are searching for medical weight loss in Columbus, Georgia — or in Phenix City, Fort Moore (formerly Fort Benning), or the surrounding area — you have probably encountered a range of options: commercial diet programs, online prescription services for GLP-1 medications, local med spas with weight loss menus, and clinics that blend clinical medicine with wellness programming. Knowing what to look for — and what distinguishes evidence-based medical weight loss from a prescription with no clinical framework — is the starting point.
+If you are searching for medical weight loss in Columbus, Georgia — or in Phenix City, Fort Benning and the surrounding military community, or the surrounding area — you have probably encountered a range of options: commercial diet programs, online prescription services for GLP-1 medications, local med spas with weight loss menus, and clinics that blend clinical medicine with wellness programming. Knowing what to look for — and what distinguishes evidence-based medical weight loss from a prescription with no clinical framework — is the starting point.
 
 ## What makes a weight loss program "medical"
 
@@ -1826,7 +1928,7 @@ What monitoring is included — lab follow-up, clinical visits, dose adjustment 
 
 The program at Revitalize Columbus is led by Travis Woodley, MSN, RN, CRNP — a nurse practitioner with 17+ years of clinical experience in high-acuity medicine. The program begins with an in-person evaluation and comprehensive lab work. GLP-1 medications are prescribed where clinically appropriate after a complete metabolic assessment — not as the starting point.
 
-The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909, and is convenient for patients in Columbus, Phenix City, Fort Moore (formerly Fort Benning), and surrounding communities. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880.
+The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909, and is convenient for patients in Columbus, Phenix City, Fort Benning and the surrounding military community, and surrounding communities. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880.
 
 Most patients in the structured program see meaningful early progress in the first six to eight weeks — both on the scale and in lab values, including insulin and inflammatory markers. Body composition changes — particularly visceral fat reduction — typically become measurable over three to six months of sustained treatment. The program does not end when the medication is issued; it continues through monitoring, adjustment, and the transition off medication with the metabolic foundation to sustain results.
     `.trim(),
@@ -1879,7 +1981,7 @@ At the Columbus location, a first neuromodulator appointment includes a clinical
 
 Treatment is conservative by philosophy — using the minimum effective dose to achieve the desired result, with room for adjustment at a follow-up visit rather than overcorrecting on the first treatment. Most patients return to normal activities the same day.
 
-The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880. The clinic serves patients in Columbus, Phenix City, Fort Moore (formerly Fort Benning), and surrounding communities.
+The Columbus clinic is located at 6901 Ray Wright Way, Suite I, Columbus, GA 31909. Online booking is available 24/7 through the JaneApp portal. The direct phone number is (762) 261-3880. The clinic serves patients in Columbus, Phenix City, Fort Benning and the surrounding military community, and surrounding communities.
 
 ## Realistic expectations
 
@@ -1894,7 +1996,7 @@ export function getBlogPost(slug: string): BlogPost | undefined {
   const post = getAllBlogPosts().find((p) => p.slug === slug);
   if (!post) return undefined;
   const enhancements = ARTICLE_ENHANCEMENTS[slug];
-  return enhancements ? { ...post, ...enhancements } : post;
+  return sanitizePost(enhancements ? { ...post, ...enhancements } : post);
 }
 
 function hubTopicFromTitle(title: string) {
@@ -1947,7 +2049,9 @@ ${article.excerpt || "Read the full article in the Learning Library for the comp
   });
 
   const map = new Map<string, BlogPost>();
-  [...BLOG_POSTS, ...NEW_ARTICLES_20, ...mirrored].forEach((post) => map.set(post.slug, post));
+  [...BLOG_POSTS, ...NEW_ARTICLES_20, ...mirrored].forEach((post) =>
+    map.set(post.slug, sanitizePost(post))
+  );
   return [...map.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 

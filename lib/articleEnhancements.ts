@@ -347,7 +347,7 @@ export const ARTICLE_ENHANCEMENTS: Record<string, ArticleEnhancement> = {
       },
       {
         q: "Does Revitalize serve patients from outside Columbus?",
-        a: "Yes. Patients travel from Phenix City, Fort Moore (formerly Fort Benning), Warner Robins, Macon, Auburn, and surrounding areas. The Columbus and Warner Robins locations serve the broader Central Georgia and East Alabama region.",
+        a: "Yes. Patients travel from Phenix City, Fort Benning and the surrounding military community, Warner Robins, Macon, Auburn, and surrounding areas. The Columbus and Warner Robins locations serve the broader Central Georgia and East Alabama region.",
       },
     ],
   },
@@ -1201,7 +1201,7 @@ export const ARTICLE_ENHANCEMENTS: Record<string, ArticleEnhancement> = {
     },
     cta: {
       headline: "Columbus medical weight loss — start with a metabolic evaluation.",
-      body: "Revitalize Columbus serves patients from Columbus, Phenix City, Fort Moore (formerly Fort Benning), Auburn, and surrounding communities. Book your metabolic evaluation online.",
+      body: "Revitalize Columbus serves patients from Columbus, Phenix City, Fort Benning and the surrounding military community, Auburn, and surrounding communities. Book your metabolic evaluation online.",
       buttonLabel: "Book at Columbus",
       buttonHref: "https://revitalizeaesthetics.janeapp.com/",
       variant: "booking",
@@ -1209,7 +1209,7 @@ export const ARTICLE_ENHANCEMENTS: Record<string, ArticleEnhancement> = {
     faq: [
       {
         q: "Where is the Revitalize Columbus location for medical weight loss?",
-        a: "Revitalize Columbus is located at 6901 Ray Wright Rd Suite I, Columbus, GA 31909. The clinic serves patients from Columbus, Phenix City, Fort Moore (formerly Fort Benning), Auburn, Opelika, and the broader Chattahoochee Valley region.",
+        a: "Revitalize Columbus is located at 6901 Ray Wright Rd Suite I, Columbus, GA 31909. The clinic serves patients from Columbus, Phenix City, Fort Benning and the surrounding military community, Auburn, Opelika, and the broader Chattahoochee Valley region.",
       },
       {
         q: "How do I book a medical weight loss consultation in Columbus, GA?",
