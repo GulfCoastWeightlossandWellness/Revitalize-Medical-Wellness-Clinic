@@ -398,7 +398,7 @@ export default function ColumbusLocationPage() {
             <div className="eyebrow" style={{ marginBottom: "16px" }}>From the learning library</div>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <Link
-                href="/blog/medical-weight-loss-columbus-ga"
+                href="/blog/hormone-therapy-men-columbus-ga"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -414,19 +414,19 @@ export default function ColumbusLocationPage() {
               >
                 <div>
                   <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "6px" }}>
-                    Medical Weight Loss · Columbus
+                    Hormone Therapy · Columbus
                   </p>
                   <p style={{ fontSize: "1rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "4px" }}>
-                    Medical Weight Loss in Columbus, GA — How the Program Works
+                    Hormone Therapy for Men in Columbus, Georgia — A Clinical Guide
                   </p>
                   <p style={{ fontSize: "0.8rem", color: "var(--color-muted)", lineHeight: 1.65 }}>
-                    The 90-day metabolic program: lab-based evaluation, GLP-1 candidacy, hormone optimization, and monitoring.
+                    What to look for in a testosterone optimization provider in Columbus, what lab work matters, and what treatment can look like.
                   </p>
                 </div>
                 <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
               </Link>
               <Link
-                href="/blog/how-to-choose-botox-provider-columbus-ga"
+                href="/blog/botox-aesthetics-warner-robins-ga"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -442,13 +442,13 @@ export default function ColumbusLocationPage() {
               >
                 <div>
                   <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "6px" }}>
-                    Aesthetics · Columbus
+                    Aesthetics · Regional
                   </p>
                   <p style={{ fontSize: "1rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "4px" }}>
-                    How to Choose a Botox Provider in Columbus, GA — A Clinical Checklist
+                    Botox and Aesthetic Treatments in Warner Robins, Georgia — A Clinical Guide
                   </p>
                   <p style={{ fontSize: "0.8rem", color: "var(--color-muted)", lineHeight: 1.65 }}>
-                    Credentials, consultation process, and red flags — what to look for before booking an injectable appointment.
+                    Clinical checklist for evaluating injectable providers and consultation standards that also apply for Columbus patients.
                   </p>
                 </div>
                 <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>

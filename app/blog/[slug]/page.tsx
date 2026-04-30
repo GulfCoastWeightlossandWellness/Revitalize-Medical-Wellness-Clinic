@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Revitalize Aesthetics & Wellness`,
+    title: post.metaTitle || `${post.title} | Revitalize Aesthetics & Wellness`,
     description: post.description,
     alternates: {
       canonical: post.canonicalUrl || `${SITE.url}/blog/${post.slug}`,
@@ -42,6 +42,23 @@ function applyServiceLinks(html: string, serviceLinks?: Record<string, string>):
     );
   }
   return result;
+}
+
+function renderInlineMarkdownLinks(html: string): string {
+  return html.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g,
+    (_match, label: string, href: string) => {
+      const isExternal = href.startsWith("http");
+      const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+      return `<a href="${href}" style="color:var(--color-teal);text-decoration:underline;"${attrs}>${label}</a>`;
+    }
+  );
+}
+
+function formatRichText(block: string, serviceLinks?: Record<string, string>): string {
+  const withLinks = renderInlineMarkdownLinks(block);
+  const withBold = withLinks.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  return applyServiceLinks(withBold, serviceLinks);
 }
 
 function renderContent(content: string, serviceLinks?: Record<string, string>) {
@@ -67,7 +84,7 @@ function renderContent(content: string, serviceLinks?: Record<string, string>) {
         <ul key={i} style={{ paddingLeft: "20px", marginBottom: "20px" }}>
           {items.map((item, j) => (
             <li key={j} style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "6px" }}
-              dangerouslySetInnerHTML={{ __html: applyServiceLinks(item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
+              dangerouslySetInnerHTML={{ __html: formatRichText(item, serviceLinks) }}
             />
           ))}
         </ul>
@@ -80,7 +97,7 @@ function renderContent(content: string, serviceLinks?: Record<string, string>) {
           <ol key={i} style={{ paddingLeft: "20px", marginBottom: "20px" }}>
             {items.map((item, j) => (
               <li key={j} style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", marginBottom: "6px" }}
-                dangerouslySetInnerHTML={{ __html: applyServiceLinks(item.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
+                dangerouslySetInnerHTML={{ __html: formatRichText(item, serviceLinks) }}
               />
             ))}
           </ol>
@@ -90,7 +107,7 @@ function renderContent(content: string, serviceLinks?: Record<string, string>) {
     if (block.trim() === "") return null;
     return (
       <p key={i} style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}
-        dangerouslySetInnerHTML={{ __html: applyServiceLinks(block.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), serviceLinks) }}
+        dangerouslySetInnerHTML={{ __html: formatRichText(block, serviceLinks) }}
       />
     );
   });
@@ -105,6 +122,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const allPosts = getAllBlogPosts();
   const otherPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const explicitRelatedArticles = post.relatedArticles ?? [];
 
   const canonicalUrl = post.canonicalUrl ?? `${SITE.url}/blog/${post.slug}`;
   const articleSchema = {
@@ -201,6 +219,20 @@ export default async function BlogPostPage({ params }: Props) {
                 const splitAt = Math.min(3, Math.floor(elements.length / 2));
                 return (
                   <>
+                    {post.tableOfContents && post.tableOfContents.length > 0 ? (
+                      <div style={{ background: "#fff", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "18px 20px", marginBottom: "24px" }}>
+                        <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "10px" }}>
+                          Table of Contents
+                        </div>
+                        <ul style={{ margin: 0, paddingLeft: "18px" }}>
+                          {post.tableOfContents.map((item) => (
+                            <li key={item} style={{ fontSize: "0.86rem", lineHeight: 1.8, color: "var(--color-muted)", marginBottom: "4px" }}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
                     {elements.slice(0, splitAt)}
                     {post.cta && <ArticleCTA {...post.cta} />}
                     {elements.slice(splitAt)}
@@ -212,11 +244,26 @@ export default async function BlogPostPage({ params }: Props) {
 
               <div style={{ background: "var(--color-stone)", border: "1px solid var(--color-divider)", borderRadius: "6px", padding: "24px 28px", marginTop: "48px" }}>
                 <p style={{ fontSize: "0.75rem", lineHeight: 1.75, color: "var(--color-muted-light)" }}>
-                  <strong style={{ color: "var(--color-muted)" }}>Medical disclaimer:</strong> This article is for educational purposes only and does not constitute medical advice. Individual clinical decisions should be made in consultation with a qualified healthcare provider following appropriate evaluation. References to specific treatments, dosing, or protocols are informational.
+                  <strong style={{ color: "var(--color-muted)" }}>Medical disclaimer:</strong> {post.medicalDisclaimer || "This article is for educational purposes only and does not constitute medical advice. Individual clinical decisions should be made in consultation with a qualified healthcare provider following appropriate evaluation. References to specific treatments, dosing, or protocols are informational."}
                 </p>
               </div>
 
               <AuthorBio />
+
+              {explicitRelatedArticles.length > 0 ? (
+                <div style={{ background: "#fff", borderRadius: "6px", border: "1px solid var(--color-divider)", padding: "28px 24px", marginTop: "24px" }}>
+                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "16px" }}>
+                    Related Articles
+                  </div>
+                  {explicitRelatedArticles.map((article) => (
+                    <Link key={article.href} href={article.href} style={{ display: "block", textDecoration: "none", paddingBottom: "14px", marginBottom: "14px", borderBottom: "1px solid var(--color-divider)" }}>
+                      <div style={{ fontSize: "0.82rem", color: "var(--color-ink)", lineHeight: 1.4, fontFamily: "var(--font-display)" }}>
+                        {article.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </article>
           </FadeIn>
 
@@ -225,6 +272,11 @@ export default async function BlogPostPage({ params }: Props) {
               <div style={{ background: "var(--color-teal)", borderRadius: "6px", padding: "32px 28px", marginBottom: "24px" }}>
                 <div style={{ fontSize: "0.58rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: "12px" }}>Related service</div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 400, color: "#fff", lineHeight: 1.3, marginBottom: "16px" }}>{post.relatedService}</h3>
+                {post.relatedServiceDescription ? (
+                  <p style={{ fontSize: "0.82rem", lineHeight: 1.7, color: "rgba(255,255,255,0.62)", marginBottom: "16px" }}>
+                    {post.relatedServiceDescription}
+                  </p>
+                ) : null}
                 <Link href={post.relatedServiceHref} style={{ display: "inline-block", background: "var(--color-gold)", color: "#fff", padding: "10px 20px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none" }}>Learn More</Link>
               </div>
 

@@ -68,6 +68,21 @@ export default function ServicesPage() {
           <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "rgba(255,255,255,0.45)", maxWidth: "520px", marginBottom: "28px" }}>
             Every treatment at Revitalize begins with a clinical consultation. Below is a complete overview of what we offer at our Columbus and Warner Robins locations.
           </p>
+          <Link
+            href="/blog/revitalize-vs-traditional-med-spa"
+            style={{
+              display: "inline-block",
+              fontSize: "0.62rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.42)",
+              marginBottom: "20px",
+              textDecoration: "none",
+            }}
+          >
+            How Revitalize is different →
+          </Link>
+          <br />
           <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", background: "var(--color-gold)", color: "#fff", padding: "13px 26px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>
             Book a Consultation
           </a>

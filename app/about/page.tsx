@@ -48,6 +48,11 @@ export default function AboutPage() {
             <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}>
               When he founded Revitalize Aesthetics and Wellness, he brought that same orientation with him. Every patient gets a clinical conversation before a treatment recommendation. Labs are reviewed, not skimmed. The question is always &ldquo;what is actually driving this&rdquo; — not &ldquo;what can we sell.&rdquo;
             </p>
+            <p style={{ marginBottom: "20px" }}>
+              <Link href="/blog/revitalize-vs-traditional-med-spa" style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-teal)", textDecoration: "none" }}>
+                What makes the Revitalize model different →
+              </Link>
+            </p>
             <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "28px" }}>
               He is a Certified Platinum Biote provider — one of the highest designations in the Biote hormone therapy network — and the published author of <em>You&apos;re Not Broken — You&apos;re Unbalanced</em>, a clinician&apos;s guide to midlife metabolic health. He also founded the Rebuild Metabolic Health Institute, a structured coaching program for adults navigating the hormone and metabolic shifts of mid-life.
             </p>

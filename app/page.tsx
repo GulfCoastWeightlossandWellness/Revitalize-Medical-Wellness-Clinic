@@ -343,18 +343,32 @@ export default function HomePage() {
             </Link>
           </div>
           <div style={{ marginBottom: "36px" }}>
-            <Link
-              href="/services"
-              style={{
-                fontSize: "0.68rem",
-                color: "rgba(255,255,255,0.3)",
-                letterSpacing: "0.12em",
-                textDecoration: "none",
-              }}
-              className="hero-services-link"
-            >
-              Explore all services →
-            </Link>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <Link
+                href="/services"
+                style={{
+                  fontSize: "0.68rem",
+                  color: "rgba(255,255,255,0.3)",
+                  letterSpacing: "0.12em",
+                  textDecoration: "none",
+                }}
+                className="hero-services-link"
+              >
+                Explore all services →
+              </Link>
+              <Link
+                href="/blog/revitalize-vs-traditional-med-spa"
+                style={{
+                  fontSize: "0.68rem",
+                  color: "rgba(255,255,255,0.3)",
+                  letterSpacing: "0.12em",
+                  textDecoration: "none",
+                }}
+                className="hero-services-link"
+              >
+                How we&apos;re different →
+              </Link>
+            </div>
           </div>
 
           {/* Stats */}

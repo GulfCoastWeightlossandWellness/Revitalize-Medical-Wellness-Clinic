@@ -1,9 +1,11 @@
 import { getHubArticles } from "@/lib/contentHub";
 import { ARTICLE_ENHANCEMENTS } from "@/lib/articleEnhancements";
+import { NEW_ARTICLES_20 } from "@/lib/newArticles20";
 
 export interface BlogPost {
   slug: string;
   title: string;
+  metaTitle?: string;
   description: string;
   keyword: string;
   date: string;
@@ -24,6 +26,10 @@ export interface BlogPost {
     variant?: "assessment" | "booking" | "start-here";
   };
   serviceLinks?: Record<string, string>;
+  tableOfContents?: string[];
+  medicalDisclaimer?: string;
+  relatedArticles?: Array<{ title: string; href: string }>;
+  relatedServiceDescription?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -1941,7 +1947,7 @@ ${article.excerpt || "Read the full article in the Learning Library for the comp
   });
 
   const map = new Map<string, BlogPost>();
-  [...BLOG_POSTS, ...mirrored].forEach((post) => map.set(post.slug, post));
+  [...BLOG_POSTS, ...NEW_ARTICLES_20, ...mirrored].forEach((post) => map.set(post.slug, post));
   return [...map.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 

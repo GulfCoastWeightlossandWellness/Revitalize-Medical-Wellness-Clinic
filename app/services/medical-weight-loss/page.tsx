@@ -54,6 +54,9 @@ export default function MedicalWeightLoss() {
         { name: "Fat Dissolving Injections", href: "/services/fat-dissolving-injections" },
       ]}
       relatedPosts={[
+        { title: "Insulin Resistance Signs and Treatment — A Clinical Guide", href: "/blog/insulin-resistance-signs-treatment" },
+        { title: "Tirzepatide vs Semaglutide in 2026 — Clinical Comparison", href: "/blog/tirzepatide-vs-semaglutide-2026" },
+        { title: "What to Eat on Semaglutide — Practical Clinical Guidance", href: "/blog/what-to-eat-on-semaglutide" },
         { title: "Semaglutide vs. Tirzepatide — What the Difference Actually Means", href: "/compare/semaglutide-vs-tirzepatide" },
         { title: "Medical Weight Loss vs Fad Diets — What Actually Works", href: "/blog/medical-weight-loss-vs-fad-diets" },
         { title: "How Semaglutide Works for Weight Loss", href: "/blog/how-semaglutide-works" },

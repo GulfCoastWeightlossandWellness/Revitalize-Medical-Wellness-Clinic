@@ -54,6 +54,7 @@ export default function DermalFillers() {
         { name: "AquaFirme Facials", href: "/services/aquafirme-facials" },
       ]}
       relatedPosts={[
+        { title: "Lip Filler — What to Expect", href: "/blog/lip-filler-what-to-expect" },
         { title: "The Difference Between Botox and Dermal Fillers", href: "/blog/botox-vs-dermal-fillers" },
         { title: "How to Choose a Medical Spa in Columbus GA", href: "/blog/how-to-choose-medical-spa-columbus-ga" },
       ]}

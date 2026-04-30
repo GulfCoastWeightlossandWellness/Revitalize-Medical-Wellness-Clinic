@@ -59,6 +59,8 @@ export default function HormoneTherapyMen() {
         { name: "Nutritional Counseling", href: "/services/nutritional-counseling" },
       ]}
       relatedPosts={[
+        { title: "Andropause — Male Hormonal Transition in Midlife", href: "/blog/andropause-male-hormonal-transition" },
+        { title: "Erectile Dysfunction and Hormones — The Clinical Connection", href: "/blog/erectile-dysfunction-hormones-connection" },
         { title: "Signs Your Hormones Are Out of Balance", href: "/blog/signs-hormones-out-of-balance" },
         { title: "Why Your Energy Crashed in Your 40s and What to Do About It", href: "/blog/energy-crashed-40s" },
         { title: "What Is Biote Pellet Therapy and How Does It Work", href: "/blog/biote-pellet-therapy-explained" },

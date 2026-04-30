@@ -394,8 +394,37 @@ export default function WarnerRobinsLocationPage() {
         <FadeIn>
           <div style={{ maxWidth: "860px", margin: "0 auto" }}>
             <div className="eyebrow" style={{ marginBottom: "16px" }}>From the learning library</div>
-            <Link
-              href="/blog/hormone-replacement-therapy-warner-robins"
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <Link
+                href="/blog/medical-weight-loss-warner-robins-ga"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  background: "#fff",
+                  borderRadius: "6px",
+                  padding: "28px 32px",
+                  borderLeft: "4px solid var(--color-gold)",
+                  textDecoration: "none",
+                  gap: "16px",
+                }}
+                className="wr-article-link"
+              >
+                <div>
+                  <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "8px" }}>
+                    Medical Weight Loss · Warner Robins
+                  </p>
+                  <p style={{ fontSize: "1.05rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "6px" }}>
+                    Medical Weight Loss in Warner Robins, Georgia — What to Look For in a Program
+                  </p>
+                  <p style={{ fontSize: "0.82rem", color: "var(--color-muted)", lineHeight: 1.7 }}>
+                    What distinguishes a clinical metabolic program from prescription-only services and what to expect at Revitalize.
+                  </p>
+                </div>
+                <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
+              </Link>
+              <Link
+                href="/blog/botox-aesthetics-warner-robins-ga"
               style={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -408,20 +437,21 @@ export default function WarnerRobinsLocationPage() {
                 gap: "16px",
               }}
               className="wr-article-link"
-            >
-              <div>
-                <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "8px" }}>
-                  Hormone Therapy · Warner Robins
-                </p>
-                <p style={{ fontSize: "1.05rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "6px" }}>
-                  Hormone Replacement Therapy in Warner Robins, GA — A Clinical Overview
-                </p>
-                <p style={{ fontSize: "0.82rem", color: "var(--color-muted)", lineHeight: 1.7 }}>
-                  What to expect from HRT at our Warner Robins clinic: evaluation process, delivery options, and who is a candidate.
-                </p>
-              </div>
-              <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
-            </Link>
+              >
+                <div>
+                  <p style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "8px" }}>
+                    Aesthetics · Warner Robins
+                  </p>
+                  <p style={{ fontSize: "1.05rem", fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--color-ink)", marginBottom: "6px" }}>
+                    Botox and Aesthetic Treatments in Warner Robins, Georgia — A Clinical Guide
+                  </p>
+                  <p style={{ fontSize: "0.82rem", color: "var(--color-muted)", lineHeight: 1.7 }}>
+                    How to evaluate credentials, consultation standards, and treatment philosophy before booking injectables.
+                  </p>
+                </div>
+                <span style={{ color: "var(--color-teal)", fontSize: "1.4rem", flexShrink: 0 }}>→</span>
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </section>

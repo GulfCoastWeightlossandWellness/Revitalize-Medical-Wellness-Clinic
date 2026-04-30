@@ -59,6 +59,9 @@ export default function HormoneTherapyWomen() {
         { name: "IV Hydration Therapy", href: "/services/iv-hydration" },
       ]}
       relatedPosts={[
+        { title: "Perimenopause Symptom Checklist — What Is Common and What Is Treatable", href: "/blog/perimenopause-symptom-checklist" },
+        { title: "Estrogen Dominance in Perimenopause — Clinical Context", href: "/blog/estrogen-dominance-perimenopause" },
+        { title: "Night Sweats and Hot Flashes — A Clinical Explanation", href: "/blog/night-sweats-hot-flashes-clinical-explanation" },
         { title: "Signs Your Hormones Are Out of Balance", href: "/blog/signs-hormones-out-of-balance" },
         { title: "What to Expect at Your First Hormone Consultation", href: "/blog/first-hormone-consultation" },
         { title: "Why Your Energy Crashed in Your 40s and What to Do About It", href: "/blog/energy-crashed-40s" },

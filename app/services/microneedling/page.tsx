@@ -56,6 +56,7 @@ export default function Microneedling() {
         { name: "Cellenis PRP Gel Filler", href: "/services/cellenis-prp-gel-filler" },
       ]}
       relatedPosts={[
+        { title: "Microneedling Results — Realistic Expectations and Timeline", href: "/blog/microneedling-results-realistic-expectations" },
         { title: "Microneedling vs. CO2 Laser — Which One Is Right for You", href: "/compare/microneedling-vs-co2-laser" },
         { title: "Microneedling vs CO2 Laser — Which Is Right for You", href: "/blog/microneedling-vs-co2-laser" },
         { title: "How to Choose a Medical Spa in Columbus GA", href: "/blog/how-to-choose-medical-spa-columbus-ga" },
