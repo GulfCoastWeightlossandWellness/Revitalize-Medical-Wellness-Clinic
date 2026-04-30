@@ -619,6 +619,17 @@ export default function ColumbusLocationPage() {
                 >
                   Warner Robins Location →
                 </Link>
+                <Link
+                  href="/locations/compare"
+                  style={{
+                    fontSize: "0.68rem",
+                    color: "rgba(255,255,255,0.38)",
+                    letterSpacing: "0.06em",
+                    alignSelf: "center",
+                  }}
+                >
+                  Compare locations →
+                </Link>
               </div>
             </div>
           </FadeIn>

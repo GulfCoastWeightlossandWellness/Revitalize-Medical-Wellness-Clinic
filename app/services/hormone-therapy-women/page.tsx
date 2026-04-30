@@ -63,6 +63,10 @@ export default function HormoneTherapyWomen() {
         { title: "What to Expect at Your First Hormone Consultation", href: "/blog/first-hormone-consultation" },
         { title: "Why Your Energy Crashed in Your 40s and What to Do About It", href: "/blog/energy-crashed-40s" },
         { title: "What Is Biote Pellet Therapy and How Does It Work", href: "/blog/biote-pellet-therapy-explained" },
+        { title: "Symptom Guide: Mood Changes in Mid-Life", href: "/symptoms/mood-changes" },
+        { title: "Symptom Guide: Poor Sleep", href: "/symptoms/poor-sleep" },
+        { title: "Symptom Guide: Low Libido", href: "/symptoms/low-libido" },
+        { title: "Symptom Guide: Brain Fog", href: "/symptoms/brain-fog" },
       ]}
       faqs={[
         {

@@ -28,6 +28,10 @@ const CONCERNS = [
       { label: "IV Hydration Therapy", href: "/services/iv-hydration" },
     ],
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
+    symptomLinks: [
+      { label: "Fatigue that sleep doesn't fix", href: "/symptoms/low-energy" },
+      { label: "Brain fog and mental slowness", href: "/symptoms/brain-fog" },
+    ],
   },
   {
     icon: "02",
@@ -39,6 +43,9 @@ const CONCERNS = [
       { label: "Hormone Therapy", href: "/services/hormone-therapy-women" },
     ],
     tool: { label: "Use the Treatment Finder", href: "/tools" },
+    symptomLinks: [
+      { label: "Midsection weight gain", href: "/symptoms/midsection-weight-gain" },
+    ],
   },
   {
     icon: "03",
@@ -50,6 +57,11 @@ const CONCERNS = [
       { label: "Biote Pellet Therapy", href: "/services/biote-pellet-therapy" },
     ],
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
+    symptomLinks: [
+      { label: "Mood changes in mid-life", href: "/symptoms/mood-changes" },
+      { label: "Poor sleep", href: "/symptoms/poor-sleep" },
+      { label: "Low libido", href: "/symptoms/low-libido" },
+    ],
   },
   {
     icon: "04",
@@ -62,6 +74,7 @@ const CONCERNS = [
       { label: "PhantomClear CO2 Laser", href: "/services/fractional-co2-laser" },
     ],
     tool: { label: "Use the Treatment Finder", href: "/tools" },
+    symptomLinks: [],
   },
   {
     icon: "05",
@@ -71,6 +84,7 @@ const CONCERNS = [
       { label: "IV Hydration Therapy", href: "/services/iv-hydration" },
     ],
     tool: { label: "Use the Treatment Finder", href: "/tools" },
+    symptomLinks: [],
   },
   {
     icon: "06",
@@ -82,6 +96,9 @@ const CONCERNS = [
       { label: "Hormone Therapy", href: "/services/hormone-therapy-women" },
     ],
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
+    symptomLinks: [
+      { label: "Low libido — clinical causes", href: "/symptoms/low-libido" },
+    ],
   },
   {
     icon: "07",
@@ -92,6 +109,7 @@ const CONCERNS = [
       { label: "Laser Hair Removal", href: "/services/laser-hair-removal" },
     ],
     tool: { label: "Use the Treatment Finder", href: "/tools" },
+    symptomLinks: [],
   },
   {
     icon: "08",
@@ -103,6 +121,10 @@ const CONCERNS = [
       { label: "IV Hydration Therapy", href: "/services/iv-hydration" },
     ],
     tool: { label: "Take the Hormone Health Assessment", href: "/tools" },
+    symptomLinks: [
+      { label: "Brain fog", href: "/symptoms/brain-fog" },
+      { label: "Poor sleep", href: "/symptoms/poor-sleep" },
+    ],
   },
 ];
 
@@ -310,6 +332,27 @@ export default function StartHerePage() {
                     ))}
                   </div>
                 </div>
+
+                {concern.symptomLinks.length > 0 && (
+                  <div style={{ marginTop: "4px" }}>
+                    <div style={{ fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-muted-light)", marginBottom: "8px" }}>
+                      Read more about this
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                      {concern.symptomLinks.map((s) => (
+                        <Link
+                          key={s.href}
+                          href={s.href}
+                          style={{ fontSize: "0.8rem", color: "var(--color-muted)", textDecoration: "none", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4px 0", borderBottom: "1px solid var(--color-divider)" }}
+                          className="concern-service-link"
+                        >
+                          {s.label}
+                          <span style={{ fontSize: "0.9rem", opacity: 0.45 }}>→</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <Link
                   href={concern.tool.href}

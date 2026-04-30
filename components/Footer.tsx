@@ -22,6 +22,7 @@ const FOOTER_CLINIC_LINKS = [
   { label: "Start Here", href: "/start-here" },
   { label: "Tools & Assessments", href: "/tools" },
   { label: "Payment Plans", href: "/payment-plans" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Contact", href: "/contact" },
 ];
 

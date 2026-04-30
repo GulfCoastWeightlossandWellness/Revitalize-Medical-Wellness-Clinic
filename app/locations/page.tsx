@@ -86,6 +86,11 @@ export default function LocationsPage() {
               <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ background: "var(--color-teal)", color: "#fff", padding: "14px 28px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase" }}>Book Online</a>
               <Link href="/contact" style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "14px 28px", borderRadius: "6px", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase" }}>Contact Us</Link>
             </div>
+            <div style={{ marginTop: "20px" }}>
+              <Link href="/locations/compare" style={{ fontSize: "0.72rem", color: "var(--color-teal)", fontWeight: 500, letterSpacing: "0.06em" }}>
+                Compare locations side-by-side →
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>

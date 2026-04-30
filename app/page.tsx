@@ -1136,12 +1136,33 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
+
+          <div style={{ textAlign: "center", marginTop: "36px" }}>
+            <Link
+              href="/reviews"
+              style={{
+                fontSize: "0.62rem",
+                fontWeight: 600,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.45)",
+                textDecoration: "none",
+                borderBottom: "1px solid rgba(255,255,255,0.15)",
+                paddingBottom: "2px",
+                transition: "color 0.2s",
+              }}
+              className="reviews-all-link"
+            >
+              Read all reviews →
+            </Link>
+          </div>
         </div>
 
         <style>{`
           .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
           .eyebrow-white { justify-content: center; }
           .eyebrow-white::before { display: none !important; }
+          .reviews-all-link:hover { color: rgba(255,255,255,0.72) !important; }
           @media (max-width: 768px) {
             .testimonials-grid { grid-template-columns: 1fr !important; }
           }

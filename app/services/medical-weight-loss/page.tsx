@@ -59,6 +59,7 @@ export default function MedicalWeightLoss() {
         { title: "How Semaglutide Works for Weight Loss", href: "/blog/how-semaglutide-works" },
         { title: "Signs Your Hormones Are Out of Balance", href: "/blog/signs-hormones-out-of-balance" },
         { title: "Why Your Energy Crashed in Your 40s and What to Do About It", href: "/blog/energy-crashed-40s" },
+        { title: "Symptom Guide: Midsection Weight Gain", href: "/symptoms/midsection-weight-gain" },
       ]}
       faqs={[
         {

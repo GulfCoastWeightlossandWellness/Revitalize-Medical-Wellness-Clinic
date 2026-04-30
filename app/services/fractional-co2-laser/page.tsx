@@ -56,6 +56,7 @@ export default function FractionalCO2Laser() {
         { name: "AquaFirme Facials", href: "/services/aquafirme-facials" },
       ]}
       relatedPosts={[
+        { title: "Microneedling vs. CO2 Laser — A Clinical Comparison", href: "/compare/microneedling-vs-co2-laser" },
         { title: "Microneedling vs CO2 Laser — Which Is Right for You", href: "/blog/microneedling-vs-co2-laser" },
         { title: "How to Choose a Medical Spa in Columbus GA", href: "/blog/how-to-choose-medical-spa-columbus-ga" },
       ]}
