@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HormoneQuiz from "@/components/tools/HormoneQuiz";
 import TreatmentFinder from "@/components/tools/TreatmentFinder";
+import WeightLossCheck from "@/components/tools/WeightLossCheck";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+      <section id="hormone-health-assessment" style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <FadeIn>
             <HormoneQuiz />
@@ -31,10 +32,18 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+      <section id="treatment-finder" style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <FadeIn>
             <TreatmentFinder />
+          </FadeIn>
+        </div>
+      </section>
+
+      <section id="weight-loss-check" style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <FadeIn>
+            <WeightLossCheck />
           </FadeIn>
         </div>
       </section>

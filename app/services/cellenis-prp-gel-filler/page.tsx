@@ -73,6 +73,7 @@ export default function CellenisPRPGelFiller() {
         },
       ]}
       disclaimer="Cellenis PRP Gel Filler is an autologous treatment using the patient's own blood. Results vary by individual. This is not FDA-approved as a filler device. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

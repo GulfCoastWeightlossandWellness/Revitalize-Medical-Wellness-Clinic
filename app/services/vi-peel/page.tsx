@@ -78,6 +78,7 @@ export default function VIPeel() {
         },
       ]}
         disclaimer="VI Peel results vary by individual and skin type. This is a cosmetic treatment with a recovery period. Strict adherence to aftercare instructions — including sun avoidance — is required. Information on this page is educational and does not constitute medical advice."
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
       <ServiceImagePlaceholder
         eyebrow="VI Peel gallery"

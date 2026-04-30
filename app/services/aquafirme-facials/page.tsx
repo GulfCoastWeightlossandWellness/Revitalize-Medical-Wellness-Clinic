@@ -74,6 +74,7 @@ export default function AquaFirmeFacials() {
         },
       ]}
       disclaimer="AquaFirme facial results vary by individual and skin type. This is a cosmetic treatment. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

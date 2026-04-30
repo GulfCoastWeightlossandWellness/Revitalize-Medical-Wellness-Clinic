@@ -107,6 +107,7 @@ export default function Microneedling() {
         </FadeIn>
       }
       disclaimer="Microneedling results vary by individual, skin type, and treatment series. This is a cosmetic treatment, not a medical one. Individual responses to microneedling differ. Results from a single session are less pronounced than results from a completed series. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

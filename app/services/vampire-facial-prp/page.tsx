@@ -104,6 +104,7 @@ export default function VampireFacialPRP() {
         </FadeIn>
       }
       disclaimer="PRP microneedling is a cosmetic treatment. PRP for aesthetic use has not been evaluated by the FDA for this indication. Individual results vary. The term 'Vampire Facial' is a colloquial description of PRP microneedling. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

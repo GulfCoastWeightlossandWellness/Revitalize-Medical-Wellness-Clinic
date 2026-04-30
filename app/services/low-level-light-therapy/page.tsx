@@ -63,6 +63,7 @@ export default function LowLevelLightTherapy() {
         },
       ]}
       disclaimer="Low level light therapy is a cosmetic treatment. Individual results vary. No specific outcomes are guaranteed. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

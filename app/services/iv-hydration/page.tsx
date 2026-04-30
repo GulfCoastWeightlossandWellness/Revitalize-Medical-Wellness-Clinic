@@ -104,6 +104,7 @@ export default function IVHydration() {
       disclaimer="IV hydration therapy is intended to support hydration status and general well-being. It is not a treatment for medical conditions, not a substitute for emergency care, and not appropriate for all individuals. A good-faith clinical examination is required before every session. Individual responses vary. Information on this page is educational and does not constitute medical advice."
       pageHref="/services/iv-hydration"
       pageName="IV Hydration Therapy"
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

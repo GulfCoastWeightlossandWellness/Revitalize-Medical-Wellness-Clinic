@@ -76,6 +76,7 @@ export default function ErectileDysfunction() {
         },
       ]}
       disclaimer="Information on this page is educational and does not constitute medical advice. Erectile dysfunction requires individualized clinical evaluation. Men with chest pain, exertional breathlessness, or sudden onset neurological symptoms should seek emergency care before pursuing ED treatment. Individual results and treatment pathways vary."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

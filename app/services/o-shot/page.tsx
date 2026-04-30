@@ -77,6 +77,7 @@ export default function OShot() {
         },
       ]}
       disclaimer="PRP for sexual wellness (O-Shot) is not FDA-approved for this indication and is considered investigational. Individual results vary significantly. This is not a treatment for medical conditions. Information on this page is educational and does not constitute medical advice. Consultation required."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

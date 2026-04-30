@@ -102,6 +102,7 @@ export default function LaserHairRemoval() {
           </FadeIn>
         }
         disclaimer="Laser hair removal results vary by individual, hair type, and skin tone. Long-term reduction is likely for most appropriate candidates; permanent elimination is not guaranteed. A series of sessions is required. Consultation required to confirm candidacy."
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
     </>
   );

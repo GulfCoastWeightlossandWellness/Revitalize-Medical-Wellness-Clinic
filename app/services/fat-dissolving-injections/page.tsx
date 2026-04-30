@@ -71,6 +71,7 @@ export default function FatDissolvingInjections() {
         },
       ]}
         disclaimer="Deoxycholic acid injections are FDA-recognized for submental fullness only. This is not a weight loss treatment. Individual results vary. Significant post-treatment swelling and bruising are expected. Information on this page is educational and does not constitute medical advice."
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
       <ServiceImagePlaceholder
         eyebrow="Treatment visuals"

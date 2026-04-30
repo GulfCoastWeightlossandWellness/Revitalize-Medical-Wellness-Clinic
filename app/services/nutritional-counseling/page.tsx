@@ -64,6 +64,7 @@ export default function NutritionalCounseling() {
         },
       ]}
       disclaimer="Nutritional counseling at Revitalize is provided by licensed clinical staff. It is not intended to replace care by a registered dietitian for patients with complex dietary medical conditions. Information on this page is educational and does not constitute medical advice."
+      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
     />
   );
 }

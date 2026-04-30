@@ -73,6 +73,7 @@ export default function DeriveHairRestoration() {
         },
       ]}
         disclaimer="DE|RIVE hair restoration results vary by individual. This is a cosmetic treatment, not a medical one. Individual responses to the protocol differ. Results are not guaranteed. Information on this page is educational and does not constitute medical advice."
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
       <ServiceImagePlaceholder
         eyebrow="Treatment visuals"

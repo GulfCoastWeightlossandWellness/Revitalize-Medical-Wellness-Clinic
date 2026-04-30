@@ -222,8 +222,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Ready to bring your symptom picture to a clinical evaluation?",
       body: "The hormone consultation at Revitalize starts with your story and your labs — not a generic protocol.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -291,8 +291,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Getting labs that include progesterone — drawn at the right time — matters.",
       body: "A hormone evaluation at Revitalize reviews the full picture: estrogen, progesterone, testosterone, thyroid, and the clinical history that gives those numbers context.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -352,8 +352,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Significant hot flashes are a clinical problem with clinical solutions.",
       body: "A hormone evaluation at Revitalize identifies the severity and drivers of your vasomotor symptoms and presents the appropriate treatment options.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -413,8 +413,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "The symptom pattern is recognizable. The evaluation is straightforward.",
       body: "A comprehensive andropause evaluation at Revitalize identifies whether testosterone optimization is appropriate for your clinical picture.",
-      buttonLabel: "Book a Men's Health Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -544,8 +544,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Fasting insulin is not on your standard lab panel — it should be.",
       body: "A comprehensive metabolic evaluation at Revitalize includes fasting insulin, HOMA-IR, and the full hormonal picture that determines why weight loss has been difficult.",
-      buttonLabel: "Learn About the Program",
-      buttonHref: "/services/medical-weight-loss"
+      buttonLabel: "Try the Weight Loss Readiness Check",
+      buttonHref: "/tools#weight-loss-check"
     },
     faq: [
       {
@@ -812,8 +812,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Not sure if microneedling is the right treatment for your specific concerns?",
       body: "A skin consultation at Revitalize identifies whether microneedling, CO2 laser, or a combination approach is most appropriate.",
-      buttonLabel: "Book a Skin Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Use the Treatment Finder",
+      buttonHref: "/tools#treatment-finder"
     },
     faq: [
       {
@@ -932,8 +932,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Pigmentation, texture, or tone concerns?",
       body: "A skin consultation at Revitalize identifies whether VI Peel, CO2 laser, or another treatment approach is most appropriate for your specific concerns.",
-      buttonLabel: "Book a Skin Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Use the Treatment Finder",
+      buttonHref: "/tools#treatment-finder"
     },
     faq: [
       {
@@ -993,8 +993,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Cortisol dysregulation does not show up on a standard lab panel.",
       body: "A comprehensive evaluation at Revitalize includes four-point cortisol assessment as part of the hormonal workup when clinically indicated.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -1065,8 +1065,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "A normal TSH is not the same as optimal thyroid function.",
       body: "The comprehensive hormonal evaluation at Revitalize includes free T3, reverse T3, and the full thyroid panel — not just TSH.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Check Your Hormone Symptoms",
+      buttonHref: "/tools#hormone-health-assessment"
     },
     faq: [
       {
@@ -1135,8 +1135,8 @@ export const NEW_ARTICLES_20: BlogPost[] = [
     cta: {
       headline: "Not sure which PRP application is relevant to your situation?",
       body: "A clinical consultation at Revitalize identifies whether PRP is appropriate and which application addresses your specific concerns.",
-      buttonLabel: "Book a Consultation",
-      buttonHref: "https://revitalizeaesthetics.janeapp.com/"
+      buttonLabel: "Use the Treatment Finder",
+      buttonHref: "/tools#treatment-finder"
     },
     faq: [
       {

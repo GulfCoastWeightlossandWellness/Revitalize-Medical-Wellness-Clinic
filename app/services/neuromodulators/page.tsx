@@ -117,6 +117,7 @@ export default function Neuromodulators() {
         disclaimer="Neuromodulator treatments are performed by licensed clinical providers. Results are temporary and vary by individual. This page uses the term 'neuromodulator' to refer to wrinkle-relaxing injectable treatments. Specific product selection is determined at consultation. Information on this page is educational and does not constitute medical advice."
         pageHref="/services/neuromodulators"
         pageName="Neuromodulators (Botox & Dysport)"
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
     </>
   );

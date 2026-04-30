@@ -107,6 +107,7 @@ export default function FractionalCO2Laser() {
           </FadeIn>
         }
         disclaimer="Fractional CO2 laser resurfacing is an ablative procedure with a recovery period. Individual results vary. This treatment is not appropriate for all patients — candidacy is determined at consultation. Strict sun protection during and after healing is required. Information on this page is educational and does not constitute medical advice."
+        assessmentCta={{ label: "Use the Treatment Finder", href: "/tools#treatment-finder" }}
       />
     </>
   );

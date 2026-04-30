@@ -116,7 +116,7 @@ export default function MedicalWeightLoss() {
       disclaimer="Medical information on this page is educational and does not constitute medical advice. GLP-1 receptor agonists require a prescription and in-person clinical evaluation. We do not prescribe weight loss medications online. Individual results vary significantly. Weight loss outcomes depend on multiple factors including adherence, metabolic baseline, and lifestyle factors."
       pageHref="/services/medical-weight-loss"
       pageName="Medical Weight Loss"
-      assessmentCta={{ label: "Use the Treatment Finder", href: "/tools" }}
+      assessmentCta={{ label: "Weight Loss Readiness Check", href: "/tools#weight-loss-check" }}
       />
   );
 }
