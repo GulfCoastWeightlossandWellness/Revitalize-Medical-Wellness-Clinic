@@ -11,6 +11,7 @@
     "hub:sync": "npm run hub:import && npm run hub:refresh"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.92.0",
     "@vercel/analytics": "^2.0.1",
     "cheerio": "^1.2.0",
     "framer-motion": "^12.38.0",
