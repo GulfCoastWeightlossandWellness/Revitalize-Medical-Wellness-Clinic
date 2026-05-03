@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogPosts, getFeaturedPost } from "@/lib/blog";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -25,8 +25,9 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();
-  const featured = posts[0];
-  const rest = posts.slice(1);
+  // Phase 5: explicit featured selection (falls back to most recent if none marked)
+  const featured = getFeaturedPost() ?? posts[0];
+  const rest = posts.filter((p) => p.slug !== featured?.slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

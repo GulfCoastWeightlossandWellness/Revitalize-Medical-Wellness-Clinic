@@ -2,6 +2,8 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import ImageSlot from "@/components/ui/ImageSlot";
+import RelatedPostsRow from "@/components/RelatedPostsRow";
+import { getPostsByServiceSlug, getPostsByCity, type BlogPost } from "@/lib/blog";
 
 export interface LocationSEOPageProps {
   city: "Columbus" | "Warner Robins";
@@ -14,6 +16,27 @@ export interface LocationSEOPageProps {
   faqs: { q: string; a: string }[];
   relatedServices: { label: string; href: string }[];
   schema: object;
+}
+
+function pickRelatedForCombo(serviceHref: string, city: "Columbus" | "Warner Robins"): BlogPost[] {
+  const serviceSlug = serviceHref.match(/^\/services\/([a-z0-9-]+)$/)?.[1];
+  const citySlug = city === "Columbus" ? "columbus-ga" : "warner-robins-ga";
+  const fromService = serviceSlug ? getPostsByServiceSlug(serviceSlug, undefined, 1) : [];
+  const fromCity = getPostsByCity(citySlug, fromService[0]?.slug, 1);
+  // 1 service-related + 1 city-related per spec; if either misses, fall back to remaining
+  const combined = [...fromService, ...fromCity];
+  if (combined.length >= 2) return combined.slice(0, 2);
+  if (serviceSlug) {
+    const more = getPostsByServiceSlug(
+      serviceSlug,
+      combined[0]?.slug,
+      2 - combined.length,
+    );
+    for (const m of more) {
+      if (!combined.find((c) => c.slug === m.slug)) combined.push(m);
+    }
+  }
+  return combined.slice(0, 2);
 }
 
 export default function LocationSEOPage({
@@ -129,6 +152,13 @@ export default function LocationSEOPage({
         </div>
         <style>{`.loc-seo-layout { grid-template-columns: 1fr 340px; } @media (max-width: 1024px) { .loc-seo-layout { grid-template-columns: 1fr !important; } }`}</style>
       </section>
+
+      {/* Phase 5 — Related Reading (1 service-tagged + 1 city-tagged post) */}
+      <RelatedPostsRow
+        posts={pickRelatedForCombo(serviceHref, city)}
+        heading={`Related reading on ${service} in ${city}`}
+        variant="compact"
+      />
     </>
   );
 }

@@ -87,7 +87,10 @@ export const REDIRECT_MAP: RedirectEntry[] = [
   // ─── Auburn location — permanently closed ───────────────────────────────────
   // Any indexed Auburn location or Auburn-specific page redirects to /locations
   // where visitors will see Columbus and Warner Robins as the active clinics.
-  { source: "/auburn",          destination: "/locations", permanent: true },
-  { source: "/auburn-al",       destination: "/locations", permanent: true },
-  { source: "/locations/auburn",destination: "/locations", permanent: true },
+  { source: "/auburn",            destination: "/locations", permanent: true },
+  { source: "/auburn-al",         destination: "/locations", permanent: true },
+  { source: "/locations/auburn",  destination: "/locations", permanent: true },
+  { source: "/auburn-aesthetics", destination: "/locations", permanent: true },
+  { source: "/revitalize-auburn", destination: "/locations", permanent: true },
+  { source: "/auburn-location",   destination: "/locations", permanent: true },
 ];

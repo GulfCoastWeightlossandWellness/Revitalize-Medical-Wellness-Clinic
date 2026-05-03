@@ -1,0 +1,3409 @@
+[
+  {
+    "postNumber": 1,
+    "publishedDate": "2026-06-02",
+    "dayOfWeek": "Tue",
+    "title": "Revitalize Is Now Serving Former Auburn Patients at Our Columbus and Warner Robins Locations",
+    "slug": "auburn-patients-columbus-warner-robins",
+    "category": "Local",
+    "primaryKeyword": "Auburn patients Columbus Warner Robins",
+    "secondaryKeywords": [
+      "Auburn Alabama medical clinic",
+      "Auburn closure transition",
+      "Auburn aesthetic patients"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga",
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 2,
+    "publishedDate": "2026-06-04",
+    "dayOfWeek": "Thu",
+    "title": "Estrogen Replacement Therapy: Patches, Pills, Pellets — Choosing the Right Delivery",
+    "slug": "estrogen-replacement-therapy-patches-pills-pellets-choosing-the-right-delivery",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "estrogen replacement therapy delivery",
+    "secondaryKeywords": [
+      "bioidentical estrogen",
+      "estradiol patch",
+      "hormone pellets women"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 3,
+    "publishedDate": "2026-06-09",
+    "dayOfWeek": "Tue",
+    "title": "GLP-1 Side Effects: How Long They Last and How to Manage Them",
+    "slug": "glp-1-side-effects-how-long-they-last-and-how-to-manage-them",
+    "category": "Weight Loss",
+    "primaryKeyword": "GLP-1 side effects management",
+    "secondaryKeywords": [
+      "semaglutide nausea",
+      "tirzepatide GI effects",
+      "GLP-1 fatigue"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 4,
+    "publishedDate": "2026-06-11",
+    "dayOfWeek": "Thu",
+    "title": "Forehead Lines vs Glabellar Lines: Targeting Both with Botox",
+    "slug": "forehead-lines-vs-glabellar-lines-targeting-both-with-botox",
+    "category": "Aesthetics",
+    "primaryKeyword": "forehead glabellar lines botox",
+    "secondaryKeywords": [
+      "frown lines treatment",
+      "11s between eyebrows",
+      "upper face neuromodulator"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 5,
+    "publishedDate": "2026-06-16",
+    "dayOfWeek": "Tue",
+    "title": "The O-Shot: Mechanism and Patient Selection",
+    "slug": "the-o-shot-mechanism-and-patient-selection",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "O-Shot mechanism candidates",
+    "secondaryKeywords": [
+      "female sexual wellness PRP",
+      "O-Shot results",
+      "vaginal PRP"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 6,
+    "publishedDate": "2026-06-18",
+    "dayOfWeek": "Thu",
+    "title": "Hormone Therapy in Phenix City, Alabama",
+    "slug": "hormone-therapy-in-phenix-city-alabama",
+    "category": "Local",
+    "primaryKeyword": "hormone therapy Phenix City Alabama",
+    "secondaryKeywords": [
+      "BHRT Phenix City",
+      "Phenix City hormone clinic",
+      "hormone replacement Phenix City"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 7,
+    "publishedDate": "2026-06-23",
+    "dayOfWeek": "Tue",
+    "title": "Myers Cocktail: What's In It and Who Benefits",
+    "slug": "myers-cocktail-whats-in-it-and-who-benefits",
+    "category": "Wellness",
+    "primaryKeyword": "Myers cocktail IV",
+    "secondaryKeywords": [
+      "Myers IV ingredients",
+      "vitamin IV therapy",
+      "Myers IV uses"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 8,
+    "publishedDate": "2026-06-25",
+    "dayOfWeek": "Thu",
+    "title": "The DE|RIVE Hair Restoration Protocol Explained",
+    "slug": "the-derive-hair-restoration-protocol-explained",
+    "category": "Hair Restoration",
+    "primaryKeyword": "DE RIVE hair restoration protocol",
+    "secondaryKeywords": [
+      "EXO|E hair therapy",
+      "exosome hair treatment",
+      "DE|RIVE results"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 9,
+    "publishedDate": "2026-06-30",
+    "dayOfWeek": "Tue",
+    "title": "Chronic Joint Pain: When to Investigate Hormones",
+    "slug": "chronic-joint-pain-when-to-investigate-hormones",
+    "category": "Symptoms",
+    "primaryKeyword": "joint pain hormones investigation",
+    "secondaryKeywords": [
+      "joint pain perimenopause",
+      "estrogen joint pain",
+      "musculoskeletal hormones"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 10,
+    "publishedDate": "2026-07-02",
+    "dayOfWeek": "Thu",
+    "title": "Weight Loss for Women Over 50: A Clinical Approach",
+    "slug": "weight-loss-for-women-over-50-a-clinical-approach",
+    "category": "Demographic",
+    "primaryKeyword": "weight loss women over 50",
+    "secondaryKeywords": [
+      "postmenopausal weight loss",
+      "older women GLP-1",
+      "fifties weight loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 11,
+    "publishedDate": "2026-07-07",
+    "dayOfWeek": "Tue",
+    "title": "Bioidentical Progesterone: Why It Matters in Hormone Therapy",
+    "slug": "bioidentical-progesterone-why-it-matters-in-hormone-therapy",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "bioidentical progesterone",
+    "secondaryKeywords": [
+      "progesterone for sleep",
+      "natural progesterone",
+      "perimenopause progesterone"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 12,
+    "publishedDate": "2026-07-09",
+    "dayOfWeek": "Thu",
+    "title": "Compounded vs Brand-Name GLP-1 in 2026: What the FDA Update Means",
+    "slug": "compounded-vs-brand-name-glp-1-in-2026-what-the-fda-update-means",
+    "category": "Weight Loss",
+    "primaryKeyword": "compounded vs brand GLP-1",
+    "secondaryKeywords": [
+      "compounded semaglutide legality",
+      "Wegovy vs compounded",
+      "FDA shortage list"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 13,
+    "publishedDate": "2026-07-14",
+    "dayOfWeek": "Tue",
+    "title": "Crow's Feet Treatment: A Conservative Botox Approach",
+    "slug": "crows-feet-treatment-a-conservative-botox-approach",
+    "category": "Aesthetics",
+    "primaryKeyword": "crow's feet botox",
+    "secondaryKeywords": [
+      "lateral canthal lines",
+      "eye wrinkles treatment",
+      "smile line botox"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 14,
+    "publishedDate": "2026-07-16",
+    "dayOfWeek": "Thu",
+    "title": "Medical Weight Loss in Bonaire, Georgia",
+    "slug": "medical-weight-loss-in-bonaire-georgia",
+    "category": "Local",
+    "primaryKeyword": "medical weight loss Bonaire Georgia",
+    "secondaryKeywords": [
+      "Bonaire weight loss clinic",
+      "Bonaire GLP-1",
+      "weight loss Houston County"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "medical-weight-loss",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 15,
+    "publishedDate": "2026-07-21",
+    "dayOfWeek": "Tue",
+    "title": "Testosterone Therapy for Women: A Clinical Primer",
+    "slug": "testosterone-therapy-for-women-a-clinical-primer",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "testosterone therapy women",
+    "secondaryKeywords": [
+      "female testosterone replacement",
+      "low T in women",
+      "testosterone for libido"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 16,
+    "publishedDate": "2026-07-23",
+    "dayOfWeek": "Thu",
+    "title": "Sarcopenia on GLP-1: Preserving Muscle While Losing Fat",
+    "slug": "sarcopenia-on-glp-1-preserving-muscle-while-losing-fat",
+    "category": "Weight Loss",
+    "primaryKeyword": "sarcopenia GLP-1 muscle loss",
+    "secondaryKeywords": [
+      "muscle preservation weight loss",
+      "lean mass GLP-1",
+      "protein resistance training"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 17,
+    "publishedDate": "2026-07-28",
+    "dayOfWeek": "Tue",
+    "title": "Subtle Brow Lift with Botox",
+    "slug": "subtle-brow-lift-with-botox",
+    "category": "Aesthetics",
+    "primaryKeyword": "botox brow lift",
+    "secondaryKeywords": [
+      "chemical brow lift",
+      "non-surgical brow lift",
+      "brow shaping botox"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 18,
+    "publishedDate": "2026-07-30",
+    "dayOfWeek": "Thu",
+    "title": "DHEA Replacement: The Forgotten Hormone in Mid-Life Optimization",
+    "slug": "dhea-replacement-the-forgotten-hormone-in-mid-life-optimization",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "DHEA replacement therapy",
+    "secondaryKeywords": [
+      "DHEA supplementation",
+      "adrenal hormones",
+      "DHEA for women"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 19,
+    "publishedDate": "2026-08-04",
+    "dayOfWeek": "Tue",
+    "title": "The P-Shot for Men: Indications and Evidence",
+    "slug": "the-p-shot-for-men-indications-and-evidence",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "P-Shot men indications",
+    "secondaryKeywords": [
+      "male PRP injection",
+      "P-Shot ED",
+      "Priapus shot"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 20,
+    "publishedDate": "2026-08-06",
+    "dayOfWeek": "Thu",
+    "title": "NAD+ for Cognitive Function: Realistic Expectations",
+    "slug": "nad-for-cognitive-function-realistic-expectations",
+    "category": "Wellness",
+    "primaryKeyword": "NAD plus cognitive function",
+    "secondaryKeywords": [
+      "NAD IV brain",
+      "NAD+ mental clarity",
+      "NAD cognitive benefits"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 21,
+    "publishedDate": "2026-08-11",
+    "dayOfWeek": "Tue",
+    "title": "Anxiety in Mid-Life: Hormonal Drivers",
+    "slug": "anxiety-in-mid-life-hormonal-drivers",
+    "category": "Symptoms",
+    "primaryKeyword": "anxiety mid-life hormonal",
+    "secondaryKeywords": [
+      "perimenopausal anxiety",
+      "anxiety hormone connection",
+      "andropause anxiety"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 22,
+    "publishedDate": "2026-08-13",
+    "dayOfWeek": "Thu",
+    "title": "Aesthetic Treatments Near Fort Benning, Georgia",
+    "slug": "aesthetic-treatments-near-fort-benning-georgia",
+    "category": "Local",
+    "primaryKeyword": "aesthetic treatments Fort Benning Georgia",
+    "secondaryKeywords": [
+      "Fort Benning med spa",
+      "military aesthetic care",
+      "Fort Benning botox"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 23,
+    "publishedDate": "2026-08-18",
+    "dayOfWeek": "Tue",
+    "title": "Building a Protein Plan for Weight Loss on GLP-1",
+    "slug": "building-a-protein-plan-for-weight-loss-on-glp-1",
+    "category": "Weight Loss",
+    "primaryKeyword": "protein plan GLP-1",
+    "secondaryKeywords": [
+      "protein targets weight loss",
+      "protein per pound bodyweight",
+      "high-protein meal plan"
+    ],
+    "targetIntent": "howto",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 24,
+    "publishedDate": "2026-08-20",
+    "dayOfWeek": "Thu",
+    "title": "Lower Face Botox: Masseter, DAO, and Mentalis",
+    "slug": "lower-face-botox-masseter-dao-and-mentalis",
+    "category": "Aesthetics",
+    "primaryKeyword": "lower face botox",
+    "secondaryKeywords": [
+      "masseter botox jaw slimming",
+      "DAO mouth corner",
+      "mentalis chin"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 25,
+    "publishedDate": "2026-08-25",
+    "dayOfWeek": "Tue",
+    "title": "Adrenal Fatigue or Cortisol Dysregulation — What the Evidence Actually Shows",
+    "slug": "adrenal-fatigue-or-cortisol-dysregulation-what-the-evidence-actually-shows",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "cortisol dysregulation",
+    "secondaryKeywords": [
+      "adrenal fatigue",
+      "HPA axis dysfunction",
+      "stress hormones"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 26,
+    "publishedDate": "2026-08-27",
+    "dayOfWeek": "Thu",
+    "title": "Resistance Training While on GLP-1: A Clinical Guide",
+    "slug": "resistance-training-while-on-glp-1-a-clinical-guide",
+    "category": "Weight Loss",
+    "primaryKeyword": "resistance training GLP-1",
+    "secondaryKeywords": [
+      "strength training weight loss",
+      "lifting on semaglutide",
+      "GLP-1 exercise protocol"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 27,
+    "publishedDate": "2026-09-01",
+    "dayOfWeek": "Tue",
+    "title": "EXO|E Exosome Therapy for Hair: An Overview",
+    "slug": "exoe-exosome-therapy-for-hair-an-overview",
+    "category": "Hair Restoration",
+    "primaryKeyword": "EXO E exosome therapy hair",
+    "secondaryKeywords": [
+      "exosome scalp therapy",
+      "exosome hair growth",
+      "regenerative hair therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 28,
+    "publishedDate": "2026-09-03",
+    "dayOfWeek": "Thu",
+    "title": "Reverse T3 vs Free T3: Decoding Your Thyroid Panel",
+    "slug": "reverse-t3-vs-free-t3-decoding-your-thyroid-panel",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "reverse T3 free T3",
+    "secondaryKeywords": [
+      "thyroid panel interpretation",
+      "T3 conversion",
+      "thyroid lab work"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 29,
+    "publishedDate": "2026-09-08",
+    "dayOfWeek": "Tue",
+    "title": "Botox for TMJ and Jaw Tension Relief",
+    "slug": "botox-for-tmj-and-jaw-tension-relief",
+    "category": "Aesthetics",
+    "primaryKeyword": "botox TMJ jaw tension",
+    "secondaryKeywords": [
+      "TMJ neuromodulator",
+      "jaw clenching treatment",
+      "bruxism botox"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 30,
+    "publishedDate": "2026-09-10",
+    "dayOfWeek": "Thu",
+    "title": "Botox Provider in Bonaire and Warner Robins, GA",
+    "slug": "botox-provider-in-bonaire-and-warner-robins-ga",
+    "category": "Local",
+    "primaryKeyword": "botox provider Bonaire Warner Robins GA",
+    "secondaryKeywords": [
+      "Bonaire botox",
+      "Warner Robins botox provider",
+      "Houston County botox"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 31,
+    "publishedDate": "2026-09-15",
+    "dayOfWeek": "Tue",
+    "title": "The Real Cost of GLP-1 Therapy in Georgia",
+    "slug": "the-real-cost-of-glp-1-therapy-in-georgia",
+    "category": "Weight Loss",
+    "primaryKeyword": "GLP-1 cost Georgia",
+    "secondaryKeywords": [
+      "semaglutide cost Columbus GA",
+      "tirzepatide pricing",
+      "weight loss medication cost"
+    ],
+    "targetIntent": "commercial",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 32,
+    "publishedDate": "2026-09-17",
+    "dayOfWeek": "Thu",
+    "title": "Hormone Therapy for Men Under 40: When It's Appropriate",
+    "slug": "hormone-therapy-for-men-under-40-when-its-appropriate",
+    "category": "Demographic",
+    "primaryKeyword": "hormone therapy men under 40",
+    "secondaryKeywords": [
+      "young men TRT",
+      "early hormone therapy men",
+      "low T 30s"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 33,
+    "publishedDate": "2026-09-22",
+    "dayOfWeek": "Tue",
+    "title": "Hashimoto's and Hormone Therapy: How They Interact Clinically",
+    "slug": "hashimotos-and-hormone-therapy-how-they-interact-clinically",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "Hashimoto thyroid hormone therapy",
+    "secondaryKeywords": [
+      "autoimmune thyroid HRT",
+      "Hashimoto bioidentical hormones",
+      "thyroid antibodies"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 34,
+    "publishedDate": "2026-09-24",
+    "dayOfWeek": "Thu",
+    "title": "PRP for Sexual Wellness: A Clinical Overview",
+    "slug": "prp-for-sexual-wellness-a-clinical-overview",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "PRP sexual wellness",
+    "secondaryKeywords": [
+      "platelet rich plasma sexual",
+      "PRP intimate wellness",
+      "regenerative sexual medicine"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 35,
+    "publishedDate": "2026-09-29",
+    "dayOfWeek": "Tue",
+    "title": "High-Dose Vitamin C IV: Use Cases and Caveats",
+    "slug": "high-dose-vitamin-c-iv-use-cases-and-caveats",
+    "category": "Wellness",
+    "primaryKeyword": "high dose vitamin C IV",
+    "secondaryKeywords": [
+      "IV vitamin C immune",
+      "vitamin C therapy",
+      "IVC clinical uses"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 36,
+    "publishedDate": "2026-10-01",
+    "dayOfWeek": "Thu",
+    "title": "Depression and Hormones: The Underexplored Connection",
+    "slug": "depression-and-hormones-the-underexplored-connection",
+    "category": "Symptoms",
+    "primaryKeyword": "depression hormones connection",
+    "secondaryKeywords": [
+      "hormonal depression",
+      "menopausal depression",
+      "low T depression"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 37,
+    "publishedDate": "2026-10-06",
+    "dayOfWeek": "Tue",
+    "title": "Hyperhidrosis Treatment with Botox",
+    "slug": "hyperhidrosis-treatment-with-botox",
+    "category": "Aesthetics",
+    "primaryKeyword": "botox hyperhidrosis sweating",
+    "secondaryKeywords": [
+      "excessive underarm sweating",
+      "axillary botox",
+      "hyperhidrosis treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 38,
+    "publishedDate": "2026-10-08",
+    "dayOfWeek": "Thu",
+    "title": "IV Hydration in Phenix City, Alabama",
+    "slug": "iv-hydration-in-phenix-city-alabama",
+    "category": "Local",
+    "primaryKeyword": "IV hydration Phenix City Alabama",
+    "secondaryKeywords": [
+      "IV therapy Phenix City",
+      "Phenix City wellness IV",
+      "IV drip Phenix City"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "iv-hydration",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 39,
+    "publishedDate": "2026-10-13",
+    "dayOfWeek": "Tue",
+    "title": "GLP-1 and Pregnancy: What Patients Need to Know",
+    "slug": "glp-1-and-pregnancy-what-patients-need-to-know",
+    "category": "Weight Loss",
+    "primaryKeyword": "GLP-1 pregnancy",
+    "secondaryKeywords": [
+      "semaglutide pregnancy risk",
+      "GLP-1 contraception",
+      "weight loss medication pregnancy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 40,
+    "publishedDate": "2026-10-15",
+    "dayOfWeek": "Thu",
+    "title": "The HPA Axis Explained for Patients",
+    "slug": "the-hpa-axis-explained-for-patients",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "HPA axis explained",
+    "secondaryKeywords": [
+      "hypothalamus pituitary adrenal",
+      "stress response system",
+      "cortisol regulation"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 41,
+    "publishedDate": "2026-10-20",
+    "dayOfWeek": "Tue",
+    "title": "Migraine Treatment with Botox: Insurance Coverage and Reality",
+    "slug": "migraine-treatment-with-botox-insurance-coverage-and-reality",
+    "category": "Aesthetics",
+    "primaryKeyword": "botox migraine treatment insurance",
+    "secondaryKeywords": [
+      "chronic migraine botox",
+      "migraine prevention injection",
+      "neurology botox referral"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 42,
+    "publishedDate": "2026-10-22",
+    "dayOfWeek": "Thu",
+    "title": "Insurance Coverage for Weight Loss Medications: The 2026 Reality",
+    "slug": "insurance-coverage-for-weight-loss-medications-the-2026-reality",
+    "category": "Weight Loss",
+    "primaryKeyword": "insurance weight loss medications 2026",
+    "secondaryKeywords": [
+      "GLP-1 insurance coverage",
+      "Wegovy insurance",
+      "weight loss prescription cost"
+    ],
+    "targetIntent": "commercial",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 43,
+    "publishedDate": "2026-10-27",
+    "dayOfWeek": "Tue",
+    "title": "Pellet Insertion Day: What to Expect Step by Step",
+    "slug": "pellet-insertion-day-what-to-expect-step-by-step",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "pellet insertion procedure",
+    "secondaryKeywords": [
+      "Biote pellet day",
+      "hormone pellet insertion",
+      "pellet aftercare"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "biote-pellet-therapy"
+  },
+  {
+    "postNumber": 44,
+    "publishedDate": "2026-10-29",
+    "dayOfWeek": "Thu",
+    "title": "The Real Cost of Bioidentical Hormone Therapy in Georgia",
+    "slug": "the-real-cost-of-bioidentical-hormone-therapy-in-georgia",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "bioidentical hormone therapy cost Georgia",
+    "secondaryKeywords": [
+      "BHRT pricing",
+      "hormone therapy cost Columbus GA",
+      "Biote cost"
+    ],
+    "targetIntent": "commercial",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 45,
+    "publishedDate": "2026-11-03",
+    "dayOfWeek": "Tue",
+    "title": "The Maintenance Phase After GLP-1: Avoiding the Rebound",
+    "slug": "the-maintenance-phase-after-glp-1-avoiding-the-rebound",
+    "category": "Weight Loss",
+    "primaryKeyword": "GLP-1 maintenance phase",
+    "secondaryKeywords": [
+      "weight regain after GLP-1",
+      "lifelong weight maintenance",
+      "transitioning off semaglutide"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 46,
+    "publishedDate": "2026-11-05",
+    "dayOfWeek": "Thu",
+    "title": "PRP Hair Restoration in Houston County, Georgia",
+    "slug": "prp-hair-restoration-in-houston-county-georgia",
+    "category": "Local",
+    "primaryKeyword": "PRP hair restoration Houston County Georgia",
+    "secondaryKeywords": [
+      "Houston County hair restoration",
+      "Warner Robins PRP hair",
+      "Bonaire hair restoration"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "derive-hair-restoration",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 47,
+    "publishedDate": "2026-11-10",
+    "dayOfWeek": "Tue",
+    "title": "Daxxify vs Botox vs Dysport: A 2026 Comparison",
+    "slug": "daxxify-vs-botox-vs-dysport-a-2026-comparison",
+    "category": "Aesthetics",
+    "primaryKeyword": "Daxxify Botox Dysport comparison",
+    "secondaryKeywords": [
+      "neuromodulator comparison 2026",
+      "longest lasting botox",
+      "Daxxify duration"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 48,
+    "publishedDate": "2026-11-12",
+    "dayOfWeek": "Thu",
+    "title": "Female Sexual Dysfunction: A Clinical Framework",
+    "slug": "female-sexual-dysfunction-a-clinical-framework",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "female sexual dysfunction",
+    "secondaryKeywords": [
+      "FSD treatment",
+      "female sexual problems",
+      "women sexual health"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 49,
+    "publishedDate": "2026-11-17",
+    "dayOfWeek": "Tue",
+    "title": "Glutathione: The Master Antioxidant",
+    "slug": "glutathione-the-master-antioxidant",
+    "category": "Wellness",
+    "primaryKeyword": "glutathione IV",
+    "secondaryKeywords": [
+      "GSH IV therapy",
+      "glutathione benefits",
+      "antioxidant IV"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 50,
+    "publishedDate": "2026-11-19",
+    "dayOfWeek": "Thu",
+    "title": "PRP for Hair Restoration vs Surgical Transplant",
+    "slug": "prp-for-hair-restoration-vs-surgical-transplant",
+    "category": "Hair Restoration",
+    "primaryKeyword": "PRP hair vs surgical transplant",
+    "secondaryKeywords": [
+      "PRP hair injection",
+      "non-surgical hair restoration",
+      "FUE vs PRP"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 51,
+    "publishedDate": "2026-11-24",
+    "dayOfWeek": "Tue",
+    "title": "Memory Issues in Mid-Life: When It's More Than Aging",
+    "slug": "memory-issues-in-mid-life-when-its-more-than-aging",
+    "category": "Symptoms",
+    "primaryKeyword": "memory issues mid-life",
+    "secondaryKeywords": [
+      "cognitive decline 40s",
+      "menopausal memory",
+      "memory loss workup"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 52,
+    "publishedDate": "2026-11-26",
+    "dayOfWeek": "Thu",
+    "title": "Men's Testosterone Optimization: TRT Beyond the Basics",
+    "slug": "mens-testosterone-optimization-trt-beyond-the-basics",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "testosterone optimization men",
+    "secondaryKeywords": [
+      "TRT advanced",
+      "men's hormone health",
+      "testosterone replacement protocol"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 53,
+    "publishedDate": "2026-12-01",
+    "dayOfWeek": "Tue",
+    "title": "Body Recomposition on GLP-1: Beyond the Scale",
+    "slug": "body-recomposition-on-glp-1-beyond-the-scale",
+    "category": "Weight Loss",
+    "primaryKeyword": "body recomposition GLP-1",
+    "secondaryKeywords": [
+      "DEXA on GLP-1",
+      "lean mass tracking",
+      "fat loss vs muscle loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 54,
+    "publishedDate": "2026-12-03",
+    "dayOfWeek": "Thu",
+    "title": "Sexual Wellness Care for Active Duty Military Near Fort Benning",
+    "slug": "sexual-wellness-care-for-active-duty-military-near-fort-benning",
+    "category": "Local",
+    "primaryKeyword": "sexual wellness Fort Benning military",
+    "secondaryKeywords": [
+      "military O-Shot Fort Benning",
+      "active duty sexual wellness",
+      "service member intimate care"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "o-shot",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 55,
+    "publishedDate": "2026-12-08",
+    "dayOfWeek": "Tue",
+    "title": "Tear Trough Filler: Risks and Realistic Expectations",
+    "slug": "tear-trough-filler-risks-and-realistic-expectations",
+    "category": "Aesthetics",
+    "primaryKeyword": "tear trough filler risks",
+    "secondaryKeywords": [
+      "under eye filler",
+      "hollow under eye treatment",
+      "filler tear trough complications"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 56,
+    "publishedDate": "2026-12-10",
+    "dayOfWeek": "Thu",
+    "title": "Free Testosterone vs Total Testosterone: Why Your Lab Results Matter",
+    "slug": "free-testosterone-vs-total-testosterone-why-your-lab-results-matter",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "free vs total testosterone",
+    "secondaryKeywords": [
+      "testosterone bioavailability",
+      "testosterone lab interpretation",
+      "low free T"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 57,
+    "publishedDate": "2026-12-15",
+    "dayOfWeek": "Tue",
+    "title": "Hidden Causes of Weight Loss Resistance",
+    "slug": "hidden-causes-of-weight-loss-resistance",
+    "category": "Weight Loss",
+    "primaryKeyword": "weight loss resistance causes",
+    "secondaryKeywords": [
+      "why I can't lose weight",
+      "metabolic resistance",
+      "stuck weight loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 58,
+    "publishedDate": "2026-12-17",
+    "dayOfWeek": "Thu",
+    "title": "Aesthetic Treatments for Men: Subtle Strategies",
+    "slug": "aesthetic-treatments-for-men-subtle-strategies",
+    "category": "Demographic",
+    "primaryKeyword": "aesthetic treatments men subtle",
+    "secondaryKeywords": [
+      "male botox subtle",
+      "men's aesthetic preferences",
+      "natural look men aesthetics"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 59,
+    "publishedDate": "2026-12-22",
+    "dayOfWeek": "Tue",
+    "title": "Cheek Filler for Mid-Face Restoration",
+    "slug": "cheek-filler-for-mid-face-restoration",
+    "category": "Aesthetics",
+    "primaryKeyword": "cheek filler mid-face",
+    "secondaryKeywords": [
+      "cheek augmentation filler",
+      "midface lift filler",
+      "volume restoration cheeks"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 60,
+    "publishedDate": "2026-12-24",
+    "dayOfWeek": "Thu",
+    "title": "SHBG and Hormone Bioavailability: A Clinical Explanation",
+    "slug": "shbg-and-hormone-bioavailability-a-clinical-explanation",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "SHBG sex hormone binding globulin",
+    "secondaryKeywords": [
+      "bioavailable hormones",
+      "SHBG levels",
+      "hormone-binding protein"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 61,
+    "publishedDate": "2026-12-29",
+    "dayOfWeek": "Tue",
+    "title": "Male Sexual Dysfunction Beyond ED Pills",
+    "slug": "male-sexual-dysfunction-beyond-ed-pills",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "male sexual dysfunction beyond pills",
+    "secondaryKeywords": [
+      "holistic ED treatment",
+      "non-medication ED",
+      "sexual function men"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 62,
+    "publishedDate": "2026-12-31",
+    "dayOfWeek": "Thu",
+    "title": "Hormone Therapy for Veterans in Columbus and Warner Robins",
+    "slug": "hormone-therapy-for-veterans-in-columbus-and-warner-robins",
+    "category": "Local",
+    "primaryKeyword": "hormone therapy veterans Columbus Warner Robins",
+    "secondaryKeywords": [
+      "veteran TRT",
+      "VA hormone therapy",
+      "veteran BHRT Georgia"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-men",
+    "relatedCities": [
+      "columbus-ga",
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 63,
+    "publishedDate": "2027-01-05",
+    "dayOfWeek": "Tue",
+    "title": "IV Therapy for Athletic Recovery",
+    "slug": "iv-therapy-for-athletic-recovery",
+    "category": "Wellness",
+    "primaryKeyword": "IV therapy athletic recovery",
+    "secondaryKeywords": [
+      "athlete IV hydration",
+      "post-workout IV",
+      "performance IV therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 64,
+    "publishedDate": "2027-01-07",
+    "dayOfWeek": "Thu",
+    "title": "Lack of Motivation in Your 40s: Clinical Investigation",
+    "slug": "lack-of-motivation-in-your-40s-clinical-investigation",
+    "category": "Symptoms",
+    "primaryKeyword": "lack of motivation 40s",
+    "secondaryKeywords": [
+      "anhedonia 40s",
+      "motivation hormones",
+      "drive testosterone"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 65,
+    "publishedDate": "2027-01-12",
+    "dayOfWeek": "Tue",
+    "title": "Leptin Resistance: Why Your Body Resists Weight Loss",
+    "slug": "leptin-resistance-why-your-body-resists-weight-loss",
+    "category": "Weight Loss",
+    "primaryKeyword": "leptin resistance",
+    "secondaryKeywords": [
+      "leptin signaling",
+      "appetite hormone",
+      "leptin and weight loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 66,
+    "publishedDate": "2027-01-14",
+    "dayOfWeek": "Thu",
+    "title": "Jawline Sculpting with Filler: A Clinical Approach",
+    "slug": "jawline-sculpting-with-filler-a-clinical-approach",
+    "category": "Aesthetics",
+    "primaryKeyword": "jawline filler sculpting",
+    "secondaryKeywords": [
+      "jaw definition filler",
+      "non-surgical jawline",
+      "jawline contouring"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 67,
+    "publishedDate": "2027-01-19",
+    "dayOfWeek": "Tue",
+    "title": "Hot Flashes at Night: When to Test Your Hormones",
+    "slug": "hot-flashes-at-night-when-to-test-your-hormones",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "night hot flashes hormones",
+    "secondaryKeywords": [
+      "nocturnal vasomotor symptoms",
+      "perimenopausal night sweats",
+      "hormone testing"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 68,
+    "publishedDate": "2027-01-21",
+    "dayOfWeek": "Thu",
+    "title": "The Microbiome and Weight Loss: A Clinical Update",
+    "slug": "the-microbiome-and-weight-loss-a-clinical-update",
+    "category": "Weight Loss",
+    "primaryKeyword": "microbiome weight loss",
+    "secondaryKeywords": [
+      "gut bacteria obesity",
+      "microbiome diversity weight",
+      "akkermansia"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 69,
+    "publishedDate": "2027-01-26",
+    "dayOfWeek": "Tue",
+    "title": "Female Pattern Hair Loss: A Clinical Approach",
+    "slug": "female-pattern-hair-loss-a-clinical-approach",
+    "category": "Hair Restoration",
+    "primaryKeyword": "female pattern hair loss",
+    "secondaryKeywords": [
+      "women's hair loss treatment",
+      "FPHL",
+      "androgenetic alopecia women"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 70,
+    "publishedDate": "2027-01-28",
+    "dayOfWeek": "Thu",
+    "title": "Medical Weight Loss for Military Spouses Near Fort Benning",
+    "slug": "medical-weight-loss-for-military-spouses-near-fort-benning",
+    "category": "Local",
+    "primaryKeyword": "medical weight loss military spouses Fort Benning",
+    "secondaryKeywords": [
+      "military spouse weight loss",
+      "military family GLP-1",
+      "Fort Benning spouse wellness"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "medical-weight-loss",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 71,
+    "publishedDate": "2027-02-02",
+    "dayOfWeek": "Tue",
+    "title": "Vaginal Estrogen: Local Therapy vs Systemic HRT",
+    "slug": "vaginal-estrogen-local-therapy-vs-systemic-hrt",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "vaginal estrogen therapy",
+    "secondaryKeywords": [
+      "local estradiol",
+      "vaginal atrophy treatment",
+      "topical estrogen"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 72,
+    "publishedDate": "2027-02-04",
+    "dayOfWeek": "Thu",
+    "title": "Chin Augmentation: Filler vs Implants",
+    "slug": "chin-augmentation-filler-vs-implants",
+    "category": "Aesthetics",
+    "primaryKeyword": "chin augmentation filler vs implants",
+    "secondaryKeywords": [
+      "chin filler comparison",
+      "non-surgical chin",
+      "chin projection"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 73,
+    "publishedDate": "2027-02-09",
+    "dayOfWeek": "Tue",
+    "title": "Sleep Quality and Weight Loss: A Clinical Connection",
+    "slug": "sleep-quality-and-weight-loss-a-clinical-connection",
+    "category": "Weight Loss",
+    "primaryKeyword": "sleep quality weight loss",
+    "secondaryKeywords": [
+      "sleep deprivation obesity",
+      "sleep apnea weight gain",
+      "circadian rhythm metabolism"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 74,
+    "publishedDate": "2027-02-11",
+    "dayOfWeek": "Thu",
+    "title": "Premature Ovarian Insufficiency and Hormone Therapy",
+    "slug": "premature-ovarian-insufficiency-and-hormone-therapy",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "premature ovarian insufficiency",
+    "secondaryKeywords": [
+      "early menopause",
+      "POI hormone therapy",
+      "premature menopause treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 75,
+    "publishedDate": "2027-02-16",
+    "dayOfWeek": "Tue",
+    "title": "Vaginal Atrophy: Hormonal vs Non-Hormonal Treatments",
+    "slug": "vaginal-atrophy-hormonal-vs-non-hormonal-treatments",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "vaginal atrophy treatment options",
+    "secondaryKeywords": [
+      "GSM treatment",
+      "genitourinary syndrome menopause",
+      "vaginal dryness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 76,
+    "publishedDate": "2027-02-18",
+    "dayOfWeek": "Thu",
+    "title": "Hangover Recovery IV: When It's Appropriate",
+    "slug": "hangover-recovery-iv-when-its-appropriate",
+    "category": "Wellness",
+    "primaryKeyword": "hangover recovery IV",
+    "secondaryKeywords": [
+      "hangover IV drip",
+      "alcohol recovery IV",
+      "morning after IV"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 77,
+    "publishedDate": "2027-02-23",
+    "dayOfWeek": "Tue",
+    "title": "Muscle Loss in Mid-Life: Sarcopenia and Hormones",
+    "slug": "muscle-loss-in-mid-life-sarcopenia-and-hormones",
+    "category": "Symptoms",
+    "primaryKeyword": "muscle loss mid-life sarcopenia",
+    "secondaryKeywords": [
+      "muscle wasting after 40",
+      "sarcopenia treatment",
+      "muscle preservation hormones"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 78,
+    "publishedDate": "2027-02-25",
+    "dayOfWeek": "Thu",
+    "title": "PTSD and Hormone Therapy: A Resource for Veterans",
+    "slug": "ptsd-and-hormone-therapy-a-resource-for-veterans",
+    "category": "Local",
+    "primaryKeyword": "PTSD hormone therapy veterans",
+    "secondaryKeywords": [
+      "veteran cortisol",
+      "PTSD adrenal",
+      "veteran hormone optimization"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-men",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 79,
+    "publishedDate": "2027-03-02",
+    "dayOfWeek": "Tue",
+    "title": "Nasolabial Folds: Filler vs Other Approaches",
+    "slug": "nasolabial-folds-filler-vs-other-approaches",
+    "category": "Aesthetics",
+    "primaryKeyword": "nasolabial folds filler treatment",
+    "secondaryKeywords": [
+      "smile line filler",
+      "marionette lines",
+      "nasolabial fold reduction"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 80,
+    "publishedDate": "2027-03-04",
+    "dayOfWeek": "Thu",
+    "title": "Stress, Cortisol, and Belly Fat",
+    "slug": "stress-cortisol-and-belly-fat",
+    "category": "Weight Loss",
+    "primaryKeyword": "cortisol belly fat",
+    "secondaryKeywords": [
+      "stress visceral fat",
+      "cortisol weight gain",
+      "midsection fat hormones"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 81,
+    "publishedDate": "2027-03-09",
+    "dayOfWeek": "Tue",
+    "title": "PCOS and Hormone Therapy: Treating the Underlying Imbalance",
+    "slug": "pcos-and-hormone-therapy-treating-the-underlying-imbalance",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "PCOS hormone therapy",
+    "secondaryKeywords": [
+      "polycystic ovary syndrome treatment",
+      "PCOS bioidentical hormones",
+      "PCOS metabolic"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 82,
+    "publishedDate": "2027-03-11",
+    "dayOfWeek": "Thu",
+    "title": "Dissolving Filler: When and Why",
+    "slug": "dissolving-filler-when-and-why",
+    "category": "Aesthetics",
+    "primaryKeyword": "dissolving filler hyaluronidase",
+    "secondaryKeywords": [
+      "filler dissolve",
+      "hyaluronidase injection",
+      "remove filler"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 83,
+    "publishedDate": "2027-03-16",
+    "dayOfWeek": "Tue",
+    "title": "Why Crash Diets Permanently Damage Metabolism",
+    "slug": "why-crash-diets-permanently-damage-metabolism",
+    "category": "Weight Loss",
+    "primaryKeyword": "crash diet metabolism damage",
+    "secondaryKeywords": [
+      "yo-yo dieting metabolism",
+      "metabolic adaptation",
+      "starvation mode"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 84,
+    "publishedDate": "2027-03-18",
+    "dayOfWeek": "Thu",
+    "title": "Testosterone for Active and Athletic Men",
+    "slug": "testosterone-for-active-and-athletic-men",
+    "category": "Demographic",
+    "primaryKeyword": "testosterone active athletic men",
+    "secondaryKeywords": [
+      "TRT for athletes",
+      "active man testosterone",
+      "performance testosterone"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 85,
+    "publishedDate": "2027-03-23",
+    "dayOfWeek": "Tue",
+    "title": "Hormone Therapy and Cancer Risk: Reading the Evidence Honestly",
+    "slug": "hormone-therapy-and-cancer-risk-reading-the-evidence-honestly",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "hormone therapy cancer risk",
+    "secondaryKeywords": [
+      "HRT breast cancer",
+      "bioidentical safety",
+      "hormone risk benefit"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 86,
+    "publishedDate": "2027-03-25",
+    "dayOfWeek": "Thu",
+    "title": "Concierge Aesthetic Care in Columbus, Georgia",
+    "slug": "concierge-aesthetic-care-in-columbus-georgia",
+    "category": "Local",
+    "primaryKeyword": "concierge aesthetic care Columbus Georgia",
+    "secondaryKeywords": [
+      "VIP aesthetic Columbus",
+      "boutique med spa Columbus",
+      "private aesthetic clinic"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 87,
+    "publishedDate": "2027-03-30",
+    "dayOfWeek": "Tue",
+    "title": "Insurance Coverage for Bioidentical Hormone Therapy in 2026",
+    "slug": "insurance-coverage-for-bioidentical-hormone-therapy-in-2026",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "insurance bioidentical hormone therapy",
+    "secondaryKeywords": [
+      "BHRT insurance",
+      "hormone therapy coverage",
+      "out-of-pocket hormone costs"
+    ],
+    "targetIntent": "commercial",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 88,
+    "publishedDate": "2027-04-01",
+    "dayOfWeek": "Thu",
+    "title": "Continuous Glucose Monitoring for Non-Diabetics: Worth It?",
+    "slug": "continuous-glucose-monitoring-for-non-diabetics-worth-it",
+    "category": "Weight Loss",
+    "primaryKeyword": "CGM non-diabetics",
+    "secondaryKeywords": [
+      "CGM weight loss",
+      "metabolic health CGM",
+      "glucose variability"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 89,
+    "publishedDate": "2027-04-06",
+    "dayOfWeek": "Tue",
+    "title": "Filler Migration: Causes and Prevention",
+    "slug": "filler-migration-causes-and-prevention",
+    "category": "Aesthetics",
+    "primaryKeyword": "filler migration causes prevention",
+    "secondaryKeywords": [
+      "lip filler migration",
+      "filler movement",
+      "migrated filler treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 90,
+    "publishedDate": "2027-04-08",
+    "dayOfWeek": "Thu",
+    "title": "Painful Intercourse: A Clinical Investigation Path",
+    "slug": "painful-intercourse-a-clinical-investigation-path",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "painful intercourse causes",
+    "secondaryKeywords": [
+      "dyspareunia investigation",
+      "painful sex women",
+      "intercourse discomfort"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 91,
+    "publishedDate": "2027-04-13",
+    "dayOfWeek": "Tue",
+    "title": "Pre-Wedding IV Therapy: A Clinical Take",
+    "slug": "pre-wedding-iv-therapy-a-clinical-take",
+    "category": "Wellness",
+    "primaryKeyword": "pre-wedding IV therapy",
+    "secondaryKeywords": [
+      "bridal IV",
+      "wedding day prep IV",
+      "pre-event hydration"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 92,
+    "publishedDate": "2027-04-15",
+    "dayOfWeek": "Thu",
+    "title": "Postpartum Hair Loss: When to Worry",
+    "slug": "postpartum-hair-loss-when-to-worry",
+    "category": "Hair Restoration",
+    "primaryKeyword": "postpartum hair loss",
+    "secondaryKeywords": [
+      "telogen effluvium pregnancy",
+      "postpartum shedding",
+      "hair loss after baby"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 93,
+    "publishedDate": "2027-04-20",
+    "dayOfWeek": "Tue",
+    "title": "Frequent Night Urination: Hormonal Causes",
+    "slug": "frequent-night-urination-hormonal-causes",
+    "category": "Symptoms",
+    "primaryKeyword": "night urination hormones",
+    "secondaryKeywords": [
+      "nocturia causes",
+      "frequent urination at night",
+      "BPH nocturia"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 94,
+    "publishedDate": "2027-04-22",
+    "dayOfWeek": "Thu",
+    "title": "Concierge Hormone Care in Warner Robins, Georgia",
+    "slug": "concierge-hormone-care-in-warner-robins-georgia",
+    "category": "Local",
+    "primaryKeyword": "concierge hormone care Warner Robins Georgia",
+    "secondaryKeywords": [
+      "VIP BHRT Warner Robins",
+      "private hormone clinic",
+      "Warner Robins concierge medicine"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 95,
+    "publishedDate": "2027-04-27",
+    "dayOfWeek": "Tue",
+    "title": "The Three-Month Hormone Reassessment: Why It Matters",
+    "slug": "the-three-month-hormone-reassessment-why-it-matters",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "hormone reassessment three months",
+    "secondaryKeywords": [
+      "BHRT follow-up",
+      "hormone titration",
+      "hormone therapy monitoring"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 96,
+    "publishedDate": "2027-04-29",
+    "dayOfWeek": "Thu",
+    "title": "Hidden Carbs in Your Diet: An Honest Audit",
+    "slug": "hidden-carbs-in-your-diet-an-honest-audit",
+    "category": "Weight Loss",
+    "primaryKeyword": "hidden carbs diet",
+    "secondaryKeywords": [
+      "sneaky carbs",
+      "low-carb mistakes",
+      "carbohydrate awareness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 97,
+    "publishedDate": "2027-05-04",
+    "dayOfWeek": "Tue",
+    "title": "Lip Flip vs Lip Filler: Different Outcomes",
+    "slug": "lip-flip-vs-lip-filler-different-outcomes",
+    "category": "Aesthetics",
+    "primaryKeyword": "lip flip vs lip filler",
+    "secondaryKeywords": [
+      "botox lip flip",
+      "lip enhancement options",
+      "lip aesthetic comparison"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 98,
+    "publishedDate": "2027-05-06",
+    "dayOfWeek": "Thu",
+    "title": "Estradiol vs Estrone vs Estriol: The Three Estrogens Explained",
+    "slug": "estradiol-vs-estrone-vs-estriol-the-three-estrogens-explained",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "estradiol estrone estriol",
+    "secondaryKeywords": [
+      "types of estrogen",
+      "estrogen hormones",
+      "estrogen forms"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 99,
+    "publishedDate": "2027-05-11",
+    "dayOfWeek": "Tue",
+    "title": "Intermittent Fasting and GLP-1: Synergy or Conflict",
+    "slug": "intermittent-fasting-and-glp-1-synergy-or-conflict",
+    "category": "Weight Loss",
+    "primaryKeyword": "intermittent fasting GLP-1",
+    "secondaryKeywords": [
+      "fasting on semaglutide",
+      "time-restricted eating",
+      "fasting protocols GLP-1"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 100,
+    "publishedDate": "2027-05-13",
+    "dayOfWeek": "Thu",
+    "title": "Vampire Facelift vs Standard PRP Treatments",
+    "slug": "vampire-facelift-vs-standard-prp-treatments",
+    "category": "Aesthetics",
+    "primaryKeyword": "vampire facelift vs PRP",
+    "secondaryKeywords": [
+      "vampire facial differences",
+      "PRP facial types",
+      "facial PRP treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "vampire-facial-prp"
+  },
+  {
+    "postNumber": 101,
+    "publishedDate": "2027-05-18",
+    "dayOfWeek": "Tue",
+    "title": "Why Your Doctor May Not Test the Right Hormones",
+    "slug": "why-your-doctor-may-not-test-the-right-hormones",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "comprehensive hormone testing",
+    "secondaryKeywords": [
+      "hormone panel gaps",
+      "missing thyroid markers",
+      "limited hormone testing"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 102,
+    "publishedDate": "2027-05-20",
+    "dayOfWeek": "Thu",
+    "title": "Booking Your Consultation in Columbus, Georgia: A Patient's Guide",
+    "slug": "booking-your-consultation-in-columbus-georgia-a-patients-guide",
+    "category": "Local",
+    "primaryKeyword": "booking consultation Columbus Georgia",
+    "secondaryKeywords": [
+      "Columbus GA medical consultation",
+      "Revitalize Columbus booking",
+      "Columbus first appointment"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 103,
+    "publishedDate": "2027-05-25",
+    "dayOfWeek": "Tue",
+    "title": "Libido and Hormones: The Connection",
+    "slug": "libido-and-hormones-the-connection",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "libido hormones connection",
+    "secondaryKeywords": [
+      "low libido hormonal causes",
+      "sex drive hormones",
+      "libido hormone testing"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 104,
+    "publishedDate": "2027-05-27",
+    "dayOfWeek": "Thu",
+    "title": "IV Therapy During Illness: A Cautious View",
+    "slug": "iv-therapy-during-illness-a-cautious-view",
+    "category": "Wellness",
+    "primaryKeyword": "IV therapy during illness",
+    "secondaryKeywords": [
+      "sick IV drip",
+      "cold IV therapy",
+      "flu IV hydration"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 105,
+    "publishedDate": "2027-06-01",
+    "dayOfWeek": "Tue",
+    "title": "Persistent Bloating in Mid-Life: Beyond Diet",
+    "slug": "persistent-bloating-in-mid-life-beyond-diet",
+    "category": "Symptoms",
+    "primaryKeyword": "persistent bloating mid-life",
+    "secondaryKeywords": [
+      "bloating perimenopause",
+      "menopausal bloating",
+      "hormonal bloating"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 106,
+    "publishedDate": "2027-06-03",
+    "dayOfWeek": "Thu",
+    "title": "Strength Training for Mid-Life Body Composition",
+    "slug": "strength-training-for-mid-life-body-composition",
+    "category": "Weight Loss",
+    "primaryKeyword": "strength training mid-life",
+    "secondaryKeywords": [
+      "lifting after 40",
+      "menopausal body composition",
+      "lean mass aging"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 107,
+    "publishedDate": "2027-06-08",
+    "dayOfWeek": "Tue",
+    "title": "Microneedling with PRP: The Combination Benefits",
+    "slug": "microneedling-with-prp-the-combination-benefits",
+    "category": "Aesthetics",
+    "primaryKeyword": "microneedling PRP combination",
+    "secondaryKeywords": [
+      "PRP microneedling",
+      "vampire microneedling",
+      "microneedling growth factors"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "microneedling"
+  },
+  {
+    "postNumber": 108,
+    "publishedDate": "2027-06-10",
+    "dayOfWeek": "Thu",
+    "title": "Fibroids and Hormone Therapy: A Treatment Decision Tree",
+    "slug": "fibroids-and-hormone-therapy-a-treatment-decision-tree",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "fibroids hormone therapy",
+    "secondaryKeywords": [
+      "uterine fibroids HRT",
+      "fibroid management",
+      "estrogen and fibroids"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 109,
+    "publishedDate": "2027-06-15",
+    "dayOfWeek": "Tue",
+    "title": "NEAT: The Non-Exercise Activity Driving Long-Term Loss",
+    "slug": "neat-the-non-exercise-activity-driving-long-term-loss",
+    "category": "Weight Loss",
+    "primaryKeyword": "NEAT non-exercise activity thermogenesis",
+    "secondaryKeywords": [
+      "daily movement weight loss",
+      "step count metabolism",
+      "fidgeting calories"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 110,
+    "publishedDate": "2027-06-17",
+    "dayOfWeek": "Thu",
+    "title": "Booking Your Consultation in Warner Robins: What to Expect",
+    "slug": "booking-your-consultation-in-warner-robins-what-to-expect",
+    "category": "Local",
+    "primaryKeyword": "booking consultation Warner Robins Georgia",
+    "secondaryKeywords": [
+      "Warner Robins consultation",
+      "Warner Robins booking guide",
+      "Revitalize Warner Robins first visit"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 111,
+    "publishedDate": "2027-06-22",
+    "dayOfWeek": "Tue",
+    "title": "Telogen Effluvium: Stress-Related Hair Shedding",
+    "slug": "telogen-effluvium-stress-related-hair-shedding",
+    "category": "Hair Restoration",
+    "primaryKeyword": "telogen effluvium stress hair shedding",
+    "secondaryKeywords": [
+      "temporary hair loss",
+      "stress-induced shedding",
+      "hair shed after illness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 112,
+    "publishedDate": "2027-06-24",
+    "dayOfWeek": "Thu",
+    "title": "Perimenopause in Your Late 30s: Earlier Than You Think",
+    "slug": "perimenopause-in-your-late-30s-earlier-than-you-think",
+    "category": "Demographic",
+    "primaryKeyword": "perimenopause late 30s",
+    "secondaryKeywords": [
+      "early perimenopause",
+      "perimenopause 38 39",
+      "perimenopause young"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 113,
+    "publishedDate": "2027-06-29",
+    "dayOfWeek": "Tue",
+    "title": "Hormones and Migraine in Women: The Connection",
+    "slug": "hormones-and-migraine-in-women-the-connection",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "hormones migraine women",
+    "secondaryKeywords": [
+      "estrogen migraine",
+      "menstrual migraine",
+      "perimenopausal headaches"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 114,
+    "publishedDate": "2027-07-01",
+    "dayOfWeek": "Thu",
+    "title": "Microneedling for Acne Scars: Realistic Outcomes",
+    "slug": "microneedling-for-acne-scars-realistic-outcomes",
+    "category": "Aesthetics",
+    "primaryKeyword": "microneedling acne scars",
+    "secondaryKeywords": [
+      "acne scar treatment",
+      "rolling scar microneedling",
+      "atrophic scar treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "microneedling"
+  },
+  {
+    "postNumber": 115,
+    "publishedDate": "2027-07-06",
+    "dayOfWeek": "Tue",
+    "title": "Why Cardio Alone Is Insufficient for Mid-Life Weight Loss",
+    "slug": "why-cardio-alone-is-insufficient-for-mid-life-weight-loss",
+    "category": "Weight Loss",
+    "primaryKeyword": "cardio insufficient weight loss",
+    "secondaryKeywords": [
+      "cardio vs strength",
+      "cardio plateau",
+      "exercise for fat loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 116,
+    "publishedDate": "2027-07-08",
+    "dayOfWeek": "Thu",
+    "title": "Bone Density, Estrogen, and Long-Term Hormone Therapy",
+    "slug": "bone-density-estrogen-and-long-term-hormone-therapy",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "bone density hormone therapy",
+    "secondaryKeywords": [
+      "osteoporosis HRT",
+      "estrogen for bones",
+      "DEXA scan menopause"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 117,
+    "publishedDate": "2027-07-13",
+    "dayOfWeek": "Tue",
+    "title": "ED in Your 40s: When to Seek Help",
+    "slug": "ed-in-your-40s-when-to-seek-help",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "ED in 40s when to seek help",
+    "secondaryKeywords": [
+      "early ED men",
+      "ED warning signs",
+      "young man ED"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 118,
+    "publishedDate": "2027-07-15",
+    "dayOfWeek": "Thu",
+    "title": "The Best Botox in Columbus, GA: A Clinician's Honest Guide",
+    "slug": "the-best-botox-in-columbus-ga-a-clinicians-honest-guide",
+    "category": "Local",
+    "primaryKeyword": "best botox Columbus GA",
+    "secondaryKeywords": [
+      "top Columbus botox provider",
+      "Columbus botox quality",
+      "best neuromodulators Columbus"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 119,
+    "publishedDate": "2027-07-20",
+    "dayOfWeek": "Tue",
+    "title": "Magnesium IV for Migraines and Cramping",
+    "slug": "magnesium-iv-for-migraines-and-cramping",
+    "category": "Wellness",
+    "primaryKeyword": "magnesium IV migraines",
+    "secondaryKeywords": [
+      "IV magnesium headache",
+      "magnesium drip",
+      "magnesium therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 120,
+    "publishedDate": "2027-07-22",
+    "dayOfWeek": "Thu",
+    "title": "Dry Skin in Mid-Life: Hormonal Origins",
+    "slug": "dry-skin-in-mid-life-hormonal-origins",
+    "category": "Symptoms",
+    "primaryKeyword": "dry skin mid-life hormones",
+    "secondaryKeywords": [
+      "menopausal dry skin",
+      "estrogen and skin moisture",
+      "dry skin causes hormonal"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 121,
+    "publishedDate": "2027-07-27",
+    "dayOfWeek": "Tue",
+    "title": "Skin Tightening: Comparing Energy-Based Modalities",
+    "slug": "skin-tightening-comparing-energy-based-modalities",
+    "category": "Aesthetics",
+    "primaryKeyword": "skin tightening modalities",
+    "secondaryKeywords": [
+      "RF microneedling",
+      "ultrasound skin tightening",
+      "non-surgical skin tightening"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "microneedling"
+  },
+  {
+    "postNumber": 122,
+    "publishedDate": "2027-07-29",
+    "dayOfWeek": "Thu",
+    "title": "Adipose Tissue as an Endocrine Organ",
+    "slug": "adipose-tissue-as-an-endocrine-organ",
+    "category": "Weight Loss",
+    "primaryKeyword": "adipose tissue endocrine",
+    "secondaryKeywords": [
+      "fat as hormone organ",
+      "adipokines",
+      "fat tissue inflammation"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 123,
+    "publishedDate": "2027-08-03",
+    "dayOfWeek": "Tue",
+    "title": "Hormone Therapy After Hysterectomy: What Changes Clinically",
+    "slug": "hormone-therapy-after-hysterectomy-what-changes-clinically",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "hormone therapy after hysterectomy",
+    "secondaryKeywords": [
+      "post-hysterectomy HRT",
+      "estrogen after surgery",
+      "surgical menopause"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 124,
+    "publishedDate": "2027-08-05",
+    "dayOfWeek": "Thu",
+    "title": "Fractional CO2 vs Erbium Laser: Choosing the Right Resurfacing",
+    "slug": "fractional-co2-vs-erbium-laser-choosing-the-right-resurfacing",
+    "category": "Aesthetics",
+    "primaryKeyword": "fractional CO2 vs erbium laser",
+    "secondaryKeywords": [
+      "laser resurfacing comparison",
+      "ablative laser comparison",
+      "erbium YAG vs CO2"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "fractional-co2-laser"
+  },
+  {
+    "postNumber": 125,
+    "publishedDate": "2027-08-10",
+    "dayOfWeek": "Tue",
+    "title": "Inflammation, Weight Gain, and Metabolic Syndrome",
+    "slug": "inflammation-weight-gain-and-metabolic-syndrome",
+    "category": "Weight Loss",
+    "primaryKeyword": "inflammation weight gain metabolic syndrome",
+    "secondaryKeywords": [
+      "chronic inflammation obesity",
+      "CRP weight loss",
+      "inflammatory diet"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 126,
+    "publishedDate": "2027-08-12",
+    "dayOfWeek": "Thu",
+    "title": "The Best BHRT Provider in Warner Robins, Georgia",
+    "slug": "the-best-bhrt-provider-in-warner-robins-georgia",
+    "category": "Local",
+    "primaryKeyword": "best BHRT provider Warner Robins Georgia",
+    "secondaryKeywords": [
+      "top hormone clinic Warner Robins",
+      "Warner Robins bioidentical hormones",
+      "best HRT Warner Robins"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 127,
+    "publishedDate": "2027-08-17",
+    "dayOfWeek": "Tue",
+    "title": "DHT and Male Pattern Hair Loss: The Hormone Connection",
+    "slug": "dht-and-male-pattern-hair-loss-the-hormone-connection",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "DHT male pattern hair loss",
+    "secondaryKeywords": [
+      "dihydrotestosterone hair loss",
+      "androgenetic alopecia",
+      "DHT blockers"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 128,
+    "publishedDate": "2027-08-19",
+    "dayOfWeek": "Thu",
+    "title": "Erectile Function as a Marker of Cardiovascular Health",
+    "slug": "erectile-function-as-a-marker-of-cardiovascular-health",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "erectile function cardiovascular health",
+    "secondaryKeywords": [
+      "ED heart disease marker",
+      "vascular health men",
+      "ED early warning"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 129,
+    "publishedDate": "2027-08-24",
+    "dayOfWeek": "Tue",
+    "title": "Mitochondrial Health and Weight Loss",
+    "slug": "mitochondrial-health-and-weight-loss",
+    "category": "Weight Loss",
+    "primaryKeyword": "mitochondrial health weight loss",
+    "secondaryKeywords": [
+      "mitochondria metabolism",
+      "ATP energy weight",
+      "mitochondrial dysfunction"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 130,
+    "publishedDate": "2027-08-26",
+    "dayOfWeek": "Thu",
+    "title": "CO2 Laser Recovery: A Day-by-Day Timeline",
+    "slug": "co2-laser-recovery-a-day-by-day-timeline",
+    "category": "Aesthetics",
+    "primaryKeyword": "CO2 laser recovery timeline",
+    "secondaryKeywords": [
+      "fractional CO2 healing",
+      "laser resurfacing day-by-day",
+      "CO2 downtime"
+    ],
+    "targetIntent": "howto",
+    "relatedServiceSlug": "fractional-co2-laser"
+  },
+  {
+    "postNumber": 131,
+    "publishedDate": "2027-08-31",
+    "dayOfWeek": "Tue",
+    "title": "Testosterone Optimization for Sexual Function",
+    "slug": "testosterone-optimization-for-sexual-function",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "testosterone sexual function",
+    "secondaryKeywords": [
+      "TRT libido",
+      "testosterone for ED",
+      "sexual performance testosterone"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 132,
+    "publishedDate": "2027-09-02",
+    "dayOfWeek": "Thu",
+    "title": "Vitamin D Optimization: When IV Isn't Always Best",
+    "slug": "vitamin-d-optimization-when-iv-isnt-always-best",
+    "category": "Wellness",
+    "primaryKeyword": "vitamin D optimization IV",
+    "secondaryKeywords": [
+      "vitamin D injection vs oral",
+      "vitamin D therapy",
+      "vitamin D dosing"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 133,
+    "publishedDate": "2027-09-07",
+    "dayOfWeek": "Tue",
+    "title": "Iron, Ferritin, and Hair Loss",
+    "slug": "iron-ferritin-and-hair-loss",
+    "category": "Hair Restoration",
+    "primaryKeyword": "ferritin hair loss",
+    "secondaryKeywords": [
+      "iron deficiency hair loss",
+      "ferritin levels for hair",
+      "anemia hair shedding"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 134,
+    "publishedDate": "2027-09-09",
+    "dayOfWeek": "Thu",
+    "title": "The Best GLP-1 Provider in Columbus, Georgia",
+    "slug": "the-best-glp-1-provider-in-columbus-georgia",
+    "category": "Local",
+    "primaryKeyword": "best GLP-1 provider Columbus Georgia",
+    "secondaryKeywords": [
+      "top semaglutide Columbus",
+      "best weight loss clinic Columbus",
+      "Columbus tirzepatide"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "medical-weight-loss",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 135,
+    "publishedDate": "2027-09-14",
+    "dayOfWeek": "Tue",
+    "title": "Hair Thinning in Women: A Differential Diagnosis",
+    "slug": "hair-thinning-in-women-a-differential-diagnosis",
+    "category": "Symptoms",
+    "primaryKeyword": "hair thinning women differential",
+    "secondaryKeywords": [
+      "women hair shedding causes",
+      "hair thinning workup",
+      "telogen effluvium causes"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 136,
+    "publishedDate": "2027-09-16",
+    "dayOfWeek": "Thu",
+    "title": "Menopausal Brain Fog: When It's Hormones, When It's Something Else",
+    "slug": "menopausal-brain-fog-when-its-hormones-when-its-something-else",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "menopausal brain fog",
+    "secondaryKeywords": [
+      "cognitive changes menopause",
+      "hormone brain fog",
+      "perimenopause memory"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 137,
+    "publishedDate": "2027-09-21",
+    "dayOfWeek": "Tue",
+    "title": "Thyroid Function and Weight Plateau",
+    "slug": "thyroid-function-and-weight-plateau",
+    "category": "Weight Loss",
+    "primaryKeyword": "thyroid weight plateau",
+    "secondaryKeywords": [
+      "hypothyroid weight loss",
+      "TSH weight",
+      "thyroid metabolism"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 138,
+    "publishedDate": "2027-09-23",
+    "dayOfWeek": "Thu",
+    "title": "GLP-1 After Menopause: A Specialized Approach",
+    "slug": "glp-1-after-menopause-a-specialized-approach",
+    "category": "Demographic",
+    "primaryKeyword": "GLP-1 after menopause",
+    "secondaryKeywords": [
+      "postmenopausal GLP-1",
+      "menopausal weight loss medication",
+      "menopause semaglutide"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 139,
+    "publishedDate": "2027-09-28",
+    "dayOfWeek": "Tue",
+    "title": "Sun Damage Reversal: A Clinical Approach",
+    "slug": "sun-damage-reversal-a-clinical-approach",
+    "category": "Aesthetics",
+    "primaryKeyword": "sun damage reversal",
+    "secondaryKeywords": [
+      "photodamage treatment",
+      "sun spots reversal",
+      "actinic damage repair"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "fractional-co2-laser"
+  },
+  {
+    "postNumber": 140,
+    "publishedDate": "2027-09-30",
+    "dayOfWeek": "Thu",
+    "title": "The Sleep–Hormone Connection: Beyond Cortisol",
+    "slug": "the-sleephormone-connection-beyond-cortisol",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "sleep hormones connection",
+    "secondaryKeywords": [
+      "progesterone sleep",
+      "hormonal insomnia",
+      "melatonin and hormones"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 141,
+    "publishedDate": "2027-10-05",
+    "dayOfWeek": "Tue",
+    "title": "Postpartum Weight Loss: A Clinical Approach",
+    "slug": "postpartum-weight-loss-a-clinical-approach",
+    "category": "Weight Loss",
+    "primaryKeyword": "postpartum weight loss",
+    "secondaryKeywords": [
+      "weight loss after pregnancy",
+      "postpartum metabolism",
+      "breastfeeding and weight loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 142,
+    "publishedDate": "2027-10-07",
+    "dayOfWeek": "Thu",
+    "title": "The Best Med Spa in Bonaire, Georgia",
+    "slug": "the-best-med-spa-in-bonaire-georgia",
+    "category": "Local",
+    "primaryKeyword": "best med spa Bonaire Georgia",
+    "secondaryKeywords": [
+      "Bonaire aesthetic clinic",
+      "top Bonaire spa",
+      "Houston County med spa"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 143,
+    "publishedDate": "2027-10-12",
+    "dayOfWeek": "Tue",
+    "title": "Melasma Treatment: What Actually Works",
+    "slug": "melasma-treatment-what-actually-works",
+    "category": "Aesthetics",
+    "primaryKeyword": "melasma treatment options",
+    "secondaryKeywords": [
+      "chloasma treatment",
+      "hyperpigmentation melasma",
+      "stubborn melasma"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "vi-peel"
+  },
+  {
+    "postNumber": 144,
+    "publishedDate": "2027-10-14",
+    "dayOfWeek": "Thu",
+    "title": "Estrogen and Skin: How HRT Changes Collagen",
+    "slug": "estrogen-and-skin-how-hrt-changes-collagen",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "estrogen skin collagen",
+    "secondaryKeywords": [
+      "HRT for skin",
+      "menopausal skin",
+      "estrogen aging"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 145,
+    "publishedDate": "2027-10-19",
+    "dayOfWeek": "Tue",
+    "title": "Pelvic Floor Health: An Often-Overlooked Factor",
+    "slug": "pelvic-floor-health-an-often-overlooked-factor",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "pelvic floor health sexual",
+    "secondaryKeywords": [
+      "pelvic floor dysfunction",
+      "Kegel exercises",
+      "pelvic floor physical therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 146,
+    "publishedDate": "2027-10-21",
+    "dayOfWeek": "Thu",
+    "title": "B12 Injections vs Sublingual: Bioavailability",
+    "slug": "b12-injections-vs-sublingual-bioavailability",
+    "category": "Wellness",
+    "primaryKeyword": "B12 injection vs sublingual",
+    "secondaryKeywords": [
+      "methylcobalamin injection",
+      "B12 absorption",
+      "B12 IM"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 147,
+    "publishedDate": "2027-10-26",
+    "dayOfWeek": "Tue",
+    "title": "Loss of Morning Erections: A Clinical Marker",
+    "slug": "loss-of-morning-erections-a-clinical-marker",
+    "category": "Symptoms",
+    "primaryKeyword": "loss morning erections",
+    "secondaryKeywords": [
+      "nocturnal erections",
+      "morning wood loss",
+      "morning erection vascular marker"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 148,
+    "publishedDate": "2027-10-28",
+    "dayOfWeek": "Thu",
+    "title": "Weight Loss After Menopause: What Actually Works",
+    "slug": "weight-loss-after-menopause-what-actually-works",
+    "category": "Weight Loss",
+    "primaryKeyword": "weight loss after menopause",
+    "secondaryKeywords": [
+      "menopausal weight loss",
+      "postmenopausal metabolism",
+      "hormones and weight after 50"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 149,
+    "publishedDate": "2027-11-02",
+    "dayOfWeek": "Tue",
+    "title": "Hyperpigmentation in Darker Skin Tones: A Specialized Approach",
+    "slug": "hyperpigmentation-in-darker-skin-tones-a-specialized-approach",
+    "category": "Aesthetics",
+    "primaryKeyword": "hyperpigmentation darker skin",
+    "secondaryKeywords": [
+      "Fitzpatrick IV-VI hyperpigmentation",
+      "ethnic skin treatment",
+      "PIH treatment"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "vi-peel"
+  },
+  {
+    "postNumber": 150,
+    "publishedDate": "2027-11-04",
+    "dayOfWeek": "Thu",
+    "title": "The Difference Between Spa Botox and Clinical Botox",
+    "slug": "the-difference-between-spa-botox-and-clinical-botox",
+    "category": "Local",
+    "primaryKeyword": "spa botox vs clinical botox",
+    "secondaryKeywords": [
+      "med spa vs clinical botox",
+      "clinician botox",
+      "RN botox vs MD"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "neuromodulators",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 151,
+    "publishedDate": "2027-11-09",
+    "dayOfWeek": "Tue",
+    "title": "What a Comprehensive Hormone Panel Should Include",
+    "slug": "what-a-comprehensive-hormone-panel-should-include",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "comprehensive hormone panel",
+    "secondaryKeywords": [
+      "complete hormone testing",
+      "hormone lab markers",
+      "BHRT workup labs"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 152,
+    "publishedDate": "2027-11-11",
+    "dayOfWeek": "Thu",
+    "title": "Weight Loss for Men with Low Testosterone",
+    "slug": "weight-loss-for-men-with-low-testosterone",
+    "category": "Weight Loss",
+    "primaryKeyword": "weight loss low testosterone men",
+    "secondaryKeywords": [
+      "TRT and weight loss",
+      "low T weight gain",
+      "men's metabolic health"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 153,
+    "publishedDate": "2027-11-16",
+    "dayOfWeek": "Tue",
+    "title": "Thyroid and Hair Loss: A Two-Way Street",
+    "slug": "thyroid-and-hair-loss-a-two-way-street",
+    "category": "Hair Restoration",
+    "primaryKeyword": "thyroid hair loss",
+    "secondaryKeywords": [
+      "hypothyroid hair loss",
+      "Hashimoto hair shedding",
+      "TSH hair loss"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 154,
+    "publishedDate": "2027-11-18",
+    "dayOfWeek": "Thu",
+    "title": "Synthetic vs Bioidentical Progestins: The Real Risk Differences",
+    "slug": "synthetic-vs-bioidentical-progestins-the-real-risk-differences",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "synthetic vs bioidentical progestin",
+    "secondaryKeywords": [
+      "medroxyprogesterone vs progesterone",
+      "progestin safety",
+      "WHI study reanalysis"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 155,
+    "publishedDate": "2027-11-23",
+    "dayOfWeek": "Tue",
+    "title": "AquaFirme Hydrafacial: When to Choose It",
+    "slug": "aquafirme-hydrafacial-when-to-choose-it",
+    "category": "Aesthetics",
+    "primaryKeyword": "AquaFirme hydrafacial selection",
+    "secondaryKeywords": [
+      "hydrafacial vs",
+      "AquaFirme treatment",
+      "deep cleansing facial"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "aquafirme-facials"
+  },
+  {
+    "postNumber": 156,
+    "publishedDate": "2027-11-25",
+    "dayOfWeek": "Thu",
+    "title": "Combining Weight Loss with Hormone Therapy",
+    "slug": "combining-weight-loss-with-hormone-therapy",
+    "category": "Weight Loss",
+    "primaryKeyword": "weight loss hormone therapy combined",
+    "secondaryKeywords": [
+      "BHRT weight loss",
+      "metabolic hormone optimization",
+      "combined protocols"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 157,
+    "publishedDate": "2027-11-30",
+    "dayOfWeek": "Tue",
+    "title": "Pellet Therapy Side Effects: What's Normal, What's Not",
+    "slug": "pellet-therapy-side-effects-whats-normal-whats-not",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "Biote pellet side effects",
+    "secondaryKeywords": [
+      "hormone pellet reactions",
+      "pellet extrusion",
+      "pellet site soreness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "biote-pellet-therapy"
+  },
+  {
+    "postNumber": 158,
+    "publishedDate": "2027-12-02",
+    "dayOfWeek": "Thu",
+    "title": "Travis Woodley: A Clinician's Path to Functional Medicine",
+    "slug": "travis-woodley-a-clinicians-path-to-functional-medicine",
+    "category": "Local",
+    "primaryKeyword": "Travis Woodley functional medicine",
+    "secondaryKeywords": [
+      "Travis Woodley NP",
+      "Revitalize founder bio",
+      "functional medicine Columbus GA"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 159,
+    "publishedDate": "2027-12-07",
+    "dayOfWeek": "Tue",
+    "title": "Reclaiming Intimacy in Mid-Life",
+    "slug": "reclaiming-intimacy-in-mid-life",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "reclaim intimacy mid-life",
+    "secondaryKeywords": [
+      "mid-life sexual rebuild",
+      "intimacy after 40",
+      "couple sexual wellness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 160,
+    "publishedDate": "2027-12-09",
+    "dayOfWeek": "Thu",
+    "title": "Choosing an IV Therapy Provider Safely",
+    "slug": "choosing-an-iv-therapy-provider-safely",
+    "category": "Wellness",
+    "primaryKeyword": "choosing IV therapy provider safely",
+    "secondaryKeywords": [
+      "IV provider credentials",
+      "safe IV clinic",
+      "IV therapy regulation"
+    ],
+    "targetIntent": "commercial",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 161,
+    "publishedDate": "2027-12-14",
+    "dayOfWeek": "Tue",
+    "title": "Increased Belly Fat: Why It Won't Budge",
+    "slug": "increased-belly-fat-why-it-wont-budge",
+    "category": "Symptoms",
+    "primaryKeyword": "increased belly fat won't budge",
+    "secondaryKeywords": [
+      "stubborn belly fat",
+      "visceral adipose hormonal",
+      "perimenopausal belly fat"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 162,
+    "publishedDate": "2027-12-16",
+    "dayOfWeek": "Thu",
+    "title": "VI Peel for Acne-Prone Skin",
+    "slug": "vi-peel-for-acne-prone-skin",
+    "category": "Aesthetics",
+    "primaryKeyword": "VI Peel acne prone skin",
+    "secondaryKeywords": [
+      "medium-depth peel acne",
+      "VI Peel for active acne",
+      "chemical peel acne"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "vi-peel"
+  },
+  {
+    "postNumber": 163,
+    "publishedDate": "2027-12-21",
+    "dayOfWeek": "Tue",
+    "title": "Visceral Fat vs Subcutaneous Fat: Why It Matters",
+    "slug": "visceral-fat-vs-subcutaneous-fat-why-it-matters",
+    "category": "Weight Loss",
+    "primaryKeyword": "visceral vs subcutaneous fat",
+    "secondaryKeywords": [
+      "belly fat types",
+      "visceral adiposity",
+      "metabolic risk fat"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 164,
+    "publishedDate": "2027-12-23",
+    "dayOfWeek": "Thu",
+    "title": "Hormone Therapy with a Cancer History: Careful Framing",
+    "slug": "hormone-therapy-with-a-cancer-history-careful-framing",
+    "category": "Demographic",
+    "primaryKeyword": "hormone therapy cancer history",
+    "secondaryKeywords": [
+      "BHRT after cancer",
+      "hormone therapy survivor",
+      "cancer history HRT decision"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 165,
+    "publishedDate": "2027-12-28",
+    "dayOfWeek": "Tue",
+    "title": "Restoring Libido in Mid-Life: A Hormonal Approach",
+    "slug": "restoring-libido-in-mid-life-a-hormonal-approach",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "restoring libido mid-life",
+    "secondaryKeywords": [
+      "low libido treatment",
+      "hormonal libido restoration",
+      "sex drive perimenopause"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 166,
+    "publishedDate": "2027-12-30",
+    "dayOfWeek": "Thu",
+    "title": "Why Patients Travel for Hormone Care: Reach of the Practice",
+    "slug": "why-patients-travel-for-hormone-care-reach-of-the-practice",
+    "category": "Local",
+    "primaryKeyword": "hormone care travel patients",
+    "secondaryKeywords": [
+      "regional BHRT clinic",
+      "Georgia hormone destination",
+      "BHRT travel clinic"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga",
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 167,
+    "publishedDate": "2028-01-04",
+    "dayOfWeek": "Tue",
+    "title": "PRP for Under-Eye Hollows",
+    "slug": "prp-for-under-eye-hollows",
+    "category": "Aesthetics",
+    "primaryKeyword": "PRP under-eye hollows",
+    "secondaryKeywords": [
+      "PRP eye area",
+      "under eye PRP injection",
+      "tear trough PRP"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "vampire-facial-prp"
+  },
+  {
+    "postNumber": 168,
+    "publishedDate": "2028-01-06",
+    "dayOfWeek": "Thu",
+    "title": "The Liver's Role in Weight Management",
+    "slug": "the-livers-role-in-weight-management",
+    "category": "Weight Loss",
+    "primaryKeyword": "liver weight management",
+    "secondaryKeywords": [
+      "fatty liver weight loss",
+      "NAFLD",
+      "liver metabolism"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 169,
+    "publishedDate": "2028-01-11",
+    "dayOfWeek": "Tue",
+    "title": "Adrenal DHEA Replacement: Dosing Considerations",
+    "slug": "adrenal-dhea-replacement-dosing-considerations",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "DHEA dosing replacement",
+    "secondaryKeywords": [
+      "DHEA dose",
+      "DHEA-S levels",
+      "adrenal hormone therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 170,
+    "publishedDate": "2028-01-13",
+    "dayOfWeek": "Thu",
+    "title": "Pregnenolone: The Mother Hormone",
+    "slug": "pregnenolone-the-mother-hormone",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "pregnenolone hormone",
+    "secondaryKeywords": [
+      "pregnenolone supplementation",
+      "hormone precursors",
+      "neurosteroid"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 171,
+    "publishedDate": "2028-01-18",
+    "dayOfWeek": "Tue",
+    "title": "SIBO and Weight Loss Resistance",
+    "slug": "sibo-and-weight-loss-resistance",
+    "category": "Weight Loss",
+    "primaryKeyword": "SIBO weight loss",
+    "secondaryKeywords": [
+      "small intestinal bacterial overgrowth",
+      "SIBO bloating weight",
+      "gut and weight"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 172,
+    "publishedDate": "2028-01-20",
+    "dayOfWeek": "Thu",
+    "title": "Skin Booster Injections: An Overview",
+    "slug": "skin-booster-injections-an-overview",
+    "category": "Aesthetics",
+    "primaryKeyword": "skin booster injections",
+    "secondaryKeywords": [
+      "Profhilo",
+      "skin quality injectables",
+      "hydrating injectables"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "dermal-fillers"
+  },
+  {
+    "postNumber": 173,
+    "publishedDate": "2028-01-25",
+    "dayOfWeek": "Tue",
+    "title": "Cardiovascular Health and Sexual Function",
+    "slug": "cardiovascular-health-and-sexual-function",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "cardiovascular health sexual function",
+    "secondaryKeywords": [
+      "heart health and ED",
+      "vascular sexual wellness",
+      "blood flow sexual"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 174,
+    "publishedDate": "2028-01-27",
+    "dayOfWeek": "Thu",
+    "title": "Patient Stories: Mid-Life Transformation in Columbus and Warner Robins",
+    "slug": "patient-stories-mid-life-transformation-in-columbus-and-warner-robins",
+    "category": "Local",
+    "primaryKeyword": "patient stories mid-life transformation",
+    "secondaryKeywords": [
+      "BHRT testimonials",
+      "weight loss patient stories",
+      "hormone optimization stories"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga",
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 175,
+    "publishedDate": "2028-02-01",
+    "dayOfWeek": "Tue",
+    "title": "IV Therapy for Long COVID Symptoms",
+    "slug": "iv-therapy-for-long-covid-symptoms",
+    "category": "Wellness",
+    "primaryKeyword": "IV therapy long COVID",
+    "secondaryKeywords": [
+      "long covid IV protocol",
+      "post-covid IV",
+      "long haul covid wellness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 176,
+    "publishedDate": "2028-02-03",
+    "dayOfWeek": "Thu",
+    "title": "Finasteride Alternatives for Hair Loss",
+    "slug": "finasteride-alternatives-for-hair-loss",
+    "category": "Hair Restoration",
+    "primaryKeyword": "finasteride alternatives hair loss",
+    "secondaryKeywords": [
+      "natural DHT blockers",
+      "non-prescription hair treatments",
+      "saw palmetto hair"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 177,
+    "publishedDate": "2028-02-08",
+    "dayOfWeek": "Tue",
+    "title": "Persistent Fatigue Beyond Sleep",
+    "slug": "persistent-fatigue-beyond-sleep",
+    "category": "Symptoms",
+    "primaryKeyword": "persistent fatigue beyond sleep",
+    "secondaryKeywords": [
+      "chronic fatigue investigation",
+      "tired despite sleep",
+      "fatigue hormonal causes"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 178,
+    "publishedDate": "2028-02-10",
+    "dayOfWeek": "Thu",
+    "title": "Cortisol Awakening Response: A Clinical Marker Worth Understanding",
+    "slug": "cortisol-awakening-response-a-clinical-marker-worth-understanding",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "cortisol awakening response",
+    "secondaryKeywords": [
+      "CAR test",
+      "morning cortisol",
+      "salivary cortisol"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 179,
+    "publishedDate": "2028-02-15",
+    "dayOfWeek": "Tue",
+    "title": "Food Sensitivities and Weight Plateau",
+    "slug": "food-sensitivities-and-weight-plateau",
+    "category": "Weight Loss",
+    "primaryKeyword": "food sensitivities weight plateau",
+    "secondaryKeywords": [
+      "food sensitivity weight loss",
+      "elimination diet weight",
+      "gluten weight"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 180,
+    "publishedDate": "2028-02-17",
+    "dayOfWeek": "Thu",
+    "title": "Maintenance Schedules for Aesthetic Treatments",
+    "slug": "maintenance-schedules-for-aesthetic-treatments",
+    "category": "Aesthetics",
+    "primaryKeyword": "aesthetic treatment maintenance schedule",
+    "secondaryKeywords": [
+      "botox maintenance frequency",
+      "filler touch-up schedule",
+      "aesthetic upkeep plan"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 181,
+    "publishedDate": "2028-02-22",
+    "dayOfWeek": "Tue",
+    "title": "Iodine, Thyroid, and Hormone Optimization",
+    "slug": "iodine-thyroid-and-hormone-optimization",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "iodine thyroid optimization",
+    "secondaryKeywords": [
+      "iodine deficiency",
+      "thyroid iodine",
+      "selenium iodine"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 182,
+    "publishedDate": "2028-02-24",
+    "dayOfWeek": "Thu",
+    "title": "Local Wellness Resources in Columbus, GA",
+    "slug": "local-wellness-resources-in-columbus-ga",
+    "category": "Local",
+    "primaryKeyword": "wellness resources Columbus GA",
+    "secondaryKeywords": [
+      "Columbus wellness directory",
+      "Columbus health resources",
+      "Columbus functional medicine network"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "columbus-ga"
+    ]
+  },
+  {
+    "postNumber": 183,
+    "publishedDate": "2028-02-29",
+    "dayOfWeek": "Tue",
+    "title": "Hidden Sugars and Liquid Calories: An Audit",
+    "slug": "hidden-sugars-and-liquid-calories-an-audit",
+    "category": "Weight Loss",
+    "primaryKeyword": "hidden sugars liquid calories",
+    "secondaryKeywords": [
+      "sugar sources audit",
+      "liquid calorie weight gain",
+      "sugar tracking"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 184,
+    "publishedDate": "2028-03-02",
+    "dayOfWeek": "Thu",
+    "title": "Men's Aesthetics: An Underserved Patient Population",
+    "slug": "mens-aesthetics-an-underserved-patient-population",
+    "category": "Aesthetics",
+    "primaryKeyword": "men's aesthetic treatments",
+    "secondaryKeywords": [
+      "male botox",
+      "male filler",
+      "men's aesthetic preferences"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 185,
+    "publishedDate": "2028-03-07",
+    "dayOfWeek": "Tue",
+    "title": "Gut Health and Estrogen Metabolism: The Estrobolome",
+    "slug": "gut-health-and-estrogen-metabolism-the-estrobolome",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "estrobolome gut estrogen",
+    "secondaryKeywords": [
+      "estrogen metabolism gut",
+      "microbiome hormones",
+      "estrogen detox pathway"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 186,
+    "publishedDate": "2028-03-09",
+    "dayOfWeek": "Thu",
+    "title": "Sexual Side Effects of Common Medications",
+    "slug": "sexual-side-effects-of-common-medications",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "medication sexual side effects",
+    "secondaryKeywords": [
+      "SSRI sexual dysfunction",
+      "antidepressant libido",
+      "drug-induced ED"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "erectile-dysfunction"
+  },
+  {
+    "postNumber": 187,
+    "publishedDate": "2028-03-14",
+    "dayOfWeek": "Tue",
+    "title": "The Difference Between IV Push and IV Drip",
+    "slug": "the-difference-between-iv-push-and-iv-drip",
+    "category": "Wellness",
+    "primaryKeyword": "IV push vs IV drip",
+    "secondaryKeywords": [
+      "IV administration methods",
+      "fast IV vs slow",
+      "IV technique"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 188,
+    "publishedDate": "2028-03-16",
+    "dayOfWeek": "Thu",
+    "title": "Heat Intolerance in Mid-Life",
+    "slug": "heat-intolerance-in-mid-life",
+    "category": "Symptoms",
+    "primaryKeyword": "heat intolerance mid-life",
+    "secondaryKeywords": [
+      "heat sensitivity perimenopause",
+      "thyroid heat intolerance",
+      "perimenopausal heat"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 189,
+    "publishedDate": "2028-03-21",
+    "dayOfWeek": "Tue",
+    "title": "Alcohol and Weight Loss: An Honest Clinical View",
+    "slug": "alcohol-and-weight-loss-an-honest-clinical-view",
+    "category": "Weight Loss",
+    "primaryKeyword": "alcohol weight loss",
+    "secondaryKeywords": [
+      "drinking and weight loss",
+      "alcohol metabolism",
+      "alcohol calories"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 190,
+    "publishedDate": "2028-03-23",
+    "dayOfWeek": "Thu",
+    "title": "Local Wellness Resources in Warner Robins, GA",
+    "slug": "local-wellness-resources-in-warner-robins-ga",
+    "category": "Local",
+    "primaryKeyword": "wellness resources Warner Robins GA",
+    "secondaryKeywords": [
+      "Warner Robins wellness directory",
+      "Warner Robins health resources",
+      "Houston County wellness network"
+    ],
+    "targetIntent": "local",
+    "relatedServiceSlug": "hormone-therapy-women",
+    "relatedCities": [
+      "warner-robins-ga"
+    ]
+  },
+  {
+    "postNumber": 191,
+    "publishedDate": "2028-03-28",
+    "dayOfWeek": "Tue",
+    "title": "Sexual Wellness After 60: Clinical Pathways",
+    "slug": "sexual-wellness-after-60-clinical-pathways",
+    "category": "Demographic",
+    "primaryKeyword": "sexual wellness after 60",
+    "secondaryKeywords": [
+      "sexual health older adults",
+      "intimacy after 60",
+      "older couples sexual wellness"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 192,
+    "publishedDate": "2028-03-30",
+    "dayOfWeek": "Thu",
+    "title": "Pre-Procedure Skin Prep: What to Do Before Treatment",
+    "slug": "pre-procedure-skin-prep-what-to-do-before-treatment",
+    "category": "Aesthetics",
+    "primaryKeyword": "pre-procedure skin prep",
+    "secondaryKeywords": [
+      "aesthetic procedure preparation",
+      "skin prep before botox",
+      "before laser checklist"
+    ],
+    "targetIntent": "howto",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 193,
+    "publishedDate": "2028-04-04",
+    "dayOfWeek": "Tue",
+    "title": "Why Mid-Life Weight Gain Is Often Hormonal, Not Caloric",
+    "slug": "why-mid-life-weight-gain-is-often-hormonal-not-caloric",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "mid-life weight gain hormonal",
+    "secondaryKeywords": [
+      "menopausal weight gain",
+      "andropause weight",
+      "hormone-driven obesity"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 194,
+    "publishedDate": "2028-04-06",
+    "dayOfWeek": "Thu",
+    "title": "Realistic Weight Loss Timelines on Medical Programs",
+    "slug": "realistic-weight-loss-timelines-on-medical-programs",
+    "category": "Weight Loss",
+    "primaryKeyword": "realistic weight loss timeline",
+    "secondaryKeywords": [
+      "medical weight loss expectations",
+      "GLP-1 timeline results",
+      "weight loss month-by-month"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 195,
+    "publishedDate": "2028-04-11",
+    "dayOfWeek": "Tue",
+    "title": "A Realistic Hair Restoration Timeline",
+    "slug": "a-realistic-hair-restoration-timeline",
+    "category": "Hair Restoration",
+    "primaryKeyword": "hair restoration timeline",
+    "secondaryKeywords": [
+      "hair regrowth timeline",
+      "PRP hair results timeline",
+      "DE|RIVE results timeline"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "derive-hair-restoration"
+  },
+  {
+    "postNumber": 196,
+    "publishedDate": "2028-04-13",
+    "dayOfWeek": "Thu",
+    "title": "Hormone Therapy for Men in Their 50s and 60s",
+    "slug": "hormone-therapy-for-men-in-their-50s-and-60s",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "hormone therapy men 50s 60s",
+    "secondaryKeywords": [
+      "older men TRT",
+      "andropause therapy",
+      "testosterone after 50"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 197,
+    "publishedDate": "2028-04-18",
+    "dayOfWeek": "Tue",
+    "title": "Sun Protection After Aesthetic Procedures",
+    "slug": "sun-protection-after-aesthetic-procedures",
+    "category": "Aesthetics",
+    "primaryKeyword": "sun protection after aesthetic",
+    "secondaryKeywords": [
+      "sunscreen after procedures",
+      "post-laser sun care",
+      "post-treatment SPF"
+    ],
+    "targetIntent": "howto",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 198,
+    "publishedDate": "2028-04-20",
+    "dayOfWeek": "Thu",
+    "title": "The Set-Point Theory of Body Weight: Updated for 2026",
+    "slug": "the-set-point-theory-of-body-weight-updated-for-2026",
+    "category": "Weight Loss",
+    "primaryKeyword": "set-point theory body weight",
+    "secondaryKeywords": [
+      "weight set point",
+      "metabolic set point",
+      "body weight regulation"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 199,
+    "publishedDate": "2028-04-25",
+    "dayOfWeek": "Tue",
+    "title": "The Andropause Window: Recognizing Male Transition Early",
+    "slug": "the-andropause-window-recognizing-male-transition-early",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "andropause early signs",
+    "secondaryKeywords": [
+      "male hormone transition",
+      "andropause symptoms men",
+      "early TRT candidacy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-men"
+  },
+  {
+    "postNumber": 200,
+    "publishedDate": "2028-04-27",
+    "dayOfWeek": "Thu",
+    "title": "Communication: The Underrated Aspect of Sexual Wellness",
+    "slug": "communication-the-underrated-aspect-of-sexual-wellness",
+    "category": "Sexual Wellness",
+    "primaryKeyword": "communication sexual wellness",
+    "secondaryKeywords": [
+      "sexual communication couples",
+      "talking about sexual health",
+      "intimate communication"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "o-shot"
+  },
+  {
+    "postNumber": 201,
+    "publishedDate": "2028-05-02",
+    "dayOfWeek": "Tue",
+    "title": "Frequency of IV Therapy: Evidence-Based Guidance",
+    "slug": "frequency-of-iv-therapy-evidence-based-guidance",
+    "category": "Wellness",
+    "primaryKeyword": "frequency IV therapy",
+    "secondaryKeywords": [
+      "how often IV therapy",
+      "IV schedule frequency",
+      "monthly IV therapy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "iv-hydration"
+  },
+  {
+    "postNumber": 202,
+    "publishedDate": "2028-05-04",
+    "dayOfWeek": "Thu",
+    "title": "Cold Intolerance: A Thyroid Investigation Starter",
+    "slug": "cold-intolerance-a-thyroid-investigation-starter",
+    "category": "Symptoms",
+    "primaryKeyword": "cold intolerance thyroid investigation",
+    "secondaryKeywords": [
+      "always cold thyroid",
+      "cold hands feet thyroid",
+      "hypothyroid cold"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 203,
+    "publishedDate": "2028-05-09",
+    "dayOfWeek": "Tue",
+    "title": "Building a Maintenance Plan: A Clinical Framework",
+    "slug": "building-a-maintenance-plan-a-clinical-framework",
+    "category": "Aesthetics",
+    "primaryKeyword": "aesthetic maintenance plan framework",
+    "secondaryKeywords": [
+      "aesthetic treatment plan",
+      "annual maintenance aesthetic",
+      "treatment scheduling clinical"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 204,
+    "publishedDate": "2028-05-11",
+    "dayOfWeek": "Thu",
+    "title": "Weight Loss Maintenance Beyond One Year",
+    "slug": "weight-loss-maintenance-beyond-one-year",
+    "category": "Weight Loss",
+    "primaryKeyword": "weight loss maintenance long term",
+    "secondaryKeywords": [
+      "sustained weight loss",
+      "weight maintenance phase",
+      "preventing weight regain"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 205,
+    "publishedDate": "2028-05-16",
+    "dayOfWeek": "Tue",
+    "title": "When to Stop Hormone Therapy: A Clinical Decision Framework",
+    "slug": "when-to-stop-hormone-therapy-a-clinical-decision-framework",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "when to stop hormone therapy",
+    "secondaryKeywords": [
+      "discontinuing HRT",
+      "tapering bioidentical hormones",
+      "BHRT exit strategy"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "hormone-therapy-women"
+  },
+  {
+    "postNumber": 206,
+    "publishedDate": "2028-05-18",
+    "dayOfWeek": "Thu",
+    "title": "Setting Realistic Expectations for Aesthetic Procedures",
+    "slug": "setting-realistic-expectations-for-aesthetic-procedures",
+    "category": "Aesthetics",
+    "primaryKeyword": "realistic aesthetic expectations",
+    "secondaryKeywords": [
+      "aesthetic before after expectations",
+      "natural-looking results",
+      "realistic outcomes injectables"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "neuromodulators"
+  },
+  {
+    "postNumber": 207,
+    "publishedDate": "2028-05-23",
+    "dayOfWeek": "Tue",
+    "title": "When GLP-1 Stops Working: Clinical Next Steps",
+    "slug": "when-glp-1-stops-working-clinical-next-steps",
+    "category": "Weight Loss",
+    "primaryKeyword": "GLP-1 stops working",
+    "secondaryKeywords": [
+      "GLP-1 plateau next steps",
+      "tirzepatide after semaglutide",
+      "weight loss medication switch"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "medical-weight-loss"
+  },
+  {
+    "postNumber": 208,
+    "publishedDate": "2028-05-25",
+    "dayOfWeek": "Thu",
+    "title": "Bioidentical Hormone Pellets vs Injections: A Side-by-Side",
+    "slug": "bioidentical-hormone-pellets-vs-injections-a-side-by-side",
+    "category": "Hormone Therapy",
+    "primaryKeyword": "pellets vs injections testosterone",
+    "secondaryKeywords": [
+      "hormone delivery comparison",
+      "Biote vs cypionate",
+      "TRT options"
+    ],
+    "targetIntent": "informational",
+    "relatedServiceSlug": "biote-pellet-therapy"
+  }
+]

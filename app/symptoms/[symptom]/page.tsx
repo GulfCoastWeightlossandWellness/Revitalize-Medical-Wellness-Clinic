@@ -3,6 +3,18 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
+import RelatedPostsRow from "@/components/RelatedPostsRow";
+import { getPostsByCategory } from "@/lib/blog";
+
+// Each symptom maps to a clinical category for related-post selection
+const SYMPTOM_CATEGORY: Record<string, string> = {
+  "brain-fog": "Hormone Therapy",
+  "low-energy": "Hormone Therapy",
+  "low-libido": "Sexual Wellness",
+  "midsection-weight-gain": "Weight Loss",
+  "mood-changes": "Hormone Therapy",
+  "poor-sleep": "Hormone Therapy",
+};
 
 type SymptomData = {
   eyebrow: string;
@@ -386,6 +398,8 @@ export default async function SymptomPage({ params }: Props) {
   const data = SYMPTOMS[symptom];
   if (!data) notFound();
 
+  const relatedPosts = getPostsByCategory(SYMPTOM_CATEGORY[symptom] ?? "Hormone Therapy", undefined, 3);
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -539,6 +553,12 @@ export default async function SymptomPage({ params }: Props) {
           @media (max-width: 1024px) { .symptom-layout { grid-template-columns: 1fr !important; } }
         `}</style>
       </section>
+
+      {/* Phase 5 — Related articles for this symptom */}
+      <RelatedPostsRow
+        posts={relatedPosts}
+        heading={`Related articles on ${data.eyebrow.toLowerCase()}`}
+      />
     </>
   );
 }

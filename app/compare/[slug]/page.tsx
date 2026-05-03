@@ -3,6 +3,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
+import RelatedPostsRow from "@/components/RelatedPostsRow";
+import { getPostsByCategory } from "@/lib/blog";
+
+const COMPARE_CATEGORY: Record<string, string> = {
+  "botox-vs-dysport": "Aesthetics",
+  "microneedling-vs-co2-laser": "Aesthetics",
+  "semaglutide-vs-tirzepatide": "Weight Loss",
+};
 
 type Section = { headline: string; body: string };
 
@@ -392,6 +400,12 @@ export default async function ComparePage({ params }: Props) {
           @media (max-width: 1024px) { .compare-layout { grid-template-columns: 1fr !important; } }
         `}</style>
       </section>
+
+      {/* Phase 5 — Related reading on this comparison topic */}
+      <RelatedPostsRow
+        posts={getPostsByCategory(COMPARE_CATEGORY[slug] ?? "Aesthetics", undefined, 3)}
+        heading="Related reading"
+      />
     </>
   );
 }

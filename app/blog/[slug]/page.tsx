@@ -163,12 +163,36 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
+  // Phase 5 — emit HowTo schema for procedural posts (in addition to Article)
+  const howToSchema =
+    post.schemaType === "HowTo"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: post.title,
+          description: post.description,
+          url: canonicalUrl,
+          datePublished: post.date,
+          author: {
+            "@type": "Person",
+            name: "Travis Woodley",
+            jobTitle: "MSN, RN, CRNP",
+          },
+        }
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

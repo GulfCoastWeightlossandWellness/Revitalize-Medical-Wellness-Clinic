@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
-import { BLOG_POSTS } from "@/lib/blog";
+import { getRecentPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Revitalize Aesthetics & Wellness | Columbus & Warner Robins, GA",
@@ -203,7 +203,10 @@ const aggregateRatingWarnerRobins = {
 };
 
 export default function HomePage() {
-  const featuredPosts = BLOG_POSTS.slice(0, 3);
+  // Phase 5: the existing "Learning Library" section now shows the 3 most
+  // recent published posts. getRecentPosts() sorts pure date-desc and
+  // respects the isPublished() filter, so future-dated posts never leak.
+  const featuredPosts = getRecentPosts(3);
   return (
     <>
       <script

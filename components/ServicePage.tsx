@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
+import RelatedPostsRow from "@/components/RelatedPostsRow";
+import { getPostsByServiceSlug } from "@/lib/blog";
 
 export interface FAQ {
   q: string;
@@ -408,6 +410,25 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
             </div>
           </section>
         </FadeIn>
+
+        {/* Phase 5 — Related Reading: auto-derived from getPostsByServiceSlug */}
+        {(() => {
+          const serviceSlug = pageHref?.match(/^\/services\/([a-z0-9-]+)$/)?.[1];
+          if (!serviceSlug) return null;
+          const relatedReadingPosts = getPostsByServiceSlug(serviceSlug, undefined, 3);
+          if (relatedReadingPosts.length === 0) return null;
+          return (
+            <FadeIn>
+              <div style={{ marginBottom: "48px", marginLeft: "-24px", marginRight: "-24px" }}>
+                <RelatedPostsRow
+                  posts={relatedReadingPosts}
+                  heading={`Related reading on ${pageName ?? "this service"}`}
+                  background="transparent"
+                />
+              </div>
+            </FadeIn>
+          );
+        })()}
 
         {/* FAQ */}
         <FadeIn>
