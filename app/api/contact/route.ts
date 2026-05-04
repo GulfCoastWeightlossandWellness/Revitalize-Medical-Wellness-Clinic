@@ -31,10 +31,24 @@ function row(label: string, value: string | undefined | null): string {
 }
 
 export async function POST(request: Request) {
+  // Fail fast with a clear message if the env var is missing — this is the
+  // most common local-dev failure mode (RESEND_API_KEY lives in Vercel
+  // production env but isn't in .env.local).
+  if (!process.env.RESEND_API_KEY) {
+    console.error(
+      "[/api/contact] RESEND_API_KEY not configured — set it in .env.local for local dev or in Vercel env for production",
+    );
+    return Response.json(
+      { error: "RESEND_API_KEY not configured" },
+      { status: 500 },
+    );
+  }
+
   let body: ContactPayload;
   try {
     body = (await request.json()) as ContactPayload;
-  } catch {
+  } catch (e) {
+    console.error("[/api/contact] JSON parse error:", e);
     return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
@@ -82,12 +96,27 @@ export async function POST(request: Request) {
 </body></html>`;
 
   try {
-    await sendEmail({
+    const result = await sendEmail({
       subject: "New Consultation Request — Revitalize",
       html,
     });
+    console.log("[/api/contact] Resend send OK:", {
+      to: "travis@rebuildmetabolichealth.com",
+      from: name,
+      fromEmail: email,
+      resendId: result?.data?.id,
+    });
     return Response.json({ success: true });
   } catch (e) {
+    // Full error dump — helpful when debugging Resend SDK responses, network
+    // failures, malformed HTML, or rate limits.
+    console.error("[/api/contact] Resend send FAILED");
+    console.error("  error:", e);
+    if (e instanceof Error) {
+      console.error("  name:", e.name);
+      console.error("  message:", e.message);
+      console.error("  stack:", e.stack);
+    }
     const message = e instanceof Error ? e.message : "Unknown error";
     return Response.json({ error: message }, { status: 500 });
   }

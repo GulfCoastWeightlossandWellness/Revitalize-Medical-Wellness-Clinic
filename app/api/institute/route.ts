@@ -29,10 +29,22 @@ function row(label: string, value: string | undefined | null): string {
 }
 
 export async function POST(request: Request) {
+  // Fail fast if RESEND_API_KEY is missing (same pattern as /api/contact).
+  if (!process.env.RESEND_API_KEY) {
+    console.error(
+      "[/api/institute] RESEND_API_KEY not configured — set it in .env.local for local dev or in Vercel env for production",
+    );
+    return Response.json(
+      { error: "RESEND_API_KEY not configured" },
+      { status: 500 },
+    );
+  }
+
   let body: InstitutePayload;
   try {
     body = (await request.json()) as InstitutePayload;
-  } catch {
+  } catch (e) {
+    console.error("[/api/institute] JSON parse error:", e);
     return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
@@ -78,12 +90,25 @@ export async function POST(request: Request) {
 </body></html>`;
 
   try {
-    await sendEmail({
+    const result = await sendEmail({
       subject: "New Institute Inquiry — Rebuild Metabolic Health",
       html,
     });
+    console.log("[/api/institute] Resend send OK:", {
+      to: "travis@rebuildmetabolichealth.com",
+      from: name,
+      fromEmail: email,
+      resendId: result?.data?.id,
+    });
     return Response.json({ success: true });
   } catch (e) {
+    console.error("[/api/institute] Resend send FAILED");
+    console.error("  error:", e);
+    if (e instanceof Error) {
+      console.error("  name:", e.name);
+      console.error("  message:", e.message);
+      console.error("  stack:", e.stack);
+    }
     const message = e instanceof Error ? e.message : "Unknown error";
     return Response.json({ error: message }, { status: 500 });
   }
