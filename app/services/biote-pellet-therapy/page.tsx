@@ -47,6 +47,7 @@ export default function BiotePelletTherapy() {
       relatedServices={[
         { name: "Hormone Therapy — Women", href: "/services/hormone-therapy-women" },
         { name: "Hormone Therapy — Men", href: "/services/hormone-therapy-men" },
+        { name: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
         { name: "Medical Weight Loss", href: "/services/medical-weight-loss" },
         { name: "Nutritional Counseling", href: "/services/nutritional-counseling" },
       ]}

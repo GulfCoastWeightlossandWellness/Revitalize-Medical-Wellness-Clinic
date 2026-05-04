@@ -51,11 +51,12 @@ const STATIC_ROUTES: {
   { path: "/services",                  priority: 0.85, changeFrequency: "monthly" },
 
   // Hormone & metabolic
-  { path: "/services/hormone-therapy-women",   priority: 0.9, changeFrequency: "monthly" },
-  { path: "/services/hormone-therapy-men",     priority: 0.9, changeFrequency: "monthly" },
-  { path: "/services/biote-pellet-therapy",    priority: 0.88, changeFrequency: "monthly" },
-  { path: "/services/medical-weight-loss",     priority: 0.88, changeFrequency: "monthly" },
-  { path: "/services/nutritional-counseling",  priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/hormone-therapy-women",          priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/hormone-therapy-men",            priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/testosterone-injection-therapy", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/biote-pellet-therapy",           priority: 0.88, changeFrequency: "monthly" },
+  { path: "/services/medical-weight-loss",            priority: 0.88, changeFrequency: "monthly" },
+  { path: "/services/nutritional-counseling",         priority: 0.7, changeFrequency: "monthly" },
 
   // Aesthetics & skin
   { path: "/services/neuromodulators",          priority: 0.85, changeFrequency: "monthly" },

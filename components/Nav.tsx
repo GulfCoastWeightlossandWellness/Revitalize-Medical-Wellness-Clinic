@@ -15,6 +15,7 @@ const SERVICES_MENU: NavColumn[] = [
     items: [
       { label: "Hormone Therapy — Women", href: "/services/hormone-therapy-women" },
       { label: "Hormone Therapy — Men", href: "/services/hormone-therapy-men" },
+      { label: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
       { label: "Biote Pellet Therapy", href: "/services/biote-pellet-therapy" },
       { label: "Medical Weight Loss", href: "/services/medical-weight-loss" },
       { label: "Nutritional Counseling", href: "/services/nutritional-counseling" },

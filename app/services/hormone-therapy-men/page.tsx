@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import ServicePage from "@/components/ServicePage";
 import { getHubVideos } from "@/lib/contentHub";
 
 export const metadata: Metadata = {
-  title: "Hormone Therapy for Men | Testosterone Optimization | Columbus & Warner Robins, GA",
+  title:
+    "Hormone Therapy for Men | Testosterone Pellets & Injections | Columbus & Warner Robins, GA",
   description:
-    "Men's hormone therapy at Revitalize in Columbus and Warner Robins, Georgia. Bioidentical testosterone pellet therapy for low energy, muscle loss, weight gain, and reduced libido. Travis Woodley, CRNP.",
+    "Men's hormone therapy at Revitalize in Columbus and Warner Robins, GA. Bioidentical testosterone pellet therapy AND testosterone injections — choose the delivery method that fits. Travis Woodley, MSN, RN, CRNP.",
+  keywords: [
+    "hormone therapy for men Columbus GA",
+    "testosterone optimization Warner Robins",
+    "testosterone pellets men Columbus",
+    "testosterone injections Columbus GA",
+    "TRT Columbus Georgia",
+    "low T treatment Warner Robins",
+    "men's hormone clinic Columbus",
+    "Biote pellet provider men",
+    "Travis Woodley TRT",
+  ],
 };
 
 export default function HormoneTherapyMen() {
@@ -52,6 +65,7 @@ export default function HormoneTherapyMen() {
         "Three to five month re-assessment: Labs are drawn and we review how you are feeling. Dosing is adjusted for the next cycle. Most men find their optimal dose within two or three cycles.",
       ]}
       relatedServices={[
+        { name: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
         { name: "Biote Pellet Therapy", href: "/services/biote-pellet-therapy" },
         { name: "Medical Weight Loss", href: "/services/medical-weight-loss" },
         { name: "Erectile Dysfunction Treatment", href: "/services/erectile-dysfunction" },
@@ -123,6 +137,84 @@ export default function HormoneTherapyMen() {
         pageName="Hormone Therapy for Men"
         assessmentCta={{ label: "Hormone Health Self-Assessment", href: "/tools" }}
       />
+
+      {/* Two delivery methods: pellets vs injections */}
+      <section style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "40px", maxWidth: "740px" }}>
+              <div className="eyebrow" style={{ marginBottom: "16px" }}>Two delivery methods</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2, marginBottom: "20px" }}>
+                Pellets and injections — both legitimate, neither one universally better.
+              </h2>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)" }}>
+                Most online conversations about TRT treat the delivery method as a religious choice. In clinical practice, the answer is more boring: pellets work better for some patients, injections work better for others, and the right choice comes from the lab pattern, the lifestyle, and the individual&apos;s preference. I run both protocols.
+              </p>
+            </div>
+          </FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }} className="trt-compare-grid">
+            {[
+              {
+                title: "Biote Pellets",
+                href: "/services/biote-pellet-therapy",
+                pros: [
+                  "One in-office procedure every 3-5 months — no daily or weekly maintenance",
+                  "Steady, physiologic hormone levels with minimal peak-and-trough swing",
+                  "No injection technique to learn",
+                  "Good fit for patients with stable lab patterns and low SHBG",
+                ],
+                cons: [
+                  "Cannot adjust dose mid-cycle — once the pellet is in, it dissolves on its own schedule",
+                  "Minor in-office procedure each cycle (about 15 minutes, well-tolerated)",
+                  "Less responsive to short-term lab adjustments",
+                ],
+              },
+              {
+                title: "Injection Therapy",
+                href: "/services/testosterone-injection-therapy",
+                pros: [
+                  "Tight dose control — adjust weekly if needed",
+                  "Better lever for patients with high SHBG, where free T is the issue",
+                  "Lower per-cycle cost in many cases",
+                  "Portable — fits a travel-heavy lifestyle",
+                ],
+                cons: [
+                  "Requires self-injection (15-second weekly task once trained)",
+                  "More follow-up labs early on to dial in the dose",
+                  "Bi-weekly dosing creates more noticeable peak-and-trough fluctuation",
+                ],
+              },
+            ].map((m) => (
+              <FadeIn key={m.title}>
+                <div style={{ background: "#fff", borderRadius: "8px", padding: "32px 28px", height: "100%", display: "flex", flexDirection: "column" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "16px" }}>{m.title}</h3>
+                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 600, marginBottom: "10px" }}>What works well</div>
+                  <ul style={{ paddingLeft: "18px", marginBottom: "20px" }}>
+                    {m.pros.map((p, i) => (
+                      <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{p}</li>
+                    ))}
+                  </ul>
+                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "10px" }}>Honest tradeoffs</div>
+                  <ul style={{ paddingLeft: "18px", marginBottom: "24px", flex: 1 }}>
+                    {m.cons.map((c, i) => (
+                      <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{c}</li>
+                    ))}
+                  </ul>
+                  <Link href={m.href} style={{ display: "inline-block", background: "var(--color-teal)", color: "#fff", padding: "11px 20px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                    Full {m.title} Page →
+                  </Link>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "var(--color-muted)", marginTop: "32px", maxWidth: "780px" }}>
+              At your consultation we walk through both options with your labs and your situation in front of us. Some men try one, run it for a cycle, and switch. That is normal. The point is to land on the protocol that produces the result — not to defend a delivery method.
+            </p>
+          </FadeIn>
+        </div>
+        <style>{`@media (max-width: 768px) { .trt-compare-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
 
       {menVideo ? (
         <section style={{ background: "var(--color-bg)", padding: "0 clamp(24px, 6vw, 80px) 80px" }}>
