@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
@@ -252,6 +253,15 @@ export default function TravisPage() {
           </FadeIn>
           <FadeIn>
             <div style={{ background: "var(--color-stone)", borderRadius: "8px", padding: "40px 32px", textAlign: "center" }}>
+              {/* You're Not Broken brand mark — light stone background; no
+                  containment needed. */}
+              <Image
+                src="/images/brand/youre-not-broken-logo.png"
+                alt="You're Not Broken brand logo"
+                width={1667}
+                height={1872}
+                style={{ width: "auto", height: "120px", objectFit: "contain", margin: "0 auto 20px", display: "block" }}
+              />
               <div style={{ fontFamily: "var(--font-display)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "16px" }}>
                 Featured Book
               </div>
@@ -324,6 +334,16 @@ export default function TravisPage() {
         <div style={{ maxWidth: "780px", margin: "0 auto" }}>
           <FadeIn>
             <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              {/* Rebuild Metabolic Health Institute brand mark — page section
+                  background is light stone, so the logo's white background
+                  blends naturally. */}
+              <Image
+                src="/images/brand/rebuild-institute-logo.png"
+                alt="Rebuild Metabolic Health Institute logo"
+                width={1024}
+                height={1024}
+                style={{ width: "auto", height: "100px", objectFit: "contain", margin: "0 auto 16px", display: "block" }}
+              />
               <div className="eyebrow" style={{ marginBottom: "16px" }}>Work with Travis</div>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2, marginBottom: "12px" }}>
                 Coaching, consulting, or speaking inquiry.

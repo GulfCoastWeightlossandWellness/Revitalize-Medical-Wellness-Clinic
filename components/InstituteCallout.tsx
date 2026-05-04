@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -40,6 +41,25 @@ export default function InstituteCallout({
           className="institute-cb-grid"
         >
           <div>
+            {/* Rebuild Institute brand mark — wide-variant. White pill since
+                file has a white background and the section is dark teal. */}
+            <div
+              style={{
+                display: "inline-block",
+                background: "rgba(255,255,255,0.96)",
+                borderRadius: "10px",
+                padding: "10px 14px",
+                marginBottom: "16px",
+              }}
+            >
+              <Image
+                src="/images/brand/rebuild-institute-logo.png"
+                alt="Rebuild Metabolic Health Institute logo"
+                width={1024}
+                height={1024}
+                style={{ width: "auto", height: "56px", objectFit: "contain", display: "block" }}
+              />
+            </div>
             <div
               style={{
                 fontSize: "0.58rem",
@@ -158,6 +178,25 @@ export default function InstituteCallout({
         marginBottom: "48px",
       }}
     >
+      {/* Rebuild Institute brand mark — compact box variant. Smaller white
+          pill so the eyebrow + heading still lead the composition. */}
+      <div
+        style={{
+          display: "inline-block",
+          background: "rgba(255,255,255,0.96)",
+          borderRadius: "8px",
+          padding: "8px 10px",
+          marginBottom: "12px",
+        }}
+      >
+        <Image
+          src="/images/brand/rebuild-institute-logo.png"
+          alt="Rebuild Metabolic Health Institute logo"
+          width={1024}
+          height={1024}
+          style={{ width: "auto", height: "40px", objectFit: "contain", display: "block" }}
+        />
+      </div>
       <div
         style={{
           fontSize: "0.55rem",

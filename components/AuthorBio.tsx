@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -132,6 +133,40 @@ export default function AuthorBio() {
             }}
           >
             Rebuild Institute &rarr;
+          </Link>
+        </div>
+
+        {/* Brand-mark row — small inline lockups for the book and the
+            Institute. Light card background so logos render without
+            containment. */}
+        <div
+          style={{
+            marginTop: "20px",
+            paddingTop: "16px",
+            borderTop: "1px solid rgba(0,0,0,0.06)",
+            display: "flex",
+            gap: "24px",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link href="/book" aria-label="You're Not Broken — visit the book page" style={{ display: "inline-flex", alignItems: "center" }}>
+            <Image
+              src="/images/brand/youre-not-broken-logo.png"
+              alt="You're Not Broken book brand"
+              width={1667}
+              height={1872}
+              style={{ width: "auto", height: "44px", objectFit: "contain", display: "block" }}
+            />
+          </Link>
+          <Link href="/institute" aria-label="Rebuild Metabolic Health Institute" style={{ display: "inline-flex", alignItems: "center" }}>
+            <Image
+              src="/images/brand/rebuild-institute-logo.png"
+              alt="Rebuild Metabolic Health Institute"
+              width={1024}
+              height={1024}
+              style={{ width: "auto", height: "44px", objectFit: "contain", display: "block" }}
+            />
           </Link>
         </div>
       </div>

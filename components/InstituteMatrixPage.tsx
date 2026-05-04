@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import InstituteInquiryForm from "@/components/InstituteInquiryForm";
@@ -75,6 +76,26 @@ export default function InstituteMatrixPage({
         }}
       >
         <div style={{ maxWidth: "760px" }}>
+          {/* Rebuild Institute brand mark — same containment pattern as the
+              other Institute hero surfaces. */}
+          <div
+            style={{
+              display: "inline-block",
+              background: "rgba(255,255,255,0.96)",
+              borderRadius: "10px",
+              padding: "10px 14px",
+              marginBottom: "20px",
+            }}
+          >
+            <Image
+              src="/images/brand/rebuild-institute-logo.png"
+              alt="Rebuild Metabolic Health Institute logo"
+              width={1024}
+              height={1024}
+              priority
+              style={{ width: "auto", height: "64px", objectFit: "contain", display: "block" }}
+            />
+          </div>
           <Link
             href="/institute"
             style={{
@@ -84,7 +105,7 @@ export default function InstituteMatrixPage({
               color: "rgba(255,255,255,0.4)",
               fontWeight: 500,
               textDecoration: "none",
-              display: "inline-block",
+              display: "block",
               marginBottom: "20px",
             }}
           >

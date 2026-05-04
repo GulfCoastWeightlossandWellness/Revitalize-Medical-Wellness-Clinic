@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import InstituteInquiryForm from "@/components/InstituteInquiryForm";
@@ -202,6 +203,27 @@ export default function InstitutePage() {
       {/* Hero */}
       <section id="overview" style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <div style={{ maxWidth: "760px" }}>
+          {/* Rebuild Institute brand mark — file is on white background, so
+              we contain it in a white pill that pops against the dark teal
+              hero. Sized large since it's the primary brand statement here. */}
+          <div
+            style={{
+              display: "inline-block",
+              background: "rgba(255,255,255,0.96)",
+              borderRadius: "12px",
+              padding: "14px 18px",
+              marginBottom: "24px",
+            }}
+          >
+            <Image
+              src="/images/brand/rebuild-institute-logo.png"
+              alt="Rebuild Metabolic Health Institute logo"
+              width={1024}
+              height={1024}
+              priority
+              style={{ width: "auto", height: "96px", objectFit: "contain", display: "block" }}
+            />
+          </div>
           <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "20px" }}>
             Rebuild Metabolic Health Institute
           </div>

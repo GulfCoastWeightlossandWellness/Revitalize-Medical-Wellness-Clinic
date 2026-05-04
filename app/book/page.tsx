@@ -41,6 +41,26 @@ export default function BookPage() {
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="book-hero-grid">
           <div>
+            {/* You're Not Broken brand lockup — placed above headline.
+                White container so the logo (dark blue + black on white) renders
+                correctly against the dark teal hero. */}
+            <div
+              style={{
+                display: "inline-block",
+                background: "rgba(255,255,255,0.96)",
+                borderRadius: "10px",
+                padding: "10px 14px",
+                marginBottom: "20px",
+              }}
+            >
+              <Image
+                src="/images/brand/youre-not-broken-logo.png"
+                alt="You're Not Broken brand logo"
+                width={1667}
+                height={1872}
+                style={{ width: "auto", height: "64px", objectFit: "contain", display: "block" }}
+              />
+            </div>
             <div className="eyebrow-white" style={{ marginBottom: "20px" }}>The book</div>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 4rem)", fontWeight: 400, lineHeight: 1.1, color: "#fff", letterSpacing: "-0.015em", marginBottom: "20px" }}>
               You&apos;re Not Broken —<br /><em style={{ fontStyle: "italic", color: "var(--color-gold)" }}>You&apos;re Unbalanced</em>

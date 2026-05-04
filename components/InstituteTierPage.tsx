@@ -5,6 +5,7 @@
  * keeps layout, schema, and section order consistent.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import InstituteApplicationForm from "@/components/InstituteApplicationForm";
@@ -105,6 +106,27 @@ export default function InstituteTierPage({ content }: { content: InstituteTierC
       {/* Hero */}
       <section style={{ background: "var(--color-teal-dark)", padding: "72px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "780px" }}>
+          {/* Rebuild Institute brand mark — same containment pattern used on
+              the /institute hero. Slightly smaller here because the tier
+              eyebrow does the heavy identification work. */}
+          <div
+            style={{
+              display: "inline-block",
+              background: "rgba(255,255,255,0.96)",
+              borderRadius: "10px",
+              padding: "10px 14px",
+              marginBottom: "20px",
+            }}
+          >
+            <Image
+              src="/images/brand/rebuild-institute-logo.png"
+              alt="Rebuild Metabolic Health Institute logo"
+              width={1024}
+              height={1024}
+              priority
+              style={{ width: "auto", height: "72px", objectFit: "contain", display: "block" }}
+            />
+          </div>
           <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "20px" }}>
             Rebuild Metabolic Health Institute · {tier.name} · {tier.duration}
           </div>

@@ -76,9 +76,10 @@ export default function Footer() {
               <Image
                 src="/images/brand/revitalize-logo.png"
                 alt="Revitalize Aesthetics and Wellness logo"
-                width={240}
-                height={70}
-                style={{ width: "auto", height: "40px" }}
+                // Intrinsic file is 864x288 (3:1 wordmark). Render at 36px tall.
+                width={864}
+                height={288}
+                style={{ width: "auto", height: "36px", objectFit: "contain" }}
               />
             </Link>
             <p

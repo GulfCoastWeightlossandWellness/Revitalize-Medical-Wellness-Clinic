@@ -168,10 +168,11 @@ export default function Nav() {
           <Image
             src="/images/brand/revitalize-logo.png"
             alt="Revitalize Aesthetics and Wellness logo"
-            width={180}
-            height={56}
+            // Intrinsic file is 864x288 (3:1 wordmark). Render at 36px tall.
+            width={864}
+            height={288}
             priority
-            style={{ width: "auto", height: "30px" }}
+            style={{ width: "auto", height: "36px", objectFit: "contain" }}
           />
         </Link>
 
