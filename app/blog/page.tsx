@@ -98,23 +98,45 @@ export default function BlogPage() {
             <Link href={`/blog/${featured.slug}`} style={{ display: "block", textDecoration: "none", marginBottom: "64px" }}>
               <div style={{ background: "#fff", borderRadius: "6px", overflow: "hidden", display: "grid", gridTemplateColumns: "1fr 1fr", boxShadow: "0 2px 20px rgba(0,0,0,0.06)", transition: "box-shadow 0.2s" }} className="featured-post-grid">
                 <div style={{ minHeight: "360px", display: "flex", alignItems: "flex-end", padding: "40px", position: "relative", overflow: "hidden" }}>
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(145deg, #0E3D4D 0%, #091922 100%)" }} />
-                  <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "36px", zIndex: 1 }}>
-                    <Image
-                      src="/images/site/biote-provider-badge.png"
-                      alt="Biote provider badge"
-                      width={900}
-                      height={1164}
-                      priority
-                      style={{ width: "min(82%, 360px)", height: "auto", opacity: 0.92, filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.35))" }}
-                    />
-                  </div>
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg, rgba(9,25,34,0.65), rgba(9,25,34,0.35))", zIndex: 2 }} />
-                  <div style={{ position: "relative", zIndex: 2 }}>
-                    <span style={{ display: "inline-block", fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.2)", padding: "4px 12px", borderRadius: "100px", marginBottom: "16px" }}>Featured</span>
-                    <div style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: "8px" }}>{featured.category}</div>
-                    <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.2vw, 2rem)", fontWeight: 400, color: "#fff", lineHeight: 1.3, marginBottom: "12px" }}>{featured.title}</h2>
-                    <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{formatPostDate(featured.date)} &bull; {featured.readTime}</div>
+                  {/* Card visual: precedence is the article's own heroImage
+                      when it has one (object-fit: cover so it fills the
+                      slot). Falls back to the Biote provider badge on the
+                      tealdark gradient for posts without a featured image.
+                      Either way an opacity gradient ensures the white text
+                      below stays readable against any background. */}
+                  {featured.heroImage ? (
+                    <>
+                      <Image
+                        src={featured.heroImage}
+                        alt={featured.heroImageAlt ?? featured.title}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        style={{ objectFit: "cover", objectPosition: "center" }}
+                      />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg, rgba(9,25,34,0.85) 0%, rgba(9,25,34,0.55) 50%, rgba(9,25,34,0.35) 100%)", zIndex: 1 }} />
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(145deg, #0E3D4D 0%, #091922 100%)" }} />
+                      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "36px", zIndex: 1 }}>
+                        <Image
+                          src="/images/site/biote-provider-badge.png"
+                          alt="Biote provider badge"
+                          width={900}
+                          height={1164}
+                          priority
+                          style={{ width: "min(82%, 360px)", height: "auto", opacity: 0.92, filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.35))" }}
+                        />
+                      </div>
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(0deg, rgba(9,25,34,0.65), rgba(9,25,34,0.35))", zIndex: 2 }} />
+                    </>
+                  )}
+                  <div style={{ position: "relative", zIndex: 3 }}>
+                    <span style={{ display: "inline-block", fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.3)", padding: "4px 12px", borderRadius: "100px", marginBottom: "16px", background: "rgba(0,0,0,0.18)" }}>Featured</span>
+                    <div style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: "8px" }}>{featured.category}</div>
+                    <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.2vw, 2rem)", fontWeight: 400, color: "#fff", lineHeight: 1.3, marginBottom: "12px", textShadow: "0 1px 16px rgba(0,0,0,0.4)" }}>{featured.title}</h2>
+                    <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>{formatPostDate(featured.date)} &bull; {featured.readTime}</div>
                   </div>
                 </div>
                 <div style={{ padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
