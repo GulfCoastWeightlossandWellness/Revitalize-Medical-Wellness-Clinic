@@ -4,6 +4,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import RelatedPostsRow from "@/components/RelatedPostsRow";
+import UniversalContactForm from "@/components/UniversalContactForm";
 import { getPostsByCategory } from "@/lib/blog";
 
 // Each symptom maps to a clinical category for related-post selection
@@ -559,6 +560,24 @@ export default async function SymptomPage({ params }: Props) {
         posts={relatedPosts}
         heading={`Related articles on ${data.eyebrow.toLowerCase()}`}
       />
+
+      {/* P4 — Contact form */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>Get a real workup</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Tell Travis what is going on.
+              </h2>
+            </div>
+            <UniversalContactForm
+              heading="Symptom-driven consultation request"
+              subheading="Brief is fine. Travis or his team will follow up to figure out the right starting point — labs, consultation type, location."
+            />
+          </FadeIn>
+        </div>
+      </section>
     </>
   );
 }

@@ -5,6 +5,7 @@ import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
 import RelatedPostsRow from "@/components/RelatedPostsRow";
 import InstituteCallout from "@/components/InstituteCallout";
+import UniversalContactForm from "@/components/UniversalContactForm";
 import { getPostsByServiceSlug } from "@/lib/blog";
 
 // Slugs that get an Institute "Go deeper" callout above the FAQ.
@@ -605,6 +606,24 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
           </FadeIn>
         </section>
       )}
+
+      {/* P4 — Contact form on every service page */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>Have questions about {pageName ?? "this service"}?</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Send Travis a message.
+              </h2>
+            </div>
+            <UniversalContactForm
+              heading="Request a Consultation"
+              subheading={`Tell Travis what you are working through with ${pageName ?? "this service"}. He or his team will follow up directly.`}
+            />
+          </FadeIn>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section

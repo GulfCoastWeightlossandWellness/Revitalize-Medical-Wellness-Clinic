@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
+import UniversalContactForm from "@/components/UniversalContactForm";
 
 export const metadata: Metadata = {
   title: "You're Not Broken — You're Unbalanced | Book by Travis Woodley",
@@ -173,6 +174,25 @@ export default function BookPage() {
             </div>
           </div>
         </FadeIn>
+      </section>
+
+      {/* P4 — Contact form, with "Travis's Book" pre-selected */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>Questions about the book?</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Send Travis a message.
+              </h2>
+            </div>
+            <UniversalContactForm
+              defaultInterests={["Travis's Book"]}
+              heading="Reach out about the book"
+              subheading="Bulk orders, speaking inquiries, podcast invitations, or general questions. Travis reviews every message."
+            />
+          </FadeIn>
+        </div>
       </section>
     </>
   );

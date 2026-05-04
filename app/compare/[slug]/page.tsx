@@ -4,6 +4,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import RelatedPostsRow from "@/components/RelatedPostsRow";
+import UniversalContactForm from "@/components/UniversalContactForm";
 import { getPostsByCategory } from "@/lib/blog";
 
 const COMPARE_CATEGORY: Record<string, string> = {
@@ -406,6 +407,24 @@ export default async function ComparePage({ params }: Props) {
         posts={getPostsByCategory(COMPARE_CATEGORY[slug] ?? "Aesthetics", undefined, 3)}
         heading="Related reading"
       />
+
+      {/* P4 — Contact form */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>Want help choosing?</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Send Travis a message.
+              </h2>
+            </div>
+            <UniversalContactForm
+              heading="Get a clinical recommendation"
+              subheading="Tell Travis which option you are considering and why. He will help you figure out which approach fits your situation."
+            />
+          </FadeIn>
+        </div>
+      </section>
     </>
   );
 }

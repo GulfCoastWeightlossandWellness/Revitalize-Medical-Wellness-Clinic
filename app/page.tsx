@@ -7,6 +7,7 @@ import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
 import { getRecentPosts } from "@/lib/blog";
 import InstituteCallout from "@/components/InstituteCallout";
+import UniversalContactForm from "@/components/UniversalContactForm";
 
 export const metadata: Metadata = {
   title: "Revitalize Aesthetics & Wellness | Columbus & Warner Robins, GA",
@@ -1840,6 +1841,27 @@ export default function HomePage() {
           .eyebrow { display: inline-flex; }
           .cta-phone-link:hover { color: var(--color-teal) !important; }
         `}</style>
+      </section>
+
+      {/* ── Book a Consultation form ── */}
+      <section style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "28px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "16px" }}>Get in touch</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2, marginBottom: "12px" }}>
+                Book a Consultation
+              </h2>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)", maxWidth: "560px", margin: "0 auto" }}>
+                Tell Travis a little about what brought you here. Travis or his team will follow up directly within one business day.
+              </p>
+            </div>
+            <UniversalContactForm
+              heading="Request a Consultation"
+              subheading="A short note is enough — we will follow up to schedule the right consultation type for your situation."
+            />
+          </FadeIn>
+        </div>
       </section>
     </>
   );

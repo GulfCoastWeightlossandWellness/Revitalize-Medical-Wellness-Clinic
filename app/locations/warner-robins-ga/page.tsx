@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE, hasReviewLink } from "@/lib/constants";
+import UniversalContactForm from "@/components/UniversalContactForm";
 
 export const metadata: Metadata = {
   title: "Warner Robins, GA Clinic | Revitalize Aesthetics & Wellness",
@@ -678,6 +679,24 @@ export default function WarnerRobinsLocationPage() {
           .wr-footer-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+
+      {/* P4 — Contact form */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>Warner Robins, GA</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Request a consultation at the Warner Robins clinic.
+              </h2>
+            </div>
+            <UniversalContactForm
+              heading="Warner Robins consultation request"
+              subheading="Tell Travis what brought you here. We will follow up to schedule the right consultation type at the Warner Robins location."
+            />
+          </FadeIn>
+        </div>
+      </section>
     </>
   );
 }

@@ -3,6 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import ImageSlot from "@/components/ui/ImageSlot";
 import RelatedPostsRow from "@/components/RelatedPostsRow";
+import UniversalContactForm from "@/components/UniversalContactForm";
 import { getPostsByServiceSlug, getPostsByCity, type BlogPost } from "@/lib/blog";
 
 export interface LocationSEOPageProps {
@@ -159,6 +160,24 @@ export default function LocationSEOPage({
         heading={`Related reading on ${service} in ${city}`}
         variant="compact"
       />
+
+      {/* P4 — Contact form */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "24px", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>{city} — Get in touch</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Request a {service} consultation.
+              </h2>
+            </div>
+            <UniversalContactForm
+              heading={`Request a ${service} consultation`}
+              subheading={`Tell Travis what brought you to this page. We will follow up to schedule a ${service} consultation at the ${city} location.`}
+            />
+          </FadeIn>
+        </div>
+      </section>
     </>
   );
 }
