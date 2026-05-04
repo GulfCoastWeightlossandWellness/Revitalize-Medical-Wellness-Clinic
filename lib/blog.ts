@@ -56,6 +56,31 @@ export interface BlogPost {
   relatedPosts?: string[];
   relatedCities?: string[];
   tags?: string[];
+  /** Optional hero image — rendered at top of post page when present. */
+  heroImage?: string;
+  /** Optional alt text for hero image (falls back to article title). */
+  heroImageAlt?: string;
+  /** Optional credit line shown beneath the hero image. */
+  heroImageCredit?: string;
+}
+
+/**
+ * Formats a YYYY-MM-DD string as "May 3, 2026" for human-facing display on
+ * blog cards and post pages. Constructed at UTC midnight so the rendered
+ * day never drifts based on the server timezone. Returns the original string
+ * unchanged if it is missing or malformed (defensive — bad data renders as-is
+ * rather than throwing).
+ */
+export function formatPostDate(dateString: string): string {
+  if (!dateString) return "";
+  const d = new Date(dateString + "T00:00:00.000Z");
+  if (Number.isNaN(d.getTime())) return dateString;
+  return d.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 // ─── Date-gating (Phase 2: live UTC midnight comparison) ───────────────────
@@ -234,6 +259,9 @@ function frontmatterToBlogPost(fm: Frontmatter, body: string): BlogPost {
     relatedPosts: asStringArray(fm.relatedPosts),
     relatedCities: asStringArray(fm.relatedCities),
     tags: asStringArray(fm.tags),
+    heroImage: asOptString(fm.heroImage),
+    heroImageAlt: asOptString(fm.heroImageAlt),
+    heroImageCredit: asOptString(fm.heroImageCredit),
   };
 }
 
@@ -321,11 +349,16 @@ export function getAllBlogPosts(): BlogPost[] {
     isPublished(post.publishedDate ?? post.date),
   );
 
-  // Sort: featured first, then publish date desc.
+  // Sort: featured first, then publish date desc, then slug desc as a
+  // deterministic tiebreaker. The slug tiebreaker matters when multiple
+  // posts share the same publish date — without it the in-memory order is
+  // map-iteration-dependent and the "top of Latest Articles" surface becomes
+  // non-deterministic.
   return published.sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (b.featured && !a.featured) return 1;
-    return a.date < b.date ? 1 : -1;
+    if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+    return a.slug < b.slug ? 1 : -1;
   });
 }
 
@@ -447,8 +480,12 @@ export function getFeaturedPost(): BlogPost | null {
 export function getRecentPosts(n: number, excludeFeatured = false): BlogPost[] {
   const posts = getAllBlogPosts().filter((p) => !p.mirroredFromHub);
   const filtered = excludeFeatured ? posts.filter((p) => !p.featured) : posts;
-  // posts may be sorted featured-first; for "recent" we want pure date desc.
+  // Pure date desc with slug-desc tiebreaker (matches getAllBlogPosts so
+  // multiple same-date posts have a deterministic top item).
   return [...filtered]
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+    .sort((a, b) => {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return a.slug < b.slug ? 1 : -1;
+    })
     .slice(0, n);
 }

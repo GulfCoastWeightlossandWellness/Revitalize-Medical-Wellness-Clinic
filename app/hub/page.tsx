@@ -3,7 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import { getHubArticles, getHubVideos } from "@/lib/contentHub";
-import { getAllBlogPosts } from "@/lib/blog";
+import { formatPostDate, getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Learning Library | Hormone Health, Weight Loss & Aesthetics Education | Revitalize",
@@ -34,10 +34,15 @@ const TOPIC_PATHS = [
 export default function LearningLibraryPage() {
   const hubArticles = getHubArticles().slice(0, 4);
   const videos = getHubVideos().slice(0, 4);
-  // Preserve pre-MDX source-order behavior (oldest 6) until Phase 5
-  // redesigns this section.
+  // Latest 6 published posts (date desc, with slug-desc tiebreaker for
+  // same-date posts). Travis uses the top of this list as the visual signal
+  // that the Tue/Thu cron drop landed — so this MUST sort newest-first AND
+  // be deterministic when multiple posts share a date.
   const blogPosts = [...getAllBlogPosts()]
-    .sort((a, b) => (a.date < b.date ? -1 : 1))
+    .sort((a, b) => {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return a.slug < b.slug ? 1 : -1;
+    })
     .slice(0, 6);
 
   const collectionSchema = {
@@ -202,9 +207,15 @@ export default function LearningLibraryPage() {
                     <div style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 500, marginBottom: "12px" }}>{post.category}</div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.08rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "10px", flex: 1 }}>{post.title}</h3>
                     <p style={{ fontSize: "0.78rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "16px" }}>{post.description}</p>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
-                      <span style={{ fontSize: "0.62rem", color: "var(--color-muted-light)" }}>{post.readTime}</span>
-                      <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                    <div style={{ marginTop: "auto" }}>
+                      <div style={{ fontSize: "0.62rem", color: "var(--color-muted-light)", letterSpacing: "0.04em", marginBottom: "8px" }}>
+                        {formatPostDate(post.date)}
+                        <span style={{ margin: "0 6px", opacity: 0.4 }}>·</span>
+                        {post.readTime}
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                      </div>
                     </div>
                   </article>
                 </Link>

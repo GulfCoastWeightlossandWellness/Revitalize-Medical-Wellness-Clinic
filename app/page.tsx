@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
-import { getRecentPosts } from "@/lib/blog";
+import { formatPostDate, getRecentPosts } from "@/lib/blog";
 import InstituteCallout from "@/components/InstituteCallout";
 import UniversalContactForm from "@/components/UniversalContactForm";
 
@@ -1723,9 +1723,15 @@ export default function HomePage() {
                     <div style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 500, marginBottom: "12px" }}>{post.category}</div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "10px", flex: 1 }}>{post.title}</h3>
                     <p style={{ fontSize: "0.78rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "16px" }}>{post.description}</p>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
-                      <span style={{ fontSize: "0.62rem", color: "var(--color-muted-light)" }}>{post.readTime}</span>
-                      <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                    <div style={{ marginTop: "auto" }}>
+                      <div style={{ fontSize: "0.62rem", color: "var(--color-muted-light)", letterSpacing: "0.04em", marginBottom: "8px" }}>
+                        {formatPostDate(post.date)}
+                        <span style={{ margin: "0 6px", opacity: 0.4 }}>·</span>
+                        {post.readTime}
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <span style={{ fontSize: "0.58rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read →</span>
+                      </div>
                     </div>
                   </article>
                 </Link>

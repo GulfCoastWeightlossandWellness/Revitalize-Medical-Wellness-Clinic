@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import { getAllBlogPosts, getFeaturedPost } from "@/lib/blog";
+import { formatPostDate, getAllBlogPosts, getFeaturedPost } from "@/lib/blog";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -114,7 +114,7 @@ export default function BlogPage() {
                     <span style={{ display: "inline-block", fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.2)", padding: "4px 12px", borderRadius: "100px", marginBottom: "16px" }}>Featured</span>
                     <div style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", marginBottom: "8px" }}>{featured.category}</div>
                     <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.2vw, 2rem)", fontWeight: 400, color: "#fff", lineHeight: 1.3, marginBottom: "12px" }}>{featured.title}</h2>
-                    <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{featured.date} &bull; {featured.readTime}</div>
+                    <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{formatPostDate(featured.date)} &bull; {featured.readTime}</div>
                   </div>
                 </div>
                 <div style={{ padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -133,9 +133,15 @@ export default function BlogPage() {
                     <div style={{ fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: CATEGORY_COLORS[post.category] ?? "var(--color-teal)", fontWeight: 500, marginBottom: "14px" }}>{post.category}</div>
                     <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.4, marginBottom: "12px", flex: 1 }}>{post.title}</h2>
                     <p style={{ fontSize: "0.8rem", lineHeight: 1.78, color: "var(--color-muted)", marginBottom: "20px" }}>{post.description}</p>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
-                      <span style={{ fontSize: "0.65rem", color: "var(--color-muted-light)", letterSpacing: "0.05em" }}>{post.readTime}</span>
-                      <span style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read &rarr;</span>
+                    <div style={{ marginTop: "auto" }}>
+                      <div style={{ fontSize: "0.65rem", color: "var(--color-muted-light)", letterSpacing: "0.04em", marginBottom: "10px" }}>
+                        {formatPostDate(post.date)}
+                        <span style={{ margin: "0 8px", opacity: 0.4 }}>·</span>
+                        {post.readTime}
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <span style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Read &rarr;</span>
+                      </div>
                     </div>
                   </article>
                 </Link>

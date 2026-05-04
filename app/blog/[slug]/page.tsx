@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { getAllBlogPosts, getBlogPost } from "@/lib/blog";
+import { formatPostDate, getAllBlogPosts, getBlogPost } from "@/lib/blog";
 import { getHubArticleBySlug } from "@/lib/contentHub";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
@@ -208,12 +209,32 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           <div style={{ display: "flex", gap: "20px", alignItems: "center", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{post.date}</span>
+            <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{formatPostDate(post.date)}</span>
             <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", letterSpacing: "0.05em" }}>{post.readTime}</span>
             <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)" }}>By Travis Woodley, MSN, RN, CRNP</span>
           </div>
         </div>
       </section>
+
+      {post.heroImage && (
+        <section style={{ background: "var(--color-bg)", padding: "32px clamp(24px, 6vw, 80px) 0" }}>
+          <figure style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <Image
+              src={post.heroImage}
+              alt={post.heroImageAlt ?? post.title}
+              width={1170}
+              height={684}
+              priority
+              style={{ width: "100%", height: "auto", borderRadius: "8px", display: "block" }}
+            />
+            {post.heroImageCredit && (
+              <figcaption style={{ fontSize: "0.72rem", color: "var(--color-muted)", marginTop: "10px", fontStyle: "italic", textAlign: "center" }}>
+                {post.heroImageCredit}
+              </figcaption>
+            )}
+          </figure>
+        </section>
+      )}
 
       <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 320px", gap: "64px", alignItems: "start" }} className="post-layout">
