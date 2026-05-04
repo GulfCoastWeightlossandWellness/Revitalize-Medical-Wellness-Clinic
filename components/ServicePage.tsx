@@ -4,7 +4,22 @@ import FadeIn from "@/components/FadeIn";
 import { SITE } from "@/lib/constants";
 import ShopCallout from "@/components/ShopCallout";
 import RelatedPostsRow from "@/components/RelatedPostsRow";
+import InstituteCallout from "@/components/InstituteCallout";
 import { getPostsByServiceSlug } from "@/lib/blog";
+
+// Slugs that get an Institute "Go deeper" callout above the FAQ.
+// Hormone + metabolic + weight loss + sexual wellness services where
+// the Institute coaching is a natural adjacent option.
+const INSTITUTE_CALLOUT_SLUGS = new Set([
+  "hormone-therapy-women",
+  "hormone-therapy-men",
+  "testosterone-injection-therapy",
+  "biote-pellet-therapy",
+  "medical-weight-loss",
+  "nutritional-counseling",
+  "erectile-dysfunction",
+  "o-shot",
+]);
 
 export interface FAQ {
   q: string;
@@ -410,6 +425,17 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
             </div>
           </section>
         </FadeIn>
+
+        {/* P3 — Institute callout for hormone/weight loss/sexual wellness services */}
+        {(() => {
+          const serviceSlug = pageHref?.match(/^\/services\/([a-z0-9-]+)$/)?.[1];
+          if (!serviceSlug || !INSTITUTE_CALLOUT_SLUGS.has(serviceSlug)) return null;
+          return (
+            <FadeIn>
+              <InstituteCallout variant="box" />
+            </FadeIn>
+          );
+        })()}
 
         {/* Phase 5 — Related Reading: auto-derived from getPostsByServiceSlug */}
         {(() => {

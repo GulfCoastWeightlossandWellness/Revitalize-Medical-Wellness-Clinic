@@ -396,6 +396,15 @@ export default function Nav() {
             Shop
           </a>
 
+          {/* Institute — top-level, promoted */}
+          <Link
+            href="/institute"
+            style={{ fontSize: "0.6rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.48)", fontWeight: 500, transition: "color 0.2s" }}
+            className={`nav-link nav-text-link ${pathname.startsWith("/institute") ? "active" : ""}`}
+          >
+            Institute
+          </Link>
+
           {/* Locations */}
           <Link
             href="/locations"
@@ -520,6 +529,7 @@ export default function Nav() {
 
             {[
               { label: "About Travis", href: "/about" },
+              { label: "Institute", href: "/institute" },
               { label: "Locations", href: "/locations" },
               { label: "Contact", href: "/contact" },
               { label: "Payment Plans", href: "/payment-plans" },

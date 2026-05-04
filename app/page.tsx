@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import ImageSlot from "@/components/ui/ImageSlot";
 import ShopCallout from "@/components/ShopCallout";
 import { getRecentPosts } from "@/lib/blog";
+import InstituteCallout from "@/components/InstituteCallout";
 
 export const metadata: Metadata = {
   title: "Revitalize Aesthetics & Wellness | Columbus & Warner Robins, GA",
@@ -1601,6 +1602,9 @@ export default function HomePage() {
           }
         `}</style>
       </section>
+
+      {/* ── REBUILD METABOLIC HEALTH INSTITUTE callout (P3) ── */}
+      <InstituteCallout variant="wide" />
 
       {/* ── NUTRITION SHOP ── */}
       <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", position: "relative", overflow: "hidden" }}>

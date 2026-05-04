@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import InstituteInquiryForm from "@/components/InstituteInquiryForm";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Rebuild Metabolic Health Institute | Travis Woodley | Revitalize",
+  title: "Rebuild Metabolic Health Institute | Travis Woodley CRNP",
   description:
-    "A structured coaching program for midlife metabolic optimization. Three tiers: Core, Elite, and the full Metabolic Year. Led by Travis Woodley, MSN, RN, CRNP.",
+    "Structured coaching for midlife metabolic optimization. Three tiers — Core, Elite, the full Metabolic Year — plus topic-specific coaching tracks (hormones, weight loss, men's health, women's hormones). Led by Travis Woodley, MSN, RN, CRNP.",
 };
 
 const TIERS = [
@@ -126,12 +128,67 @@ export default function InstitutePage() {
     })),
   };
 
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Rebuild Metabolic Health Institute",
+    description:
+      "Structured coaching and education program for adults navigating mid-life hormonal and metabolic health, founded by Travis Woodley, MSN, RN, CRNP.",
+    url: `${SITE.url}/institute`,
+    sameAs: SITE.ecosystem.rebuildInstitute,
+    founder: {
+      "@type": "Person",
+      name: "Travis Woodley",
+      jobTitle: "MSN, RN, CRNP",
+      url: `${SITE.url}/travis`,
+    },
+    parentOrganization: {
+      "@type": "MedicalBusiness",
+      name: "Revitalize Aesthetics & Wellness",
+      url: SITE.url,
+    },
+  };
+
+  const courseSchema = TIERS.map((tier) => ({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: `Rebuild Metabolic Health Institute — ${tier.name}`,
+    description: tier.tagline,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Rebuild Metabolic Health Institute",
+      url: `${SITE.url}/institute`,
+    },
+    instructor: {
+      "@type": "Person",
+      name: "Travis Woodley",
+      jobTitle: "MSN, RN, CRNP",
+    },
+    offers: {
+      "@type": "Offer",
+      price: tier.price.replace(/[^0-9]/g, ""),
+      priceCurrency: "USD",
+      url: tier.applyHref,
+    },
+  }));
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      {courseSchema.map((cs, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cs) }}
+        />
+      ))}
 
       {/* Hero */}
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
@@ -322,32 +379,59 @@ export default function InstitutePage() {
         </FadeIn>
       </section>
 
-      {/* Closing CTA */}
+      {/* Coaching tracks (matrix pages) */}
+      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+        <FadeIn>
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <div style={{ marginBottom: "40px", maxWidth: "700px" }}>
+              <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "16px" }}>Coaching Tracks</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.2, marginBottom: "16px" }}>
+                Topic-specific coaching pathways.
+              </h2>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)" }}>
+                The Core, Elite, and Metabolic Year tiers are the program structure. The tracks below are the topic-specific applications — each with its own clinical framework, lab interpretation focus, and protocol logic.
+              </p>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }} className="institute-tracks-grid">
+              {[
+                { name: "Hormone Optimization Coaching", href: "/institute/hormone-optimization-coaching", desc: "Mid-life hormone shifts — perimenopause, andropause, thyroid, adrenals." },
+                { name: "Metabolic Health Program", href: "/institute/metabolic-health-program", desc: "Insulin sensitivity, mitochondrial function, inflammation, body composition." },
+                { name: "Weight Loss Coaching", href: "/institute/weight-loss-coaching", desc: "GLP-1 integration, muscle preservation, durable maintenance." },
+                { name: "Men's Health Coaching", href: "/institute/mens-health-coaching", desc: "Testosterone optimization, training, recovery, long-term performance." },
+                { name: "Women's Hormone Coaching", href: "/institute/womens-hormone-coaching", desc: "Perimenopause, menopause, post-reproductive optimization." },
+              ].map((t) => (
+                <Link key={t.href} href={t.href} style={{ background: "#fff", borderRadius: "8px", padding: "24px 24px", border: "1px solid var(--color-divider)", textDecoration: "none", display: "block" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "8px" }}>{t.name}</h3>
+                  <p style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "var(--color-muted)", marginBottom: "12px" }}>{t.desc}</p>
+                  <span style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)" }}>Explore track &rarr;</span>
+                </Link>
+              ))}
+            </div>
+            <style>{`@media (max-width: 768px) { .institute-tracks-grid { grid-template-columns: 1fr !important; } }`}</style>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Closing inquiry form */}
       <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
         <FadeIn>
-          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, marginBottom: "12px" }}>
-              Ready to rebuild?
-            </h2>
-            <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "40px" }}>
-              The application is short. Travis reviews every one.
-            </p>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", marginBottom: "28px" }}>
-              <a href="https://rebuildmetabolichealth.com/apply-for-core/" target="_blank" rel="noopener noreferrer" style={BUTTON}>
-                Apply for Core &mdash; $1,500 &rarr;
-              </a>
-              <a href="https://rebuildmetabolichealth.com/apply-for-elite/" target="_blank" rel="noopener noreferrer" style={{ ...BUTTON, background: "var(--color-teal)" }}>
-                Apply for Elite &mdash; $3,000 &rarr;
-              </a>
-              <a href="https://rebuildmetabolichealth.com/apply-for-metabolic-year/" target="_blank" rel="noopener noreferrer" style={{ ...BUTTON, background: "var(--color-ink)" }}>
-                Apply for the Metabolic Year &mdash; $9,000 &rarr;
-              </a>
+          <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: "32px" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.15, marginBottom: "12px" }}>
+                Ready to apply?
+              </h2>
+              <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "var(--color-muted)" }}>
+                The application is short. Travis reviews every one.
+              </p>
             </div>
-            <p style={{ fontSize: "0.82rem", color: "var(--color-muted)" }}>
-              Questions?{" "}
-              <Link href="/contact" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>
-                Contact us
-              </Link>
+            <InstituteInquiryForm />
+            <p style={{ fontSize: "0.78rem", color: "var(--color-muted)", textAlign: "center", marginTop: "20px" }}>
+              Prefer to apply via the external Rebuild site?{" "}
+              <a href="https://rebuildmetabolichealth.com/apply-for-core/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>Core</a>
+              {" · "}
+              <a href="https://rebuildmetabolichealth.com/apply-for-elite/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>Elite</a>
+              {" · "}
+              <a href="https://rebuildmetabolichealth.com/apply-for-metabolic-year/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>Metabolic Year</a>
             </p>
           </div>
         </FadeIn>
