@@ -124,6 +124,14 @@ const FEATURED_SERVICES = [
     tags: ["RF Option", "Texture", "Tone"],
   },
   {
+    category: "Education",
+    name: "Peptide Education",
+    description:
+      "Travis's clinical reference guide to 25 peptides across metabolic, growth hormone axis, recovery, skin, immune, sexual wellness, and longevity categories. Education only — peptide therapy is pending FDA approval and not currently prescribed at Revitalize.",
+    href: "/peptide-education",
+    tags: ["Education Only", "Clinical Reference", "BPC-157 · GH-Axis"],
+  },
+  {
     category: "Wellness",
     name: "IV Hydration Therapy",
     description:

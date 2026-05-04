@@ -28,6 +28,7 @@ const TOPIC_PATHS = [
   { title: "IV Hydration", desc: "Vitamin infusions, recovery, hydration protocols", href: "/hub/articles?category=iv-hydration", service: "/services/iv-hydration" },
   { title: "Sexual Wellness", desc: "O-Shot, erectile dysfunction, intimacy restoration", href: "/hub/articles?category=sexual-wellness", service: "/services/o-shot" },
   { title: "Hair Restoration", desc: "DE|RIVE protocol, PRP for hair, scalp health", href: "/hub/articles?category=hair-restoration", service: "/services/derive-hair-restoration" },
+  { title: "Peptides", desc: "BPC-157, GH-axis, MOTS-C, GHK-Cu, PT-141 — clinical reference for 25+ peptides", href: "/hub/peptides", service: "/services/peptide-education" },
 ];
 
 export default function LearningLibraryPage() {

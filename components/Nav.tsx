@@ -18,6 +18,7 @@ const SERVICES_MENU: NavColumn[] = [
       { label: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
       { label: "Biote Pellet Therapy", href: "/services/biote-pellet-therapy" },
       { label: "Medical Weight Loss", href: "/services/medical-weight-loss" },
+      { label: "Peptide Education", href: "/services/peptide-education" },
       { label: "Nutritional Counseling", href: "/services/nutritional-counseling" },
     ],
   },
@@ -75,6 +76,7 @@ const LIBRARY_MENU = [
     category: "From Travis",
     items: [
       { label: "The Book", href: "/book" },
+      { label: "Peptide Education Guide", href: "/peptide-education" },
       { label: "Assessments & Tools", href: "/tools" },
       { label: "Start Here — New Patients", href: "/start-here" },
     ],
@@ -614,6 +616,7 @@ export default function Nav() {
                 { label: "Full Archive", href: "/hub/articles" },
                 { label: "Videos", href: "/hub/videos" },
                 { label: "Patient Guides", href: "/hub/resources" },
+                { label: "Peptide Education Guide", href: "/peptide-education" },
                 { label: "The Book", href: "/book" },
               ].map((item) => (
                 <Link

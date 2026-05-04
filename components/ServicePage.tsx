@@ -20,6 +20,7 @@ const INSTITUTE_CALLOUT_SLUGS = new Set([
   "nutritional-counseling",
   "erectile-dysfunction",
   "o-shot",
+  "peptide-education",
 ]);
 
 export interface FAQ {

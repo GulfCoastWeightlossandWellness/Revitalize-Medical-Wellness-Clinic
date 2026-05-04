@@ -54,6 +54,8 @@ const STATIC_ROUTES: {
   { path: "/hub/articles",              priority: 0.65, changeFrequency: "weekly" },
   { path: "/hub/videos",                priority: 0.6, changeFrequency: "weekly" },
   { path: "/hub/resources",             priority: 0.55, changeFrequency: "monthly" },
+  { path: "/hub/peptides",              priority: 0.78, changeFrequency: "monthly" },
+  { path: "/peptide-education",         priority: 0.88, changeFrequency: "monthly" },
   { path: "/locations/compare",         priority: 0.6, changeFrequency: "monthly" },
 
   // Services index
@@ -65,6 +67,7 @@ const STATIC_ROUTES: {
   { path: "/services/testosterone-injection-therapy", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/biote-pellet-therapy",           priority: 0.88, changeFrequency: "monthly" },
   { path: "/services/medical-weight-loss",            priority: 0.88, changeFrequency: "monthly" },
+  { path: "/services/peptide-education",              priority: 0.85, changeFrequency: "monthly" },
   { path: "/services/nutritional-counseling",         priority: 0.7, changeFrequency: "monthly" },
 
   // Aesthetics & skin
