@@ -268,7 +268,7 @@ export default function Footer() {
         >
           <div>
             <p style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.22)", marginBottom: "6px" }}>
-              &copy; {new Date().getFullYear()} Revitalize Aesthetics &amp; Wellness. All rights reserved.
+              {`© ${new Date().getFullYear()} Revitalize Aesthetics & Wellness. All rights reserved.`}
             </p>
             <p style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.15)", maxWidth: "580px", lineHeight: 1.65 }}>
               Information on this site is for educational purposes only and does not constitute medical advice. Individual results vary. Consultation required to determine candidacy for any treatment.

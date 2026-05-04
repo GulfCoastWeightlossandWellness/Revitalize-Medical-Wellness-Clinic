@@ -221,19 +221,32 @@ export default function Nav() {
             {servicesOpen && (
               <div
                 style={{
-                  position: "absolute",
-                  top: "calc(100% + 8px)",
-                  left: "50%",
-                  transform: "translateX(-50%)",
+                  // Fixed-positioned panel — anchored to the viewport, never to
+                  // the trigger. This guarantees the menu can never overflow off
+                  // the right edge or get clipped on narrow desktop widths.
+                  // Centered horizontally in the available viewport via the
+                  // left/right + margin-auto pattern; capped at 940px so it
+                  // doesn't sprawl on wide displays.
+                  position: "fixed",
+                  zIndex: 1001,
+                  top: "calc(var(--nav-height) + 8px)",
+                  left: "16px",
+                  right: "16px",
+                  margin: "0 auto",
+                  width: "auto",
+                  maxWidth: "940px",
+                  maxHeight: "calc(100vh - var(--nav-height) - 24px)",
+                  overflowY: "auto",
                   background: "rgba(9,25,34,0.98)",
                   backdropFilter: "blur(20px)",
                   border: "1px solid rgba(255,255,255,0.08)",
                   borderRadius: "10px",
                   padding: "28px",
                   display: "grid",
-                  gridTemplateColumns: "repeat(4, 1fr)",
-                  gap: "28px",
-                  minWidth: "760px",
+                  // Auto-fit columns adapt from 4 → 3 → 2 → 1 as width shrinks.
+                  // 180px minimum keeps each column readable.
+                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                  gap: "24px 28px",
                   boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
                 }}
                 id="desktop-services-menu"
@@ -348,7 +361,31 @@ export default function Nav() {
             {libraryOpen && (
               <div
                 id="desktop-library-menu"
-                style={{ position: "absolute", top: "calc(100% + 8px)", left: "50%", transform: "translateX(-50%)", background: "rgba(9,25,34,0.98)", backdropFilter: "blur(20px)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "10px", padding: "24px 28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", minWidth: "340px", boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}
+                style={{
+                  // Fixed-positioned panel — same approach as the Services
+                  // dropdown above. Capped at 460px (smaller, two-column
+                  // content) and centered in the viewport with safe insets,
+                  // so it can never get clipped at narrow widths.
+                  position: "fixed",
+                  zIndex: 1001,
+                  top: "calc(var(--nav-height) + 8px)",
+                  left: "16px",
+                  right: "16px",
+                  margin: "0 auto",
+                  width: "auto",
+                  maxWidth: "460px",
+                  maxHeight: "calc(100vh - var(--nav-height) - 24px)",
+                  overflowY: "auto",
+                  background: "rgba(9,25,34,0.98)",
+                  backdropFilter: "blur(20px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "10px",
+                  padding: "24px 28px",
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+                  gap: "32px",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+                }}
               >
                 {LIBRARY_MENU.map((col) => (
                   <div key={col.category}>

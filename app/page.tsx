@@ -61,11 +61,19 @@ const PATHWAYS = [
 const FEATURED_SERVICES = [
   {
     category: "Hormone & Metabolic",
-    name: "Hormone Therapy",
+    name: "Women's Hormone Therapy",
     description:
-      "Bioidentical hormone optimization for women and men. Lab-guided, clinician-supervised, and delivered via the Biote pellet method for steady, convenient support.",
+      "Bioidentical hormone optimization for perimenopause, menopause, and post-reproductive years. Lab-guided, clinician-supervised, and delivered via the Biote pellet method for steady, convenient support.",
     href: "/services/hormone-therapy-women",
-    tags: ["Women", "Men", "Biote Pellets"],
+    tags: ["Perimenopause", "Menopause", "Biote Pellets"],
+  },
+  {
+    category: "Hormone & Metabolic",
+    name: "Men's Hormone Therapy",
+    description:
+      "Testosterone optimization for men experiencing low energy, declining libido, body composition changes, or mid-life metabolic shifts. Lab-guided protocols delivered via injection or Biote pellet — your physiology, your choice.",
+    href: "/services/hormone-therapy-men",
+    tags: ["TRT", "Injections", "Biote Pellets"],
   },
   {
     category: "Hormone & Metabolic",
@@ -74,6 +82,14 @@ const FEATURED_SERVICES = [
       "A 90-day metabolic program addressing insulin sensitivity, cortisol rhythms, thyroid function, and sex hormones. GLP-1 receptor agonists considered where clinically appropriate.",
     href: "/services/medical-weight-loss",
     tags: ["Lab-Guided", "Structured Program", "GLP-1 Options"],
+  },
+  {
+    category: "Sexual Wellness",
+    name: "Erectile Dysfunction",
+    description:
+      "Clinical workup and evidence-based treatment for men experiencing ED. Private consultation, root-cause evaluation (vascular, hormonal, neurogenic), and treatment options including PRP, shockwave, and pharmacologic protocols.",
+    href: "/services/erectile-dysfunction",
+    tags: ["PRP", "Shockwave", "Confidential"],
   },
   {
     category: "Aesthetics",
@@ -125,9 +141,9 @@ const FEATURED_SERVICES = [
   },
   {
     category: "Sexual Wellness",
-    name: "O-Shot & Erectile Dysfunction",
+    name: "O-Shot for Women",
     description:
-      "PRP-based sexual wellness treatments for men and women. Private consultation, evidence-informed protocols, and a judgment-free clinical approach.",
+      "PRP-based sexual wellness treatment for women — addressing arousal, sensation, and post-childbirth or post-menopausal changes. Private consultation, evidence-informed protocols.",
     href: "/services/o-shot",
     tags: ["PRP", "Non-Surgical", "Private"],
   },
