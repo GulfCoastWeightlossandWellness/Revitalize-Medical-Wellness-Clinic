@@ -103,6 +103,50 @@ export function hasReviewLink(url: string | undefined): url is string {
   return typeof url === "string" && url.length > 0 && !url.includes("REPLACE_WITH");
 }
 
+/**
+ * Source-of-truth pricing for the Rebuild Metabolic Health Institute tiers.
+ * Edit here only — both the institute index page and each per-tier page read
+ * from this. `price` is rendered to users; `priceNumber` feeds Course schema.
+ * `durationISO` matches the ISO-8601 duration format Schema.org expects.
+ */
+export type InstituteTierSlug = "core" | "elite" | "metabolic-year";
+
+export interface InstituteTier {
+  slug: InstituteTierSlug;
+  name: string;
+  price: string;
+  priceNumber: string;
+  duration: string;
+  durationISO: string;
+}
+
+export const INSTITUTE_PRICING: Record<InstituteTierSlug, InstituteTier> = {
+  core: {
+    slug: "core",
+    name: "Core",
+    price: "$1,500",
+    priceNumber: "1500",
+    duration: "90 days",
+    durationISO: "P90D",
+  },
+  elite: {
+    slug: "elite",
+    name: "Elite",
+    price: "$3,000",
+    priceNumber: "3000",
+    duration: "6 months",
+    durationISO: "P180D",
+  },
+  "metabolic-year": {
+    slug: "metabolic-year",
+    name: "Metabolic Year",
+    price: "$9,000",
+    priceNumber: "9000",
+    duration: "12 months",
+    durationISO: "P365D",
+  },
+};
+
 export const NAV_SERVICES = [
   { label: "Hormone Therapy", href: "/services/hormone-therapy-women" },
   { label: "Testosterone Injections", href: "/services/testosterone-injection-therapy" },

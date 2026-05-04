@@ -49,3 +49,38 @@ export async function sendEmail({ subject, html }: SendEmailArgs) {
 
   return result;
 }
+
+export interface SendEmailToArgs {
+  to: string;
+  subject: string;
+  html: string;
+  fromName?: string;
+  replyTo?: string;
+}
+
+/**
+ * Send to an arbitrary recipient — used for applicant auto-reply confirmations.
+ * Reply-to defaults to PRIMARY_EMAIL so any reply lands with Travis.
+ */
+export async function sendEmailTo({
+  to,
+  subject,
+  html,
+  fromName = "Rebuild Metabolic Health Institute",
+  replyTo = PRIMARY_EMAIL,
+}: SendEmailToArgs) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+  const result = await resend.emails.send({
+    from: `${fromName} <${FROM_EMAIL}>`,
+    to,
+    replyTo,
+    subject,
+    html,
+  });
+  if (result.error) {
+    throw new Error(`Resend send failed: ${result.error.message}`);
+  }
+  return result;
+}

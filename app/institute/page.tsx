@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import InstituteInquiryForm from "@/components/InstituteInquiryForm";
-import { SITE } from "@/lib/constants";
+import InstituteSubNav from "@/components/InstituteSubNav";
+import { SITE, INSTITUTE_PRICING } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Rebuild Metabolic Health Institute | Travis Woodley CRNP",
@@ -12,8 +13,10 @@ export const metadata: Metadata = {
 
 const TIERS = [
   {
-    name: "Core",
-    price: "$1,500",
+    slug: "core" as const,
+    name: INSTITUTE_PRICING.core.name,
+    price: INSTITUTE_PRICING.core.price,
+    duration: INSTITUTE_PRICING.core.duration,
     tagline: "A structured metabolic foundation for individuals who want guidance, not hand-holding.",
     body: "Core is the entry-level Rebuild program. It provides the framework, the clinical reasoning, and the protocols — delivered through structured content and periodic group touchpoints with Travis. It is designed for self-directed individuals who want to understand what they are doing and why, not just receive instructions.",
     includes: [
@@ -26,12 +29,14 @@ const TIERS = [
     ],
     rightFor: "You are new to metabolic optimization, you learn well from structured content, and you want a clinical framework without the cost of one-on-one coaching. You are willing to do the work independently with periodic group support.",
     notRightFor: "You need individualized protocol adjustments, you have complex hormonal or metabolic pathology, or you learn best through direct interaction with a clinician.",
-    applyHref: "https://rebuildmetabolichealth.com/apply-for-core/",
-    applyLabel: "Apply for Core",
+    applyHref: "/institute/core",
+    applyLabel: "Explore Core",
   },
   {
-    name: "Elite",
-    price: "$3,000",
+    slug: "elite" as const,
+    name: INSTITUTE_PRICING.elite.name,
+    price: INSTITUTE_PRICING.elite.price,
+    duration: INSTITUTE_PRICING.elite.duration,
     tagline: "A clinical coaching relationship for individuals who want individualized guidance.",
     body: "Elite provides everything in Core plus direct access to Travis for individualized protocol design, lab interpretation, and periodic one-on-one coaching sessions. This is the program for people who have tried the general approach and know they need something tailored to their specific physiology.",
     includes: [
@@ -45,12 +50,14 @@ const TIERS = [
     ],
     rightFor: "You have specific hormonal or metabolic issues that require individualized attention, you want Travis reviewing your actual lab values rather than general guidance, or you have been through a basic program and know the generic approach is not sufficient.",
     notRightFor: "You want frequent, ongoing clinical oversight or are dealing with acute medical issues that require in-person care. Rebuild is a coaching program, not a medical practice. Clinical care remains at Revitalize.",
-    applyHref: "https://rebuildmetabolichealth.com/apply-for-elite/",
-    applyLabel: "Apply for Elite",
+    applyHref: "/institute/elite",
+    applyLabel: "Explore Elite",
   },
   {
-    name: "Metabolic Year",
-    price: "$9,000",
+    slug: "metabolic-year" as const,
+    name: INSTITUTE_PRICING["metabolic-year"].name,
+    price: INSTITUTE_PRICING["metabolic-year"].price,
+    duration: INSTITUTE_PRICING["metabolic-year"].duration,
     tagline: "A full-year clinical partnership for individuals committed to comprehensive metabolic transformation.",
     body: "The Metabolic Year is the complete Rebuild experience. It pairs the full curriculum with a sustained coaching relationship across four quarters, regular lab review cycles, and direct access to Travis throughout the year. It is designed for individuals who understand that meaningful metabolic change takes time and want a clinical partner for the full journey.",
     includes: [
@@ -64,8 +71,8 @@ const TIERS = [
     ],
     rightFor: "You are serious about sustainable metabolic optimization, you want a clinical relationship rather than a program, and you understand that the most meaningful changes in hormone function, body composition, and metabolic health take longer than 90 days to fully manifest.",
     notRightFor: null,
-    applyHref: "https://rebuildmetabolichealth.com/apply-for-metabolic-year/",
-    applyLabel: "Apply for the Metabolic Year",
+    applyHref: "/institute/metabolic-year",
+    applyLabel: "Explore the Metabolic Year",
   },
 ];
 
@@ -168,7 +175,7 @@ export default function InstitutePage() {
       "@type": "Offer",
       price: tier.price.replace(/[^0-9]/g, ""),
       priceCurrency: "USD",
-      url: tier.applyHref,
+      url: `${SITE.url}${tier.applyHref}`,
     },
   }));
 
@@ -190,8 +197,10 @@ export default function InstitutePage() {
         />
       ))}
 
+      <InstituteSubNav />
+
       {/* Hero */}
-      <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+      <section id="overview" style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <div style={{ maxWidth: "760px" }}>
           <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "20px" }}>
             Rebuild Metabolic Health Institute
@@ -229,15 +238,45 @@ export default function InstitutePage() {
       </section>
 
       {/* Tiers */}
-      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+      <section id="tiers" style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <FadeIn>
           <div style={{ maxWidth: "900px", margin: "0 auto" }}>
             <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "16px" }}>
               Three Tiers
             </div>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.2, marginBottom: "48px" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.2, marginBottom: "32px" }}>
               Choose the level of support that fits your situation.
             </h2>
+
+            {/* Compare-tiers strip */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", marginBottom: "48px" }} className="tier-compare-strip">
+              {TIERS.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={t.applyHref}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid var(--color-divider)",
+                    borderTop: "3px solid var(--color-gold)",
+                    borderRadius: "6px",
+                    padding: "18px 18px",
+                    textDecoration: "none",
+                    display: "block",
+                  }}
+                >
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "var(--color-ink)", marginBottom: "4px" }}>
+                    {t.name}
+                  </div>
+                  <div style={{ fontSize: "0.78rem", color: "var(--color-muted)", marginBottom: "8px" }}>
+                    {t.price} · {t.duration}
+                  </div>
+                  <div style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 600 }}>
+                    See details &rarr;
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <style>{`@media (max-width: 720px) { .tier-compare-strip { grid-template-columns: 1fr !important; } }`}</style>
             <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
               {TIERS.map((tier) => (
                 <div
@@ -293,9 +332,9 @@ export default function InstitutePage() {
                       </div>
                     )}
                   </div>
-                  <a href={tier.applyHref} target="_blank" rel="noopener noreferrer" style={BUTTON}>
+                  <Link href={tier.applyHref} style={BUTTON}>
                     {tier.applyLabel} &rarr;
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -353,7 +392,7 @@ export default function InstitutePage() {
       </section>
 
       {/* FAQ */}
-      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+      <section id="faq" style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <FadeIn>
           <div style={{ maxWidth: "760px", margin: "0 auto" }}>
             <div style={{ fontSize: "0.58rem", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "16px" }}>
@@ -380,7 +419,7 @@ export default function InstitutePage() {
       </section>
 
       {/* Coaching tracks (matrix pages) */}
-      <section style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+      <section id="tracks" style={{ background: "var(--color-bg)", padding: "72px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <FadeIn>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ marginBottom: "40px", maxWidth: "700px" }}>
@@ -413,7 +452,7 @@ export default function InstitutePage() {
       </section>
 
       {/* Closing inquiry form */}
-      <section style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)" }}>
+      <section id="apply" style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", scrollMarginTop: "70px" }}>
         <FadeIn>
           <div style={{ maxWidth: "780px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "32px" }}>
