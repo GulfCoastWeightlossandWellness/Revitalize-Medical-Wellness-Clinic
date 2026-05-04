@@ -265,20 +265,26 @@ function frontmatterToBlogPost(fm: Frontmatter, body: string): BlogPost {
   };
 }
 
-// ─── Load + cache MDX posts (sync at module init; cache cleared on restart) ─
+// ─── Load + cache MDX posts ─────────────────────────────────────────────
+// Cached in production (single read at module init, fast for every request).
+// NOT cached in development — without this, editing an .mdx file requires a
+// dev-server restart to see the change, since Next HMR doesn't invalidate
+// non-component module state.
 const BLOG_DIR = join(process.cwd(), "content", "blog");
+const SHOULD_CACHE_BLOG_POSTS = process.env.NODE_ENV === "production";
 
 let mdxCache: BlogPost[] | null = null;
 
 function readAllMdxPosts(): BlogPost[] {
-  if (mdxCache) return mdxCache;
+  if (SHOULD_CACHE_BLOG_POSTS && mdxCache) return mdxCache;
   const files = readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
-  mdxCache = files.map((file) => {
+  const posts = files.map((file) => {
     const raw = readFileSync(join(BLOG_DIR, file), "utf8");
     const { data, content } = matter(raw);
     return frontmatterToBlogPost(data as Frontmatter, content);
   });
-  return mdxCache;
+  if (SHOULD_CACHE_BLOG_POSTS) mdxCache = posts;
+  return posts;
 }
 
 // ─── Hub-mirror synthesis (preserved from previous lib/blog.ts) ────────────
