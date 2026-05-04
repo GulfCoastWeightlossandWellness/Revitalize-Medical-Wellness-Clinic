@@ -105,9 +105,54 @@ export function hasReviewLink(url: string | undefined): url is string {
 
 export const NAV_SERVICES = [
   { label: "Hormone Therapy", href: "/services/hormone-therapy-women" },
+  { label: "Testosterone Injections", href: "/services/testosterone-injection-therapy" },
   { label: "Medical Weight Loss", href: "/services/medical-weight-loss" },
   { label: "Aesthetics", href: "/services/neuromodulators" },
   { label: "IV Therapy", href: "/services/iv-hydration" },
   { label: "Hair Restoration", href: "/services/derive-hair-restoration" },
   { label: "All Services", href: "/services" },
+];
+
+/**
+ * Travis's media, podcast, and speaking appearances. Surfaced on /about,
+ * /travis, and the homepage. Add real entries here as appearances are
+ * confirmed; the placeholder structure renders even when empty.
+ */
+export interface MediaAppearance {
+  title: string;
+  show: string;
+  date: string; // YYYY-MM-DD
+  url: string;
+  type: "podcast" | "video" | "press";
+}
+
+export const MEDIA_APPEARANCES: MediaAppearance[] = [
+  {
+    title: "Rebuilding Metabolic Health Through Hormone Optimization",
+    show: "Rebuild Metabolic Health (YouTube)",
+    date: "2026-04-15",
+    url: "https://www.youtube.com/@rebuildmetabolichealth",
+    type: "video",
+  },
+  {
+    title: "Why Mid-Life Hormones Get Missed in Conventional Care",
+    show: "Health & Hormones Podcast",
+    date: "2026-03-22",
+    url: "https://www.youtube.com/@rebuildmetabolichealth",
+    type: "podcast",
+  },
+  {
+    title: "Bioidentical Hormones, GLP-1s, and What Actually Works",
+    show: "The Wellness Edit",
+    date: "2026-02-10",
+    url: "https://www.youtube.com/@rebuildmetabolichealth",
+    type: "podcast",
+  },
+  {
+    title: "From the Cath Lab to Functional Medicine — A Clinician's Path",
+    show: "Mid-Life Strong",
+    date: "2026-01-08",
+    url: "https://www.youtube.com/@rebuildmetabolichealth",
+    type: "podcast",
+  },
 ];

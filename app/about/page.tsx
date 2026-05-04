@@ -1,17 +1,58 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import { SITE } from "@/lib/constants";
+import { SITE, MEDIA_APPEARANCES } from "@/lib/constants";
 import ImageSlot from "@/components/ui/ImageSlot";
 
 export const metadata: Metadata = {
   title: "About Travis Woodley | MSN, RN, CRNP | Founder",
-  description: "Travis Woodley, MSN, RN, CRNP — founder of Revitalize Aesthetics & Wellness. 17+ years in emergency medicine, cardiac ICU, and cath lab. Certified Platinum Biote provider. Columbus and Warner Robins, GA.",
+  description: "Travis Woodley, MSN, RN, CRNP — founder of Revitalize Aesthetics & Wellness, author of 'You're Not Broken — You're Unbalanced', and founder of the Rebuild Metabolic Health Institute. 17+ years in emergency medicine, cardiac ICU, cath lab. Columbus and Warner Robins, GA.",
 };
 
 export default function AboutPage() {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Travis Woodley",
+    honorificSuffix: "MSN, RN, CRNP",
+    jobTitle: "Nurse Practitioner, Founder",
+    description:
+      "Travis Woodley is a nurse practitioner with 17+ years of clinical experience in emergency medicine, cardiac ICU, and cardiac catheterization labs. Founder of Revitalize Aesthetics & Wellness, Certified Platinum Biote provider, published author, and founder of the Rebuild Metabolic Health Institute.",
+    url: `${SITE.url}/about`,
+    image: `${SITE.url}/images/site/travis-woodley.jpg`,
+    knowsAbout: [
+      "Hormone therapy",
+      "Bioidentical hormone replacement",
+      "Testosterone optimization",
+      "Metabolic health",
+      "Medical weight loss",
+      "GLP-1 therapy",
+      "Aesthetic medicine",
+      "Functional medicine",
+    ],
+    worksFor: {
+      "@type": "MedicalBusiness",
+      name: "Revitalize Aesthetics & Wellness",
+      url: SITE.url,
+    },
+    author: {
+      "@type": "Book",
+      name: "You're Not Broken — You're Unbalanced",
+      url: `${SITE.url}/book`,
+    },
+    sameAs: [
+      SITE.social.linkedin,
+      SITE.social.youtube,
+      SITE.social.instagram,
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <section style={{ background: "var(--color-teal-dark)", padding: "80px clamp(24px, 6vw, 80px)" }}>
         <div style={{ maxWidth: "760px" }}>
           <div className="eyebrow-white" style={{ marginBottom: "20px" }}>The clinician behind the practice</div>
@@ -94,6 +135,51 @@ export default function AboutPage() {
           </div>
         </div>
         <style>{`.creds-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 900px) { .creds-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 560px) { .creds-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* Media & Speaking */}
+      <section style={{ background: "var(--color-bg)", padding: "80px clamp(24px, 6vw, 80px)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <FadeIn>
+            <div style={{ marginBottom: "32px" }}>
+              <div className="eyebrow" style={{ marginBottom: "16px" }}>Media &amp; Speaking</div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2 }}>
+                Podcast appearances, video, and press.
+              </h2>
+            </div>
+          </FadeIn>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }} className="about-media-grid">
+            {MEDIA_APPEARANCES.map((m) => (
+              <FadeIn key={m.title + m.date}>
+                <a href={m.url} target="_blank" rel="noopener noreferrer" style={{ display: "block", textDecoration: "none", background: "#fff", padding: "24px 28px", borderRadius: "8px", border: "1px solid var(--color-divider)", height: "100%" }}>
+                  <div style={{ fontSize: "0.55rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "10px" }}>
+                    {m.type === "podcast" ? "Podcast" : m.type === "video" ? "Video" : "Press"} · {m.date}
+                  </div>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "8px", lineHeight: 1.4 }}>
+                    {m.title}
+                  </h3>
+                  <div style={{ fontSize: "0.78rem", color: "var(--color-muted)" }}>
+                    {m.show}
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div style={{ marginTop: "32px", display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" style={{ background: "var(--color-teal)", color: "#fff", padding: "12px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none" }}>
+                YouTube: @rebuildmetabolichealth &rarr;
+              </a>
+              <Link href="/travis" style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none" }}>
+                Travis&apos;s Page &rarr;
+              </Link>
+              <Link href="/book" style={{ border: "1.5px solid var(--color-divider)", color: "var(--color-muted)", padding: "12px 24px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none" }}>
+                The Book &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+          <style>{`.about-media-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .about-media-grid { grid-template-columns: 1fr !important; } }`}</style>
+        </div>
       </section>
 
       <section style={{ background: "var(--color-teal)", padding: "72px clamp(24px, 6vw, 80px)", textAlign: "center" }}>

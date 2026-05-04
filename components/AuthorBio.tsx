@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/**
+ * AuthorBio — renders below every blog post. Travis credentials, book link,
+ * /travis personal brand link, /institute coaching link, /hub/articles for
+ * more posts.
+ */
 export default function AuthorBio() {
   return (
     <div
@@ -41,17 +46,20 @@ export default function AuthorBio() {
       </div>
 
       <div style={{ flex: 1 }}>
-        <div
+        <Link
+          href="/travis"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "1.15rem",
             fontWeight: 400,
             color: "var(--color-ink)",
             marginBottom: "2px",
+            textDecoration: "none",
+            display: "block",
           }}
         >
           Travis Woodley
-        </div>
+        </Link>
         <div
           style={{
             fontSize: "0.58rem",
@@ -62,36 +70,70 @@ export default function AuthorBio() {
             marginBottom: "12px",
           }}
         >
-          MSN, RN, CRNP &mdash; Founder, Revitalize Aesthetics &amp; Wellness
+          MSN, RN, CRNP &mdash; Platinum Biote Provider &mdash; Founder, Revitalize
         </div>
         <p
           style={{
             fontSize: "0.84rem",
             lineHeight: 1.82,
             color: "var(--color-muted)",
-            marginBottom: "14px",
+            marginBottom: "12px",
           }}
         >
-          Travis Woodley spent 17+ years in high-acuity clinical medicine &mdash; emergency,
-          cardiac ICU, and cath lab environments &mdash; before founding Revitalize. He is a
-          Certified Platinum Biote hormone therapy provider, published author of{" "}
-          <em>You&apos;re Not Broken &mdash; You&apos;re Unbalanced</em>, and the founder of the Rebuild
-          Metabolic Health Institute. His clinical writing reflects the same precision he brought
-          to critical care: specific, honest, and built around what actually works.
+          Travis spent 17+ years in high-acuity clinical medicine &mdash; emergency, cardiac
+          ICU, and cath lab &mdash; before founding Revitalize. He is a Certified Platinum Biote
+          hormone therapy provider, the published author of{" "}
+          <Link href="/book" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>
+            <em>You&apos;re Not Broken &mdash; You&apos;re Unbalanced</em>
+          </Link>
+          , and the founder of the{" "}
+          <Link href="/institute" style={{ color: "var(--color-teal)", textDecoration: "underline" }}>
+            Rebuild Metabolic Health Institute
+          </Link>
+          . His clinical writing reflects the same precision he brought to critical care:
+          specific, honest, and built around what actually works.
         </p>
-        <Link
-          href="/hub/articles"
-          style={{
-            fontSize: "0.6rem",
-            fontWeight: 600,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "var(--color-gold)",
-            textDecoration: "none",
-          }}
-        >
-          More articles by Travis &rarr;
-        </Link>
+        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+          <Link
+            href="/travis"
+            style={{
+              fontSize: "0.6rem",
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--color-gold)",
+              textDecoration: "none",
+            }}
+          >
+            About Travis &rarr;
+          </Link>
+          <Link
+            href="/hub/articles"
+            style={{
+              fontSize: "0.6rem",
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--color-teal)",
+              textDecoration: "none",
+            }}
+          >
+            More articles &rarr;
+          </Link>
+          <Link
+            href="/institute"
+            style={{
+              fontSize: "0.6rem",
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--color-teal)",
+              textDecoration: "none",
+            }}
+          >
+            Rebuild Institute &rarr;
+          </Link>
+        </div>
       </div>
     </div>
   );
