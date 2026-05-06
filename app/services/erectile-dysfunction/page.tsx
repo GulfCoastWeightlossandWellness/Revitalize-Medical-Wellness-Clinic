@@ -45,8 +45,9 @@ export default function ErectileDysfunction() {
       ]}
       relatedServices={[
         { name: "Hormone Therapy — Men", href: "/services/hormone-therapy-men" },
-        { name: "Medical Weight Loss", href: "/services/medical-weight-loss" },
+        { name: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
         { name: "Biote Pellet Therapy", href: "/services/biote-pellet-therapy" },
+        { name: "Medical Weight Loss", href: "/services/medical-weight-loss" },
         { name: "IV Hydration Therapy", href: "/services/iv-hydration" },
       ]}
       relatedPosts={[

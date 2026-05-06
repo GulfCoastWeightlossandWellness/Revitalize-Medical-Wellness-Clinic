@@ -49,6 +49,7 @@ export default function MedicalWeightLoss() {
       relatedServices={[
         { name: "Hormone Therapy — Women", href: "/services/hormone-therapy-women" },
         { name: "Hormone Therapy — Men", href: "/services/hormone-therapy-men" },
+        { name: "Testosterone Injection Therapy", href: "/services/testosterone-injection-therapy" },
         { name: "Nutritional Counseling", href: "/services/nutritional-counseling" },
         { name: "IV Hydration Therapy", href: "/services/iv-hydration" },
         { name: "Fat Dissolving Injections", href: "/services/fat-dissolving-injections" },
