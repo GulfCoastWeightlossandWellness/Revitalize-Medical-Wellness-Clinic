@@ -49,6 +49,13 @@ export interface ServicePageProps {
   relatedPosts: { title: string; href: string }[];
   faqs: FAQ[];
   earlyVisual?: ReactNode;
+  /**
+   * Optional full-bleed content rendered immediately AFTER the hero and
+   * BEFORE the intro content container. Use this when a service has a
+   * primary decision the patient should see before reading long-form copy
+   * (e.g., the pellet-vs-injection comparison on hormone-therapy-men).
+   */
+  afterHero?: ReactNode;
   schema?: Record<string, unknown>;
   disclaimer?: string;
   /** Page href used for BreadcrumbList schema, e.g. "/services/hormone-therapy-women" */
@@ -106,7 +113,7 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
-export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, earlyVisual, schema, disclaimer, pageHref, pageName, assessmentCta }: ServicePageProps) {
+export default function ServicePage({ hero, intro, candidacy, whatToExpect, relatedServices, relatedPosts, faqs, earlyVisual, afterHero, schema, disclaimer, pageHref, pageName, assessmentCta }: ServicePageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -241,6 +248,12 @@ export default function ServicePage({ hero, intro, candidacy, whatToExpect, rela
           </div>
         </div>
       </section>
+
+      {/* afterHero slot — full-bleed, renders directly under the hero and
+          before the constrained intro container. Used by pages with a
+          primary decision the patient should see immediately (e.g., the
+          pellet-vs-injection comparison on hormone-therapy-men). */}
+      {afterHero}
 
       {/* Content */}
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 clamp(24px, 6vw, 80px)" }}>

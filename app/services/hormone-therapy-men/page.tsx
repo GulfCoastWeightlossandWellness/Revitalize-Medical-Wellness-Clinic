@@ -63,6 +63,92 @@ export default function HormoneTherapyMen() {
     },
   };
 
+  // Pellet vs. injection comparison — passed to ServicePage's afterHero
+  // slot so it renders directly under the hero (previously it was at the
+  // bottom of the page and most patients never reached it). This is the
+  // primary navigational decision for men's TRT, so it gets primary
+  // visual real estate.
+  const deliveryComparison = (
+    <section id="choose-method" style={{ background: "var(--color-stone)", padding: "72px clamp(24px, 6vw, 80px)", scrollMarginTop: "80px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ marginBottom: "40px", maxWidth: "780px" }}>
+            <div className="eyebrow" style={{ marginBottom: "16px" }}>Choose your delivery method</div>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2, marginBottom: "20px" }}>
+              Testosterone injections vs. Biote pellets — both work, the right one depends on you.
+            </h2>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)" }}>
+              Most online conversations about TRT treat the delivery method as a religious choice. In clinical practice, the answer is more boring: pellets work better for some patients, injections work better for others, and the right choice comes from the lab pattern, the lifestyle, and the individual&apos;s preference. Travis runs both protocols at roughly equal volume.
+            </p>
+          </div>
+        </FadeIn>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }} className="trt-compare-grid">
+          {[
+            {
+              title: "Testosterone Injections",
+              href: "/services/testosterone-injection-therapy",
+              pros: [
+                "Tight dose control — adjust weekly if needed",
+                "Better lever for patients with high SHBG, where free T is the issue",
+                "Lower per-cycle cost in many cases",
+                "Portable — fits a travel-heavy lifestyle",
+                "Cypionate or enanthate, intramuscular or subcutaneous — flexible to your physiology",
+              ],
+              cons: [
+                "Requires self-injection (15-second weekly task once trained)",
+                "More follow-up labs early on to dial in the dose",
+                "Bi-weekly dosing creates more noticeable peak-and-trough fluctuation than weekly",
+              ],
+            },
+            {
+              title: "Biote Pellet Therapy",
+              href: "/services/biote-pellet-therapy",
+              pros: [
+                "One in-office procedure every 3-5 months — no daily or weekly maintenance",
+                "Steady, physiologic hormone levels with minimal peak-and-trough swing",
+                "No injection technique to learn",
+                "Good fit for patients with stable lab patterns and low SHBG",
+                "Travis is a Certified Platinum Biote provider",
+              ],
+              cons: [
+                "Cannot adjust dose mid-cycle — once the pellet is in, it dissolves on its own schedule",
+                "Minor in-office procedure each cycle (about 15 minutes, well-tolerated)",
+                "Less responsive to short-term lab adjustments",
+              ],
+            },
+          ].map((m) => (
+            <FadeIn key={m.title}>
+              <div style={{ background: "#fff", borderRadius: "8px", padding: "32px 28px", height: "100%", display: "flex", flexDirection: "column" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "16px" }}>{m.title}</h3>
+                <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 600, marginBottom: "10px" }}>What works well</div>
+                <ul style={{ paddingLeft: "18px", marginBottom: "20px" }}>
+                  {m.pros.map((p, i) => (
+                    <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{p}</li>
+                  ))}
+                </ul>
+                <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "10px" }}>Honest tradeoffs</div>
+                <ul style={{ paddingLeft: "18px", marginBottom: "24px", flex: 1 }}>
+                  {m.cons.map((c, i) => (
+                    <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{c}</li>
+                  ))}
+                </ul>
+                <Link href={m.href} style={{ display: "inline-block", background: "var(--color-teal)", color: "#fff", padding: "11px 20px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
+                  Full {m.title} Page →
+                </Link>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <FadeIn>
+          <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "var(--color-muted)", marginTop: "32px", maxWidth: "780px" }}>
+            At your consultation we walk through both options with your labs and your situation in front of us. Some men try one, run it for a cycle, and switch. That is normal. The point is to land on the protocol that produces the result — not to defend a delivery method.
+          </p>
+        </FadeIn>
+      </div>
+      <style>{`@media (max-width: 768px) { .trt-compare-grid { grid-template-columns: 1fr !important; } }`}</style>
+    </section>
+  );
+
   return (
     <>
       <script
@@ -186,87 +272,8 @@ export default function HormoneTherapyMen() {
         pageHref="/services/hormone-therapy-men"
         pageName="Hormone Therapy for Men"
         assessmentCta={{ label: "Hormone Health Self-Assessment", href: "/tools" }}
+        afterHero={deliveryComparison}
       />
-
-      {/* Two delivery methods: pellets vs injections — side-by-side decision support */}
-      <section id="choose-method" style={{ background: "var(--color-stone)", padding: "80px clamp(24px, 6vw, 80px)", scrollMarginTop: "80px" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <FadeIn>
-            <div style={{ marginBottom: "40px", maxWidth: "780px" }}>
-              <div className="eyebrow" style={{ marginBottom: "16px" }}>Choose your delivery method</div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", letterSpacing: "-0.01em", lineHeight: 1.2, marginBottom: "20px" }}>
-                Testosterone injections vs. Biote pellets — both work, the right one depends on you.
-              </h2>
-              <p style={{ fontSize: "0.95rem", lineHeight: 1.85, color: "var(--color-muted)" }}>
-                Most online conversations about TRT treat the delivery method as a religious choice. In clinical practice, the answer is more boring: pellets work better for some patients, injections work better for others, and the right choice comes from the lab pattern, the lifestyle, and the individual&apos;s preference. Travis runs both protocols at roughly equal volume.
-              </p>
-            </div>
-          </FadeIn>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }} className="trt-compare-grid">
-            {[
-              {
-                title: "Testosterone Injections",
-                href: "/services/testosterone-injection-therapy",
-                pros: [
-                  "Tight dose control — adjust weekly if needed",
-                  "Better lever for patients with high SHBG, where free T is the issue",
-                  "Lower per-cycle cost in many cases",
-                  "Portable — fits a travel-heavy lifestyle",
-                  "Cypionate or enanthate, intramuscular or subcutaneous — flexible to your physiology",
-                ],
-                cons: [
-                  "Requires self-injection (15-second weekly task once trained)",
-                  "More follow-up labs early on to dial in the dose",
-                  "Bi-weekly dosing creates more noticeable peak-and-trough fluctuation than weekly",
-                ],
-              },
-              {
-                title: "Biote Pellet Therapy",
-                href: "/services/biote-pellet-therapy",
-                pros: [
-                  "One in-office procedure every 3-5 months — no daily or weekly maintenance",
-                  "Steady, physiologic hormone levels with minimal peak-and-trough swing",
-                  "No injection technique to learn",
-                  "Good fit for patients with stable lab patterns and low SHBG",
-                  "Travis is a Certified Platinum Biote provider",
-                ],
-                cons: [
-                  "Cannot adjust dose mid-cycle — once the pellet is in, it dissolves on its own schedule",
-                  "Minor in-office procedure each cycle (about 15 minutes, well-tolerated)",
-                  "Less responsive to short-term lab adjustments",
-                ],
-              },
-            ].map((m) => (
-              <FadeIn key={m.title}>
-                <div style={{ background: "#fff", borderRadius: "8px", padding: "32px 28px", height: "100%", display: "flex", flexDirection: "column" }}>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 400, color: "var(--color-ink)", marginBottom: "16px" }}>{m.title}</h3>
-                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-teal)", fontWeight: 600, marginBottom: "10px" }}>What works well</div>
-                  <ul style={{ paddingLeft: "18px", marginBottom: "20px" }}>
-                    {m.pros.map((p, i) => (
-                      <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{p}</li>
-                    ))}
-                  </ul>
-                  <div style={{ fontSize: "0.58rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, marginBottom: "10px" }}>Honest tradeoffs</div>
-                  <ul style={{ paddingLeft: "18px", marginBottom: "24px", flex: 1 }}>
-                    {m.cons.map((c, i) => (
-                      <li key={i} style={{ fontSize: "0.86rem", lineHeight: 1.75, color: "var(--color-muted)", marginBottom: "6px" }}>{c}</li>
-                    ))}
-                  </ul>
-                  <Link href={m.href} style={{ display: "inline-block", background: "var(--color-teal)", color: "#fff", padding: "11px 20px", borderRadius: "6px", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", textDecoration: "none", textAlign: "center" }}>
-                    Full {m.title} Page →
-                  </Link>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <FadeIn>
-            <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "var(--color-muted)", marginTop: "32px", maxWidth: "780px" }}>
-              At your consultation we walk through both options with your labs and your situation in front of us. Some men try one, run it for a cycle, and switch. That is normal. The point is to land on the protocol that produces the result — not to defend a delivery method.
-            </p>
-          </FadeIn>
-        </div>
-        <style>{`@media (max-width: 768px) { .trt-compare-grid { grid-template-columns: 1fr !important; } }`}</style>
-      </section>
 
       {menVideo ? (
         <section style={{ background: "var(--color-bg)", padding: "0 clamp(24px, 6vw, 80px) 80px" }}>

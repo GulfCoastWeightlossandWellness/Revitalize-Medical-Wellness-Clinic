@@ -244,7 +244,7 @@ export default function InstitutePage() {
               The Clinical Philosophy
             </div>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 400, color: "var(--color-ink)", lineHeight: 1.2, marginBottom: "32px" }}>
-              What Rebuild is built on.
+              What Rebuild Metabolic Health Institute is built on.
             </h2>
             <p style={{ fontSize: "0.95rem", lineHeight: 1.9, color: "var(--color-muted)", marginBottom: "20px" }}>
               Travis Woodley did not design a weight loss program. He designed a metabolic reconstruction framework.
