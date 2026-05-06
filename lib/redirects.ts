@@ -93,4 +93,10 @@ export const REDIRECT_MAP: RedirectEntry[] = [
   { source: "/auburn-aesthetics", destination: "/locations", permanent: true },
   { source: "/revitalize-auburn", destination: "/locations", permanent: true },
   { source: "/auburn-location",   destination: "/locations", permanent: true },
+
+  // ─── Cypionate-only TRT — superseded the cypionate-vs-enanthate post ───────
+  // Travis runs cypionate exclusively in his practice; the comparison post
+  // was retired before publish. Catch the URL anyway for any external link
+  // and direct it to the cypionate-explicit replacement.
+  { source: "/blog/testosterone-cypionate-vs-enanthate", destination: "/blog/why-i-use-testosterone-cypionate-only", permanent: true },
 ];

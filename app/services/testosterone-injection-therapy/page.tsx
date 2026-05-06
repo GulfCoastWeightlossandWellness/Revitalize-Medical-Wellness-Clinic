@@ -8,19 +8,18 @@ export const metadata: Metadata = {
   title:
     "Testosterone Injection Therapy Columbus GA | Cypionate & Enanthate | Revitalize",
   description:
-    "Weekly testosterone injection therapy in Columbus and Warner Robins, GA. Cypionate and enanthate protocols, intramuscular or subcutaneous, self-injection training, lab-guided dosing, estradiol management. Travis Woodley, MSN, RN, CRNP — also a Certified Platinum Biote provider.",
+    "Weekly testosterone cypionate injection therapy in Columbus and Warner Robins, GA. Intramuscular or subcutaneous, self-injection training, lab-guided dosing, estradiol management. Travis Woodley, MSN, RN, CRNP — runs cypionate exclusively, also a Certified Platinum Biote provider.",
   keywords: [
     "testosterone injection therapy Columbus GA",
     "testosterone injections Columbus GA",
     "testosterone injections Warner Robins",
     "testosterone injections Warner Robins GA",
-    "testosterone cypionate Columbus",
+    "testosterone cypionate Columbus GA",
     "testosterone cypionate Warner Robins",
-    "testosterone enanthate Georgia",
+    "weekly testosterone cypionate Columbus",
     "TRT injection clinic Columbus",
     "TRT injections Warner Robins",
     "weekly testosterone injection protocol",
-    "bi-weekly testosterone injection",
     "self-injection testosterone training",
     "subcutaneous testosterone injection Columbus",
     "intramuscular testosterone Warner Robins",
@@ -38,7 +37,7 @@ export default function TestosteroneInjectionTherapyPage() {
     procedureType: "Therapeutic",
     bodyLocation: "Endocrine system",
     howPerformed:
-      "Intramuscular or subcutaneous injection of testosterone cypionate or enanthate, delivered on a weekly or bi-weekly schedule, with self-injection training provided. Dose calibrated to lab values and patient response.",
+      "Intramuscular or subcutaneous injection of testosterone cypionate, delivered on a weekly schedule, with self-injection training provided. Dose calibrated to lab values and patient response. Travis Woodley runs cypionate exclusively for clinical consistency across the practice.",
     indication: {
       "@type": "MedicalIndication",
       name: "Lab-confirmed low testosterone with corresponding clinical symptoms in adult men",
@@ -68,13 +67,13 @@ export default function TestosteroneInjectionTherapyPage() {
           headline:
             "Testosterone Injection<br /><em>Therapy</em>",
           subheadline:
-            "Lab-guided testosterone replacement using injection-based delivery — cypionate or enanthate, weekly or bi-weekly, with self-injection training. For men who want the precision and dose flexibility that injections provide.",
+            "Lab-guided testosterone replacement using weekly injections of testosterone cypionate, intramuscular or subcutaneous, with self-injection training. For men who want the precision and dose flexibility that injection therapy provides.",
           heroKeyword: "Testosterone Injection Therapy Columbus GA",
         }}
         intro={{
           problem:
             "Most men with low testosterone are told they have two options: do nothing, or jump on a generic protocol with no real follow-up. Neither one fits how I practice. Injection therapy works for a specific kind of patient — the one who wants tight dose control, fast titration, and the option to manage their own delivery between visits. Done right, it produces stable energy, recovery, and body composition without the swings men hear about. Done wrong, it produces the same swings, plus elevated hematocrit, suppressed natural production, and side effects nobody warned about. The difference is the protocol and the monitoring.",
-          what: "Testosterone injection therapy uses bioidentical testosterone esters — cypionate or enanthate — administered intramuscularly or subcutaneously on a defined schedule. The two esters behave very similarly in most patients; the choice often comes down to availability, half-life nuance, and patient preference. Weekly dosing produces tighter levels and is what I typically recommend; bi-weekly is acceptable for some patients but produces a more pronounced peak-and-trough pattern. Self-injection training is part of the program. Once you understand the technique, the maintenance is fifteen seconds a week.",
+          what: "Testosterone injection therapy uses bioidentical testosterone administered intramuscularly or subcutaneously on a defined schedule. In Travis's practice the ester is testosterone cypionate, exclusively — standardizing on a single ester gives him a tighter clinical baseline across patients and the most consistent symptom response. Weekly dosing produces the smoothest hormone curve and is what I typically recommend. Self-injection training is part of the program. Once you understand the technique, the maintenance is about fifteen seconds a week.",
           how: "We start the same way every TRT conversation should start: a comprehensive hormone panel and an honest clinical conversation. Total testosterone, free testosterone, SHBG, estradiol, DHEA, PSA, CBC, and a full metabolic panel. We talk through your symptoms, your history, your goals, and the specific tradeoffs between pellets and injections so you can make an informed choice. Once we initiate, the first follow-up labs run at 8-12 weeks. Dose is calibrated based on the data and how you actually feel — not based on what is convenient for the protocol.",
         }}
         candidacy={{
@@ -98,7 +97,7 @@ export default function TestosteroneInjectionTherapyPage() {
         whatToExpect={[
           "Comprehensive consultation: We review your symptoms, history, medications, and goals. We discuss pellet vs injection in detail so you can choose the delivery method that actually fits your situation.",
           "Lab work: Full hormone panel — total and free testosterone, SHBG, estradiol, DHEA, PSA, CBC, metabolic panel. We review every value with you, not just the testosterone number.",
-          "Treatment plan: Specific ester (cypionate vs enanthate), specific dose, specific frequency. We discuss why each choice was made for your physiology.",
+          "Treatment plan: Specific cypionate dose, specific frequency (weekly is the default cadence), specific route (intramuscular or subcutaneous). We discuss why each choice was made for your physiology.",
           "Self-injection training: In-office, hands-on. Most patients are comfortable doing it themselves by the end of the first visit. Subcutaneous and intramuscular techniques are both taught.",
           "8-12 week reassessment: Labs are repeated. Dose is calibrated based on the data and your symptom response. This is where the precision happens.",
           "Ongoing monitoring: Labs at intervals appropriate to your protocol. We track testosterone, hematocrit, estradiol, PSA. We adjust as needed. This is a long-term clinical relationship, not a prescription handoff.",
@@ -111,7 +110,7 @@ export default function TestosteroneInjectionTherapyPage() {
           { name: "IV Hydration Therapy", href: "/services/iv-hydration" },
         ]}
         relatedPosts={[
-          { title: "Testosterone Cypionate vs Enanthate — What's the Difference and Which Is Right for You", href: "/blog/testosterone-cypionate-vs-enanthate" },
+          { title: "Why I Use Testosterone Cypionate Exclusively in My TRT Practice", href: "/blog/why-i-use-testosterone-cypionate-only" },
           { title: "How to Self-Inject Testosterone — A Clinical Guide from Travis Woodley", href: "/blog/how-to-self-inject-testosterone" },
           { title: "Pellets vs Injections — How I Help Men Choose the Right Testosterone Delivery Method", href: "/blog/pellets-vs-injections-testosterone" },
           { title: "Free Testosterone vs Total Testosterone — Why Your Lab Results Matter", href: "/blog/free-testosterone-vs-total-testosterone-why-your-lab-results-matter" },
@@ -122,8 +121,8 @@ export default function TestosteroneInjectionTherapyPage() {
         ]}
         faqs={[
           {
-            q: "What is the difference between cypionate and enanthate?",
-            a: "Both are testosterone esters with very similar half-lives (approximately 7-8 days). In clinical practice, most patients respond similarly to either. Cypionate is more commonly used in the US; enanthate is more available in some international contexts. The half-life difference is small enough that most weekly dosing protocols work with either. We discuss which is appropriate for your specific situation at the consultation.",
+            q: "Which testosterone ester does Travis use?",
+            a: "Testosterone cypionate, exclusively. Cypionate is the most commonly used testosterone ester in US clinical practice and the one Travis has the most clinical experience with. Standardizing on a single ester gives him a tighter clinical baseline across patients, more predictable dose adjustments, and consistent supply through US pharmacy channels. Read the full clinical reasoning here: Why I Use Testosterone Cypionate Exclusively.",
           },
           {
             q: "How often do I need to inject?",
@@ -143,7 +142,7 @@ export default function TestosteroneInjectionTherapyPage() {
           },
           {
             q: "What happens if I miss a weekly dose?",
-            a: "One missed dose on weekly testosterone (cypionate or enanthate, half-life ~7-8 days) is not a clinical emergency — your levels drop a bit but stay within a workable range. Take the dose as soon as you remember and resume your normal schedule. Do not double up. If you've missed multiple consecutive doses, message us before resuming so we can confirm whether you need a brief reload or just to continue normally.",
+            a: "One missed dose on weekly cypionate (half-life ~8 days) is not a clinical emergency — your levels drop a bit but stay within a workable range. Take the dose as soon as you remember and resume your normal schedule. Do not double up. If you've missed multiple consecutive doses, message us before resuming so we can confirm whether you need a brief reload or just to continue normally.",
           },
           {
             q: "How quickly will I notice changes?",
@@ -193,7 +192,7 @@ export default function TestosteroneInjectionTherapyPage() {
                 },
                 {
                   day: "Days 1-3 post-injection",
-                  body: "Testosterone level peaks in the 24-48 hour window after injection. Most men feel this as steady energy and good sleep — not a dramatic spike. The peak with weekly cypionate or enanthate at a sensible dose is well within the optimal range for most men.",
+                  body: "Testosterone level peaks in the 24-48 hour window after injection. Most men feel this as steady energy and good sleep — not a dramatic spike. The peak with weekly cypionate at a sensible dose is well within the optimal range for most men.",
                 },
                 {
                   day: "Days 4-6",

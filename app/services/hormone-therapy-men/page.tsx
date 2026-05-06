@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Men's Hormone Therapy Columbus GA | Testosterone Injections & Pellets | Revitalize",
   description:
-    "Men's testosterone replacement therapy in Columbus and Warner Robins, GA. Both delivery methods — weekly testosterone injections (cypionate or enanthate) and Biote pellets. Lab-guided protocols by Travis Woodley, MSN, RN, CRNP.",
+    "Men's testosterone replacement therapy in Columbus and Warner Robins, GA. Both delivery methods — weekly testosterone cypionate injections and Biote pellets. Lab-guided protocols by Travis Woodley, MSN, RN, CRNP.",
   keywords: [
     "hormone therapy for men Columbus GA",
     "testosterone replacement therapy Columbus GA",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "testosterone injections Columbus GA",
     "testosterone injections Warner Robins",
     "testosterone cypionate Columbus",
-    "testosterone enanthate Georgia",
+    "weekly testosterone cypionate Georgia",
     "weekly TRT injection clinic",
     "testosterone pellets men Columbus",
     "Biote pellets men Warner Robins",
@@ -47,7 +47,7 @@ export default function HormoneTherapyMen() {
     procedureType: "Therapeutic",
     bodyLocation: "Endocrine system",
     howPerformed:
-      "Lab-guided testosterone replacement therapy with two delivery options: weekly testosterone injections (cypionate or enanthate, intramuscular or subcutaneous, with self-injection training) or Biote subcutaneous pellet therapy (in-office insertion every 3-5 months). Delivery method is selected at the treatment-plan visit based on the patient's lab pattern (SHBG, free testosterone, estradiol), lifestyle, and preference.",
+      "Lab-guided testosterone replacement therapy with two delivery options: weekly testosterone cypionate injections (intramuscular or subcutaneous, with self-injection training) or Biote subcutaneous pellet therapy (in-office insertion every 3-5 months). Travis runs cypionate exclusively for injection patients. Delivery method is selected at the treatment-plan visit based on the patient's lab pattern (SHBG, free testosterone, estradiol), lifestyle, and preference.",
     indication: {
       "@type": "MedicalIndication",
       name: "Lab-confirmed low testosterone with corresponding clinical symptoms in adult men (low energy, low libido, body composition changes, mood disturbance, recovery deficits).",
@@ -92,7 +92,7 @@ export default function HormoneTherapyMen() {
                 "Better lever for patients with high SHBG, where free T is the issue",
                 "Lower per-cycle cost in many cases",
                 "Portable — fits a travel-heavy lifestyle",
-                "Cypionate or enanthate, intramuscular or subcutaneous — flexible to your physiology",
+                "Testosterone cypionate, intramuscular or subcutaneous — Travis runs cypionate exclusively for clinical consistency",
               ],
               cons: [
                 "Requires self-injection (15-second weekly task once trained)",
@@ -159,12 +159,12 @@ export default function HormoneTherapyMen() {
         hero={{
         eyebrow: "Men's Health — Columbus & Warner Robins, GA",
         headline: "Hormone Therapy<br /><em>for Men</em>",
-        subheadline: "Lab-guided testosterone replacement therapy — both weekly injections (cypionate or enanthate) and Biote pellets. Travis runs both protocols and matches the delivery method to your physiology, lifestyle, and goals. Not a one-size-fits-all program.",
+        subheadline: "Lab-guided testosterone replacement therapy — both weekly testosterone cypionate injections and Biote pellets. Travis runs both protocols and matches the delivery method to your physiology, lifestyle, and goals. Not a one-size-fits-all program.",
         heroKeyword: "Hormone Therapy for Men Columbus GA",
       }}
       intro={{
         problem: "Most men attribute the changes they feel in their 40s and 50s — the fatigue, the weight that won't budge, the low motivation, the loss of muscle, the declining sex drive — to 'getting older.' Some of that is true. A lot of it isn't. Low testosterone affects a significant number of men in mid-life, and the symptoms are often dismissed or misattributed. A simple blood panel can clarify what's actually driving the shift. Many men are surprised to learn how far their levels have fallen and how much that explains.",
-        what: "Testosterone replacement therapy uses bioidentical testosterone — identical in molecular structure to what your testes produce — to restore levels to an optimal range. At Revitalize, Travis offers two delivery methods, and they are equally legitimate options: weekly testosterone injections (cypionate or enanthate, intramuscular or subcutaneous, with self-injection training) and Biote pellet therapy (a grain-of-rice-sized pellet inserted subcutaneously every three to five months for steady release). About half our male TRT patients choose injections; about half choose pellets. The right answer depends on your labs, your lifestyle, your preference for dose flexibility, and how you want to manage the protocol week-to-week. We walk through both at the consultation.",
+        what: "Testosterone replacement therapy uses bioidentical testosterone — identical in molecular structure to what your testes produce — to restore levels to an optimal range. At Revitalize, Travis offers two delivery methods, and they are equally legitimate options: weekly testosterone cypionate injections (intramuscular or subcutaneous, with self-injection training) and Biote pellet therapy (a grain-of-rice-sized pellet inserted subcutaneously every three to five months for steady release). About half our male TRT patients choose injections; about half choose pellets. The right answer depends on your labs, your lifestyle, your preference for dose flexibility, and how you want to manage the protocol week-to-week. We walk through both at the consultation.",
         how: "We start the same way every TRT conversation should start: a comprehensive hormone panel and an honest clinical conversation. Total testosterone, free testosterone, SHBG, estradiol, DHEA, PSA, CBC, and a full metabolic panel. From the labs we can see which delivery method actually fits your physiology — men with high SHBG, for example, often do better on weekly injections because the dose can be tuned to push free T higher. Men with stable lab patterns who prefer set-it-and-forget-it convenience often do better on pellets. We discuss the tradeoffs of each, you choose, and we calibrate dose at the first 8-12 week reassessment based on the data and how you feel.",
       }}
       candidacy={{
@@ -190,7 +190,7 @@ export default function HormoneTherapyMen() {
       whatToExpect={[
         "Comprehensive consultation: We review your symptoms, health history, medications, and goals. We walk through both delivery methods — pellets and injections — in detail so you can make an informed choice. We also discuss the realistic timeline for improvement and set accurate expectations.",
         "Lab work: Full hormone panel — total and free testosterone, SHBG, estradiol, DHEA, PSA, CBC, metabolic markers. We review every value with you, not just the testosterone number. The lab pattern often points to which delivery method will work better for your physiology.",
-        "Treatment plan: Together we choose pellet or injection therapy. For pellets: dose, insertion scheduling, expected cycle length. For injections: ester (cypionate or enanthate), specific dose, weekly or bi-weekly cadence, route (intramuscular or subcutaneous).",
+        "Treatment plan: Together we choose pellet or injection therapy. For pellets: dose, insertion scheduling, expected cycle length. For injections: testosterone cypionate dose, weekly cadence (default), and route (intramuscular or subcutaneous).",
         "Initiation visit: Pellet patients have a brief in-office insertion procedure (~15 minutes, well-tolerated). Injection patients receive in-office self-injection training (~15-20 minutes) and complete their first injection under supervision.",
         "First two to six weeks: Testosterone levels begin to optimize. Most men notice improved sleep and energy early. Mood and libido improvements often follow within four to six weeks.",
         "8-12 week reassessment (injections) or 3-5 month reassessment (pellets): Labs are repeated, dose is calibrated based on your response. This is where the precision happens. Most men find their optimal protocol within the first two cycles.",
